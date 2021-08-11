@@ -1653,7 +1653,7 @@ defined XML attributes of the macro are specified in [table
 | XML Attribute Name | Value Type                        | Description                   |
 | ------------------ | --------------------------------- | ----------------------------- |
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the macro. |
-| ChannelFunction    | [Node](#user-content-attrtype-node ) | Link to channel function; Starting point [DMX mode](#user-content-dmx-mode) |
+| ChannelFunction    | [Node](#user-content-attrtype-node ) | Link to channel function; Starting point [DMX Mode](#user-content-dmx-mode) |
 
 #### Table 51. *Macro Attributes*
 
