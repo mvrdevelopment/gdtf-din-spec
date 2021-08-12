@@ -1050,6 +1050,17 @@ ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
 
+### Regarding glTF Files
+
+The used glTF files should follow these requirements:
+
+ - Use the `glb` binary format
+ - Only use the 2.0 version
+ - Do not use extension
+ - Do not use animations
+ - Only use jpeg or png texture resource
+ - all vertex attributes are `GL_FLOAT`
+
 
 ## Geometry Collect
 
