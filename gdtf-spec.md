@@ -1075,6 +1075,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 | [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                               |
 | [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes a wiring object.                                 |
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry used for the inventory.                                         |
+| [Origin](#user-content-geometry-type-origin )                         | Any    | Geometry used as origin.                                                 |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1479,6 +1480,30 @@ defined XML attributes of an electrical geometry are specified in
 </div>
 
 The inventory geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Origin
+
+This type of geometry is used to describe the origin of a geometry (XML node `<Origin>`). The currently
+defined XML attributes of an electrical geometry are specified in
+[table 103](#user-content-table-103 ).
+
+<div id="table-103">
+
+| XML Attribute Name  | Value Type                               | Description                                                    |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
+| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
+| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
+| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
+| AllowableForceX     | [Float](#user-content-attrtype-float )   | The allowable force on the X-Axis.                             |
+| AllowableForceY     | [Float](#user-content-attrtype-float )   | The allowable force on the Y-Axis.                             |
+| AllowableForceZ     | [Float](#user-content-attrtype-float )   | The allowable force on the Z-Axis.                             |
+
+#### Table 103. *Origin Attributes*
+
+</div>
+
+The origin geometry has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
