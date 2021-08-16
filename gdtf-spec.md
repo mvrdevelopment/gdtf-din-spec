@@ -1526,12 +1526,12 @@ defined XML attributes of a support geometry are specified in
 | SupportType               | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
 | RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section.                                                             |
 | RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for Ropes.                                      |
-| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the X-Axis applied to the object according to the Eurocode              |
-| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the Y-Axis applied to the object according to the Eurocode              |
-| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the Z-Axis applied to the object according to the Eurocode              |
-| CapacityXX                | [Float](#user-content-attrtype-float )    |  The allowable moment around the X-Axis applied to the object accoring to the Eurocode.         |
-| CapacityYY                | [Float](#user-content-attrtype-float )    |  The allowable moment around the Y-Axis applied to the object accoring to the Eurocode.         |
-| CapacityZZ                | [Float](#user-content-attrtype-float )    |  The allowable moment around the Z-Axis applied to the object accoring to the Eurocode.         |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode               |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode               |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode               |
+| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode.         |
+| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode.         |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.         |
 | ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for Ground Supports.   |
 | ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for Ground Supports.   |
 | ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for Ground Supports.   |
