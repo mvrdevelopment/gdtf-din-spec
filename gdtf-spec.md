@@ -1074,6 +1074,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 | [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.               |
 | [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                               |
 | [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes a wiring object.                                 |
+| [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry used for the inventory.                                         |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1407,7 +1408,7 @@ attributes of the break are specified in [table
 
 ### Geometry Type Wiring Object
 
-This type of geometry is used to describe an electrical device (XML node `<WiringObject>`). The currently
+This type of geometry is used to describe an electrical device that can be wired (XML node `<WiringObject>`). The currently
 defined XML attributes of an electrical geometry are specified in
 [table 100](#user-content-table-100 ).
 
@@ -1437,7 +1438,7 @@ defined XML attributes of an electrical geometry are specified in
 
 The wiring object has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
-In addition, it also has `<SocketPatch>` children.
+In addition, it also has socket patch (XML node `<SocketPatch>`) children.
 
 #### Socket Patch
 
@@ -1457,6 +1458,28 @@ attributes of the break are specified in [table 101](#user-content-table-101 ).
 </div>
 
 The socket patch doesn't have any children.
+
+### Geometry Type Inventory
+
+This type of geometry is used to describe a geometry used for the inventory (XML node `<Inventory>`). The currently
+defined XML attributes of an electrical geometry are specified in
+[table 102](#user-content-table-102 ).
+
+<div id="table-102">
+
+| XML Attribute Name  | Value Type                               | Description                                                    |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
+| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
+| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
+| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
+| Count               | [Int](#user-content-attrtype-int )       | The total of objects.                                          |
+
+#### Table 102. *Inventory Attributes*
+
+</div>
+
+The inventory geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
 
