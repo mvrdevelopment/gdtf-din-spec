@@ -1076,6 +1076,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 | [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes a wiring object.                                 |
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry used for the inventory.                                         |
 | [Origin](#user-content-geometry-type-origin )                         | Any    | Geometry used as origin.                                                 |
+| [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes a structure.                                     |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1410,8 +1411,7 @@ attributes of the break are specified in [table
 ### Geometry Type Wiring Object
 
 This type of geometry is used to describe an electrical device that can be wired (XML node `<WiringObject>`). The currently
-defined XML attributes of an electrical geometry are specified in
-[table 100](#user-content-table-100 ).
+defined XML attributes of a wiring object geometry are specified in [table 100](#user-content-table-100 ).
 
 <div id="table-100">
 
@@ -1444,7 +1444,7 @@ In addition, it also has socket patch (XML node `<SocketPatch>`) children.
 #### Socket Patch
 
 This XML node specifies how the different sockets of its parent wiring object are connected to the sockets of other wiring objects. The currently defined XML
-attributes of the break are specified in [table 101](#user-content-table-101 ).
+attributes of a socket patch are specified in [table 101](#user-content-table-101 ).
 
 <div id="table-101">
 
@@ -1463,7 +1463,7 @@ The socket patch doesn't have any children.
 ### Geometry Type Inventory
 
 This type of geometry is used to describe a geometry used for the inventory (XML node `<Inventory>`). The currently
-defined XML attributes of an electrical geometry are specified in
+defined XML attributes of an inventory geometry are specified in
 [table 102](#user-content-table-102 ).
 
 <div id="table-102">
@@ -1485,7 +1485,7 @@ collect (see [table 30](#user-content-table-30 )).
 ### Geometry Type Origin
 
 This type of geometry is used to describe the origin of a geometry (XML node `<Origin>`). The currently
-defined XML attributes of an electrical geometry are specified in
+defined XML attributes of an origin geometry are specified in
 [table 103](#user-content-table-103 ).
 
 <div id="table-103">
@@ -1504,6 +1504,35 @@ defined XML attributes of an electrical geometry are specified in
 </div>
 
 The origin geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Structure
+
+This type of geometry is used to describe a structure (XML node `<Structure>`). The currently
+defined XML attributes of a structure geometry are specified in
+[table 104](#user-content-table-104 ).
+
+<div id="table-104">
+
+| XML Attribute Name        | Value Type                               | Description                                                    |
+| ------------------------- | ---------------------------------------- | -------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
+| Model                     | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
+| Position                  | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
+| LinkedGeometry            | [Name](#user-content-attrtype-name )     | The linked geometry.                                           |
+| StructureType             | [Int](#user-content-attrtype-int )       | The type of structure.                                         |
+| CrossSectionType          | [Int](#user-content-attrtype-int )       | The type of cross section.                                     |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )   | The height of the cross section.                               |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )   | The thickness of the wall of the cross section.                |
+| TrussCrossSection         | [String](#user-content-attrtype-string ) | The name of the truss cross section.                           |
+
+LightRightUUIDObjectProperty<LightRightGeometryPtr> fLinkedTo;
+
+#### Table 104. *Structure Attributes*
+
+</div>
+
+The strucure geometry has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
