@@ -1060,25 +1060,24 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 
 <div id="table-30">
 
-| XML node                                                              | Amount | Description                                                              |
-| --------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------ |
-| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                        |
-| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                      |
-| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                             |
-| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                              |
-| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                      |
-| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                    |
-| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                       |
-| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device.  |
-| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.      |
-| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.        |
-| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.               |
-| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                               |
-| [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes a wiring object.                                 |
-| [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry used for the inventory.                                         |
-| [Origin](#user-content-geometry-type-origin )                         | Any    | Geometry used as origin.                                                 |
-| [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes a structure.                                     |
-| [Support](#user-content-geometry-type-support )                       | Any    | Geometry that describes a support.                                       |
+| XML node                                                              | Amount | Description                                                                                    |
+| --------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
+| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                                              |
+| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                                            |
+| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                                                   |
+| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                                                    |
+| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                                            |
+| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                                          |
+| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                                             |
+| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device.                        |
+| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.                            |
+| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.                              |
+| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.                                     |
+| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                                                     |
+| [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes an internal wiring for power or data.                                  |
+| [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry that describes an additional item that can be used for a fixture (like a rain cover). |
+| [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes the internal framing of an object (like members).                      |
+| [Support](#user-content-geometry-type-support )                       | Any    | Geometry that describes a support like a base plate or a hoist.                                |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1417,23 +1416,23 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 
 <div id="table-100">
 
-| XML Attribute Name  | Value Type                               | Description                                                    |
-| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
-| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
-| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
-| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
-| WireType            | [Int](#user-content-attrtype-int )       | The type of the wire used.                                     |
-| ConnectorType       | [String](#user-content-attrtype-string ) | The type of the connector used.                                |
-| SignalType          | [Int](#user-content-attrtype-int )       | The type of the signal used.                                   |
-| SocketCount         | [Int](#user-content-attrtype-int )       | The number of available sockets.                               |
-| ElectricalPayLoad   | [Float](#user-content-attrtype-float )   | The electrical payload's value.                                |
-| MaxPayLoad          | [Float](#user-content-attrtype-float )   | The maximum payload's value.                                   |
-| CosPhi              | [Float](#user-content-attrtype-float )   |                                                                |
-| FuseCurrent         | [Float](#user-content-attrtype-float )   | The fuse current's value.                                      |
-| Voltage             | [Float](#user-content-attrtype-float )   | The voltage's value.                                           |
-| VoltageRangeMin     | [Float](#user-content-attrtype-float )   | The voltage range's minimum value.                             |
-| VoltageRangeMax     | [Float](#user-content-attrtype-float )   | The voltage range's maximum value.                             |
-| FuseRating          | [Int](#user-content-attrtype-int )       | Fuse Rating                                                    |
+| XML Attribute Name  | Value Type                                | Description                                                                                       |
+| ------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                  |
+| Model               | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                  |
+| Position            | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                     |
+| WireType            | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
+| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). |
+| SignalType          | [Enum](#user-content-attrtype-enum )      | The type of the signal used. Defined values are "Power", "DMX512", "Network", "AES".              |
+| SocketCount         | [Int](#user-content-attrtype-int )        | The number of available sockets.                                                                  |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for Consumers.                                          |
+| VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for Consumers.                                            |
+| VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for Consumers.                                            |
+| MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for Power Sources.         |
+| Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for Power Sources.                     |
+| CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device.                                                                   |
+| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value.                                                                                   |
+| FuseRating          | [Enum](#user-content-attrtype-enum )      | Fuse Rating. Defined values are "B", "C", "D", "K", "Z".                                          |
 
 #### Table 100. *Wiring Object Attributes*
 
@@ -1475,7 +1474,7 @@ defined XML attributes of an inventory geometry are specified in
 | Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
 | Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
 | Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
-| Count               | [Int](#user-content-attrtype-int )       | The total of objects.                                          |
+| Count               | [Int](#user-content-attrtype-int )       | The default count for new objects.                             |
 
 #### Table 102. *Inventory Attributes*
 
@@ -1484,51 +1483,27 @@ defined XML attributes of an inventory geometry are specified in
 The inventory geometry has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 
-### Geometry Type Origin
-
-This type of geometry is used to describe the origin of a geometry (XML node `<Origin>`). The currently
-defined XML attributes of an origin geometry are specified in
-[table 103](#user-content-table-103 ).
-
-<div id="table-103">
-
-| XML Attribute Name  | Value Type                               | Description                                                    |
-| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
-| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
-| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
-| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
-| AllowableForceX     | [Float](#user-content-attrtype-float )   | The allowable force on the X-Axis.                             |
-| AllowableForceY     | [Float](#user-content-attrtype-float )   | The allowable force on the Y-Axis.                             |
-| AllowableForceZ     | [Float](#user-content-attrtype-float )   | The allowable force on the Z-Axis.                             |
-
-#### Table 103. *Origin Attributes*
-
-</div>
-
-The origin geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
-
 ### Geometry Type Structure
 
 This type of geometry is used to describe a structure (XML node `<Structure>`). The currently
 defined XML attributes of a structure geometry are specified in
-[table 104](#user-content-table-104 ).
+[table 103](#user-content-table-103 ).
 
-<div id="table-104">
+<div id="table-103">
 
-| XML Attribute Name        | Value Type                                | Description                                                     |
-| ------------------------- | ----------------------------------------- | --------------------------------------------------------------- |
-| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                |
-| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                |
-| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix   |
-| LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                            |
-| StructureType             | [Int](#user-content-attrtype-int )        | The type of structure.                                          |
-| CrossSectionType          | [Int](#user-content-attrtype-int )        | The type of cross section.                                      |
-| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section.                                |
-| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.                 |
-| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section.                            |
+| XML Attribute Name        | Value Type                                | Description                                                             |
+| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                        |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                        |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix           |
+| LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                                    |
+| StructureType             | [Enum](#user-content-attrtype-enum )      | The type of structure. Defined values are "CenterLineBased", "Detail".  |
+| CrossSectionType          | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Fachwerk", "Tube".       |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for Tubes.                        |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for Tubes.          |
+| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for Trusses.                  |
 
-#### Table 104. *Structure Attributes*
+#### Table 103. *Structure Attributes*
 
 </div>
 
@@ -1539,27 +1514,32 @@ collect (see [table 30](#user-content-table-30 )).
 
 This type of geometry is used to describe a support (XML node `<Support>`). The currently
 defined XML attributes of a support geometry are specified in
-[table 105](#user-content-table-105 ).
+[table 104](#user-content-table-104 ).
 
-<div id="table-105">
+<div id="table-104">
 
-| XML Attribute Name        | Value Type                                | Description                                                     |
-| ------------------------- | ----------------------------------------- | --------------------------------------------------------------- |
-| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                |
-| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                |
-| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix   |
-| SupportType               | [Int](#user-content-attrtype-int )        | The type of support.                                            |
-| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section.                             |
-| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| Rope offset.                                                    |
-| Capacity                  | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceX               | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceY               | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceZ               | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceXX              | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceYY              | [Float](#user-content-attrtype-float )    |                                                                 |
-| ResistanceZZ              | [Float](#user-content-attrtype-float )    |                                                                 |
+| XML Attribute Name        | Value Type                                | Description                                                                                     |
+| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
+| SupportType               | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section.                                                             |
+| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for Ropes.                                      |
+| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the X-Axis applied to the object according to the Eurocode              |
+| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the Y-Axis applied to the object according to the Eurocode              |
+| CapacityX                 | [Float](#user-content-attrtype-float )    |  The allowable force on the Z-Axis applied to the object according to the Eurocode              |
+| CapacityXX                | [Float](#user-content-attrtype-float )    |  The allowable moment around the X-Axis applied to the object accoring to the Eurocode.         |
+| CapacityYY                | [Float](#user-content-attrtype-float )    |  The allowable moment around the Y-Axis applied to the object accoring to the Eurocode.         |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    |  The allowable moment around the Z-Axis applied to the object accoring to the Eurocode.         |
+| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for Ground Supports.  |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for Ground Supports.  |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for Ground Supports.  |
 
-#### Table 105. *Support Attributes*
+#### Table 104. *Support Attributes*
 
 </div>
 
