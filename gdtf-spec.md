@@ -1524,7 +1524,7 @@ defined XML attributes of a support geometry are specified in
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
 | SupportType               | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
-| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section.                                                             |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for Ropes.                                             |
 | RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for Ropes.                                      |
 | CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode               |
 | CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode               |
