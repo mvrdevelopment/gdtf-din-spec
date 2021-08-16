@@ -1059,20 +1059,21 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 
 <div id="table-30">
 
-| XML node                                                           | Amount | Description                                                             |
-| ------------------------------------------------------------------ | ------ | ----------------------------------------------------------------------- |
-| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                       |
-| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                     |
-| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                            |
-| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                             |
-| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                     |
-| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                   |
-| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                      |
-| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device. |
-| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.     |
-| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.       |
-| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.              |
-| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                              |
+| XML node                                                              | Amount | Description                                                              |
+| --------------------------------------------------------------------- | ------ | ------------------------------------------------------------------------ |
+| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                        |
+| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                      |
+| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                             |
+| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                              |
+| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                      |
+| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                    |
+| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                       |
+| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device.  |
+| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.      |
+| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.        |
+| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.               |
+| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                               |
+| [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes a wiring object.                                 |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1402,6 +1403,60 @@ attributes of the break are specified in [table
 #### Table 43. *Break Attributes*
 
 </div>
+
+
+### Geometry Type Wiring Object
+
+This type of geometry is used to describe an electrical device (XML node `<WiringObject>`). The currently
+defined XML attributes of an electrical geometry are specified in
+[table 100](#user-content-table-100 ).
+
+<div id="table-100">
+
+| XML Attribute Name  | Value Type                               | Description                                                    |
+| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
+| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
+| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
+| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
+| WireType            | [Int](#user-content-attrtype-int )       | The type of the wire used.                                     |
+| ConnectorType       | [String](#user-content-attrtype-string ) | The type of the connector used.                                |
+| SignalType          | [Int](#user-content-attrtype-int )       | The type of the signal used.                                   |
+| SocketCount         | [Int](#user-content-attrtype-int )       | The number of available sockets.                               |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )   | The electrical payload's value.                                |
+| MaxPayLoad          | [Float](#user-content-attrtype-float )   | The maximum payload's value.                                   |
+| CosPhi              | [Float](#user-content-attrtype-float )   |                                                                |
+| FuseCurrent         | [Float](#user-content-attrtype-float )   | The fuse current's value.                                      |
+| Voltage             | [Float](#user-content-attrtype-float )   | The voltage's value.                                           |
+| VoltageRangeMin     | [Float](#user-content-attrtype-float )   | The voltage range's minimum value.                             |
+| VoltageRangeMax     | [Float](#user-content-attrtype-float )   | The voltage range's maximum value.                             |
+| FuseRating          | [Int](#user-content-attrtype-int )       | Fuse Rating                                                    |
+
+#### Table 100. *Wiring Object Attributes*
+
+</div>
+
+The wiring object has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+In addition, it also has `<SocketPatch>` children.
+
+#### Socket Patch
+
+This XML node specifies how the different sockets of its parent wiring object are connected to the sockets of other wiring objects. The currently defined XML
+attributes of the break are specified in [table 101](#user-content-table-101 ).
+
+<div id="table-101">
+
+| XML Attribute Name  | Value Type                               | Description                                                                                            |
+| ------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| ToWiringObject      | [Node](#user-content-attrtype-node )     | Link to the wiring object connected through this socket patch.                                         |
+| FromSocket          | [Int](#user-content-attrtype-int )       | The socket used by the parent wiring object to connect to the targeted wiring object "ToWiringObject". |
+| ToSocket            | [Int](#user-content-attrtype-int )       | The socket used by the targeted wiring object "ToWiringObject" to connect to the parent wiring object. |
+
+#### Table 101. *Socket Patch Attributes*
+
+</div>
+
+The socket patch doesn't have any children.
 
 ## DMX Mode Collect
 
