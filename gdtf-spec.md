@@ -162,6 +162,7 @@ Name<div id="attrtype-name" />                 | restricted Literal    | Unique 
 Date<div id="attrtype-date" /> yyyy-mm-ddThh:mm:ss   |  Date and time corresponding to UTC +00:00 (Coordinated Universal Time): yyyy – year, mm – month, dd – day, hh – hours (24 format), mm – minutes, ss – seconds. Example: “2016-06-21T11:22:48” 
 Node<div id="attrtype-node" />                   | Name.Name.Name...     | Link to an element: “Name” is the value of the attribute “Name” of a defined XML node. The starting point defines each attribute separately. 
 ColorCIE<div id="attrtype-colorcie" />             | floatx, floaty,floatY       | CIE color representation xyY 1931
+Vector3<div id="attrtype-vector3" />               |  {float,float,float} | Vector with 3 float components
 Matrix<div id="attrtype-matrix" />                  |  {float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} |  The transformation matrix consists 4 x 4 floats. Stored in a row-major order. For example, each row of the matrix is stored as a 4- component vector. The mathematical definition of the matrix is in a column-major order. For example, the matrix rotation is stored in the first three columns, and the translation is stored in the 4th column. The metric system consists of the Right- handed Cartesian Coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from bottom (-Z) to top (+Z). 0,0,0 – center base. 
 Rotation<div id="attrtype-rotation"/>| {float, float, float}<br/>{float, float, float} <br/>{float, float, float} | Rotation matrix, consist of 3*3 floats. Stored as row-major matrix, i.e. each row of the matrix is stored as a 3-component vector. Mathematical definition of the matrix is column-major, i.e. the matrix rotation is stored in the three columns. Metric system, right-handed Cartesian coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from the bottom (-Z) to the top (+Z). 
 Enum<div id="attrtype-enum"/>                     | Literal               | Possible values are predefined.
@@ -1077,6 +1078,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry used for the inventory.                                         |
 | [Origin](#user-content-geometry-type-origin )                         | Any    | Geometry used as origin.                                                 |
 | [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes a structure.                                     |
+| [Support](#user-content-geometry-type-support )                       | Any    | Geometry that describes a support.                                       |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1514,25 +1516,54 @@ defined XML attributes of a structure geometry are specified in
 
 <div id="table-104">
 
-| XML Attribute Name        | Value Type                               | Description                                                    |
-| ------------------------- | ---------------------------------------- | -------------------------------------------------------------- |
-| Name                      | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
-| Model                     | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
-| Position                  | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
-| LinkedGeometry            | [Name](#user-content-attrtype-name )     | The linked geometry.                                           |
-| StructureType             | [Int](#user-content-attrtype-int )       | The type of structure.                                         |
-| CrossSectionType          | [Int](#user-content-attrtype-int )       | The type of cross section.                                     |
-| CrossSectionHeight        | [Float](#user-content-attrtype-float )   | The height of the cross section.                               |
-| CrossSectionWallThickness | [Float](#user-content-attrtype-float )   | The thickness of the wall of the cross section.                |
-| TrussCrossSection         | [String](#user-content-attrtype-string ) | The name of the truss cross section.                           |
-
-LightRightUUIDObjectProperty<LightRightGeometryPtr> fLinkedTo;
+| XML Attribute Name        | Value Type                                | Description                                                     |
+| ------------------------- | ----------------------------------------- | --------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix   |
+| LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                            |
+| StructureType             | [Int](#user-content-attrtype-int )        | The type of structure.                                          |
+| CrossSectionType          | [Int](#user-content-attrtype-int )        | The type of cross section.                                      |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section.                                |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.                 |
+| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section.                            |
 
 #### Table 104. *Structure Attributes*
 
 </div>
 
 The strucure geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Support
+
+This type of geometry is used to describe a support (XML node `<Support>`). The currently
+defined XML attributes of a support geometry are specified in
+[table 105](#user-content-table-105 ).
+
+<div id="table-105">
+
+| XML Attribute Name        | Value Type                                | Description                                                     |
+| ------------------------- | ----------------------------------------- | --------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix   |
+| SupportType               | [Int](#user-content-attrtype-int )        | The type of support.                                            |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section.                             |
+| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| Rope offset.                                                    |
+| Capacity                  | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceX               | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceY               | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    |                                                                 |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    |                                                                 |
+
+#### Table 105. *Support Attributes*
+
+</div>
+
+The support geometry has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
