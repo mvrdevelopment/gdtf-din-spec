@@ -762,7 +762,45 @@ profile collect has a list of a [DMX profiles](#user-content-dmx-profile ).
 #### DMX Profile
 
 This section defines the DMX profile description (XML node
-`<DMXProfile>`).
+`<DMXProfile>`). The currently defined XML attributes of the color space
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                           | Description                    |
+| ------------------- | ------------------------------------ | ------------------------------ |
+| Name                | [Name](#user-content-attrtype-name ) | Unique name of the DMX profile |
+
+#### Table TODO. *DMX Profile Attributes*
+
+</div>
+
+As children a DMX Profile has a list of [point] (#user-content-point ).
+
+##### Point
+
+This section contains points to define the DMX profile (XML node `<Point>`). The currently defined XML attributes of the point
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                             | Description                    |
+| ------------------- | -------------------------------------- | ------------------------------ |
+| DMXPercentage       | [Float](#user-content-attrtype-Float ) | DMX percentage of the point; Default value: 0 |
+| CBP0                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 0; Default value: 0 |
+| CBP1                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 1; Default value: 0 |
+| CBP2                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 2; Default value: 0 |
+| CBP3                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 3; Default value: 0 |
+
+#### Table TODO. *Point Attributes*
+
+</div>
+
+Find last point with a DMXPercent below or equal x.
+
+Output(x) = CBP3(x-DMXPercent)3 + CBP2(x-DMXPercent)2 + CBP1(x-DMXPercent) +CBP0
+
+The point does not have any children.
 
 ### Color Rendering Index Collect
 
@@ -1511,11 +1549,11 @@ currently defined XML attributes of channel function are specified in
 
 <div id="table-48">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XML Attribute Name | Value Type                                   | Description                                                                                                                                                   |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Name               | [Name](#user-content-attrtype-name )         | Unique name; Default value: Name of attribute and number of channel function.                                                                                 |
 | Attribute          | [Node](#user-content-attrtype-node )         | Link to attribute; Starting point is the attributes node. Default value: “NoFeature”.                                                                         |
-| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                            |
+| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                             |
 | DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel function – 1 or the maximum value of the DMX channel. Default value: "0/1". |
 | Default            | [DMXValue](#user-content-attrtype-dmxvalue ) | Default DMX value of channel function when activated by the control system.                                                                                   |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value; Default value: 0                                                                                                                        |
@@ -1528,6 +1566,10 @@ currently defined XML attributes of channel function are specified in
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to DMX Profile; Starting point: DMX Profile Collect                                                                                             |
+| Min                | [Float](#user-content-attrtype-Float )       | Minimum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalFrom                                                                |
+| Max                | [Float](#user-content-attrtype-Float )       | Maximum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalTo                                                                  |
+
 
 #### Table 48. *Channel Function Attributes*
 
