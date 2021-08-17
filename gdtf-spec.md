@@ -786,11 +786,11 @@ are specified in [table TODO](#user-content-table-TODO ).
 
 | XML Attribute Name  | Value Type                             | Description                    |
 | ------------------- | -------------------------------------- | ------------------------------ |
-| DMXPercentage       | [Float](#user-content-attrtype-Float ) | DMX percentage of the point; Default value: 0 |
-| CBP0                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 0; Default value: 0 |
-| CBP1                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 1; Default value: 0 |
-| CBP2                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 2; Default value: 0 |
-| CBP3                | [Float](#user-content-attrtype-Float ) | Cubic Bezier Parameter 3; Default value: 0 |
+| DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Default value: 0 |
+| CBP0                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 0; Default value: 0 |
+| CBP1                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 1; Default value: 0 |
+| CBP2                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 2; Default value: 0 |
+| CBP3                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 3; Default value: 0 |
 
 #### Table TODO. *Point Attributes*
 
