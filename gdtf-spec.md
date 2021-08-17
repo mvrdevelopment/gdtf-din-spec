@@ -775,7 +775,7 @@ are specified in [table TODO](#user-content-table-TODO ).
 
 </div>
 
-As children a DMX Profile has a list of [point] (#user-content-point ).
+As children a DMX Profile has a list of [point](#user-content-point ).
 
 ##### Point
 
