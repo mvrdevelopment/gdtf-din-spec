@@ -1078,6 +1078,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry that describes an additional item that can be used for a fixture (like a rain cover). |
 | [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes the internal framing of an object (like members).                      |
 | [Support](#user-content-geometry-type-support )                       | Any    | Geometry that describes a support like a base plate or a hoist.                                |
+| [Magnet](#user-content-geometry-type-magnet )                         | Any    | Geometry that describes a point where other geometries should be attached.                     |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1544,6 +1545,27 @@ defined XML attributes of a support geometry are specified in
 </div>
 
 The support geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Magnet
+
+This type of geometry is used to describe a magnet, a point where other geometries should be attached (XML node `<Magnet>`). The currently
+defined XML attributes of a magnet geometry are specified in
+[table 105](#user-content-table-105 ).
+
+<div id="table-105">
+
+| XML Attribute Name        | Value Type                                | Description                                                                                     |
+| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
+
+#### Table 105. *Magnet Attributes*
+
+</div>
+
+The magnet geometry has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
