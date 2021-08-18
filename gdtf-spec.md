@@ -420,12 +420,29 @@ in [table 9](#user-content-table-9 ).
 |                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### Table 9. *XML Attributes of the Attribute*
-Node*
 
 </div>
 
-The attribute Node does not have any children.
+As children the attributes node has a list of a [subphysical units](#user-content-subphysical-unit ).
 
+##### Subphysical Unit
+
+This section defines the Attribute Subphysical Unit (XML node `<SubPhysicalUnit>`).
+The currently defined XML attributes of the subphysical unit are specified in [table TODO(#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: TODO                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Default            | [Float](#user-content-attrtype-float )    | The default value of the subphysical unit; Unit: percentage; Value range between 0 and 100; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+#### Table TODO. *XML Attributes of the Subphysical Unit*
+
+</div>
+
+The subphysical unit does not have any children.
 
 ## Wheel Collect
 
@@ -786,7 +803,7 @@ are specified in [table TODO](#user-content-table-TODO ).
 
 | XML Attribute Name  | Value Type                             | Description                    |
 | ------------------- | -------------------------------------- | ------------------------------ |
-| DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Default value: 0 |
+| DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Unit: Percentage; Default value: 0 |
 | CBP0                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 0; Default value: 0 |
 | CBP1                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 1; Default value: 0 |
 | CBP2                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 2; Default value: 0 |
