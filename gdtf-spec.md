@@ -1613,7 +1613,31 @@ are specified in [table 49](#user-content-table-49 ).
 
 </div>
 
-The channel set does not have any children.
+As children the channel set has list of a [sub channel
+sets](#user-content-sub-channel-set ).
+
+####### Sub Channel Set TODO Level of Headline
+
+This section defines the sub channel sets of a channel set (XML node
+<SubChannelSet>). The currently defined XML attributes of the sub channel set
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
+| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )         | The name of the sub channel set. Default: Empty                                                                                                                                                                                                              |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                         |
+| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                           |
+| SubPhysicalUnit    | [Node](#user-content-attrtype-node )         | Link to the sub physical unit; Starting Point: Attribute                                                                                                                                                                                                     |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to the DMX Profile; Starting Point: DMX Profile Collect                                                                                                                                                                                        |
+| WheelSlotIndex     | [Int](#user-content-attrtype-int )           | TODO: Do we need the WheelSlotIndex here? I do not think so. If the channel function has a link to a wheel, a corresponding slot index shall be specified. The wheel slot index results from the order of slots of the wheel which is linked in the channel function. The wheel slot index is normalized to 1. Size: 4 bytes |
+
+#### Table TODO. *Sub Channel Set Attributes*
+
+</div>
+
+The sub channel set does not have any children.
 
 #### Relation Collect
 
