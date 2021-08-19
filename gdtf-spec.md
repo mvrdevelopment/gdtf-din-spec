@@ -450,6 +450,7 @@ in [table 10](#user-content-table-10 ).
 | XML Attribute Name | Value Type                        | Description                  |
 | ------------------ | --------------------------------- | ---------------------------- |
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the wheel |
+| Placement          | [Int](#user-content-attrtype-int )   | Defines the placement of the wheel in relation to the beam. Unit: degree. |
 
 #### Table 10. *Wheel Attributes*
 
