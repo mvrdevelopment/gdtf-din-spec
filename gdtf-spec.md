@@ -70,6 +70,9 @@ Photography and graphic technology - Extended colour encodings for
 digital image storage, manipulation and interchange - Part 2: Reference
 output medium metric RGB colour image encoding (ROMM RGB)
 
+OpenSoundControl http://opensoundcontrol.org/index.html
+
+
 # Terms and definitions
 
 For the purposes of this document, the following terms and definitions
@@ -1528,6 +1531,20 @@ currently defined XML attributes of channel function are specified in
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
+
+
+Note: 
+For command based based control systems you can control the fixture when sending it a string in the following style:
+
+/[FIXTURE_ID]/[CUSTOM_NAME_CHANNELFUCTION] ,f [FLOAT_VALUE_PHYSICAL]
+/[FIXTURE_ID]/[CUSTOM_NAME_CHANNELFUCTION]/percent ,f [FLOAT_VALUE_PERCENT]
+
+Where 
+FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
+CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
+FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo
+FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
 
 #### Table 48. *Channel Function Attributes*
 
@@ -1837,19 +1854,47 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-This section has not yet been defined (XML node `<Art-Net>`).
+To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name | Value Type                        | Description                                                       |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
+| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
+| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Streaming ACN Section
 
-This section has not yet been defined (XML node `<sACN>`).
+To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name | Value Type                        | Description                                                       |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
+| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
+| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Posi Stage Net Section
 
-This section has not yet been defined (XML node `<PosiStageNet>`).
+To define a link between an PSN tracker and a Channel Function you can add a an XML node
+`<Tracker>`. Tracker do not have attributes
 
-### Open Sound Control Section
+Tracker children are specified in [table 52](#user-content-table-52 )
 
-This section has not yet been defined (XML node `<OpenSoundControl>`).
+
+
+| XML Attribute Name | Value Type                        | Description                                                       |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
+| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
+| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
 
 ### CITP Section
 
