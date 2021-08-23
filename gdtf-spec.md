@@ -455,12 +455,12 @@ in [table 10](#user-content-table-10 ).
 
 </div>
 
-As children, Wheel have a list of a [ wheel
-slot](#user-content-wheel-slot ).
+As children, Wheel has a list of [wheel
+slots](#user-content-wheel-slot ).
 
 #### Wheel Slot
 
-The wheel slot represents the slot on the wheel (XML node `<Slot>`). The
+The wheel slot represents a slot on the wheel (XML node `<Slot>`). The
 currently defined XML attributes of the wheel slot are specified in
 [table 11](#user-content-table-11 ).
 
@@ -553,9 +553,9 @@ specified in [table 13](#user-content-table-13 ).
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
 | ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis. |
-| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
+| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
+| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis. |
+| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
 | Radius             | [Pixel](#user-content-attrtype-pixel )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
 
 #### Table 13. *AnimationSystem Attributes*
@@ -1453,16 +1453,16 @@ channels](#user-content-dmx-channel ).
 
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
 of a DMX channel cannot be user-defined and must consists of a geometry
-name and the attribute name of the first logical channel with seperator
-"\_". Currently defined XML attributes of the DMX channel are specified
-in [table 40](#user-content-table-40 ).
+name and the attribute name of the first logical channel with separator
+"\_". The name should also be unique. Currently defined XML attributes of the DMX channel are specified
+in [table 46](#user-content-table-46 ).
 
 <div id="table-46">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                    |
 | ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DMXBreak           | [Int](#user-content-attrtype-int )           | Number of the DMXBreak; Default value: 1; Special value: “Overwrite” – means that this number will be overwritten by Geometry Reference; Size: 4 bytes                                                         |
-| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Seperator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
+| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Separator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
 | InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel;                                                                                                                            |
 | Highlight          | [DMXValue](#user-content-attrtype-dmxvalue ) | Highlight value for current channel; Special value: “None”. Default value: “None”.                                                                                                                             |
 | Geometry           | [Name](#user-content-attrtype-name )         | Name of the geometry the current channel controls.                                                                                                                                                             |
@@ -1476,7 +1476,7 @@ channels](#user-content-logical-channel ).
 
 ###### Logical Channel
 
-The Fixture Type Attribute is assinged to a LogicalChannel and defines
+The Fixture Type Attribute is assigned to a LogicalChannel and defines
 the function of the LogicalChannel. All logical channels that are
 children of the same DMX channel are mutually exclusive. In a DMX mode,
 only one logical channel with the same attribute can reference the same
@@ -1504,7 +1504,7 @@ function](#user-content-channel-function ).
 
 ###### Channel Function
 
-The Fixture Type Attribute is assinged to a Channel Function and defines
+The Fixture Type Attribute is assigned to a Channel Function and defines
 the function of its DMX Range. (XML node `<ChannelFunction>`). The
 currently defined XML attributes of channel function are specified in
 [table 48](#user-content-table-48 ).
