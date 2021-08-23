@@ -1533,22 +1533,22 @@ currently defined XML attributes of channel function are specified in
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
 | CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
 
-
-Note: 
-For command based based control systems you can control the fixture when sending it a string in the following style:
-
-/[FIXTURE_ID]/[CUSTOM_NAME_CHANNELFUCTION] ,f [FLOAT_VALUE_PHYSICAL]
-/[FIXTURE_ID]/[CUSTOM_NAME_CHANNELFUCTION]/percent ,f [FLOAT_VALUE_PERCENT]
-
-Where 
-FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
-CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
-FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo
-FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
-
 #### Table 48. *Channel Function Attributes*
 
 </div>
+
+Note:  
+For command based control systems, you can control the fixture by sending it a string in the following style:  
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION ,f FLOAT_VALUE_PHYSICAL"`  
+or   
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION/percent ,f FLOAT_VALUE_PERCENT"`
+
+Where:  
+- FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
+- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
+- FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
+- FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
+
 
 As children the channel function has list of a [channel
 sets](#user-content-channel-set ).
@@ -1860,25 +1860,25 @@ To define a custom mapping for Art-Net values and DMX Stream values you can add 
 
 <div id="table-59">
 
-| XML Attribute Name | Value Type                        | Description                                                       |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
-| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
-| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
+| XML Attribute Name  | Value Type                            | Description                                                       |
+| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
 By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Streaming ACN Section
 
-To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+To define a custom mapping for Streaming ACN values and DMX Stream values you can add a an XML node
 `<Map>`. The currently defined XML attributes are specified in
 [table 59](#user-content-table-59 ).
 
 <div id="table-59">
 
-| XML Attribute Name | Value Type                        | Description                                                       |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
-| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
-| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
+| XML Attribute Name  | Value Type                            | Description                                                       |
+| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
 By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
