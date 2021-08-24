@@ -249,7 +249,7 @@ attributes of the fixture type are specified in [table 2](#user-content-table-2 
 <tr class="even">
 <td><p>RefFT</p></td>
 <td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type</p></td>
+<td><p>GUID of the referenced fixture type. Optional</p></td>
 </tr>
 <tr class="odd">
 <td><p>CanHaveChildren</p></td>
