@@ -1574,9 +1574,9 @@ XML attributes of the relations are specified in [table
 
 <div id="table-50">
 
-| XML Attribute Name | Value Type                            | Description                                                      |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------- |
-| Name               | [String](#user-content-attrtype-string ) | The unique name of the relation                                  |
+| XML Attribute Name | Value Type                               | Description                                                      |
+| ------------------ | ---------------------------------------- | ---------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )     | The unique name of the relation                                  |
 | Master             | [Node](#user-content-attrtype-node )     | Link to the master DMX channel; Starting point: DMX mode         |
 | Follower           | [Node](#user-content-attrtype-node )     | Link to the following channel function; Starting point: DMX mode |
 | Type               | [Enum](#user-content-attrtype-enum )     | Type of the relation; Values: “Multiply”, “Override”             |
