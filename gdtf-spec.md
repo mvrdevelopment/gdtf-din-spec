@@ -1007,6 +1007,8 @@ The used glTF files should follow these requirements:
  - Only use jpeg or png texture resource
  - all vertex attributes are `GL_FLOAT`
 
+ ### Regarding SVG Files
+
 
 ## Geometry Collect
 
