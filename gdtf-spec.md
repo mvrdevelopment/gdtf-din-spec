@@ -1454,7 +1454,7 @@ channels](#user-content-dmx-channel ).
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
 of a DMX channel cannot be user-defined and must consists of a geometry
 name and the attribute name of the first logical channel with separator
-"\_". The name should also be unique. Currently defined XML attributes of the DMX channel are specified
+"\_". In one Dmx Mode, this combination needs to be unique. Currently defined XML attributes of the DMX channel are specified
 in [table 46](#user-content-table-46 ).
 
 <div id="table-46">
