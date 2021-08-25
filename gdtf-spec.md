@@ -946,6 +946,34 @@ specified in [table 29](#user-content-table-29 ).
 </ul>
 <p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p></td>
 </tr>
+<tr class="odd">
+<td><p>SVGOffsetX</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="odd">
+<td><p>SVGOffsetY</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+</tr>
+<td><p>SVGSideOffsetX</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="odd">
+<td><p>SVGSideOffsetY</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+</tr>
+<td><p>SVGFrontOffsetX</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+<tr class="odd">
+<td><p>SVGFrontOffsetY</p></td>
+<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
+<td><p></p></td>
+</tr>
+
 </tbody>
 </table>
 
