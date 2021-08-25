@@ -194,72 +194,18 @@ The FixtureType node is the starting point of the description of the
 fixture type within the XML file. The defined Fixture Type Node
 attributes of the fixture type are specified in [table 2](#user-content-table-2 ).
 
-<div id="table-3">
+|XML Attribute Name|Value Type|Description|
+|--- |--- |--- |
+|Name|Name|Name of the fixture type.|
+|ShortName|String|Shortened name of the fixture type.|
+|LongName|String|Detailed name of the fixture type.|
+|Manufacturer|String|Manufacturer of the fixture type.|
+|Description|String|Description of the fixture type.|
+|FixtureTypeID|GUID|Unique number of the fixture type.|
+|Thumbnail|Resource|Optional; File name without extension containing description of the thumbnail. Use the following as a resource file: png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024; svg file to provide the vector graphic. These resource files are located in the root directory of the zip file. Default value: empty.|
+|RefFT|GUID|GUID of the referenced fixture type|
+|CanHaveChildren|Enum|Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”|
 
-<table>
-<caption>Table 3. <em>Fixture Type Node Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>Name of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>ShortName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Shortened name of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>LongName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Detailed name of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>Manufacturer</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Manufacturer of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Description</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Description of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>FixtureTypeID</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>Unique number of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Thumbnail</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
-<ul>
-<li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
-<li>svg file to provide the vector graphic.</li>
-</ul>
-<p>These resource files are located in the root directory of the zip file. Default value: empty.</p></td>
-</tr>
-<tr class="even">
-<td><p>RefFT</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type</p></td>
-</tr>
-<tr class="odd">
-<td><p>CanHaveChildren</p></td>
-<td><p><a href="#user-content-attrtype-enum" title=>Enum</a></p></td>
-<td><p>Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”</p></td>
-</tr>
-</tbody>
-</table>
-
-</div>
 
 Fixture type node children are specified in [table 4](#user-content-table-4 ).
 
@@ -1452,7 +1398,7 @@ channels](#user-content-dmx-channel ).
 ##### DMX Channel
 
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
-of a DMX channel cannot be user-defined and must consists of a geometry
+of a DMX channel cannot be user-defined and must consist  s of a geometry
 name and the attribute name of the first logical channel with seperator
 "\_". Currently defined XML attributes of the DMX channel are specified
 in [table 40](#user-content-table-40 ).
