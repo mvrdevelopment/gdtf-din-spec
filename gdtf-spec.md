@@ -1037,6 +1037,9 @@ The used glTF files should follow these requirements:
 
  ### Regarding SVG Files
 
+- Use SVG 1.1 spec
+- Don't embed bitmap images.
+- Align the viewbox to the top left of the device
 
 ## Geometry Collect
 
