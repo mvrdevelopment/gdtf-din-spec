@@ -1511,6 +1511,10 @@ in [table 40](#user-content-table-40 ).
 
 </div>
 
+The `Geometry` should be the place in the tree of geometries where the DMX
+Channel is located. If the DMX channel doesn't have a location, put it in the
+top level geometry of the geometry tree.
+
 As children the DMX channel has a list of [logical
 channels](#user-content-logical-channel ).
 
