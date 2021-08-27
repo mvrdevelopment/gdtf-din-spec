@@ -112,7 +112,7 @@ term used when a fixture needs more than one DMX start address.
 
 ## File Format Definition
 
-To describe the device type, an uncompressed zip file with the extension
+To describe the device type, a zip file with the extension
 "\*.gdtf" is used. The archive shall contain a description XML file and
 resource files. Some of the resource files are located in a folder
 structure. There are two folders defined: "./wheels" and "./models". The
