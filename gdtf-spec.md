@@ -1231,7 +1231,8 @@ the Beam are specified in [table 37](#user-content-table-37 ).
 | ThrowRatio          | [Float](#user-content-attrtype-float )   | Throw Ratio of the lens for BeamType Rectangle; Default value: 1; Unit: None                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | RectangleRatio      | [Float](#user-content-attrtype-float )   | Ratio from Width to Height of the Rectangle Type Beam; Default value: 1.7777; Unit: None                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | BeamRadius          | [Float](#user-content-attrtype-float )   | Beam radius on starting point. Default value: 0.05; Unit: meter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| BeamType            | [Enum](#user-content-attrtype-enum )     | Beam Type; Specified values: “Wash”, “Spot”, “None”, “Rectangle“. Default value “Wash”                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| BeamType            | [Enum](#user-content-attrtype-enum )     | Beam Type; Specified values: "Wash", "Spot", "None", "Rectangle", "PC", "Fresnel", "Glow". Default value "Wash"
+|
 | ColorRenderingIndex | [Uint](#user-content-attrtype-uint )     | The CRI according to TM-30 is a quantitative measure of the ability of the light source showing the object color naturally as it does as daylight reference. Size 1 byte. Default value 100.                                                                                                                                                                                                                                                                                                                                                             |
 
 #### Table 37. *Beam Attributes*
@@ -1250,13 +1251,13 @@ order to not block the rendered beam.
 
 The `<BeamType>` describes how the Beam will be rendered.
 
-“Wash” - A conical beam with soft edges.
+"Wash", "Fresnel", "PC"- A conical beam with soft edges and softened field projection.
 
-“Spot” - A conical beam with hard edges.
+"Spot" - A conical beam with hard edges.
 
-“Rectangle“ - A pyramid-shaped beam with hard edges.
+"Rectangle" - A pyramid-shaped beam with hard edges.
 
-“None” - No beam will be drawn, only the geometry will emit light
+"None", "Glow" - No beam will be drawn, only the geometry will emit light
 itself.
 
 The beam geometry emits its light into negative Z direction (and Y-up).
