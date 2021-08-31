@@ -995,7 +995,6 @@ specified in [table 29](#user-content-table-29 ).
 <td><p>Optional; File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
 <ul>
 <li>3DS or GLB to file to provide 3D model.</li>
-<li>STEP file to provide 3D model as a parametric model;</li>
 <li>SVG file to provide the 2D symbol.</li>
 </ul>
 <p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p></td>
