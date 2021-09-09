@@ -209,7 +209,7 @@ attributes of the fixture type are specified in [table 2](#user-content-table-2 
 <tr class="odd">
 <td><p>Name</p></td>
 <td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>Name of the fixture type. As is is based on <a
+<td><p>Name of the fixture type. As it is based on <a
 href="#user-content-attrtype-name" title=>Name</a>, it is safe for
 parsing.</p></td>
 </tr>
