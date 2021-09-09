@@ -1738,6 +1738,7 @@ are specified in [table 55](#user-content-table-55 ).
 | Text               | [String](#user-content-attrtype-string ) | User-defined text for this revision; Default value: empty                            |
 | Date               | [Date](#user-content-attrtype-date )     | Revision date and time                                                               |
 | UserID             | [Uint](#user-content-attrtype-uint )     | UserID of the user that has uploaded the GDTF file to the database; Default value: 0 |
+| ModifiedBy         | [String](#user-content-attrtype-string ) | Name of the software that modified this revision; Default value: empty               |
 
 #### Table 55. *Revision Attributes*
 
