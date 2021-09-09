@@ -209,17 +209,21 @@ attributes of the fixture type are specified in [table 2](#user-content-table-2 
 <tr class="odd">
 <td><p>Name</p></td>
 <td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>Name of the fixture type.</p></td>
+<td><p>Name of the fixture type. As it is based on <a
+href="#user-content-attrtype-name" title=>Name</a>, it is safe for
+parsing.</p></td>
 </tr>
 <tr class="even">
 <td><p>ShortName</p></td>
 <td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Shortened name of the fixture type.</p></td>
+<td><p>Shortened name of the fixture type. Non detailed version or an
+abbreviation. Can use any characters or symbols.</p></td>
 </tr>
 <tr class="odd">
 <td><p>LongName</p></td>
 <td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Detailed name of the fixture type.</p></td>
+<td><p>Detailed, complete name of the fixture type, can include any characters
+or extra symbols.</p></td>
 </tr>
 <tr class="even">
 <td><p>Manufacturer</p></td>
