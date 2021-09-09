@@ -1423,6 +1423,7 @@ DMX mode are specified in [table 44](#user-content-table-44 ).
 | XML Attribute Name | Value Type                        | Description                                                                                   |
 | ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------- |
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the DMX mode                                                               |
+| Description        | [String](#user-content-attrtype-string ) | Description of the DMX mode                                                               |
 | Geometry           | [Name](#user-content-attrtype-name ) | Name of the first geometry in the device; Only top level geometries are allowed to be linked. |
 
 #### Table 44. *DMX Mode Attributes*
