@@ -131,6 +131,14 @@ all firmware revisions of the device.
 ./models/3ds/yoke.3ds
 ./models/gltf/base.glb
 ./models/gltf/yoke.glb
+./models/3ds_low/base.3ds
+./models/3ds_low/yoke.3ds
+./models/gltf_high/base.glb
+./models/gltf_high/yoke.glb
+./models/3ds_low/base.3ds
+./models/3ds_low/yoke.3ds
+./models/gltf_high/base.glb
+./models/gltf_high/yoke.glb
 ./models/svg/base.svg
 ./models/svg/yoke.svg
 ```
@@ -1006,8 +1014,16 @@ specified in [table 29](#user-content-table-29 ).
 
 The model currently does not have any children.
 
-All models of a device combined should not exceed a maximum vertices
-count of 1200.
+All models of a device combined should not exceed a maximum vertices count of 1200 for the default mesh level of detail.
+
+There are three level of details that you can define:
+
+| LOD  | Description  |
+|---|---|
+| Low  | This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  |
+| Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  |
+| High  | This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. |
+
 
 The device shall be drawn in a hanging position displaying the front
 view. That results in the pan axis is Z aligned, and the tilt axis is X
