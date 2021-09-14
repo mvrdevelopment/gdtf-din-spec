@@ -133,12 +133,12 @@ all firmware revisions of the device.
 ./models/gltf/yoke.glb
 ./models/3ds_low/base.3ds
 ./models/3ds_low/yoke.3ds
+./models/gltf_low/base.glb
+./models/gltf_low/yoke.glb
 ./models/gltf_high/base.glb
 ./models/gltf_high/yoke.glb
-./models/3ds_low/base.3ds
-./models/3ds_low/yoke.3ds
-./models/gltf_high/base.glb
-./models/gltf_high/yoke.glb
+./models/3ds_high/base.3ds
+./models/3ds_high/yoke.3ds
 ./models/svg/base.svg
 ./models/svg/yoke.svg
 ```
@@ -1018,11 +1018,14 @@ All models of a device combined should not exceed a maximum vertices count of 12
 
 There are three level of details that you can define:
 
-| LOD  | Description  |
-|---|---|
-| Low  | This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  |
-| Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  |
-| High  | This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. |
+| LOD  | Description  |  Folder 3DS / gltf |
+|---|---|---|
+| Very Low  | The default meshes that are definded by GDTF can be used for the lowest quality. You don't need to add extra files for this. | NA |
+| Low  | This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  | `3ds_low` / `gltf_low`  |
+| Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  | `3ds` / `gltf` |
+| High  | This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. | `3ds_high` / `gltf_high`  |
+
+Low and High meshes definitions are optional. Place the a file with the same name in the defined folder.
 
 
 The device shall be drawn in a hanging position displaying the front
