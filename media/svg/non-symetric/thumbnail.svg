@@ -12,7 +12,7 @@
    version="1.1"
    viewBox="0 0 224.41 270.53"
    id="svg900"
-   sodipodi:docname="EspriteFS_no_label.svg"
+   sodipodi:docname="thumbnail.svg"
    inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
   <defs
      id="defs904" />
@@ -31,11 +31,12 @@
      showgrid="false"
      inkscape:zoom="0.98584261"
      inkscape:cx="424.0819"
-     inkscape:cy="592.38665"
+     inkscape:cy="308.36565"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g898" />
+     inkscape:current-layer="g898"
+     inkscape:document-rotation="0" />
   <!-- Working space 10 10 410 287 -->
   <!-- Title block 220 227 410 287 -->
   <metadata
@@ -46,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1154,40 +1155,9 @@
            id="path884" />
       </g>
     </g>
-    <rect
-       class="st2"
-       x="-401.09"
-       y="362.31"
-       width="119.09"
-       height="58.235001"
-       clip-rule="evenodd"
-       fill="#ffffff"
-       fill-rule="evenodd"
-       stroke="#000000"
-       stroke-width="0.26458"
-       id="rect890" />
     <g
        transform="matrix(0,-0.5,0.5,0,-322.46,471.58)"
        fill="#c8c8c8"
        id="g892" />
-    <text
-       x="-381.44794"
-       y="396.56036"
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="14.111px"
-       letter-spacing="0px"
-       stroke-width="0.26458px"
-       word-spacing="0px"
-       style="line-height:124%;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       xml:space="preserve"
-       id="text896"><tspan
-         x="-381.44794"
-         y="396.56036"
-         font-family="sans-serif"
-         font-size="14.111px"
-         stroke-width="0.26458px"
-         style="font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan894">ESPRITE FS</tspan></text>
   </g>
 </svg>

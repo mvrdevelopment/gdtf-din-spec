@@ -14,7 +14,7 @@
    height="30.257469mm"
    width="105.35378mm"
    sodipodi:docname="yoke.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -24,16 +24,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1042"
+     inkscape:window-width="1248"
+     inkscape:window-height="1174"
      id="namedview385"
      showgrid="false"
      inkscape:zoom="1.2695313"
      inkscape:cx="290.65301"
      inkscape:cy="21.79596"
      inkscape:window-x="0"
-     inkscape:window-y="38"
-     inkscape:window-maximized="1"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer5"
      inkscape:document-rotation="0"
      showguides="true"
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -678,5 +678,12 @@
          d="m -270.40845,256.78854 h 0.15036 0.25167 0.3245 0.39637 0.46871 0.54105 0.61132 0.68575 0.75552 0.82838 0.89813 0.86042 c 0.1541,0.31759 0.31131,0.7199 0.46612,1.2113 0.17002,0.54028 0.33917,1.18376 0.50384,1.91771 0.16465,0.73467 0.32232,1.55586 0.47438,2.46289 0.15181,0.90097 0.29641,1.88789 0.43357,2.95951 v 39.73297 c -0.13716,1.07164 -0.28176,2.05906 -0.43357,2.96002 -0.15206,0.90705 -0.30973,1.72824 -0.47438,2.4629 -0.16467,0.73396 -0.33382,1.37949 -0.50384,1.91979 -0.1547,0.4911 -0.3116,0.89149 -0.46562,1.2087 h -0.86092 -0.89813 -0.82838 -0.75552 -0.68575 -0.61132 -0.54105 -0.46871 -0.39637 -0.32451 -0.25167 -0.15036 z"
          id="path6346" />
     </g>
+    <ellipse
+       style="fill:#ff0000;stroke:#ff0000"
+       id="path1296"
+       cx="-999.2724"
+       cy="157.24225"
+       rx="3.5446153"
+       ry="3.150769" />
   </g>
 </svg>

@@ -133,6 +133,11 @@ all firmware revisions of the device.
 ./models/gltf/yoke.glb
 ./models/svg/base.svg
 ./models/svg/yoke.svg
+./models/svg_side/base.svg
+./models/svg_side/yoke.svg
+./models/svg_front/base.svg
+./models/svg_front/yoke.svg
+
 ```
 
 The ZIP archive name is specified as follows:
@@ -1023,6 +1028,28 @@ The dimension XML attributes of model (see [table
 ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
+
+SVG use viewboxes to align their content. The viewbox is always defined ny the top left of the bounding box. With the attributes `SVG_VIEW_Offset_XY` you can define the insertion point in relation to the view box.
+
+SVG can have background filling. This filling should have the color #C8C8C8. By this color, any software can replace it with another color.
+
+| Type  | Description  |
+|---|---|
+| Top View  | View from top in -Z direction. |
+| Front View  | View from  fron in Y direction |
+| Side View  | View from  fron in -X direction  |
+
+
+
+![Base](media/svg/non-symetric/base.svg)
+
+![Head](media/svg/non-symetric/head.svg)
+
+![Yoke](media/svg/non-symetric/yoke.svg)
+
+
+
+![media/](media/svg/non-symetric/thumbnail.svg)
 
 ### Regarding glTF Files
 

@@ -14,7 +14,7 @@
    height="142.74745mm"
    width="73.172432mm"
    sodipodi:docname="head.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
+   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -24,16 +24,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1042"
+     inkscape:window-width="1248"
+     inkscape:window-height="1174"
      id="namedview385"
      showgrid="false"
      inkscape:zoom="1.7953884"
      inkscape:cx="143.28874"
-     inkscape:cy="241.36391"
+     inkscape:cy="308.20182"
      inkscape:window-x="0"
-     inkscape:window-y="38"
-     inkscape:window-maximized="1"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer5"
      inkscape:document-rotation="0"
      showguides="true"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1187,5 +1187,12 @@
          id="g520-2"
          style="fill:#c8c8c8;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
+    <ellipse
+       style="fill:#ff0000;stroke:#ff0000;stroke-width:0.264583"
+       id="path1183"
+       cx="-380.66235"
+       cy="367.08163"
+       rx="0.88420981"
+       ry="0.95789397" />
   </g>
 </svg>
