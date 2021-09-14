@@ -210,6 +210,8 @@ attributes of the fixture type are specified in [table 2](#user-content-table-2 
 |Description|String|Description of the fixture type.|
 |FixtureTypeID|GUID|Unique number of the fixture type.|
 |Thumbnail|Resource|Optional; File name without extension containing description of the thumbnail. Use the following as a resource file: png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024; svg file to provide the vector graphic. These resource files are located in the root directory of the zip file. Default value: empty.|
+|ThumbnailOffsetX|Float| Offset from the top left of the viewbox to the insertion point on a label. |
+|ThumbnailOffsetY|Float| Offset from the top left of the viewbox to the insertion point on a label. |
 |RefFT|GUID|GUID of the referenced fixture type|
 |CanHaveChildren|Enum|Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”|
 
