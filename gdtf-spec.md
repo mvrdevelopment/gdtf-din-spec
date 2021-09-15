@@ -1683,6 +1683,7 @@ defined XML attributes of the macro are specified in [table
 | XML Attribute Name | Value Type                        | Description                   |
 | ------------------ | --------------------------------- | ----------------------------- |
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the macro. |
+| Command            | [String](#user-content-attrtype-name ) | Command that should be sended out when activating the macro. Default: Empty String, When no command string is defined, no command should be send. |
 
 #### Table 51. *Macro Attributes*
 
