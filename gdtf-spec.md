@@ -2327,7 +2327,7 @@ PlacementOffset Deg 270
 PlacementOffset Deg 270
            <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
 PlacementOffset Deg 270
-Amplitude Percentage TODO  This is the amount of shake as a percentage of the image size.
+Amplitude Percentage TODO  This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
 PlacementOffset Deg 270
            <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
@@ -2335,7 +2335,7 @@ PlacementOffset Deg 270
            <Attribute Name="Gobo(n)Pos" Pretty="G(n) &lt;&gt;" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
            <Attribute Name="Gobo(n)PosRotate" Pretty="Rotate" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
-Amplitude Percent  TODO
+Amplitude Percent  TODO  This defines the peak amplitude of the shake
            <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />
 PlacementOffset Deg 270    
            <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" /> 
@@ -2346,23 +2346,27 @@ PlacementOffset Deg 270
            <Attribute Name="AnimationWheel(n)SelectEffects" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Select FX" />  
            <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />
 PlacementOffset Deg 270    
+Amplitude Percent  TODO  This defines the peak amplitude of the shake
            <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />
 PlacementOffset Deg 270    
            <Attribute Name="AnimationWheel(n)Pos" ActivationGroup="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim Pos" />  
            <Attribute Name="AnimationWheel(n)PosRotate" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Rotate" />  
            <Attribute Name="AnimationWheel(n)PosShake" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Shake" />  
-Amplitude Percent  TODO
+Amplitude Percent  TODO  This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
-Duration Percent  This defines the 
-Amplitude       This is the amount of shake as a percentage of the image size.
+Duration Percent  This defines the duration of the ramp in relation to the period.
+AmplitudeMin Percent TODO This defines the minimum position in relation to the whole way of the spline
+AmplitudeMax Percent TODO This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
-Amplitude Percent  
+AmplitudeMin Percent TODO This defines the minimum position in relation to the whole way of the spline
+AmplitudeMax Percent TODO This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Audio" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Audio/>  
            <Attribute Name="AnimationSystem(n)Random" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Random/>  
            <Attribute Name="AnimationSystem(n)Pos" ActivationGroup="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim System Pos"/>  
            <Attribute Name="AnimationSystem(n)PosRotate" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim System Rotate"/>  
            <Attribute Name="AnimationSystem(n)PosShake" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake"/>  
+Amplitude Degree TODO  This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)PosRandom" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Random"/>  
            <Attribute Name="AnimationSystem(n)PosAudio" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Audio"/>  
            <Attribute Name="AnimationSystem(n)Macro" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Macro"/>  
@@ -2376,10 +2380,15 @@ Amplitude Percent
            <Attribute Name="PlaySpeed" Pretty="Play Speed" Feature="Gobo.Media" PhysicalUnit="Percent" />  
            <Attribute Name="ColorEffects(n)" Pretty="Color FX(n)" Feature="Color.Color" />  
            <Attribute Name="Color(n)" Pretty="C(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+PlacementOffset Deg 270
            <Attribute Name="Color(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Angle" />  
+PlacementOffset Deg 270
            <Attribute Name="Color(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="AngularSpeed" />  
+PlacementOffset Deg 270
            <Attribute Name="Color(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Frequency" />  
+PlacementOffset Deg 270
            <Attribute Name="Color(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+PlacementOffset Deg 270
            <Attribute Name="ColorAdd_R" Pretty="R" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.64,0.33,21.3" />  
            <Attribute Name="ColorAdd_G" Pretty="G" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.3,0.6,71.5" />  
            <Attribute Name="ColorAdd_B" Pretty="B" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.15,0.06,7.2" />  
@@ -2438,29 +2447,71 @@ Amplitude Percent
            <Attribute Name="StrobeRate" Pretty="Strobe Rate" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)" Pretty="Sh(n)" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)Strobe" Pretty="Strobe(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobePulseClose" Pretty="Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobePulseOpen" Pretty="Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobeRandom" Pretty="Random(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobeRandomPulse" Pretty="Random Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobeRandomPulseClose" Pretty="Random Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobeRandomPulseOpen" Pretty="Random Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Shutter(n)StrobeEffect" Pretty="Effect(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Iris" Pretty="Iris" Feature="Beam.Beam" />  
            <Attribute Name="IrisStrobe" Pretty="Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisStrobeRandom" Pretty="Random Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseClose" Pretty="Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseOpen" Pretty="Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseClose" Pretty="Random Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseOpen" Pretty="Random Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
+MinimumOpening Percent TODO This defines the minimum percentage to which the iris closes.
            <Attribute Name="Frost(n)" Pretty="Frost(n)" Feature="Beam.Beam" />  
            <Attribute Name="Frost(n)PulseOpen" Pretty="Pulse Open (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Value Degree TODO: how to describe the "frostyness"
+Duration Time 
+TimeOffset Percent
+
            <Attribute Name="Frost(n)PulseClose" Pretty="Pulse Close (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Frost(n)Ramp" Pretty="Ramp (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+Duration Time 
+TimeOffset Percent
            <Attribute Name="Prism(n)" Pretty="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
            <Attribute Name="Prism(n)SelectSpin" Pretty="Select Spin(n)" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Prism(n)Macro" Pretty="Prism(n) Macro" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
-           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed"/>  
            <Attribute Name="Prism(n)PosRotate" Pretty="Rotate(n)" MainAttribute="Prism(n)Pos" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Effects(n)" Pretty="FX(n)" Feature="Beam.Beam" />  
            <Attribute Name="Effects(n)Rate" Pretty="FX(n) Rate" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
@@ -2470,9 +2521,11 @@ Amplitude Percent
            <Attribute Name="Effects(n)PosRotate" Pretty="FX(n) Rotate" MainAttribute="Effects(n)Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />              
            <Attribute Name="EffectsSync" Pretty="FX Sync" Feature="Beam.Beam" />  
            <Attribute Name="BeamShaper" Pretty="Beam Shaper" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+RatioHorizontal Percent This defines the size of the beam compared to the original size.
+RatioVertical Percent This defines the size of the beam compared to the original size.
            <Attribute Name="BeamShaperMacro" Pretty="Beam Shaper Macro" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Zoom" Pretty="Zoom" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeSpot" Pretty="Zoom Spot" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />          
