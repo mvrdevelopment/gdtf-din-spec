@@ -1049,9 +1049,9 @@ SVG can have background filling. This filling should have the color #C8C8C8. By 
 
 ![Yoke](media/svg/non-symetric/yoke.svg)
 
-
-
 ![media/](media/svg/non-symetric/thumbnail.svg)
+
+SVG images should be drawn in a 1:1 scale to the actual device. Use mm as base unit. Scaling operation from 3D meshes will not be applied to the SVG informations
 
 ### Regarding glTF Files
 
