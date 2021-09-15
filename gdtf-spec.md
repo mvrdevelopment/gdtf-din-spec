@@ -1532,8 +1532,8 @@ currently defined XML attributes of channel function are specified in
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
 | CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
-| CommandZone         | [String](#user-content-attrtype-string )     | Optional, Defines a command zone for channel functions that send out data in the sane command.   |
-| OffsetInCommandZone         | [Int](#user-content-attrtype-integer )     |  Defines the offset in a command zone. Needs to be unique for one command zone. There should no be no gaps in the offset from one command zone. |
+| CommandZone         | [String](#user-content-attrtype-string )     | Optional, Defines a command zone for channel functions that send out data in the sane command. |
+| OffsetInCommandZone         | [Int](#user-content-attrtype-integer ) |  Optional, Defines the offset in a command zone. Needs to be unique for one command zone. There should no be no gaps in the offset from one command zone. Default: Position of the DMX Channel in the DMX Channel Collect |
 
 #### Table 48. *Channel Function Attributes*
 
@@ -1561,6 +1561,8 @@ Where:
 - FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
 - COMMAND_ZONE_NAME is the name of the command group that gets changed
 - PERCENTAGE_IN_8BIT_FUNCTION_AT_OFFSET_X is a 8bit value where the percentage of the channel function get decoded in. 0% -> 0 and 100% -> 255
+
+Only active 
 
 
 As children the channel function has list of a [channel
