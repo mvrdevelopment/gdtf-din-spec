@@ -745,6 +745,12 @@ are specified in [table 19](#user-content-table-19 ).
 | Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
 | Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
 | Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| Amber              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Amber; this is used only if the ColorSpace is "Custom".                                                                      |
+| Lime               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Lime; this is used only if the ColorSpace is "Custom".                                                                      |
+| UV                 | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the UV; this is used only if the ColorSpace is "Custom".                                                                      |
+| Cyan               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Cyan; this is used only if the ColorSpace is "Custom".                                                                      |
+| Magenta            | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Magenta; this is used only if the ColorSpace is "Custom".                                                                      |
+| Yellow             | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Yellow; this is used only if the ColorSpace is "Custom".                                                                      |
 | WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
 
 #### Table 19. *Color Space Attributes*
