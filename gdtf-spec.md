@@ -116,8 +116,12 @@ To describe the device type, an uncompressed zip file with the extension
 "\*.gdtf" is used. The archive shall contain a description XML file and
 resource files. Some of the resource files are located in a folder
 structure. There are two folders defined: "./wheels" and "./models". The
-folder "./models" has two subfolders for a better structural overview
-called "./models/3ds" and "./models/svg". The description.xml file
+folder "./models" has subfolders for a better structural overview:
+- ./models/3ds
+- ./models/gltf
+- ./models/svg
+
+The description.xml file
 contains the description of the device type and all DMX modes as well as
 all firmware revisions of the device.
 
@@ -129,6 +133,16 @@ all firmware revisions of the device.
 ./wheels/gobo2.png
 ./models/3ds/base.3ds
 ./models/3ds/yoke.3ds
+./models/gltf/base.glb
+./models/gltf/yoke.glb
+./models/3ds_low/base.3ds
+./models/3ds_low/yoke.3ds
+./models/gltf_low/base.glb
+./models/gltf_low/yoke.glb
+./models/gltf_high/base.glb
+./models/gltf_high/yoke.glb
+./models/3ds_high/base.3ds
+./models/3ds_high/yoke.3ds
 ./models/svg/base.svg
 ./models/svg/yoke.svg
 ```
@@ -996,11 +1010,10 @@ specified in [table 29](#user-content-table-29 ).
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
 <td><p>Optional; File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
 <ul>
-<li>3DS file to provide 3D model.</li>
-<li>STEP file to provide 3D model as a parametric model;</li>
+<li>3DS or GLB to file to provide 3D model.</li>
 <li>SVG file to provide the 2D symbol.</li>
 </ul>
-<p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>.</p></td>
+<p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1009,8 +1022,18 @@ specified in [table 29](#user-content-table-29 ).
 
 The model currently does not have any children.
 
-All models of a device combined should not exceed a maximum vertices
-count of 1200.
+All models of a device combined should not exceed a maximum vertices count of 1200 for the default mesh level of detail.
+
+There are three level of details that you can define:
+
+| LOD  | Description  |  Folder 3DS / gltf |
+|---|---|---|
+| Low  | Optional; This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  | `3ds_low` / `gltf_low`  |
+| Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  | `3ds` / `gltf` |
+| High  | Optional;This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. | `3ds_high` / `gltf_high`  |
+
+Low and High meshes definitions are optional. Place the a file with the same name in the defined folder.
+
 
 The device shall be drawn in a hanging position displaying the front
 view. That results in the pan axis is Z aligned, and the tilt axis is X
@@ -1051,6 +1074,17 @@ The dimension XML attributes of model (see [table
 ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
+
+### Regarding glTF Files
+
+The used glTF files should follow these requirements:
+
+ - Use the `glb` binary format
+ - Only use the 2.0 version
+ - Do not use extension
+ - Do not use animations
+ - Only use jpeg or png texture resource
+ - all vertex attributes are `GL_FLOAT`
 
 
 ## Geometry Collect
