@@ -116,7 +116,7 @@ To describe the device type, an uncompressed zip file with the extension
 "\*.gdtf" is used. The archive shall contain a description XML file and
 resource files. Some of the resource files are located in a folder
 structure. There are two folders defined: "./wheels" and "./models". The
-folder "./models" has three subfolders for a better structural overview
+folder "./models" has subfolders for a better structural overview
 called "./models/3ds", "./models/gltf" and "./models/svg". The description.xml file
 contains the description of the device type and all DMX modes as well as
 all firmware revisions of the device.
