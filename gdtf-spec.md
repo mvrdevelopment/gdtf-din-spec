@@ -433,7 +433,7 @@ The currently defined XML attributes of the subphysical unit are specified in [t
 
 | XML Attribute Name | Value Type                                | Description                                                                                             |
 | ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: TODO ADD AFTER SUBPHYSICALS PER ATTRIBUTE ARE DEFINED                 |
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical". Default: TODO |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: 0   |
 | PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: 1     |
