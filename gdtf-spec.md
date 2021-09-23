@@ -1051,6 +1051,14 @@ SVG can have background filling. This filling should have the color #C8C8C8. By 
 
 ![media/](media/svg/non-symetric/thumbnail.svg)
 
+![media/](media/svg/Spiider/front/base.svg)
+![media/](media/svg/Spiider/front/head.svg)
+![media/](media/svg/Spiider/front/yoke.svg)
+
+![media/](media/svg/Spiider/side/base.svg)
+![media/](media/svg/Spiider/side/head.svg)
+![media/](media/svg/Spiider/side/yoke.svg)
+
 SVG images should be drawn in a 1:1 scale to the actual device. Use mm as base unit. Scaling operation from 3D meshes will not be applied to the SVG informations
 
 ### Regarding glTF Files
