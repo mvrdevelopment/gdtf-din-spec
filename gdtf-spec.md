@@ -1392,6 +1392,38 @@ defined XML attributes of the display are specified in [table
 The display has the same children types as the geometry collect (see
 [table 30](#user-content-table-30 )).
 
+### Geometry Type Laser
+
+This type of geometry is used to describe the position of a laser's 
+light output (XML node `<Laser>`). The currently
+defined XML attributes of the display are specified in [table
+41](#user-content-table-35 ).
+
+<div id="table-41">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                    |
+|--------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
+| Model              | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                               |
+| Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
+| ColorType          | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
+| Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType] is "SingleWaveLength"; Unit:nm (nanometers)                                            |
+| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
+| Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitters](#user-content-emitter-collect ) node. |
+| BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: mm (millimeters)                                            |
+| BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
+| BeamDivergenceMax  | [Float](#user-content-attrtype-float)     | Maximum beam divergence; Unit: mrad  (milliradian)                                                             |
+| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
+
+#### Table TODO. *Laser Attributes*
+
+</div>
+
+The laser has the same children types as the geometry collect (see
+[table 30](#user-content-table-30 )).
+
 ### Geometry Type Reference
 
 The Geometry Type Reference is used to describe multiple instances of
