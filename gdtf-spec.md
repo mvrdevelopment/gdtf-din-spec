@@ -433,10 +433,10 @@ The currently defined XML attributes of the subphysical unit are specified in [t
 
 | XML Attribute Name | Value Type                                | Description                                                                                             |
 | ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical". Default: TODO |
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
-| PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: 0   |
-| PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: 1     |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO   |
+| PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO     |
 
 #### Table TODO. *XML Attributes of the Subphysical Unit*
 
@@ -2319,7 +2319,7 @@ not taken into account.
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)SelectEffects" Pretty="Select Effects" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
            <Attribute Name="Gobo(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Angle" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
@@ -2327,7 +2327,7 @@ not taken into account.
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
@@ -2335,7 +2335,7 @@ not taken into account.
            <Attribute Name="Gobo(n)Pos" Pretty="G(n) &lt;&gt;" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
            <Attribute Name="Gobo(n)PosRotate" Pretty="Rotate" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the peak amplitude of the shake
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" /> 
@@ -2346,27 +2346,27 @@ not taken into account.
            <Attribute Name="AnimationWheel(n)SelectEffects" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Select FX" />  
            <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the peak amplitude of the shake
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)Pos" ActivationGroup="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim Pos" />  
            <Attribute Name="AnimationWheel(n)PosRotate" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Rotate" />  
            <Attribute Name="AnimationWheel(n)PosShake" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Shake" />  
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the peak amplitude of the shake
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
               <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the ramp in relation to the period.
-              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum position in relation to the whole way of the spline
-              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the maximum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
-              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum position in relation to the whole way of the spline
-              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the maximum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Audio" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Audio/>  
            <Attribute Name="AnimationSystem(n)Random" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Random/>  
            <Attribute Name="AnimationSystem(n)Pos" ActivationGroup="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim System Pos"/>  
            <Attribute Name="AnimationSystem(n)PosRotate" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim System Rotate"/>  
            <Attribute Name="AnimationSystem(n)PosShake" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake"/>  
-              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the peak amplitude of the shake
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)PosRandom" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Random"/>  
            <Attribute Name="AnimationSystem(n)PosAudio" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Audio"/>  
            <Attribute Name="AnimationSystem(n)Macro" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Macro"/>  
