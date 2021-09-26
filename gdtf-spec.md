@@ -1889,8 +1889,7 @@ This section has not yet been defined (XML node `<PosiStageNet>`).
 
 ### Open Sound Control Section
 
-This section has not yet been defined (XML node `<OpenSoundControl>`)
-This is intentionally left empty. Future settings for custom OpenSoundControl behavior can be defined in later version. (XML node `<PosiStageNet>`).
+This is intentionally left empty. Future settings for custom OpenSoundControl behavior can be defined in later version. (XML node `<OpenSoundControl>`).
 
 
 ### CITP Section
