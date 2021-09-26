@@ -1532,8 +1532,7 @@ currently defined XML attributes of channel function are specified in
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
 | CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
-| CommandZone         | [String](#user-content-attrtype-string )     | Optional, Defines a command zone for channel functions that send out data in the sane command. |
-| OffsetInCommandZone         | [Int](#user-content-attrtype-integer ) |  Optional, Defines the offset in a command zone. Needs to be unique for one command zone. There should no be no gaps in the offset from one command zone. Default: Position of the DMX Channel in the DMX Channel Collect |
+
 
 #### Table 48. *Channel Function Attributes*
 
@@ -1550,19 +1549,6 @@ Where:
 - CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
 - FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
 - FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
-
-Note:
-For command group based control system, you can send out the the commands by defining a command group with `CommandZone`. 
-Everytime when one of the ChannelFunction changes its value, you send out a command string in the following style:
-
-`"FIXTURE_ID COMMAND_ZONE_NAME %PERCENTAGE_IN_8BIT_FUNCTION_AT_OFFSET_1!%,%PERCENTAGE_IN_8BIT_FUNCTION_AT_OFFSET_2!%,...,%PERCENTAGE_IN_8BIT_FUNCTION_AT_OFFSET_N!%,`
-
-Where:  
-- FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
-- COMMAND_ZONE_NAME is the name of the command group that gets changed
-- PERCENTAGE_IN_8BIT_FUNCTION_AT_OFFSET_X is a 8bit value where the percentage of the channel function get decoded in. 0% -> 0 and 100% -> 255
-
-Only active 
 
 
 As children the channel function has list of a [channel
@@ -1685,7 +1671,6 @@ defined XML attributes of the macro are specified in [table
 | XML Attribute Name | Value Type                        | Description                   |
 | ------------------ | --------------------------------- | ----------------------------- |
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the macro. |
-| Command            | [String](#user-content-attrtype-name ) | Command that should be sended out when activating the macro. Default: Empty String, When no command string is defined, no command should be send. |
 
 #### Table 51. *Macro Attributes*
 
@@ -1897,21 +1882,6 @@ To define a custom mapping for Streaming ACN values and DMX Stream values you ca
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
 By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
-
-### Posi Stage Net Section
-
-To define a link between an PSN tracker and a Channel Function you can add a an XML node
-`<Tracker>`. Tracker do not have attributes
-
-Tracker children are specified in [table 52](#user-content-table-52 )
-
-
-
-| XML Attribute Name | Value Type                        | Description                                                       |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
-| Key              | [Uint](#user-content-attrtype-uint )   | Value of the Artnet value.                                   |
-| Value            | [Uint](#user-content-attrtype-uint ) | Value of the DMX value. |
-
 ### CITP Section
 
 This section has not yet been defined (XML node `<CITP>`).
