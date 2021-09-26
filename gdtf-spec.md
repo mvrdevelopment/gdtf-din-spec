@@ -1882,6 +1882,11 @@ To define a custom mapping for Streaming ACN values and DMX Stream values you ca
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
 By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
+
+### Posi Stage Net Section
+
+This section has not yet been defined (XML node `<PosiStageNet>`).
+
 ### CITP Section
 
 This section has not yet been defined (XML node `<CITP>`).
