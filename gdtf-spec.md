@@ -1887,6 +1887,12 @@ By default it is asumed, that all the values are mapped 1:1, so only when you di
 
 This section has not yet been defined (XML node `<PosiStageNet>`).
 
+### Open Sound Control Section
+
+This section has not yet been defined (XML node `<OpenSoundControl>`)
+This is intentionally left empty. Future settings for custom OpenSoundControl behavior can be defined in later version. (XML node `<PosiStageNet>`).
+
+
 ### CITP Section
 
 This section has not yet been defined (XML node `<CITP>`).
