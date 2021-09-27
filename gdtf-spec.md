@@ -1566,7 +1566,7 @@ function](#user-content-channel-function ).
 
 ###### Channel Function
 
-The Fixture Type Attribute is assinged to a Channel Function and defines
+The Fixture Type Attribute is assigned to a Channel Function and defines
 the function of its DMX Range. (XML node `<ChannelFunction>`). The
 currently defined XML attributes of channel function are specified in
 [table 48](#user-content-table-48 ).
@@ -1584,12 +1584,14 @@ currently defined XML attributes of channel function are specified in
 | PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value; Default value: 1                                                                                                                          |
 | RealFade           | [Float](#user-content-attrtype-float )       | Time in seconds to move from min to max of the Channel Function; Default value: 0                                                                             |
 | RealAcceleration   | [Float](#user-content-attrtype-float )       | Time in seconds to accelerate from stop to maximum velocity; Default value: 0                                                                                 |
-| Wheel              | [Node](#user-content-attrtype-node )         | Optional link to wheel; Starting point: Wheel Collect                                                                                                         |
-| Emitter            | [Node](#user-content-attrtype-node )         | Optional link to emitter in the physical description; Starting point: Emitter Collect                                                                         |
-| Filter             | [Node](#user-content-attrtype-node )         | Optional link to filter in the physical description; Starting point: Filter Collect                                                                           |
+| Wheel              | [Node](#user-content-attrtype-node )         | Optional. Link to a wheel; Starting point: Wheel Collect                                                                                                      |
+| Emitter            | [Node](#user-content-attrtype-node )         | Optional. Link to an emitter in the physical description; Starting point: Emitter Collect                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect                                                                        |
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space                                                                                                                               |
+| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut                                                                                                                                     |
 
 #### Table 48. *Channel Function Attributes*
 
