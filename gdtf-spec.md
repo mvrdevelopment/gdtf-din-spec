@@ -739,19 +739,13 @@ are specified in [table 19](#user-content-table-19 ).
 
 <div id="table-19">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                  |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB" |
-| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
-| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
-| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
-| Amber              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Amber; this is used only if the ColorSpace is "Custom".                                                                      |
-| Lime               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Lime; this is used only if the ColorSpace is "Custom".                                                                      |
-| UV                 | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the UV; this is used only if the ColorSpace is "Custom".                                                                      |
-| Cyan               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Cyan; this is used only if the ColorSpace is "Custom".                                                                      |
-| Magenta            | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Magenta; this is used only if the ColorSpace is "Custom".                                                                      |
-| Yellow             | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Yellow; this is used only if the ColorSpace is "Custom".                                                                      |
-| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
+| ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
+| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
+| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                       |
+| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                        |
 
 #### Table 19. *Color Space Attributes*
 
@@ -776,6 +770,28 @@ specified in [table 20](#user-content-table-20 ).
 </div>
 
 The color space does not have any children.
+
+### Gamut Collect
+
+This section defines gamuts. Currently it does not
+have any XML attributes (XML node `<Gamuts>`). As children, gamut collect has a list of a [Gamut](#user-content-gamut ).
+
+### Gamut
+
+This section defines the color gamut of the fixture (XML node `<Gamut>`), which is the set of attainable colors by the fixture. The currently defined XML attributes of a gamut
+are specified in [table 111](#user-content-table-111 ).
+
+<div id="table-111">
+
+| XML Attribute Name | Value Type                                             | Description                                                 |
+| ------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
+| Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
+
+#### Table 111. *Gamuts Attributes*
+
+</div>
+
+The gamut does not have any children.
 
 ### DMX Profile Collect
 
