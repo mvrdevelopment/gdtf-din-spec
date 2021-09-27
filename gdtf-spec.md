@@ -244,7 +244,7 @@ attributes of the fixture type are specified in [table 2](#user-content-table-2 
 <li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
 <li>svg file to provide the vector graphic.</li>
 </ul>
-<p>These resource files are located in the root directory of the zip file. Default value: empty.</p></td>
+<p>These resource files are located in the root directory of the zip file.</p></td>
 </tr>
 <tr class="even">
 <td><p>RefFT</p></td>
@@ -416,7 +416,7 @@ in [table 9](#user-content-table-9 ).
 | Feature            | [Node](#user-content-attrtype-node )         | Link to the corresponding feature. The starting point is the [feature groups](#user-content-feature-groups ) node.                                                                                                                                                                                                                                                                                                                      |
 | MainAttribute      | [Node](#user-content-attrtype-node )         | Optional link to the main attribute. The starting point is the [attribute](#user-content-attribute ) node.                                                                                                                                                                                                                                                                                                                              |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )         | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
-| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional: Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
+| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
 |                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### Table 9. *XML Attributes of the Attribute*
@@ -489,12 +489,12 @@ currently defined XML attributes of the wheel slot are specified in
 <tr class="odd">
 <td><p>Filter</p></td>
 <td><p><a href="#user-content-attrtype-node" title=>Node</a></p></td>
-<td><p>Optional link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
+<td><p>Optional. Link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
 </tr>
 <tr class="even">
 <td><p>MediaFileName</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; PNG file name without extension containing image for specific gobos etc.</p>
+<td><p>Optional. PNG file name without extension containing image for specific gobos etc.</p>
 <ul>
 <li>Maximum resolution of picture: 1024x1024;</li>
 <li>Recommended resolution of gobo: 256x256;</li>
@@ -613,7 +613,7 @@ specified in [table 15](#user-content-table-15 ).
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the emitter                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point if applicable. Omit for non-visible emitters (eg., UV). For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 | DominantWaveLength | [Float](#user-content-attrtype-float )       | Required if color is omitted, otherwise it is optional. Dominant wavelength of the LED.                                                                                                                                       |
-| DiodePart          | [String](#user-content-attrtype-string )     | Optional; Manufacturer’s part number of the diode.                                                                                                                                                                            |
+| DiodePart          | [String](#user-content-attrtype-string )     | Optional. Manufacturer’s part number of the diode.                                                                                                                                                                            |
 
 #### Table 15. *Emitter Attributes*
 
@@ -724,10 +724,10 @@ are specified in [table 19](#user-content-table-19 ).
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                  |
 | ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB" |
-| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
-| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
-| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
-| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
+| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
+| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
+| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
 
 #### Table 19. *Color Space Attributes*
 
@@ -824,7 +824,7 @@ defined XML attributes of the connector are specified in [table
 | ------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector.                                                                                                                          |
 | Type               | [Name](#user-content-attrtype-name )   | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ).                                                         |
-| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional: Defines to which DMX Break this connector belongs to.                                                                                        |
+| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.                                                                                        |
 | Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. |
 | Length             | [Float](#user-content-attrtype-float ) | Defines the length of the connector's wire in meters. "0" means that there is no cable and the connector is build into the housing. Default value "0"  |
 
@@ -990,7 +990,7 @@ specified in [table 29](#user-content-table-29 ).
 <tr class="even">
 <td><p>File</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
+<td><p>Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
 <ul>
 <li>3DS file to provide 3D model.</li>
 <li>STEP file to provide 3D model as a parametric model;</li>
@@ -1369,7 +1369,7 @@ geometries.
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry.                                                                                                                                                                                                                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                              |
 | Geometry           | [Name](#user-content-attrtype-name )     | Name of the referenced geometry. Only top level geometries are allowed to be referenced.                                                                                                                                                                                                                   |
-| Model              | [Name](#user-content-attrtype-name )     | Optional; Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
+| Model              | [Name](#user-content-attrtype-name )     | Optional. Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
 
 #### Table 42. *Geometry Reference Attributes*
 
@@ -1463,7 +1463,7 @@ in [table 46](#user-content-table-46 ).
 | ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DMXBreak           | [Int](#user-content-attrtype-int )           | Number of the DMXBreak; Default value: 1; Special value: “Overwrite” – means that this number will be overwritten by Geometry Reference; Size: 4 bytes                                                         |
 | Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Separator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
-| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel. Optional, default value is the first channel function of the first logical function of this DMX channel.                                                                                                                            |
+| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel. Default value is the first channel function of the first logical function of this DMX channel.                                                                                                                            |
 | Highlight          | [DMXValue](#user-content-attrtype-dmxvalue ) | Highlight value for current channel; Special value: “None”. Default value: “None”.                                                                                                                             |
 | Geometry           | [Name](#user-content-attrtype-name )         | Name of the geometry the current channel controls.                                                                                                                                                             |
 
