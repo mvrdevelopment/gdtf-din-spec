@@ -1419,20 +1419,21 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 
 | XML Attribute Name  | Value Type                                | Description                                                                                       |
 | ------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                  |
+| Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry. The name is also the name of the interface to the outside                                                                 |
 | Model               | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                  |
+| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. |
 | Position            | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                     |
-| WireType            | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
-| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). |
-| SignalType          | [Enum](#user-content-attrtype-enum )      | The type of the signal used. Defined values are "Power", "DMX512", "Network", "AES".              |
-| SocketCount         | [Int](#user-content-attrtype-int )        | The number of available sockets.                                                                  |
+| ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
+| SignalType          | [String](#user-content-attrtype-string )      | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocoll, you can add it here.              |
+| PinCount         | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.                                                                  |
 | ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for Consumers.                                          |
 | VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for Consumers.                                            |
 | VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for Consumers.                                            |
 | MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for Power Sources.         |
 | Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for Power Sources.                     |
-| CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device.                                                                   |
-| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value.                                                                                   |
+| SignalLayer         | [Float](#user-content-attrtype-integer )    | The layer of the Signal Type. In one device, all wiring geometry that use the same Signal Layers are connected. Special value 0: Connected to all geometries.              |
+| CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device. Only for consumers.                                               |
+| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value. Only for fuses.                                                                                  |
 | FuseRating          | [Enum](#user-content-attrtype-enum )      | Fuse Rating. Defined values are "B", "C", "D", "K", "Z".                                          |
 
 #### Table 100. *Wiring Object Attributes*
@@ -1443,24 +1444,24 @@ The wiring object has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
 In addition, it also has socket patch (XML node `<SocketPatch>`) children.
 
-#### Socket Patch
+#### Pin Patch
 
-This XML node specifies how the different sockets of its parent wiring object are connected to the sockets of other wiring objects. The currently defined XML
-attributes of a socket patch are specified in [table 101](#user-content-table-101 ).
+This XML node specifies how the different sockets of its parent wiring object are connected to the pins of other wiring objects. The currently defined XML
+attributes of a pin patch are specified in [table 101](#user-content-table-101 ).
 
 <div id="table-101">
 
 | XML Attribute Name  | Value Type                               | Description                                                                                            |
 | ------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| ToWiringObject      | [Node](#user-content-attrtype-node )     | Link to the wiring object connected through this socket patch.                                         |
-| FromSocket          | [Int](#user-content-attrtype-int )       | The socket used by the parent wiring object to connect to the targeted wiring object "ToWiringObject". |
-| ToSocket            | [Int](#user-content-attrtype-int )       | The socket used by the targeted wiring object "ToWiringObject" to connect to the parent wiring object. |
+| ToWiringObject      | [Node](#user-content-attrtype-node )     | Link to the wiring object connected through this pin patch.                                         |
+| FromPin          | [Int](#user-content-attrtype-int )       | The pin number used by the parent wiring object to connect to the targeted wiring object "ToWiringObject". |
+| ToPin            | [Int](#user-content-attrtype-int )       | The pin number used by the targeted wiring object "ToWiringObject" to connect to the parent wiring object. |
 
 #### Table 101. *Socket Patch Attributes*
 
 </div>
 
-The socket patch doesn't have any children.
+The pin patch doesn't have any children.
 
 ### Geometry Type Inventory
 
