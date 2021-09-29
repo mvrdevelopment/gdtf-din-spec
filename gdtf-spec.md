@@ -730,7 +730,12 @@ spacing is 1 nm. Measurement spacing should not exceed 4 nm.
 
 The measurement point does not have any children.
 
-### Color Space
+### Color Space Collect
+
+This section defines color spaces. Currently it does not
+have any XML attributes (XML node `<ColorSpaces>`). As children, color space collect has a list of a [ColorSpace](#user-content-color-space ).
+
+#### Color Space
 
 This section defines the color space that is used for color mixing with
 indirect RGB, Hue/Sat, xyY or CMY control input. (XML node
@@ -777,7 +782,7 @@ The color space does not have any children.
 This section defines gamuts. Currently it does not
 have any XML attributes (XML node `<Gamuts>`). As children, gamut collect has a list of a [Gamut](#user-content-gamut ).
 
-### Gamut
+#### Gamut
 
 This section defines the color gamut of the fixture (XML node `<Gamut>`), which is the set of attainable colors by the fixture. The currently defined XML attributes of a gamut
 are specified in [table 111](#user-content-table-111 ).
@@ -1588,7 +1593,9 @@ currently defined XML attributes of channel function are specified in
 | RealAcceleration   | [Float](#user-content-attrtype-float )       | Time in seconds to accelerate from stop to maximum velocity; Default value: 0                                                                                 |
 | Wheel              | [Node](#user-content-attrtype-node )         | Optional. Link to a wheel; Starting point: Wheel Collect                                                                                                      |
 | Emitter            | [Node](#user-content-attrtype-node )         | Optional. Link to an emitter in the physical description; Starting point: Emitter Collect                                                                     |
-| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect                                                                        |
+| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Filter Collect                                                                        |
+| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Color Space Collect                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Gamut Collect                                                                        |
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
