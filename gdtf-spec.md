@@ -893,30 +893,6 @@ specified in [table 26](#user-content-table-26 ).
 
 The weight currently does not have any children.
 
-#### PowerConsumption
-
-This section defines the maximum power consumption per connector (XML
-node `<PowerConsumption>`). The currently defined XML attributes of the
-PowerConsumption are specified in [table 27](#user-content-table-27 ).
-
-<div id="table-27">
-
-| XML Attribute Name | Value Type                          | Description                                                                               |
-| ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------- |
-| Value              | [Float](#user-content-attrtype-float ) | Defines the power consumption of the connector at full load. Unit: VA. Default value: 0   |
-| PowerFactor        | [Float](#user-content-attrtype-float ) | Defines the cosinus of phase of voltage relative to current. Unit: None. Default value: 1 |
-| Connector          | [Node](#user-content-attrtype-node )   | Name of the linked Connector                                                              |
-| VoltageLow         | [Float](#user-content-attrtype-float ) | Defines the lowest possible operating voltage. Unit: Volt. Default value: 90              |
-| VoltageHigh        | [Float](#user-content-attrtype-float ) | Defines the highest possible operating voltage. Unit: Volt. Default value: 240            |
-| FrequencyLow       | [Float](#user-content-attrtype-float ) | Defines the, owest possible operating frequency. Unit: Hertz. Default value: 50           |
-| FrequencyHigh      | [Float](#user-content-attrtype-float ) | Defines the highest possible operating frequency. Unit: Hertz. Default value: 60          |
-
-#### Table 27. *Power Consumption Attributes*
-
-</div>
-
-The PowerConsumption currently does not have any children.
-
 #### LegHeight
 
 This section defines the height of the legs (XML node `<LegHeight>`). The
