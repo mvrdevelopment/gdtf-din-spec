@@ -741,6 +741,7 @@ are specified in [table 19](#user-content-table-19 ).
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
 | ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space.  |                                                                                                                            |
 | Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
 | Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
 | Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
@@ -785,6 +786,7 @@ are specified in [table 111](#user-content-table-111 ).
 
 | XML Attribute Name | Value Type                                             | Description                                                 |
 | ------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )                   | Unique Name of the Gamut.                                   |
 | Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
 
 #### Table 111. *Gamuts Attributes*
