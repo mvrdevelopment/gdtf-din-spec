@@ -1577,6 +1577,12 @@ in [table 46](#user-content-table-46 ).
 
 </div>
 
+The `Geometry` should be the place in the tree of geometries where the function
+of the DMX Channel (as defined by ChannelFunction) is located either physically
+or logically. If the DMX channel doesn't have a location, put it in the top
+level geometry of the geometry tree. Attributes follow a trickle down
+principle, so they are inherited from top to down. 
+
 As children the DMX channel has a list of [logical
 channels](#user-content-logical-channel ).
 
