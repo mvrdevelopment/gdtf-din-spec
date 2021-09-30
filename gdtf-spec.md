@@ -1,4 +1,4 @@
-GDTF Version 1.1 Draft 3
+GDTF Version 1.2 Draft 3
 
 # Introduction
 
@@ -191,9 +191,9 @@ Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value represeting one Pixel in
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
 The second XML node is the GDTF node. The attribute of this node is the
-DataVersion: `<GDTF DataVersion="1.1">`
+DataVersion: `<GDTF DataVersion="1.2">`
 
-The example above shows the XML node for GDTF version 1.1.
+The example above shows the XML node for GDTF version 1.2.
 
 <div id="table-2">
 
