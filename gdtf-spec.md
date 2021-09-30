@@ -186,7 +186,7 @@ DMXAddress<div id="attrtype-dmxaddress"/>|Int, Alternative format: Universe.Addr
 DMXValue<div id="attrtype-dmxvalue"/>| Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. 
 GUID<div id="attrtype-guid"/> | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. 
 Resource<div id="attrtype-resource"/> | String|File name of the resource file without extension and without subfolder. 
-Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value represeting one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
+Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
 
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
@@ -574,10 +574,10 @@ specified in [table 13](#user-content-table-13 ).
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
 | ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis. |
-| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| Radius             | [Pixel](#user-content-attrtype-pixel )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
+| P1                 | [Array of Float](#user-content-attrtype-float ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| P2                 | [Array of Float](#user-content-attrtype-float ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis. |
+| P3                 | [Array of Float](#user-content-attrtype-float ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| Radius             | [Float](#user-content-attrtype-float )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
 
 #### Table 13. *AnimationSystem Attributes*
 
