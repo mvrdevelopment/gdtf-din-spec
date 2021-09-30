@@ -1457,6 +1457,19 @@ defined XML attributes of the display are specified in [table
 
 The laser has the same children types as the geometry collect (see
 [table 30](#user-content-table-30 )).
+In addition, it also has a list of supported protocols (XML node `<Protocol>`) as children.
+
+#### Protocol
+
+This XML node specifies the protocol for a Laser (XML node `<Protocol>`). The currently defined XML
+attributes of the protocol are specified in [table
+43](#user-content-table-43 ).
+
+<div id="table-43">
+
+| XML Attribute Name | Value Type                                    | Description                                                                                              |
+| ------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
 
 ### Geometry Type Reference
 
