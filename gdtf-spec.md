@@ -260,7 +260,7 @@ or extra symbols.</p></td>
 <tr class="odd">
 <td><p>Thumbnail</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
+<td><p>Optional. File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
 <ul>
 <li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
 <li>svg file to provide the vector graphic.</li>
@@ -270,7 +270,7 @@ or extra symbols.</p></td>
 <tr class="even">
 <td><p>RefFT</p></td>
 <td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type. Optional</p></td>
+<td><p>Optional. GUID of the referenced fixture type.</p></td>
 </tr>
 <tr class="odd">
 <td><p>CanHaveChildren</p></td>
