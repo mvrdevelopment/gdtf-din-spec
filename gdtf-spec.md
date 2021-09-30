@@ -1377,7 +1377,6 @@ defined XML attributes of the display are specified in [table
 | ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
 | ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
 | ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
-| SupportetProtocolls          | [Array of String](#user-content-attrtype-string)     | Names of the protocolls that are supported by this laser.                                                                 |
 
 #### Table TODO. *Laser Attributes*
 
@@ -1385,6 +1384,19 @@ defined XML attributes of the display are specified in [table
 
 The laser has the same children types as the geometry collect (see
 [table 30](#user-content-table-30 )).
+In addition, it also has a list of supported protocols (XML node `<Protocol>`) as children.
+
+#### Protocol
+
+This XML node specifies the protocol for a Laser (XML node `<Protocol>`). The currently defined XML
+attributes of the protocol are specified in [table
+43](#user-content-table-43 ).
+
+<div id="table-43">
+
+| XML Attribute Name | Value Type                                    | Description                                                                                              |
+| ------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
 
 ### Geometry Type Reference
 
