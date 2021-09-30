@@ -603,7 +603,9 @@ in [table 14](#user-content-table-14 ).
 | -------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
 | [Emitters](#user-content-emitter-collect )       | No        | Describes device emitters                                                           |
 | [Filters](#user-content-filter-collect )         | No        | Describes device filters                                                            |
-| [ColorSpace](#user-content-color-space )   | No        | Describes device color space                                                        |
+| [ColorSpace](#user-content-color-space )   | No        | Describes device default color space                                                       |
+| [AdditionalColorSpaces](#user-content-color-spaces )   | No        | Describes device color additional spaces                                                        |
+| [Gamuts](#user-content-gamuts )   | No        | Describes device gamuts                                                        |
 | [DMXProfiles](#user-content-dmx-profile-collect) | No        | Describes nonlinear correlation between DMX input and physical output of a channel. |
 | [CRIs](#user-content-color-rendering-index-collect)               | No        | Describes color rendering with IES TM-30-15 (99 color samples).                     |
 | [Connectors](#user-content-connector-collect )   | No        | Describes physical connectors of the device.                                        |
@@ -733,7 +735,12 @@ spacing is 1 nm. Measurement spacing should not exceed 4 nm.
 
 The measurement point does not have any children.
 
-### Color Space
+### Color Space Collect
+
+This section defines color spaces. Currently it does not
+have any XML attributes (XML node `<AdditionalColorSpaces>`). As children, color space collect has a list of a [ColorSpace](#user-content-color-space ).
+
+#### Color Space
 
 This section defines the color space that is used for color mixing with
 indirect RGB, Hue/Sat, xyY or CMY control input. (XML node
@@ -742,13 +749,14 @@ are specified in [table 19](#user-content-table-19 ).
 
 <div id="table-19">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                  |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB" |
-| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
-| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
-| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
-| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
+| ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space. Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the AdditionalColorSpaces node. |                                                                                                                            |
+| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
+| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
+| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                       |
+| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                        |
 
 #### Table 19. *Color Space Attributes*
 
@@ -773,6 +781,29 @@ specified in [table 20](#user-content-table-20 ).
 </div>
 
 The color space does not have any children.
+
+### Gamut Collect
+
+This section defines gamuts. Currently it does not
+have any XML attributes (XML node `<Gamuts>`). As children, gamut collect has a list of a [Gamut](#user-content-gamut ).
+
+#### Gamut
+
+This section defines the color gamut of the fixture (XML node `<Gamut>`), which is the set of attainable colors by the fixture. The currently defined XML attributes of a gamut
+are specified in [table 111](#user-content-table-111 ).
+
+<div id="table-111">
+
+| XML Attribute Name | Value Type                                             | Description                                                 |
+| ------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )                   | Unique Name of the Gamut.                                   |
+| Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
+
+#### Table 111. *Gamuts Attributes*
+
+</div>
+
+The gamut does not have any children.
 
 ### DMX Profile Collect
 
@@ -1597,10 +1628,12 @@ currently defined XML attributes of channel function are specified in
 | PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value; Default value: 1                                                                                                                          |
 | RealFade           | [Float](#user-content-attrtype-float )       | Time in seconds to move from min to max of the Channel Function; Default value: 0                                                                             |
 | RealAcceleration   | [Float](#user-content-attrtype-float )       | Time in seconds to accelerate from stop to maximum velocity; Default value: 0                                                                                 |
-| Wheel              | [Node](#user-content-attrtype-node )         | Optional link to wheel; Starting point: Wheel Collect                                                                                                         |
-| Emitter            | [Node](#user-content-attrtype-node )         | Optional link to emitter in the physical description; Starting point: Emitter Collect                                                                         |
-| Filter             | [Node](#user-content-attrtype-node )         | Optional link to filter in the physical description; Starting point: Filter Collect                                                                           |
-| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                              |
+| Wheel              | [Node](#user-content-attrtype-node )         | Optional. Link to a wheel; Starting point: Wheel Collect                                                                                                      |
+| Emitter            | [Node](#user-content-attrtype-node )         | Optional. Link to an emitter in the physical description; Starting point: Emitter Collect                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect Collect                                                                        |
+| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Physical Descriptions Collect                                                                        |
+| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Gamut Collect                                                                     |
+| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                            |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
 | CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
