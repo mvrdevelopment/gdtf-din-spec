@@ -1377,6 +1377,7 @@ defined XML attributes of the display are specified in [table
 | ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
 | ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
 | ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
+| SupportetProtocolls          | [Array of String](#user-content-attrtype-string)     | Names of the protocolls that are supported by this laser.                                                                 |
 
 #### Table TODO. *Laser Attributes*
 
