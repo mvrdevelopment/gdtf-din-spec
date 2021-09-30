@@ -640,8 +640,8 @@ specified in [table 15](#user-content-table-15 ).
 
 </div>
 
-As children the Emitter Collect has a list of a
-[measurement](#user-content-measurement ).
+As children, the Emitter has a list of
+[measurements](#user-content-measurement ).
 
 ### Filter Collect
 
@@ -669,7 +669,7 @@ The currently defined XML attributes of the filter are specified in
 
 </div>
 
-As children the Filter Collect has a list of a
+As children the Filter has a list of
 [measurements](#user-content-measurement ).
 
 ### Measurement
