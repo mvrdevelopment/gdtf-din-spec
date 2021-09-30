@@ -789,7 +789,7 @@ This section defines the DMX profile description (XML node
 
 This section contains TM-30-15 Fidelity Index (Rf) for 99 color samples.
 Currently it does not have any XML attributes (XML node `<CRIs>`). As
-children CRIs has a list of CRI groups.
+children, CRIs has a list of [CRI groups](#user-content-cri-group ).
 
 ### Color Rendering Index Group
 
@@ -807,6 +807,8 @@ specified in [table 21](#user-content-table-21 ).
 #### Table 19. *CRI Group Attributes*
 
 </div>
+
+As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-cri ).
 
 ##### Color Rendering Index
 
