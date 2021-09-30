@@ -40,6 +40,7 @@ GeneralSceneDescription.xml
 Custom@Fixture.gdtf
 Custom@Fixture.gdtf
 geo1.3ds
+geo1.glb
 Textr12.png
 ```
 
