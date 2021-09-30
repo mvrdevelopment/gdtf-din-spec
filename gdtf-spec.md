@@ -600,6 +600,7 @@ in [table 14](#user-content-table-14 ).
 | -------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
 | [Emitters](#user-content-emitter-collect )       | No        | Describes device emitters                                                           |
 | [Filters](#user-content-filter-collect )         | No        | Describes device filters                                                            |
+| [ColorSpace](#user-content-color-space )   | No        | Describes device default color space                                                       |
 | [ColorSpaces](#user-content-color-spaces )   | No        | Describes device color spaces                                                        |
 | [Gamuts](#user-content-gamuts )   | No        | Describes device gamuts                                                        |
 | [DMXProfiles](#user-content-dmx-profile-collect) | No        | Describes nonlinear correlation between DMX input and physical output of a channel. |
@@ -747,7 +748,7 @@ are specified in [table 19](#user-content-table-19 ).
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
 | ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space.  |                                                                                                                            |
+| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space . Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the ColorSpaces node. |                                                                                                                            |
 | Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
 | Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
 | Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
