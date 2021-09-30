@@ -1601,8 +1601,6 @@ currently defined XML attributes of channel function are specified in
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
-| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space                                                                                                                               |
-| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut                                                                                                                                     |
 
 #### Table 48. *Channel Function Attributes*
 
