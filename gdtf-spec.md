@@ -70,6 +70,9 @@ Photography and graphic technology - Extended colour encodings for
 digital image storage, manipulation and interchange - Part 2: Reference
 output medium metric RGB colour image encoding (ROMM RGB)
 
+OpenSoundControl http://opensoundcontrol.org/index.html
+
+
 # Terms and definitions
 
 For the purposes of this document, the following terms and definitions
@@ -112,7 +115,7 @@ term used when a fixture needs more than one DMX start address.
 
 ## File Format Definition
 
-To describe the device type, an uncompressed zip file with the extension
+To describe the device type, a zip file with the extension
 "\*.gdtf" is used. The archive shall contain a description XML file and
 resource files. Some of the resource files are located in a folder
 structure. There are two folders defined: "./wheels" and "./models". The
@@ -262,12 +265,12 @@ or extra symbols.</p></td>
 <li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
 <li>svg file to provide the vector graphic.</li>
 </ul>
-<p>These resource files are located in the root directory of the zip file. Default value: empty.</p></td>
+<p>These resource files are located in the root directory of the zip file.</p></td>
 </tr>
 <tr class="even">
 <td><p>RefFT</p></td>
 <td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type</p></td>
+<td><p>GUID of the referenced fixture type. Optional</p></td>
 </tr>
 <tr class="odd">
 <td><p>CanHaveChildren</p></td>
@@ -434,7 +437,7 @@ in [table 9](#user-content-table-9 ).
 | Feature            | [Node](#user-content-attrtype-node )         | Link to the corresponding feature. The starting point is the [feature groups](#user-content-feature-groups ) node.                                                                                                                                                                                                                                                                                                                      |
 | MainAttribute      | [Node](#user-content-attrtype-node )         | Optional link to the main attribute. The starting point is the [attribute](#user-content-attribute ) node.                                                                                                                                                                                                                                                                                                                              |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )         | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
-| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional: Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
+| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
 |                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### Table 9. *XML Attributes of the Attribute*
@@ -473,12 +476,12 @@ in [table 10](#user-content-table-10 ).
 
 </div>
 
-As children, Wheel have a list of a [ wheel
-slot](#user-content-wheel-slot ).
+As children, Wheel has a list of [wheel
+slots](#user-content-wheel-slot ).
 
 #### Wheel Slot
 
-The wheel slot represents the slot on the wheel (XML node `<Slot>`). The
+The wheel slot represents a slot on the wheel (XML node `<Slot>`). The
 currently defined XML attributes of the wheel slot are specified in
 [table 11](#user-content-table-11 ).
 
@@ -507,12 +510,12 @@ currently defined XML attributes of the wheel slot are specified in
 <tr class="odd">
 <td><p>Filter</p></td>
 <td><p><a href="#user-content-attrtype-node" title=>Node</a></p></td>
-<td><p>Optional link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
+<td><p>Optional. Link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
 </tr>
 <tr class="even">
 <td><p>MediaFileName</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; PNG file name without extension containing image for specific gobos etc.</p>
+<td><p>Optional. PNG file name without extension containing image for specific gobos etc.</p>
 <ul>
 <li>Maximum resolution of picture: 1024x1024;</li>
 <li>Recommended resolution of gobo: 256x256;</li>
@@ -571,9 +574,9 @@ specified in [table 13](#user-content-table-13 ).
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
 | ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis. |
-| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
+| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
+| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis. |
+| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
 | Radius             | [Pixel](#user-content-attrtype-pixel )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
 
 #### Table 13. *AnimationSystem Attributes*
@@ -633,7 +636,7 @@ specified in [table 15](#user-content-table-15 ).
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the emitter                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point if applicable. Omit for non-visible emitters (eg., UV). For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 | DominantWaveLength | [Float](#user-content-attrtype-float )       | Required if color is omitted, otherwise it is optional. Dominant wavelength of the LED.                                                                                                                                       |
-| DiodePart          | [String](#user-content-attrtype-string )     | Optional; Manufacturer’s part number of the diode.                                                                                                                                                                            |
+| DiodePart          | [String](#user-content-attrtype-string )     | Optional. Manufacturer’s part number of the diode.                                                                                                                                                                            |
 
 #### Table 15. *Emitter Attributes*
 
@@ -748,12 +751,12 @@ are specified in [table 19](#user-content-table-19 ).
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
 | ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space . Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the AdditionalColorSpaces node. |                                                                                                                            |
+| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space. Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the AdditionalColorSpaces node. |                                                                                                                            |
 | Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
-| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
-| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
-| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                       |
-| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                        |
+| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
+| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                       |
+| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                        |
 
 #### Table 19. *Color Space Attributes*
 
@@ -873,7 +876,7 @@ defined XML attributes of the connector are specified in [table
 | ------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector.                                                                                                                          |
 | Type               | [Name](#user-content-attrtype-name )   | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ).                                                         |
-| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional: Defines to which DMX Break this connector belongs to.                                                                                        |
+| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.                                                                                        |
 | Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. |
 | Length             | [Float](#user-content-attrtype-float ) | Defines the length of the connector's wire in meters. "0" means that there is no cable and the connector is build into the housing. Default value "0"  |
 
@@ -1039,7 +1042,7 @@ specified in [table 29](#user-content-table-29 ).
 <tr class="even">
 <td><p>File</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
+<td><p>Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
 <ul>
 <li>3DS or GLB to file to provide 3D model.</li>
 <li>SVG file to provide the 2D symbol.</li>
@@ -1423,6 +1426,38 @@ defined XML attributes of the display are specified in [table
 The display has the same children types as the geometry collect (see
 [table 30](#user-content-table-30 )).
 
+### Geometry Type Laser
+
+This type of geometry is used to describe the position of a laser's 
+light output (XML node `<Laser>`). The currently
+defined XML attributes of the display are specified in [table
+41](#user-content-table-35 ).
+
+<div id="table-41">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                    |
+|--------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
+| Model              | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                               |
+| Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
+| ColorType          | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
+| Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType] is "SingleWaveLength"; Unit:nm (nanometers)                                            |
+| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
+| Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitters](#user-content-emitter-collect ) node. |
+| BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: mm (millimeters)                                            |
+| BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
+| BeamDivergenceMax  | [Float](#user-content-attrtype-float)     | Maximum beam divergence; Unit: mrad  (milliradian)                                                             |
+| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
+
+#### Table TODO. *Laser Attributes*
+
+</div>
+
+The laser has the same children types as the geometry collect (see
+[table 30](#user-content-table-30 )).
+
 ### Geometry Type Reference
 
 The Geometry Type Reference is used to describe multiple instances of
@@ -1439,7 +1474,7 @@ geometries.
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry.                                                                                                                                                                                                                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                              |
 | Geometry           | [Name](#user-content-attrtype-name )     | Name of the referenced geometry. Only top level geometries are allowed to be referenced.                                                                                                                                                                                                                   |
-| Model              | [Name](#user-content-attrtype-name )     | Optional; Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
+| Model              | [Name](#user-content-attrtype-name )     | Optional. Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
 
 #### Table 42. *Geometry Reference Attributes*
 
@@ -1523,18 +1558,18 @@ channels](#user-content-dmx-channel ).
 ##### DMX Channel
 
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
-of a DMX channel cannot be user-defined and must consists of a geometry
-name and the attribute name of the first logical channel with seperator
-"\_". Currently defined XML attributes of the DMX channel are specified
-in [table 40](#user-content-table-40 ).
+of a DMX channel cannot be user-defined and must consist of a geometry
+name and the attribute name of the first logical channel with separator
+"\_". In one Dmx Mode, this combination needs to be unique. Currently defined XML attributes of the DMX channel are specified
+in [table 46](#user-content-table-46 ).
 
 <div id="table-46">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                    |
 | ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DMXBreak           | [Int](#user-content-attrtype-int )           | Number of the DMXBreak; Default value: 1; Special value: “Overwrite” – means that this number will be overwritten by Geometry Reference; Size: 4 bytes                                                         |
-| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Seperator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
-| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel;                                                                                                                            |
+| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Separator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
+| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel. Default value is the first channel function of the first logical function of this DMX channel.                                                                                                                            |
 | Highlight          | [DMXValue](#user-content-attrtype-dmxvalue ) | Highlight value for current channel; Special value: “None”. Default value: “None”.                                                                                                                             |
 | Geometry           | [Name](#user-content-attrtype-name )         | Name of the geometry the current channel controls.                                                                                                                                                             |
 
@@ -1547,7 +1582,7 @@ channels](#user-content-logical-channel ).
 
 ###### Logical Channel
 
-The Fixture Type Attribute is assinged to a LogicalChannel and defines
+The Fixture Type Attribute is assigned to a LogicalChannel and defines
 the function of the LogicalChannel. All logical channels that are
 children of the same DMX channel are mutually exclusive. In a DMX mode,
 only one logical channel with the same attribute can reference the same
@@ -1598,13 +1633,28 @@ currently defined XML attributes of channel function are specified in
 | Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect Collect                                                                        |
 | ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Physical Descriptions Collect                                                                        |
 | Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Gamut Collect                                                                     |
-| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
+| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                            |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
+
 
 #### Table 48. *Channel Function Attributes*
 
 </div>
+
+Note:  
+For command based control systems, you can control the fixture by sending it a string in the following style:  
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION ,f FLOAT_VALUE_PHYSICAL"`  
+or   
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION/percent ,f FLOAT_VALUE_PERCENT"`
+
+Where:  
+- FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
+- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
+- FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
+- FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
+
 
 As children the channel function has list of a [channel
 sets](#user-content-channel-set ).
@@ -1647,9 +1697,9 @@ XML attributes of the relations are specified in [table
 
 <div id="table-50">
 
-| XML Attribute Name | Value Type                            | Description                                                      |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------- |
-| Name               | [String](#user-content-attrtype-string ) | The unique name of the relation                                  |
+| XML Attribute Name | Value Type                               | Description                                                      |
+| ------------------ | ---------------------------------------- | ---------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )     | The unique name of the relation                                  |
 | Master             | [Node](#user-content-attrtype-node )     | Link to the master DMX channel; Starting point: DMX mode         |
 | Follower           | [Node](#user-content-attrtype-node )     | Link to the following channel function; Starting point: DMX mode |
 | Type               | [Enum](#user-content-attrtype-enum )     | Type of the relation; Values: “Multiply”, “Override”             |
@@ -1912,11 +1962,33 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-This section has not yet been defined (XML node `<Art-Net>`).
+To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name  | Value Type                            | Description                                                       |
+| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Streaming ACN Section
 
-This section has not yet been defined (XML node `<sACN>`).
+To define a custom mapping for Streaming ACN values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name  | Value Type                            | Description                                                       |
+| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Posi Stage Net Section
 
@@ -1924,7 +1996,8 @@ This section has not yet been defined (XML node `<PosiStageNet>`).
 
 ### Open Sound Control Section
 
-This section has not yet been defined (XML node `<OpenSoundControl>`).
+This is intentionally left empty. Future settings for custom OpenSoundControl behavior can be defined in later version. (XML node `<OpenSoundControl>`).
+
 
 ### CITP Section
 
