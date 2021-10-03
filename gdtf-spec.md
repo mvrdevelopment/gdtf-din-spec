@@ -1031,9 +1031,12 @@ ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
 
-SVG use viewboxes to align their content. The viewbox is always defined ny the top left of the bounding box. With the attributes `SVG_VIEW_Offset_XY` you can define the insertion point in relation to the view box.
+SVG use viewboxes to align their content. The viewbox is always defined ny the
+top left of the bounding box. With the attributes `SVG_VIEW_Offset_XY` you can
+define the insertion point in relation to the view box.
 
-SVG can have background filling. This filling should have the color #C8C8C8. By this color, any software can replace it with another color.
+SVG can have background filling. This filling should have the color #C8C8C8. By
+this color, any software can replace it with another color.
 
 | Type  | Description  |
 |---|---|
