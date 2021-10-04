@@ -1593,7 +1593,8 @@ currently defined XML attributes of channel function are specified in
 </div>
 
 As children the channel function has list of a [channel
-sets](#user-content-channel-set ).
+sets](#user-content-channel-set ) and a [sub channel
+sets](#user-content-sub-channel-set ).
 
 ###### Channel Set
 
@@ -1615,12 +1616,11 @@ are specified in [table 49](#user-content-table-49 ).
 
 </div>
 
-As children the channel set has list of a [sub channel
-sets](#user-content-sub-channel-set ).
+The channel set does not have any children.
 
-####### Sub Channel Set TODO Level of Headline
+###### Sub Channel Set
 
-This section defines the sub channel sets of a channel set (XML node
+This section defines the sub channel sets of a channel function (XML node
 <SubChannelSet>). The currently defined XML attributes of the sub channel set
 are specified in [table TODO](#user-content-table-TODO ).
 
