@@ -1620,7 +1620,7 @@ The channel set does not have any children.
 
 ###### Sub Channel Set
 
-This section defines the sub channel sets of a channel function (XML node
+This section defines the sub channel sets of the channel function (XML node
 <SubChannelSet>). The currently defined XML attributes of the sub channel set
 are specified in [table TODO](#user-content-table-TODO ).
 
