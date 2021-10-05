@@ -2079,13 +2079,13 @@ introduced as well.
 | StrobeRate                       | Controls the time between strobe flashes.                                                                                                                                                                                                                                                                 |
 | Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature.                                                                                                                                                                                                                                        |
 | Shutter(n)Strobe                 | Controls the frequency of the fixture´s mechanical or electronical strobe shutter feature.                                                                                                                                                                                                                |
-| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                 |
-| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature.                                                                                                                                                                                                         |
-| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature.                                                                                                                                                                                                         |
+| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                  |
+| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                        |
+| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandom           | Controls the frequency of the fixture´s mechanical or electronical random strobe shutter feature.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandomPulse      | Controls the frequency of the fixture´s mechanical or electronical random pulse shutter feature.                                                                                                                                                                                                          |
-| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature.                                                                                                                                                                                                  |
-| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature.                                                                                                                                                                                                  |
+| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
+| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
 | Shutter(n)StrobeEffect           | Controls the frequency of the fixture´s mechanical or electronical shutter effect feature.                                                                                                                                                                                                                |
 | Iris                             | Controls the diameter of the fixture's beam.                                                                                                                                                                                                                                                              |
 | IrisStrobe                       | Sets frequency of the iris's strobe feature.                                                                                                                                                                                                                                                              |
@@ -2355,7 +2355,7 @@ not taken into account.
               <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the ramp in relation to the period.
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="50" PhysicalTo="50"/> This defines the duration of the ramp in relation to the period.
               <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
               <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
@@ -2447,28 +2447,28 @@ not taken into account.
            <Attribute Name="StrobeRate" Pretty="Strobe Rate" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)" Pretty="Sh(n)" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)Strobe" Pretty="Strobe(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseClose" Pretty="Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.05" PhysicalTo="0.05"/> This defines the duration of the ramp.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseOpen" Pretty="Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the ramp.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobeRandom" Pretty="Random(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the strobe.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeRandomPulse" Pretty="Random Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeRandomPulseClose" Pretty="Random Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeRandomPulseOpen" Pretty="Random Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeEffect" Pretty="Effect(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Iris" Pretty="Iris" Feature="Beam.Beam" />  
