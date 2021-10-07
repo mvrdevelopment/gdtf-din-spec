@@ -2163,7 +2163,18 @@ introduced as well.
 | VideoKeyTolerance                | Adjusts tolerance of color keying.                                                                                                                                                                                                                                                                        |
 | StrobeDuration                   | Controls the length of a strobe flash.                                                                                                                                                                                                                                                                    |
 | StrobeRate                       | Controls the time between strobe flashes.                                                                                                                                                                                                                                                                 |
-| Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature.                                                                                                                                                                                                                                        |
+| StrobeFrequency                  | Controls the frequency of strobe flashes.                                                                                                                                                                                                                                                                 |
+| StrobeModeShutter                | Strobe mode shutter. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                         |
+| StrobeModeStrobe                 | Strobe mode strobe. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                          |
+| StrobeModePulse                  | Strobe mode pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                           |
+| StrobeModePulseOpen              | Strobe mode opening pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModePulseClose             | Strobe mode closing pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModeRandom                 | Strobe mode random strobe. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModeRandomPulse            | Strobe mode random pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                    |
+| StrobeModeRandomPulseOpen        | Strobe mode random opening pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                            |
+| StrobeModeRandomPulseClose       | Strobe mode random closing pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                            |
+| StrobeModeEffect                 | Strobe mode random shutter effect feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                   |
+| Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                           |
 | Shutter(n)Strobe                 | Controls the frequency of the fixture´s mechanical or electronical strobe shutter feature.                                                                                                                                                                                                                |
 | Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                 |
 | Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature.                                                                                                                                                                                                         |
@@ -2203,6 +2214,7 @@ introduced as well.
 | Zoom                             | Controls the spread of the fixture's beam/spot.                                                                                                                                                                                                                                                           |
 | ZoomModeSpot                     | Selects spot mode of zoom.                                                                                                                                                                                                                                                                                |
 | ZoomModeBeam                     | Selects beam mode of zoom.                                                                                                                                                                                                                                                                                |
+| DigitalZoom                      | Controls the image size within the defined projection. Used on digital projection based devices                                                                                                                                                                                                           |
 | Focus(n)                         | Controls the sharpness of the fixture's spot light. Can blur or sharpen the edge of the spot.                                                                                                                                                                                                             |
 | Focus(n)Adjust                   | Autofocuses functionality using presets.                                                                                                                                                                                                                                                                  |
 | Focus(n)Distance                 | Autofocuses functionality using distance.                                                                                                                                                                                                                                                                 |
@@ -2218,6 +2230,7 @@ introduced as well.
 | PanTiltMode                      | Selects fixture's pan/tilt mode. Selects between a limited pan/tilt range or a continuous pan/tilt range.                                                                                                                                                                                                 |
 | PositionModes                    | Selects the fixture's position mode.                                                                                                                                                                                                                                                                      |
 | Gobo(n)WheelMode                 | Changes control between selecting, indexing, and rotating the gobos of gobo wheel (n).                                                                                                                                                                                                                    |
+| GoboWheelShortcutMode            | Defines whether the gobo wheel takes the shortest distance between two positions.                                                                                                                                                                                                                         |
 | AnimationWheel(n)Mode            | Changes control between selecting, indexing, and rotating the slots of animation wheel (n).                                                                                                                                                                                                               |
 | AnimationWheelShortcutMode       | Defines whether the animation wheel takes the shortest distance between two positions.                                                                                                                                                                                                                    |
 | Color(n)Mode                     | Changes control between selecting, continuous selection, half selection, random selection, color spinning, etc. in colors of color wheel (n).                                                                                                                                                             |
@@ -2259,6 +2272,7 @@ introduced as well.
 | GlobalMSpeed                     | General speed of fixture's features.                                                                                                                                                                                                                                                                      |
 | ReflectorAdjust                  | Movement speed of the fixture's frost.                                                                                                                                                                                                                                                                    |
 | FixtureGlobalReset               | Generally resets the entire fixture.                                                                                                                                                                                                                                                                      |
+| DimmerReset                      | Resets the fixture's dimmer.                                                                                                                                                                                                                                                                              |
 | ShutterReset                     | Resets the fixture's shutter.                                                                                                                                                                                                                                                                             |
 | BeamReset                        | Resets the fixture's beam features.                                                                                                                                                                                                                                                                       |
 | ColorMixReset                    | Resets the fixture's color mixing system.                                                                                                                                                                                                                                                                 |
@@ -2326,6 +2340,8 @@ not taken into account.
        <ActivationGroups>  
            <ActivationGroup  Name="PanTilt" />  
            <ActivationGroup  Name="XYZ" />  
+           <ActivationGroup  Name="Rot_XYZ" />
+           <ActivationGroup  Name="Scale_XYZ" />
            <ActivationGroup  Name="ColorRGB" />  
            <ActivationGroup  Name="ColorHSB" />  
            <ActivationGroup  Name="ColorCIE" />  
@@ -2392,13 +2408,13 @@ not taken into account.
            <Attribute Name="XYZ_X" Pretty="X" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Y" Pretty="Y" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Z" Pretty="Z" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" /  
-           <Attribute Name="Rot_X" Pretty="Rot X" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Y" Pretty="Rot Y" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Z" Pretty="Rot Z" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Scale_X" Pretty="Scale X" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Y" Pretty="Scale Y" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Z" Pretty="Scale Z" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Rot_X" Pretty="Rot X" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Y" Pretty="Rot Y" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Z" Pretty="Rot Z" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Scale_X" Pretty="Scale X" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Y" Pretty="Scale Y" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Z" Pretty="Scale Z" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" ActivationGroup="Rot_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
            <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
            <Attribute Name="Gobo(n)SelectSpin" Pretty="Select Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
@@ -2502,6 +2518,17 @@ not taken into account.
            <Attribute Name="VideoKeyTolerance" Pretty="Tolerance" Feature="Color.ColorKey" PhysicalUnit="None" />  
            <Attribute Name="StrobeDuration" Pretty="Strobe Duration" Feature="Beam.Beam" PhysicalUnit="Time" />  
            <Attribute Name="StrobeRate" Pretty="Strobe Rate" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeFrequency" Pretty="Strobe Frequency" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+           <Attribute Name="StrobeModeShutter" Pretty="StrobeM Shutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeStrobe" Pretty="StrobeM Strobe" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulse" Pretty="StrobeM Pulse" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulseOpen" Pretty="StrobeM Pulse Open" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulseClose" Pretty="StrobeM Pulse Close" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandom" Pretty="StrobeM Random" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulse" Pretty="StrobeM Random Pulse" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulseOpen" Pretty="StrobeM Random Pulse Open" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulseClose" Pretty="StrobeM Random Pulse Close" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeEffect" Pretty="StrobeM Effect" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)" Pretty="Sh(n)" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)Strobe" Pretty="Strobe(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
@@ -2541,7 +2568,8 @@ not taken into account.
            <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
            <Attribute Name="Zoom" Pretty="Zoom" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeSpot" Pretty="Zoom Spot" Feature="Focus.Focus" PhysicalUnit="Angle" />  
-           <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />          
+           <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />    
+           <Attribute Name="DigitalZoom" Pretty="DZoom" Feature="Focus.Focus" PhysicalUnit="Angle" />        
            <Attribute Name="Focus(n)" Pretty="Focus(n)" Feature="Focus.Focus" />  
            <Attribute Name="Focus(n)Adjust" Pretty="Focus(n) Adjust" Feature="Focus.Focus" />  
            <Attribute Name="Focus(n)Distance" Pretty="Focus(n) Distance" Feature="Focus.Focus" PhysicalUnit="Length" />  
@@ -2557,6 +2585,7 @@ not taken into account.
            <Attribute Name="PanTiltMode" Pretty="PanTilt Mode" Feature="Control.Control" />  
            <Attribute Name="PositionModes" Pretty="Pos Modes" Feature="Control.Control" />  
            <Attribute Name="Gobo(n)WheelMode" Pretty="G(n) Mode" Feature="Control.Control" />  
+           <Attribute Name="GoboWheelShortcutMode" Pretty="Gobo Shortcut Mode" Feature="Control.Control" />  
            <Attribute Name="AnimationWheel(n)Mode" Feature="Control.Control" Pretty="Anim Mode" />  
            <Attribute Name="AnimationWheelShortcutMode" Pretty="Anim Shortcut Mode" Feature="Control.Control" />  
            <Attribute Name="Color(n)Mode" Pretty="C(n) Mode" Feature="Control.Control" />  
@@ -2598,6 +2627,7 @@ not taken into account.
            <Attribute Name="GlobalMSpeed" Pretty="Global MSpeed" Feature="Control.Control" />  
            <Attribute Name="ReflectorAdjust" Pretty="Reflector Adj" Feature="Control.Control" /> />  
            <Attribute Name="FixtureGlobalReset" Pretty="Fixture Global Reset" Feature="Control.Control" />  
+           <Attribute Name="DimmerReset" Pretty="Dimmer Reset" Feature="Control.Control" />  
            <Attribute Name="ShutterReset" Pretty="Shutter Reset" Feature="Control.Control" />  
            <Attribute Name="BeamReset" Pretty="Beam Reset" Feature="Control.Control" />  
            <Attribute Name="ColorMixReset" Pretty="Color Mix Reset" Feature="Control.Control" />  
