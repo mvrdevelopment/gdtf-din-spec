@@ -1,4 +1,4 @@
-GDTF Version 1.2 Draft 3
+GDTF Version 1.2 Draft 1
 
 # Introduction
 
