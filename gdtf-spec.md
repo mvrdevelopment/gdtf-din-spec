@@ -1,4 +1,4 @@
-GDTF Version 1.1 Draft 3
+GDTF Version 1.2 Draft 1
 
 # Introduction
 
@@ -186,14 +186,14 @@ DMXAddress<div id="attrtype-dmxaddress"/>|Int, Alternative format: Universe.Addr
 DMXValue<div id="attrtype-dmxvalue"/>| Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. 
 GUID<div id="attrtype-guid"/> | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. 
 Resource<div id="attrtype-resource"/> | String|File name of the resource file without extension and without subfolder. 
-Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value represeting one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
+Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
 
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
 The second XML node is the GDTF node. The attribute of this node is the
-DataVersion: `<GDTF DataVersion="1.1">`
+DataVersion: `<GDTF DataVersion="1.2">`
 
-The example above shows the XML node for GDTF version 1.1.
+The example above shows the XML node for GDTF version 1.2.
 
 <div id="table-2">
 
@@ -260,7 +260,7 @@ or extra symbols.</p></td>
 <tr class="odd">
 <td><p>Thumbnail</p></td>
 <td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
+<td><p>Optional. File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
 <ul>
 <li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
 <li>svg file to provide the vector graphic.</li>
@@ -270,7 +270,7 @@ or extra symbols.</p></td>
 <tr class="even">
 <td><p>RefFT</p></td>
 <td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type. Optional</p></td>
+<td><p>Optional. GUID of the referenced fixture type.</p></td>
 </tr>
 <tr class="odd">
 <td><p>CanHaveChildren</p></td>
@@ -574,10 +574,10 @@ specified in [table 13](#user-content-table-13 ).
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
 | ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis. |
-| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| Radius             | [Pixel](#user-content-attrtype-pixel )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
+| P1                 | [Array of Float](#user-content-attrtype-float ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| P2                 | [Array of Float](#user-content-attrtype-float ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis. |
+| P3                 | [Array of Float](#user-content-attrtype-float ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| Radius             | [Float](#user-content-attrtype-float )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
 
 #### Table 13. *AnimationSystem Attributes*
 
@@ -642,8 +642,8 @@ specified in [table 15](#user-content-table-15 ).
 
 </div>
 
-As children the Emitter Collect has a list of a
-[measurement](#user-content-measurement ).
+As children, the Emitter has a list of
+[measurements](#user-content-measurement ).
 
 ### Filter Collect
 
@@ -671,7 +671,7 @@ The currently defined XML attributes of the filter are specified in
 
 </div>
 
-As children the Filter Collect has a list of a
+As children the Filter has a list of
 [measurements](#user-content-measurement ).
 
 ### Measurement
@@ -820,7 +820,7 @@ This section defines the DMX profile description (XML node
 
 This section contains TM-30-15 Fidelity Index (Rf) for 99 color samples.
 Currently it does not have any XML attributes (XML node `<CRIs>`). As
-children CRIs has a list of CRI groups.
+children, CRIs has a list of [CRI groups](#user-content-cri-group ).
 
 ### Color Rendering Index Group
 
@@ -838,6 +838,8 @@ specified in [table 21](#user-content-table-21 ).
 #### Table 19. *CRI Group Attributes*
 
 </div>
+
+As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-cri ).
 
 ##### Color Rendering Index
 
@@ -1686,12 +1688,12 @@ are specified in [table 49](#user-content-table-49 ).
 
 <div id="table-49">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
-| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name               | [Name](#user-content-attrtype-name )         | The name of the channel set. Default: Empty                                                                                                                                                                                                                     |
-| DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel set – 1 or the maximum value of the current channel function; Default value: 0/1                                                                                              |
-| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                            |
-| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                              |
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                   |
+| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )         | The name of the channel set. Default: Empty                                                                                                                                             |
+| DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel set – 1 or the maximum value of the current channel function; Default value: 0/1                      |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value. Default value is the PhysicalFrom from the parent channel function.                                                                                               |
+| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value. Default value is the PhysicalTo from the parent channel function.                                                                                                   |
 | WheelSlotIndex     | [Int](#user-content-attrtype-int )           | If the channel function has a link to a wheel, a corresponding slot index shall be specified. The wheel slot index results from the order of slots of the wheel which is linked in the channel function. The wheel slot index is normalized to 1. Size: 4 bytes |
 
 #### Table 49. *Channel Set Attributes*
