@@ -433,7 +433,7 @@ The currently defined XML attributes of the subphysical unit are specified in [t
 
 | XML Attribute Name | Value Type                                | Description                                                                                             |
 | ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "DutyCycle",  "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO   |
 | PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO     |
@@ -2450,63 +2450,50 @@ not taken into account.
               <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse is on.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseClose" Pretty="Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.05" PhysicalTo="0.05"/> This defines the duration of the ramp.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseOpen" Pretty="Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the ramp.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+             <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobeRandom" Pretty="Random(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the strobe.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
            <Attribute Name="Shutter(n)StrobeRandomPulse" Pretty="Random Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeRandomPulseClose" Pretty="Random Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeRandomPulseOpen" Pretty="Random Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the duration of the on time of the pulse.
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
            <Attribute Name="Shutter(n)StrobeEffect" Pretty="Effect(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Iris" Pretty="Iris" Feature="Beam.Beam" />  
            <Attribute Name="IrisStrobe" Pretty="Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisStrobeRandom" Pretty="Random Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseClose" Pretty="Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseOpen" Pretty="Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseClose" Pretty="Random Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseOpen" Pretty="Random Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
               <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="Frost(n)" Pretty="Frost(n)" Feature="Beam.Beam" />  
            <Attribute Name="Frost(n)PulseOpen" Pretty="Pulse Open (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Value" PhysicalUnit="Degree" PhysicalFrom="TODO" PhysicalTo="TODO"/>TODO: how to describe the "frostyness"
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)PulseClose" Pretty="Pulse Close (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)Ramp" Pretty="Ramp (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="TODO" PhysicalTo="TODO"/>
-              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/>
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Prism(n)" Pretty="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
            <Attribute Name="Prism(n)SelectSpin" Pretty="Select Spin(n)" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Prism(n)Macro" Pretty="Prism(n) Macro" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
