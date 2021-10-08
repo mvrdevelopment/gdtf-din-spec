@@ -442,12 +442,30 @@ in [table 9](#user-content-table-9 ).
 |                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### Table 9. *XML Attributes of the Attribute*
-Node*
 
 </div>
 
-The attribute Node does not have any children.
+As children the attributes node has a list of a [subphysical units](#user-content-subphysical-unit ).
 
+##### Subphysical Unit
+
+This section defines the Attribute Subphysical Unit (XML node `<SubPhysicalUnit>`).
+The currently defined XML attributes of the subphysical unit are specified in [table TODO(#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                             |
+| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "DutyCycle",  "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
+| PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO   |
+| PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO     |
+
+#### Table TODO. *XML Attributes of the Subphysical Unit*
+
+</div>
+
+The subphysical unit does not have any children.
 
 ## Wheel Collect
 
@@ -815,7 +833,45 @@ profile collect has a list of a [DMX profiles](#user-content-dmx-profile ).
 #### DMX Profile
 
 This section defines the DMX profile description (XML node
-`<DMXProfile>`).
+`<DMXProfile>`). The currently defined XML attributes of the color space
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                           | Description                    |
+| ------------------- | ------------------------------------ | ------------------------------ |
+| Name                | [Name](#user-content-attrtype-name ) | Unique name of the DMX profile |
+
+#### Table TODO. *DMX Profile Attributes*
+
+</div>
+
+As children a DMX Profile has a list of [point](#user-content-point ).
+
+##### Point
+
+This section contains points to define the DMX profile (XML node `<Point>`). The currently defined XML attributes of the point
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                             | Description                    |
+| ------------------- | -------------------------------------- | ------------------------------ |
+| DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Unit: Percentage; Default value: 0 |
+| CBP0                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 0; Default value: 0 |
+| CBP1                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 1; Default value: 0 |
+| CBP2                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 2; Default value: 0 |
+| CBP3                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 3; Default value: 0 |
+
+#### Table TODO. *Point Attributes*
+
+</div>
+
+Find last point with a DMXPercent below or equal x.
+
+Output(x) = CBP3(x-DMXPercent)3 + CBP2(x-DMXPercent)2 + CBP1(x-DMXPercent) +CBP0
+
+The point does not have any children.
 
 ### Color Rendering Index Collect
 
@@ -1784,11 +1840,11 @@ currently defined XML attributes of channel function are specified in
 
 <div id="table-48">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XML Attribute Name | Value Type                                   | Description                                                                                                                                                   |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Name               | [Name](#user-content-attrtype-name )         | Unique name; Default value: Name of attribute and number of channel function.                                                                                 |
 | Attribute          | [Node](#user-content-attrtype-node )         | Link to attribute; Starting point is the attributes node. Default value: “NoFeature”.                                                                         |
-| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                            |
+| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                             |
 | DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel function – 1 or the maximum value of the DMX channel. Default value: "0/1". |
 | Default            | [DMXValue](#user-content-attrtype-dmxvalue ) | Default DMX value of channel function when activated by the control system.                                                                                   |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value; Default value: 0                                                                                                                        |
@@ -1803,6 +1859,9 @@ currently defined XML attributes of channel function are specified in
 | ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                            |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to DMX Profile; Starting point: DMX Profile Collect                                                                                             |
+| Min                | [Float](#user-content-attrtype-float )       | Minimum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalFrom                                                                |
+| Max                | [Float](#user-content-attrtype-float )       | Maximum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalTo                                                                  |
 | CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
 
 
@@ -1824,7 +1883,8 @@ Where:
 
 
 As children the channel function has list of a [channel
-sets](#user-content-channel-set ).
+sets](#user-content-channel-set ) and a [sub channel
+sets](#user-content-sub-channel-set ).
 
 ###### Channel Set
 
@@ -1847,6 +1907,28 @@ are specified in [table 49](#user-content-table-49 ).
 </div>
 
 The channel set does not have any children.
+
+###### Sub Channel Set
+
+This section defines the sub channel sets of the channel function (XML node
+<SubChannelSet>). The currently defined XML attributes of the sub channel set
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
+| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name               | [Name](#user-content-attrtype-name )         | The name of the sub channel set. Default: Empty                                                                                                                                                                                                              |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                         |
+| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                           |
+| SubPhysicalUnit    | [Node](#user-content-attrtype-node )         | Link to the sub physical unit; Starting Point: Attribute                                                                                                                                                                                                     |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to the DMX Profile; Starting Point: DMX Profile Collect                                                                                                                                                                                        |
+
+#### Table TODO. *Sub Channel Set Attributes*
+
+</div>
+
+The sub channel set does not have any children.
 
 #### Relation Collect
 
@@ -2322,13 +2404,13 @@ introduced as well.
 | StrobeModeEffect                 | Strobe mode random shutter effect feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                   |
 | Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                           |
 | Shutter(n)Strobe                 | Controls the frequency of the fixture´s mechanical or electronical strobe shutter feature.                                                                                                                                                                                                                |
-| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                 |
-| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature.                                                                                                                                                                                                         |
-| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature.                                                                                                                                                                                                         |
+| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                  |
+| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                        |
+| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandom           | Controls the frequency of the fixture´s mechanical or electronical random strobe shutter feature.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandomPulse      | Controls the frequency of the fixture´s mechanical or electronical random pulse shutter feature.                                                                                                                                                                                                          |
-| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature.                                                                                                                                                                                                  |
-| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature.                                                                                                                                                                                                  |
+| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
+| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
 | Shutter(n)StrobeEffect           | Controls the frequency of the fixture´s mechanical or electronical shutter effect feature.                                                                                                                                                                                                                |
 | Iris                             | Controls the diameter of the fixture's beam.                                                                                                                                                                                                                                                              |
 | IrisStrobe                       | Sets frequency of the iris's strobe feature.                                                                                                                                                                                                                                                              |
@@ -2554,43 +2636,67 @@ not taken into account.
            <Attribute Name="XYZ_X" Pretty="X" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Y" Pretty="Y" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Z" Pretty="Z" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" /  
-           <Attribute Name="Rot_X" Pretty="Rot X" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Y" Pretty="Rot Y" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Z" Pretty="Rot Z" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Scale_X" Pretty="Scale X" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Y" Pretty="Scale Y" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Z" Pretty="Scale Z" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" ActivationGroup="Rot_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
+           <Attribute Name="Rot_X" Pretty="Rot X" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Y" Pretty="Rot Y" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Z" Pretty="Rot Z" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Scale_X" Pretty="Scale X" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Y" Pretty="Scale Y" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Z" Pretty="Scale Z" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)SelectSpin" Pretty="Select Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)SelectEffects" Pretty="Select Effects" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
-           <Attribute Name="Gobo(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
-           <Attribute Name="Gobo(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
+           <Attribute Name="Gobo(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Angle" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
-           <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)Pos" Pretty="G(n) &lt;&gt;" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
            <Attribute Name="Gobo(n)PosRotate" Pretty="Rotate" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
-           <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />  
-           <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" />  
-           <Attribute Name="AnimationWheel(n)Macro" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim FX" />  
-           <Attribute Name="AnimationWheel(n)Random" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Random" />  
+           <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
+           <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" /> 
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="AnimationWheel(n)Macro" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim FX" />
+           <Attribute Name="AnimationWheel(n)Random" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Random" /> 
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)SelectEffects" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Select FX" />  
-           <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />  
-           <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />  
+           <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
+           <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)Pos" ActivationGroup="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim Pos" />  
            <Attribute Name="AnimationWheel(n)PosRotate" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Rotate" />  
            <Attribute Name="AnimationWheel(n)PosShake" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Shake" />  
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
-           <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="50" PhysicalTo="50"/> This defines the duration of the ramp in relation to the period.
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
+           <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Audio" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Audio/>  
            <Attribute Name="AnimationSystem(n)Random" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Random/>  
            <Attribute Name="AnimationSystem(n)Pos" ActivationGroup="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim System Pos"/>  
            <Attribute Name="AnimationSystem(n)PosRotate" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim System Rotate"/>  
            <Attribute Name="AnimationSystem(n)PosShake" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake"/>  
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)PosRandom" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Random"/>  
            <Attribute Name="AnimationSystem(n)PosAudio" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Audio"/>  
            <Attribute Name="AnimationSystem(n)Macro" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Macro"/>  
@@ -2604,10 +2710,15 @@ not taken into account.
            <Attribute Name="PlaySpeed" Pretty="Play Speed" Feature="Gobo.Media" PhysicalUnit="Percent" />  
            <Attribute Name="ColorEffects(n)" Pretty="Color FX(n)" Feature="Color.Color" />  
            <Attribute Name="Color(n)" Pretty="C(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Angle" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="AngularSpeed" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="ColorAdd_R" Pretty="R" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.64,0.33,21.3" />  
            <Attribute Name="ColorAdd_G" Pretty="G" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.3,0.6,71.5" />  
            <Attribute Name="ColorAdd_B" Pretty="B" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.15,0.06,7.2" />  
@@ -2677,29 +2788,57 @@ not taken into account.
            <Attribute Name="StrobeModeEffect" Pretty="StrobeM Effect" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)" Pretty="Sh(n)" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)Strobe" Pretty="Strobe(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseClose" Pretty="Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseOpen" Pretty="Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+             <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobeRandom" Pretty="Random(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
            <Attribute Name="Shutter(n)StrobeRandomPulse" Pretty="Random Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeRandomPulseClose" Pretty="Random Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeRandomPulseOpen" Pretty="Random Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeEffect" Pretty="Effect(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Iris" Pretty="Iris" Feature="Beam.Beam" />  
            <Attribute Name="IrisStrobe" Pretty="Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisStrobeRandom" Pretty="Random Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseClose" Pretty="Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseOpen" Pretty="Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseClose" Pretty="Random Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseOpen" Pretty="Random Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="Frost(n)" Pretty="Frost(n)" Feature="Beam.Beam" />  
            <Attribute Name="Frost(n)PulseOpen" Pretty="Pulse Open (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)PulseClose" Pretty="Pulse Close (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)Ramp" Pretty="Ramp (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Prism(n)" Pretty="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
            <Attribute Name="Prism(n)SelectSpin" Pretty="Select Spin(n)" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Prism(n)Macro" Pretty="Prism(n) Macro" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
-           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed"/>  
            <Attribute Name="Prism(n)PosRotate" Pretty="Rotate(n)" MainAttribute="Prism(n)Pos" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Effects(n)" Pretty="FX(n)" Feature="Beam.Beam" />  
            <Attribute Name="Effects(n)Rate" Pretty="FX(n) Rate" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
@@ -2709,9 +2848,11 @@ not taken into account.
            <Attribute Name="Effects(n)PosRotate" Pretty="FX(n) Rotate" MainAttribute="Effects(n)Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />              
            <Attribute Name="EffectsSync" Pretty="FX Sync" Feature="Beam.Beam" />  
            <Attribute Name="BeamShaper" Pretty="Beam Shaper" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+              <SubPhysicalUnit Type="RatioHorizontal" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
+              <SubPhysicalUnit Type="RatioVertical" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
            <Attribute Name="BeamShaperMacro" Pretty="Beam Shaper Macro" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Zoom" Pretty="Zoom" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeSpot" Pretty="Zoom Spot" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />    
