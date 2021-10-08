@@ -1633,7 +1633,6 @@ are specified in [table TODO](#user-content-table-TODO ).
 | PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                           |
 | SubPhysicalUnit    | [Node](#user-content-attrtype-node )         | Link to the sub physical unit; Starting Point: Attribute                                                                                                                                                                                                     |
 | DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to the DMX Profile; Starting Point: DMX Profile Collect                                                                                                                                                                                        |
-| WheelSlotIndex     | [Int](#user-content-attrtype-int )           | TODO: Do we need the WheelSlotIndex here? I do not think so. If the channel function has a link to a wheel, a corresponding slot index shall be specified. The wheel slot index results from the order of slots of the wheel which is linked in the channel function. The wheel slot index is normalized to 1. Size: 4 bytes |
 
 #### Table TODO. *Sub Channel Set Attributes*
 
@@ -2468,22 +2467,22 @@ not taken into account.
            <Attribute Name="IrisStrobe" Pretty="Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisStrobeRandom" Pretty="Random Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseClose" Pretty="Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseOpen" Pretty="Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
               <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseClose" Pretty="Random Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseOpen" Pretty="Random Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
-              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the minimum percentage to which the iris closes.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="Frost(n)" Pretty="Frost(n)" Feature="Beam.Beam" />  
            <Attribute Name="Frost(n)PulseOpen" Pretty="Pulse Open (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
               <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
@@ -2507,8 +2506,8 @@ not taken into account.
            <Attribute Name="Effects(n)PosRotate" Pretty="FX(n) Rotate" MainAttribute="Effects(n)Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />              
            <Attribute Name="EffectsSync" Pretty="FX Sync" Feature="Beam.Beam" />  
            <Attribute Name="BeamShaper" Pretty="Beam Shaper" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-              <SubPhysicalUnit Type="RatioHorizontal" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the size of the beam compared to the original size.
-              <SubPhysicalUnit Type="RatioVertical" PhysicalUnit="Percent" PhysicalFrom="TODO" PhysicalTo="TODO"/> This defines the size of the beam compared to the original size.
+              <SubPhysicalUnit Type="RatioHorizontal" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
+              <SubPhysicalUnit Type="RatioVertical" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
            <Attribute Name="BeamShaperMacro" Pretty="Beam Shaper Macro" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
            <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="Angle" />  
            <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
