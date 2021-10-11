@@ -2636,13 +2636,13 @@ not taken into account.
            <Attribute Name="XYZ_X" Pretty="X" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Y" Pretty="Y" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Z" Pretty="Z" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" /  
-           <Attribute Name="Rot_X" Pretty="Rot X" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Y" Pretty="Rot Y" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Z" Pretty="Rot Z" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Scale_X" Pretty="Scale X" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Y" Pretty="Scale Y" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Z" Pretty="Scale Z" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Rot_X" Pretty="Rot X" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Y" Pretty="Rot Y" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Z" Pretty="Rot Z" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Scale_X" Pretty="Scale X" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Y" Pretty="Scale Y" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Z" Pretty="Scale Z" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
            <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
               <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)SelectSpin" Pretty="Select Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
