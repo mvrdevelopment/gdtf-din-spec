@@ -168,26 +168,26 @@ specified in [Table 1](#user-content-table-1 ).
 
 ##### Table 1 — *XML Attribute Value Types*
 
- Value Type            | Format                | Description           
------------------------|-----------------------|-----------------------
-Uint<div id="attrtype-uint" /> | Integer               | Unsigned integer
-Int<div id="attrtype-int" />  | Integer               | Signed integer
-Hex<div id="attrtype-hex" />  | Integer               | Number in hexadecimal  notation; Default value: 0
-Float<div id="user-content-attrtype-float" /> | float                 | Floating point numeric; Separator: "."
-String<div id="attrtype-string" />                 | Literal               | Text
-Name<div id="attrtype-name" />                 | restricted Literal    | Unique object names; The allowed characters are listed in [AnnexC](#user-content-table-c1) Default value: object type with an index in parent.
-Date<div id="attrtype-date" /> yyyy-mm-ddThh:mm:ss   |  Date and time corresponding to UTC +00:00 (Coordinated Universal Time): yyyy – year, mm – month, dd – day, hh – hours (24 format), mm – minutes, ss – seconds. Example: “2016-06-21T11:22:48” 
-Node<div id="attrtype-node" />                   | Name.Name.Name...     | Link to an element: “Name” is the value of the attribute “Name” of a defined XML node. The starting point defines each attribute separately. 
-ColorCIE<div id="attrtype-colorcie" />             | floatx, floaty,floatY       | CIE color representation xyY 1931
-Vector3<div id="attrtype-vector3" />               |  {float,float,float} | Vector with 3 float components
-Matrix<div id="attrtype-matrix" />                  |  {float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} |  The transformation matrix consists 4 x 4 floats. Stored in a row-major order. For example, each row of the matrix is stored as a 4- component vector. The mathematical definition of the matrix is in a column-major order. For example, the matrix rotation is stored in the first three columns, and the translation is stored in the 4th column. The metric system consists of the Right- handed Cartesian Coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from bottom (-Z) to top (+Z). 0,0,0 – center base. 
-Rotation<div id="attrtype-rotation"/>| {float, float, float}<br/>{float, float, float} <br/>{float, float, float} | Rotation matrix, consist of 3*3 floats. Stored as row-major matrix, i.e. each row of the matrix is stored as a 3-component vector. Mathematical definition of the matrix is column-major, i.e. the matrix rotation is stored in the three columns. Metric system, right-handed Cartesian coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from the bottom (-Z) to the top (+Z). 
-Enum<div id="attrtype-enum"/>                     | Literal               | Possible values are predefined.
-DMXAddress<div id="attrtype-dmxaddress"/>|Int, Alternative format: Universe.Address | Absolute DMX address (size 4 bytes); Alternative format: Universe – integer universe number, starting with 1; Address: address within universe from 1 to 512. Format: integer 
-DMXValue<div id="attrtype-dmxvalue"/>| Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. 
-GUID<div id="attrtype-guid"/> | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. 
-Resource<div id="attrtype-resource"/> | String|File name of the resource file without extension and without subfolder. 
-Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
+| Value Type                            | Format                | Description           |
+|----|----|----|
+|Uint<a id="attrtype-uint" />                       | Integer               | Unsigned integer|
+|Int<a id="attrtype-int" />                         | Integer               | Signed integer|
+|Hex<a id="attrtype-hex" />                         | Integer               | Number in hexadecimal  notation; Default value: 0|
+|Float<a id="user-content-attrtype-float" />        | float                 | Floating point numeric; Separator: "."|
+|String<a id="attrtype-string" />                   | Literal               | Text|
+|Name<a id="attrtype-name" />                       | restricted Literal    | Unique object names; The allowed characters are listed in [AnnexC](#user-content-table-c1) Default value: object type with an index in parent.|
+|Date<a id="attrtype-date" />                       | yyyy-mm-ddThh:mm:ss   |  Date and time corresponding to UTC +00:00 (Coordinated Universal Time): yyyy – year, mm – month, dd – day, hh – hours (24 format), mm – minutes, ss – seconds. Example: “2016-06-21T11:22:48” |
+|Node<a id="attrtype-node" />                       | Name.Name.Name...     | Link to an element: “Name” is the value of the attribute “Name” of a defined XML node. The starting point defines each attribute separately. |
+|ColorCIE<a id="attrtype-colorcie" />               | floatx, floaty,floatY       | CIE color representation xyY 1931|
+|Vector3<a id="attrtype-vector3" />                 |  {float,float,float} | Vector with 3 float components|
+|Matrix<a id="attrtype-matrix" />                   |  {float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} |  The transformation matrix consists 4 x 4 floats. Stored in a row-major order. For example, each row of the matrix is stored as a 4- component vector. The mathematical definition of the matrix is in a column-major order. For example, the matrix rotation is stored in the first three columns, and the translation is stored in the 4th column. The metric system consists of the Right- handed Cartesian Coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from bottom (-Z) to top (+Z). 0,0,0 – center base. |
+|Rotation<a id="attrtype-rotation"/>                | {float, float, float}<br/>{float, float, float} <br/>{float, float, float} | Rotation matrix, consist of 3\*3 floats. Stored as row-major matrix, i.e. each row of the matrix is stored as a 3-component vector. Mathematical definition of the matrix is column-major, i.e. the matrix rotation is stored in the three columns. Metric system, right-handed Cartesian coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from the bottom (-Z) to the top (+Z). |
+|Enum<a id="attrtype-enum"/>                        | Literal               | Possible values are predefined.|
+|DMXAddress<a id="attrtype-dmxaddress"/>            |Int, Alternative format: Universe.Address | Absolute DMX address (size 4 bytes); Alternative format: Universe – integer universe number, starting with 1; Address: address within universe from 1 to 512. Format: integer |
+|DMXValue<a id="attrtype-dmxvalue"/>                | Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. |
+|GUID<a id="attrtype-guid"/>                        | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. |
+|Resource<a id="attrtype-resource"/>                | String|File name of the resource file without extension and without subfolder. |
+|Pixel<a id="attrtype-pixel"/>                      | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner.| 
 
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
@@ -199,8 +199,8 @@ The example above shows the XML node for GDTF version 1.2.
 <div id="table-2">
 
 | XML Attribute Name | Value Type                             | Description                                                                                                                                                 |
-| ------------------ | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DataVersion        | Uint.Unit<div id="attrtype-uint"/> | The DataVersion attribute defines the minimal version of compatibility.The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
+|----|----|----|
+| DataVersion        | [UInt.UInt](#user-content-attrtype-uint )| The DataVersion attribute defines the minimal version of compatibility.The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
 
 #### Table 2. *GDTF Node Attributes*
 
@@ -212,83 +212,29 @@ The FixtureType node is the starting point of the description of the
 fixture type within the XML file. The defined Fixture Type Node
 attributes of the fixture type are specified in [table 2](#user-content-table-2 ).
 
+
 <div id="table-3">
+#### Table 3. *Fixture Type Node Attributes*
 
-<table>
-<caption>Table 3. <em>Fixture Type Node Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>Name of the fixture type. As it is based on <a
-href="#user-content-attrtype-name" title=>Name</a>, it is safe for
-parsing.</p></td>
-</tr>
-<tr class="even">
-<td><p>ShortName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Shortened name of the fixture type. Non detailed version or an
-abbreviation. Can use any characters or symbols.</p></td>
-</tr>
-<tr class="odd">
-<td><p>LongName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Detailed, complete name of the fixture type, can include any characters
-or extra symbols.</p></td>
-</tr>
-<tr class="even">
-<td><p>Manufacturer</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Manufacturer of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Description</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Description of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>FixtureTypeID</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>Unique number of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Thumbnail</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional. File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
-<ul>
-<li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
-<li>svg file to provide the vector graphic.</li>
-</ul>
-<p>These resource files are located in the root directory of the zip file.</p></td>
-</tr>
-<tr class="even">
-<td><p>RefFT</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>Optional. GUID of the referenced fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>CanHaveChildren</p></td>
-<td><p><a href="#user-content-attrtype-enum" title=>Enum</a></p></td>
-<td><p>Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”</p></td>
-</tr>
-</tbody>
-</table>
+| XML Attribute Name | Value Type | Description  |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )       | Name of the fixture type. As it is based on Name, it is safe for parsing.                                                                                                                                                                                                                                                    |
+| ShortName          | [String](#user-content-attrtype-string )     | Shortened name of the fixture type. Non detailed version or an abbreviation. Can use any characters or symbols.                                                                                                                                                                                                              |
+| LongName           | [String](#user-content-attrtype-string )     | Detailed, complete name of the fixture type, can include any characters or extra symbols.                                                                                                                                                                                                                                    |
+| Manufacturer       | [String](#user-content-attrtype-string )     | Manufacturer of the fixture type.                                                                                                                                                                                                                                                                                            |
+| Description        | [String](#user-content-attrtype-string )     | Description of the fixture type.                                                                                                                                                                                                                                                                                             |
+| FixtureTypeID      | [GUID](#user-content-attrtype-guid )        | Unique number of the fixture type.                                                                                                                                                                                                                                                                                           |
+| Thumbnail          | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension containing description of the thumbnail. Use the following as a resource file: <br />- png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024 <br />- svg file to provide the vector graphic.  <br />- These resource files are located in the root directory of the zip file.  |
+| RefFT              | [GUID](#user-content-attrtype-guid )       | Optional. GUID of the referenced fixture type.                                                                                                                                                                                                                                                                               |
+| CanHaveChildren    | [Enum](#user-content-attrtype-enum )       | Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”                                                                                                                                                                                                                  |
 
-</div>
 
 Fixture type node children are specified in [table 4](#user-content-table-4 ).
 
 <div id="table-4">
 
 | Child Node                                                | Mandatory | Description                                                                                 |
-| --------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------- |
+|----|----|----|
 | [AttributeDefinitions](#user-content-attribute-definitions ) | Yes       | Defines all Fixture Type Attributes that are used in the fixture type.                      |
 | [Wheels](#user-content-wheel-collect )                       | No        | Defines the physical or virtual color wheels, gobo wheels, media server content and others. |
 | [PhysicalDescriptions](#user-content-physical-descriptions ) | No        | Contains additional physical descriptions.                                                  |
@@ -324,8 +270,8 @@ are specified in [table 5](#user-content-table-5 ).
 
 <div id="table-5">
 
-| XML node                                         | Mandatory | Description                                                                                                                             |
-| ------------------------------------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| XML node     | Mandatory | Description     |
+|----|----|----|
 | [ActivationGroups](#user-content-activation-group) | No        | Defines which attributes are to be activated together. For example, Pan and Tilt are in the same activation group.                      |
 | [FeatureGroups](#user-content-feature-group)       | Yes       | Describes the logical grouping of attributes. For example, Gobo 1 and Gobo 2 are grouped in the feature Gobo of the feature group Gobo. |
 | [Attributes](#user-content-attribute)              | Yes       | List of Fixture Type Attributes that are used. Predefindes fixtury type attributes can be found in Annex A.                             |
@@ -355,7 +301,7 @@ group are specified in [table 6](#user-content-table-6 ).
 <div id="table-6">
 
 | XML Attribute Name | Value Type                        | Description                              |
-| ------------------ | --------------------------------- | ---------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the activation group. |
 
 #### Table 6. *Activation Group Attributes*
@@ -385,7 +331,7 @@ currently defined XML attributes of the feature group are specified in
 <div id="table-7">
 
 | XML Attribute Name | Value Type                            | Description                           |
-| ------------------ | ------------------------------------- | ------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the feature group. |
 | Pretty             | [String](#user-content-attrtype-string ) | The pretty name of the feature group. |
 
@@ -405,7 +351,7 @@ defined XML attributes of the feature are specified in [table
 <div id="table-8">
 
 | XML Attribute Name | Value Type                        | Description                     |
-| ------------------ | --------------------------------- | ------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the feature. |
 
 #### Table 8. *Feature Attributes*
@@ -430,8 +376,8 @@ in [table 9](#user-content-table-9 ).
 
 <div id="table-9">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| XML Attribute Name | Value Type | Description |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The unique name of the attribute.                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Pretty             | [String](#user-content-attrtype-string )     | The pretty name of the attribute .                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ActivationGroup    | [Node](#user-content-attrtype-node )         | Optional link to the activation group. The starting point is the [activation groups](#user-content-activation-groups ) node.                                                                                                                                                                                                                                                                                                            |
@@ -455,7 +401,7 @@ The currently defined XML attributes of the subphysical unit are specified in [t
 <div id="table-TODO">
 
 | XML Attribute Name | Value Type                                | Description                                                                                             |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "DutyCycle",  "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO   |
@@ -488,7 +434,7 @@ in [table 10](#user-content-table-10 ).
 <div id="table-10">
 
 | XML Attribute Name | Value Type                        | Description                  |
-| ------------------ | --------------------------------- | ---------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the wheel |
 
 #### Table 10. *Wheel Attributes*
@@ -506,44 +452,16 @@ currently defined XML attributes of the wheel slot are specified in
 
 <div id="table-11">
 
-<table>
-<caption>Table 11. <em>Wheel Slot Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>The unique name of the wheel slot</p></td>
-</tr>
-<tr class="even">
-<td><p>Color</p></td>
-<td><p><a href="#user-content-attrtype-colorcie" title=>ColorCIE</a></p></td>
-<td><p>Color of the wheel slot, Default value: {0.3127, 0.3290, 100.0 } (white) For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case).</p></td>
-</tr>
-<tr class="odd">
-<td><p>Filter</p></td>
-<td><p><a href="#user-content-attrtype-node" title=>Node</a></p></td>
-<td><p>Optional. Link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
-</tr>
-<tr class="even">
-<td><p>MediaFileName</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional. PNG file name without extension containing image for specific gobos etc.</p>
-<ul>
-<li>Maximum resolution of picture: 1024x1024;</li>
-<li>Recommended resolution of gobo: 256x256;</li>
-<li>Recommended resolution of animation wheel: 256x256</li>
-</ul>
-<p>These resource files are located in a folder called <code>./wheels</code> in the zip archive. Default value: empty.</p></td>
-</tr>
-</tbody>
-</table>
+#### Table 11. *Wheel Slot Attributes*
+
+| XML Attribute Name | Value Type | Description                                                                                                                                                                                                                                                                                                                       |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )        | The unique name of the wheel slot                                                                                                                                                                                                                                                                                                 |
+| Color              | [ColorCIE](#user-content-attrtype-colorcie )   | Color of the wheel slot, Default value: {0.3127, 0.3290, 100.0 } (white) For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case).                                                                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )       | Optional. Link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect                                                                                                                                                                                                       |
+| MediaFileName | [Resource](#user-content-attrtype-resource ) | Optional. PNG file name without extension containing image for specific gobos etc. <br />- Maximum resolution of picture: 1024x1024<br />- Recommended resolution of gobo: 256x256<br />- Recommended resolution of animation wheel: 256x256<br />These resource files are located in a folder called `./wheels` in the zip archive. Default value: empty. |
+
+
 
 </div>
 
@@ -571,7 +489,7 @@ defined XML attributes of the prism facet are specified in [table
 <div id="table-12">
 
 | XML Attribute Name | Value Type                                | Description                                                           |
-| ------------------ | ----------------------------------------- | --------------------------------------------------------------------- |
+|----|----|----|
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Color of prism facet, Default value: {0.3127, 0.3290, 100.0 } (white) |
 | Rotation           | [Rotation](#user-content-attrtype-rotation ) | Specify the rotation, translation and scaling for the facet.          |
 
@@ -592,7 +510,7 @@ specified in [table 13](#user-content-table-13 ).
 <div id="table-13">
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|----|----|----|
 | P1                 | [Array of Float](#user-content-attrtype-float ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
 | P2                 | [Array of Float](#user-content-attrtype-float ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis. |
 | P3                 | [Array of Float](#user-content-attrtype-float ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
@@ -619,7 +537,7 @@ in [table 14](#user-content-table-14 ).
 <div id="table-14">
 
 | XML node                               | Mandatory | Description                                                                         |
-| -------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
+|----|----|----|
 | [Emitters](#user-content-emitter-collect )       | No        | Describes device emitters                                                           |
 | [Filters](#user-content-filter-collect )         | No        | Describes device filters                                                            |
 | [ColorSpace](#user-content-color-space )   | No        | Describes device default color space                                                       |
@@ -651,7 +569,7 @@ specified in [table 15](#user-content-table-15 ).
 <div id="table-15">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the emitter                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point if applicable. Omit for non-visible emitters (eg., UV). For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 | DominantWaveLength | [Float](#user-content-attrtype-float )       | Required if color is omitted, otherwise it is optional. Dominant wavelength of the LED.                                                                                                                                       |
@@ -682,7 +600,7 @@ The currently defined XML attributes of the filter are specified in
 <div id="table-16">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the filter.                                                                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point when this filter is the only item fully inserted into the beam and the fixture is at maximum intensity. For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 
@@ -703,7 +621,7 @@ the measurement are specified in [table 17](#user-content-table-17 ).
 <div id="table-17">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                                                                                                  |
-| ------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Physical           | [Float](#user-content-attrtype-float ) | For additive color mixing: uniquely given emitter intensity DMX percentage. Value range between \> 0 and \<= 100. For subtractive color mixing: uniquely given flag insertion DMX percentage. Value range between 0 and 100. |
 | LuminousIntensity  | [Float](#user-content-attrtype-float ) | Used for additive color mixing: overall candela value for the enclosed set of measurement.                                                                                                                                   |
 | Transmission       | [Float](#user-content-attrtype-float ) | Used for subtractive color mixing: total amount of lighting energy passed at this insertion percentage.                                                                                                                      |
@@ -744,7 +662,7 @@ spacing is 1 nm. Measurement spacing should not exceed 4 nm.
 <div id="table-18">
 
 | XML Attribute Name | Value Type                          | Description                            |
-| ------------------ | ----------------------------------- | -------------------------------------- |
+|----|----|----|
 | WaveLength         | [Float](#user-content-attrtype-float ) | Center wavelength of measurement (nm). |
 | Energy             | [Float](#user-content-attrtype-float ) | Lighting energy (W/m2/nm)              |
 
@@ -769,7 +687,7 @@ are specified in [table 19](#user-content-table-19 ).
 <div id="table-19">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
-| ------------------ | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space. Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the AdditionalColorSpaces node. |                                                                                                                            |
 | Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
 | Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
@@ -787,7 +705,7 @@ specified in [table 20](#user-content-table-20 ).
 <div id="table-20">
 
 |             |                                     |                                          |                 |
-| ----------- | ----------------------------------- | ---------------------------------------- | --------------- |
+|----|----|----|----|
 | Mode        | sRGB                                | ProPhoto                                 | ANSI            |
 | Description | Adobe sRGB, HDTV IEC 61966-2-1:1999 | Kodak ProPhoto ROMM RGB ISO 22028-2:2013 | ANSI E1.54-2015 |
 | Red         | 0.6400, 0.3300, 0.2126              | 0.7347, 0.2653                           | 0.7347, 0.2653  |
@@ -814,7 +732,7 @@ are specified in [table 111](#user-content-table-111 ).
 <div id="table-111">
 
 | XML Attribute Name | Value Type                                             | Description                                                 |
-| ------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )                   | Unique Name of the Gamut.                                   |
 | Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
 
@@ -839,7 +757,7 @@ are specified in [table TODO](#user-content-table-TODO ).
 <div id="table-TODO">
 
 | XML Attribute Name  | Value Type                           | Description                    |
-| ------------------- | ------------------------------------ | ------------------------------ |
+|----|----|----|
 | Name                | [Name](#user-content-attrtype-name ) | Unique name of the DMX profile |
 
 #### Table TODO. *DMX Profile Attributes*
@@ -856,7 +774,7 @@ are specified in [table TODO](#user-content-table-TODO ).
 <div id="table-TODO">
 
 | XML Attribute Name  | Value Type                             | Description                    |
-| ------------------- | -------------------------------------- | ------------------------------ |
+|----|----|----|
 | DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Unit: Percentage; Default value: 0 |
 | CBP0                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 0; Default value: 0 |
 | CBP1                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 1; Default value: 0 |
@@ -888,7 +806,7 @@ specified in [table 21](#user-content-table-21 ).
 <div id="table-21">
 
 | XML Attribute Name | Value Type                          | Description                                          |
-| ------------------ | ----------------------------------- | ---------------------------------------------------- |
+|----|----|----|
 | ColorTemperature   | [Float](#user-content-attrtype-float ) | Color temperature; Default value: 6000; Unit: Kelvin |
 
 
@@ -907,7 +825,7 @@ are specified in [table 20](#user-content-table-20 ).
 <div id="table-22">
 
 | XML Attribute Name  | Value Type                        | Description                                                                             |
-| ------------------- | --------------------------------- | --------------------------------------------------------------------------------------- |
+|----|----|----|
 | CES                 | [Enum](#user-content-attrtype-enum ) | Color sample. The defined values are “CES01”, “CES02”, … “CES99”. Default Value “CES01" |
 | ColorRenderingIndex | [UInt](#user-content-attrtype-uint ) | The color rendering index for this sample. Size: 1 byte; Default value: 100             |
 
@@ -932,7 +850,7 @@ defined XML attributes of the connector are specified in [table
 <div id="table-23">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                            |
-| ------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector.                                                                                                                          |
 | Type               | [Name](#user-content-attrtype-name )   | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ).                                                         |
 | DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.                                                                                        |
@@ -955,7 +873,7 @@ are specified in [table 24](#user-content-table-24 ).
 <div id="table-24">
 
 | XML node                                                 | Amount | Description                                            |
-| -------------------------------------------------------- | ------ | ------------------------------------------------------ |
+|----|----|----|
 | [OperatingTemperature](#user-content-operatingtemperature ) | 0 or 1 | Temperature range in which the device can be operated. |
 | [Weight](#user-content-weight )                             | 0 or 1 | Weight of the device including all accessories.        |
 | [PowerConsumption](#user-content-powerconsumption )         | Any    | Power information for a given connector.               |
@@ -974,12 +892,11 @@ OperatingTemperature are specified in [table 25](#user-content-table-25 ).
 <div id="table-25">
 
 | XML Attribute Name | Value Type                          | Description                                                                 |
-| ------------------ | ----------------------------------- | --------------------------------------------------------------------------- |
+|----|----|----|
 | Low                | [Float](#user-content-attrtype-float ) | Lowest temperature the device can be operated. Unit: °C. Default value: 0   |
 | High               | [Float](#user-content-attrtype-float ) | Highest temperature the device can be operated. Unit: °C. Default value: 40 |
 
-#### Table 25. *Operating Temperature
-Attributes*
+#### Table 25. *Operating Temperature Attributes*
 
 </div>
 
@@ -994,7 +911,7 @@ specified in [table 26](#user-content-table-26 ).
 <div id="table-26">
 
 | XML Attribute Name | Value Type                          | Description                                                                      |
-| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Float](#user-content-attrtype-float ) | Weight of the device including all accessories. Unit: kilogram. Default value: 0 |
 
 #### Table 26. *Weight Attributes*
@@ -1012,7 +929,7 @@ currently defined XML attributes of the LegHeight are specified in
 <div id="table-28">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                      |
-| ------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Float](#user-content-attrtype-float ) | Defines height of the legs - distance between the floor and the bottom base plate. Unit: meter. Default value: 0 |
 
 #### Table 28. *Leg Height Attributes*
@@ -1039,53 +956,15 @@ specified in [table 29](#user-content-table-29 ).
 
 <div id="table-29">
 
-<table>
-<caption>Table 29. <em>Model Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>The unique name of the model</p></td>
-</tr>
-<tr class="even">
-<td><p>Length</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="odd">
-<td><p>Width</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="even">
-<td><p>Height</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="odd">
-<td><p>PrimitiveType</p></td>
-<td><p><a href="#user-content-attrtype-enum" title=>Enum</a></p></td>
-<td><p>Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; TODO Default value: “Undefined”</p></td>
-</tr>
-<tr class="even">
-<td><p>File</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
-<ul>
-<li>3DS or GLB to file to provide 3D model.</li>
-<li>SVG file to provide the 2D symbol.</li>
-</ul>
-<p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p></td>
-</tr>
-</tbody>
-</table>
+| XML Attribute Name | Value Type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )       | The unique name of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Length             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Width              | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Height             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PrimitiveType      | [Enum](#user-content-attrtype-enum )        | Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; TODO Default value: “Undefined”                                                                                                                                                                                                                                                                                                                                                                         |
+| File               | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:<br />- 3DS or GLB to file to provide 3D model.<br />- SVG file to provide the 2D symbol.<br />It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called `./models`. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be `./models/3ds`. For glb files, it would be `./models/gltf`. |
+
 
 </div>
 
@@ -1167,7 +1046,7 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 <div id="table-30">
 
 | XML node                                                              | Amount | Description                                                                                    |
-| --------------------------------------------------------------------- | ------ | ---------------------------------------------------------------------------------------------- |
+|----|----|----|
 | [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                                              |
 | [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                                            |
 | [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                                                   |
@@ -1203,7 +1082,7 @@ The currently defined XML attributes of the geometry are specified in
 <div id="table-31">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                             |
-| ------------------ | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry. Recommendation for conventional is “Body”. Recommendation for a geometry that is representing the base housing of a moving head is “Base”. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                        |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                           |
@@ -1224,7 +1103,7 @@ specified in [table 32](#user-content-table-32 ).
 <div id="table-32">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                   |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for an axis-geometry is “Yoke”. Recommendation for an axis-geometry representing the lamp housing of a moving head is “Head”. Note: The Head of a moving head is usually mounted to the Yoke. |
 | Model           | [Name](#user-content-attrtype-name ) | Link to the corresponding model. Matrix                                                                                                                                                                                 |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                 |
@@ -1245,7 +1124,7 @@ are specified in [table 27](#user-content-table-27 ).
 <div id="table-33">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                              |
-| ------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for beam filter limiting the diffusion of light is “BarnDoor”. Recommendation for beam filter adjusting the diameter of the beam is “Iris”. Note: BarnDoor and Iris are usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                                                                                         |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                            |
@@ -1267,7 +1146,7 @@ attributes of the color filter are specified in [table
 <div id="table-34">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry. Recommendation for filter of a color or mechanical color changer is “FilterColor”. Note: FilterColor is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                      |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                         |
@@ -1288,7 +1167,7 @@ the gobo filter are specified in [table 35](#user-content-table-35 ).
 <div id="table-35">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for filter of a gobo or mechanical gobo changer is “FilterGobo”. Note: FilterGobo is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                      |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                         |
@@ -1309,7 +1188,7 @@ of the shaper filter are specified in [table 36](#user-content-table-36 ).
 <div id="table-36">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                 |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry; Recommendation for filter used to form the beam to a framed, triangular, or trapezoid shape, is “Shaper”. Note: Shaper is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                            |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                               |
@@ -1330,7 +1209,7 @@ the Beam are specified in [table 37](#user-content-table-37 ).
 <div id="table-37">
 
 | XML Attribute Name  | Value Type                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for a light source of a conventional or moving head or a projector is “Beam”. Note 1: Beam is usually mounted to Head or Body. Recommendation for a self-emitting single light source is “Pixel”. Note 2: Pixel is usually mounted to Head or Body. Recommendation for a number of Pixel that are controlled at the same time is “Array”. Note 3: Array is usually mounted to Head or Body. Recommendation for a light source of a moving mirror is “Mirror”. Note 4: Mirror is usually mounted to Yoke. |
 | Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -1384,7 +1263,7 @@ server layer are specified in [table 38](#user-content-table-38 ).
 <div id="table-38">
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                                                                  |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model that will be used to display the alignment in media server space. |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                     |
@@ -1406,7 +1285,7 @@ attributes of the media server camera are specified in [table
 <div id="table-39">
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                                                                  |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model that will be used to display the alignment in media server space. |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                     |
@@ -1431,7 +1310,7 @@ defined XML attributes of the media server master are specified in
 <div id="table-40">
 
 | XML Attribute Name | Value Type                            | Description                                                   |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                              |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                              |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix |
@@ -1453,7 +1332,7 @@ defined XML attributes of the display are specified in [table
 <div id="table-41">
 
 | XML Attribute Name | Value Type                                | Description                                                                               |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The unique name of the geometry.                                                          |
 | Model              | [Name](#user-content-attrtype-name )         | Link to the corresponding model.                                                          |
 | Position           | [Matrix](#user-content-attrtype-matrix )     | Relative position of geometry; Default value: Identity Matrix                             |
@@ -1475,8 +1354,8 @@ defined XML attributes of the display are specified in [table
 
 <div id="table-41">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                    |
-|--------------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| XML Attribute Name | Value Type     |                    |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
 | Model              | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
@@ -1508,7 +1387,7 @@ attributes of the protocol are specified in [table
 <div id="table-43">
 
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
-| ------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
 
 ### Geometry Type Reference
@@ -1522,8 +1401,8 @@ geometries.
 
 <div id="table-42">
 
-| XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                                                                                |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XML Attribute Name | Value Type                            | Description    |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry.                                                                                                                                                                                                                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                              |
 | Geometry           | [Name](#user-content-attrtype-name )     | Name of the referenced geometry. Only top level geometries are allowed to be referenced.                                                                                                                                                                                                                   |
@@ -1553,7 +1432,7 @@ attributes of the break are specified in [table
 <div id="table-43">
 
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
-| ------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | DMXOffset          | [DMXAddress](#user-content-attrtype-dmxaddress ) | DMX offset; Default value:1 (Means no offset for the corresponding DMX Channel)                          |
 | DMXBreak           | [Uint](#user-content-attrtype-uint )             | Defines the unique number of the DMX Break for which the Offset is given. Size: 1 byte; Default value 1. |
 
@@ -1570,7 +1449,7 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 <div id="table-100">
 
 | XML Attribute Name  | Value Type                                | Description                                                                                       |
-| ------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry. The name is also the name of the interface to the outside        |
 | Model               | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                  |
 | ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. |
@@ -1608,7 +1487,7 @@ attributes of a pin patch are specified in [table 101](#user-content-table-101 )
 <div id="table-101">
 
 | XML Attribute Name  | Value Type                               | Description                                                                                            |
-| ------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+|----|----|----|
 | ToWiringObject      | [Node](#user-content-attrtype-node )     | Link to the wiring object connected through this pin patch.                                         |
 | FromPin          | [Int](#user-content-attrtype-int )       | The pin number used by the parent wiring object to connect to the targeted wiring object "ToWiringObject". |
 | ToPin            | [Int](#user-content-attrtype-int )       | The pin number used by the targeted wiring object "ToWiringObject" to connect to the parent wiring object. |
@@ -1628,7 +1507,7 @@ defined XML attributes of an inventory geometry are specified in
 <div id="table-102">
 
 | XML Attribute Name  | Value Type                               | Description                                                    |
-| ------------------- | ---------------------------------------- | -------------------------------------------------------------- |
+|----|----|----|
 | Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
 | Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
 | Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
@@ -1650,7 +1529,7 @@ defined XML attributes of a structure geometry are specified in
 <div id="table-103">
 
 | XML Attribute Name        | Value Type                                | Description                                                             |
-| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------- |
+|----|----|----|
 | Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                        |
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                        |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix           |
@@ -1677,7 +1556,7 @@ defined XML attributes of a support geometry are specified in
 <div id="table-104">
 
 | XML Attribute Name        | Value Type                                | Description                                                                                     |
-| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
@@ -1713,7 +1592,7 @@ defined XML attributes of a magnet geometry are specified in
 <div id="table-105">
 
 | XML Attribute Name        | Value Type                                | Description                                                                                     |
-| ------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
@@ -1742,7 +1621,7 @@ DMX mode are specified in [table 44](#user-content-table-44 ).
 <div id="table-44">
 
 | XML Attribute Name | Value Type                        | Description                                                                                   |
-| ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the DMX mode                                                               |
 | Description        | [String](#user-content-attrtype-string ) | Description of the DMX mode                                                               |
 | Geometry           | [Name](#user-content-attrtype-name ) | Name of the first geometry in the device; Only top level geometries are allowed to be linked. |
@@ -1756,7 +1635,7 @@ DMX mode children are specified in [table 45](#user-content-table-45 ).
 <div id="table-45">
 
 | XML node                                       | Mandatory | Description                                      |
-| ---------------------------------------------- | --------- | ------------------------------------------------ |
+|----|----|----|
 | [DMXChannels](#user-content-dmx-channel-collect ) | Yes       | Description of all DMX channels used in the mode |
 | [Relations](#user-content-relation-collect )      | No        | Description of relations between channels        |
 | [FTMacros](#user-content-macro-collect )      | No        | Is used to describe macros of the manufacturer.  |
@@ -1783,7 +1662,7 @@ in [table 46](#user-content-table-46 ).
 <div id="table-46">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                    |
-| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | DMXBreak           | [Int](#user-content-attrtype-int )           | Number of the DMXBreak; Default value: 1; Special value: “Overwrite” – means that this number will be overwritten by Geometry Reference; Size: 4 bytes                                                         |
 | Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Separator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
 | InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel. Default value is the first channel function of the first logical function of this DMX channel.                                                                                                                            |
@@ -1817,7 +1696,7 @@ logical channel are specified in [table 47](#user-content-table-47 ).
 <div id="table-47">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                                                                  |
-| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Attribute          | [Node](#user-content-attrtype-node )   | Link to the attribute; The starting point is the Attribute Collect (see [Annex A](#user-content-annex-a-normative-attribute-definitions)).                                                              |
 | Snap               | [Enum](#user-content-attrtype-enum )   | If snap is enabled, the logical channel will not fade between values. Instead, it will jump directly to the new value.; Value: “Yes”, “No”, “On”, “Off”. Default value: “No”                 |
 | Master             | [Enum](#user-content-attrtype-enum )   | Defines if all the subordinate channel functions react to a Group Control defined by the control system. Values: “None”, “Grand”, “Group”; Default value: “None”.                            |
@@ -1841,7 +1720,7 @@ currently defined XML attributes of channel function are specified in
 <div id="table-48">
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                   |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique name; Default value: Name of attribute and number of channel function.                                                                                 |
 | Attribute          | [Node](#user-content-attrtype-node )         | Link to attribute; Starting point is the attributes node. Default value: “NoFeature”.                                                                         |
 | OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                             |
@@ -1895,7 +1774,7 @@ are specified in [table 49](#user-content-table-49 ).
 <div id="table-49">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The name of the channel set. Default: Empty                                                                                                                                             |
 | DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel set – 1 or the maximum value of the current channel function; Default value: 0/1                      |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value. Default value is the PhysicalFrom from the parent channel function.                                                                                               |
@@ -1917,7 +1796,7 @@ are specified in [table TODO](#user-content-table-TODO ).
 <div id="table-TODO">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
-| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The name of the sub channel set. Default: Empty                                                                                                                                                                                                              |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                         |
 | PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                           |
@@ -1947,7 +1826,7 @@ XML attributes of the relations are specified in [table
 <div id="table-50">
 
 | XML Attribute Name | Value Type                               | Description                                                      |
-| ------------------ | ---------------------------------------- | ---------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the relation                                  |
 | Master             | [Node](#user-content-attrtype-node )     | Link to the master DMX channel; Starting point: DMX mode         |
 | Follower           | [Node](#user-content-attrtype-node )     | Link to the following channel function; Starting point: DMX mode |
@@ -2023,7 +1902,7 @@ defined XML attributes of the macro are specified in [table
 <div id="table-51">
 
 | XML Attribute Name | Value Type                        | Description                   |
-| ------------------ | --------------------------------- | ----------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the macro. |
 | ChannelFunction    | [Node](#user-content-attrtype-node ) | Link to channel function; Starting point [DMX Mode](#user-content-dmx-mode) |
 
@@ -2036,7 +1915,7 @@ Macro children are specified in [table 52](#user-content-table-52 )
 <div id="table-52">
 
 | XML node                          | Mandatory | Description                          |
-| --------------------------------- | --------- | ------------------------------------ |
+|----|----|----|
 | [MacroDMX](#user-content-macro-dmx ) | No        | This section defines a DMX sequence. |
 
 #### Table 52. *Macro Children*
@@ -2058,7 +1937,7 @@ defined XML attributes of the macro DMX step are specified in [table
 <div id="table-53">
 
 | XML Attribute Name | Value Type                          | Description                                          |
-| ------------------ | ----------------------------------- | ---------------------------------------------------- |
+|----|----|----|
 | Duration           | [Float](#user-content-attrtype-float ) | Duration of a step; Default value: 1; Unit: seconds. |
 
 #### Table 53. *Macro DMX Step Attributes*
@@ -2077,7 +1956,7 @@ are specified in [table 54](#user-content-table-54 ).
 <div id="table-54">
 
 | XML Attribute Name | Value Type                                | Description                                                                                  |
-| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [DMXValue](#user-content-attrtype-dmxvalue ) | Value of the DMX channel                                                                     |
 | DMXChannel         | [Node](#user-content-attrtype-node )         | Link to a DMX channel. Starting node [DMX Channel collect](#user-content-dmx-channel-collect ). |
 
@@ -2105,7 +1984,7 @@ are specified in [table 55](#user-content-table-55 ).
 <div id="table-55">
 
 | XML Attribute Name | Value Type                            | Description                                                                          |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------ |
+|----|----|----|
 | Text               | [String](#user-content-attrtype-string ) | User-defined text for this revision; Default value: empty                            |
 | Date               | [Date](#user-content-attrtype-date )     | Revision date and time                                                               |
 | UserID             | [Uint](#user-content-attrtype-uint )     | UserID of the user that has uploaded the GDTF file to the database; Default value: 0 |
@@ -2140,7 +2019,7 @@ protocol collect currently does not have any XML attributes (XML node
 <div id="table-56">
 
 | XML node                                                   | Mandatory | Description                            |
-| ---------------------------------------------------------- | --------- | -------------------------------------- |
+|----|----|----|
 | [RDM](#user-content-rdm-section )                             | No        | Describes RDM information              |
 | [Art-Net](#user-content-art-net-section )                     | No        | Describes Art-Net information          |
 | [sACN](#user-content-streaming-acn-section )                  | No        | Describes sACN information             |
@@ -2162,7 +2041,7 @@ attributes of RDM are specified in [table 57](#user-content-table-57 ).
 <div id="table-57">
 
 | XML Attribute Name | Value Type                      | Description            |
-| ------------------ | ------------------------------- | ---------------------- |
+|----|----|----|
 | ManufacturerID     | [Hex](#user-content-attrtype-hex ) | Manufacturer ESTA ID   |
 | DeviceModelID      | [Hex](#user-content-attrtype-hex ) | Unique device model ID |
 
@@ -2181,7 +2060,7 @@ The currently defined XML attributes are specified in [table
 <div id="table-58">
 
 | XML Attribute Name | Value Type                      | Description         |
-| ------------------ | ------------------------------- | ------------------- |
+|----|----|----|
 | Value              | [Hex](#user-content-attrtype-hex ) | Software version ID |
 
 #### Table 58. *SoftwareVersionID*
@@ -2199,7 +2078,7 @@ To define the supported software versions add an XML node
 <div id="table-59">
 
 | XML Attribute Name | Value Type                        | Description                                                       |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Hex](#user-content-attrtype-hex )   | Hex Value of the DMXPersonality                                   |
 | DMXMode            | [Name](#user-content-attrtype-name ) | Link to the DMX Mode that can be used with this software version. |
 
@@ -2218,7 +2097,7 @@ To define a custom mapping for Art-Net values and DMX Stream values you can add 
 <div id="table-59">
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
-| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+|----|----|----|
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
@@ -2233,7 +2112,7 @@ To define a custom mapping for Streaming ACN values and DMX Stream values you ca
 <div id="table-59">
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
-| ------------------- | ------------------------------------- | ----------------------------------------------------------------- |
+|----|----|----|
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
@@ -2269,7 +2148,7 @@ introduced as well.
 <div id="table-a1">
 
 | Description                      | Attribute                                                                                                                                                                                                                                                                                                 
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+|----------------------------------|-----------------------------| 
 | Dimmer                           | Controls the intensity of a fixture.                                                                                                                                                                                                                                                                      |
 | Pan                              | Controls the fixture's sideward movement (horizontal axis).                                                                                                                                                                                                                                               |
 | Tilt                             | Controls the fixture's upward and the downward movement (vertical axis).                                                                                                                                                                                                                                  |
