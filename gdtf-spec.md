@@ -866,8 +866,8 @@ defined XML attributes of the connector are specified in [table
 |----|----|----|
 | Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector. Now: Geometry Type WiringObject, XML Attribute: Name                                                                                                                         |
 | Type               | [Name](#user-content-attrtype-name )   | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). Now: Geometry Type WiringObject, XML Attribute: ConnectorType.                                                        |
-| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.                                                                                        |
-| Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. |
+| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.  Obsolete now.                                                                                       |
+| Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. Obsolete now.  |
 | Length             | [Float](#user-content-attrtype-float ) | Defines the length of the connector's wire in meters. "0" means that there is no cable and the connector is build into the housing. Default value "0".  Obsolete now. |
 
 #### Table 23. *Connector Attributes*
