@@ -873,8 +873,7 @@ Output(x) = CFC3 * (x - DMXPercent)³ + CFC2 * (x - DMXPercent)² + CFC1 * (x - 
 
 Here is an example where the output follows a function f for 75% of the DMX Range and another function g for the last 25%. The Point attributes are given to illustrate how they are defined.
 
-![DMXProfile example](media/DMXProfile.png
-"DMXProfile example")
+![DMXProfile example](media/DMXProfile.png "DMXProfile example")
 
 *Figure TODO. DMXProfile example*
 
