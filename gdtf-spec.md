@@ -1,57 +1,64 @@
-GDTF Version 1.1 Draft 3
+GDTF Version 1.2 Draft 1
 
 # Introduction
 
-Nowadays lighting fixtures (luminaires and other controllable devices)
-have become more and more complex. Additionally, the development of
-these devices has become faster than ever. New devices are designed with
-very complex structures and multiple instances, they have more complex
-color-mixing systems and mode dependencies. To give the user access to
-the enormous flexibility of the existing devices a way to provide the
-accurate Fixture Type data is needed to control and pre-visualize the
-particular devices as good as possible and as quickly as needed. GDTF is
-that measure. There are many different lighting consoles and software
-manufacturers on the market and all of them are using different ways and
-different file formats to get the fixture control information into their
-systems. As the development of new high-end fixtures takes place at an
-amazing speed, this creates a \`lack\` of available control data on the
-side of the console and pre-visualization software manufacturers. Also,
-fixture manufacturers are often approached by their clients directly to
-support them with accurate fixture types. As there are so many different
-consoles and visualizers on the market this process requires vast
+In the lighting and entertainment industry, lighting fixtures
+(luminaires and other controllable devices) have become more and more
+complex, and the development of these devices happens faster than ever.
+New devices are designed with very involved structures; they have
+numerous complex color-mixing systems and mode dependencies. To give the
+user access to the enormous flexibility of existing devices, a method of
+providing accurate fixture type data, and controlling and
+pre-visualizing devices quickly and precisely as possible, is needed.
+The "General Device Type Format" (GDTF) is that method.
+
+There are many different lighting consoles and software manufacturers on
+the market, and all of them use different file formats and methods of
+getting the fixture control information into their systems. The
+development of new high-end fixtures at an amazing rate creates a lack
+of available control data on the side of the console and
+pre-visualization software manufacturers. Also, fixture manufacturers
+are often approached directly by their clients with requests to support
+them with accurate fixture types. As there are so many different
+consoles and visualizers on the market, this process requires vast
 knowledge of many different systems. Fixture manufacturers would need to
 understand how every console or visualizer works, and how to provide the
-required data. Moreover a way of format description is needed that not
-only allows to provide all of the required control information, but also
-structures it already in a hierarchical way that follows the structure
-of the device to be described. The lighting designer who would like to
-use these devices has to deal with such obstacles. They often receive
-the device control data of a specific new fixture later than expected.
-Also, the data may be incomplete, because it was not created with the
-latest information needed from the manufacturer of the fixture. This
-very clearly demonstrates that our industry is missing a standardized
-way of defining the description of intelligent and complex devices. This
-document defines a data format. After the DIN SPEC has been published,
-the format will continue to be developed further, but it is important to
-make an initial version publicly available. Topics for which no
-specifications can be made at this time, but for which it is foreseeable
-that this will be necessary, are therefore already specified in this DIN
-SPEC, but with the note that no specifications can be made at this time.
+required data. A format description is needed that not only provides all
+of the required control information, but also structures it in a
+hierarchical way matching that of the described device.
+
+The lighting designer who would like to use these devices has to deal
+with such obstacles. Designers often receive the device control data of
+a specific new fixture later than expected. Also, the data may be
+incomplete, because it was not created with the latest information from
+the fixture manufacturer.
+
+These issues demonstrate that our industry needs a standardized way of
+defining the description of intelligent and complex devices. This
+document defines such a data format. After the DIN SPEC has been
+published, the format will continue to be developed further, but it is
+important to make an initial version publicly available. Topics for
+which no specifications can be made at this time, but which will soon
+become necessary, are therefore already included in this DIN SPEC, but
+with a note that no specifications can be made now.
+
+Scope
+=====
 
 # Scope
 
-This Document specifies the "General Device Type Format" (GDTF). This
-document provides a unified way of listing and describing the
-hierarchical and logical structure and controls of any type of
-controllable device (e.g. luminaires, fog machines, etc.) in the
-lighting and entertainment industry. It will be used as a foundation for
-the exchange of device data between lighting consoles, CAD and
-3D-pre-visualization applications. The purpose of an existing GDTF-file
-is to reflect the real-world physical components of the devices and to
-provide control based on this information. It contains and is derived
-from the 3D geometry (real world or virtual) of the device. This
-document is only applicable for lighting systems and equipment used in
-the entertainment industry.
+This document specifies the "General Device Type Format" (GDTF), a
+unified way of listing and describing the hierarchical and logical
+structure and controls of any type of controllable device
+(e.g. luminaires, fog machines, etc.) in the lighting and entertainment
+industry. It will be used as a foundation for the exchange of device
+data between lighting consoles, CAD and 3D-pre-visualization
+applications. The purpose of an existing GDTF file is to reflect the
+real-world physical components of the devices and to provide control
+based on this information. It contains and is derived from the 3D
+geometry (real world or virtual) of the device. This document is only
+applicable for lighting systems and equipment used in the entertainment
+industry. 	
 
 # Normative references
 
@@ -70,6 +77,9 @@ Photography and graphic technology - Extended colour encodings for
 digital image storage, manipulation and interchange - Part 2: Reference
 output medium metric RGB colour image encoding (ROMM RGB)
 
+OpenSoundControl http://opensoundcontrol.org/index.html
+
+
 # Terms and definitions
 
 For the purposes of this document, the following terms and definitions
@@ -82,13 +92,13 @@ standardization at the following addresses:
 
 ## GDTF
 
-descriptive name of the specification and the acronym for General Device
+Descriptive name of the specification and the acronym for General Device
 Type Format.
 
 ## Fixture Type Attribute
 
-singular mutual exclusive control function. Note 1 to entry: Definitions
-of common attributes can be found in Annex A.
+Singular mutually exclusive control function. Note 1 to entry:
+Definitions of common attributes can be found in Annex A.
 
 ## Activation Group
 
@@ -98,26 +108,30 @@ gain control over Position.
 
 ## Feature
 
-groups the Fixture Type Attributes into a structured way for easier
+Groups the Fixture Type Attributes into a structured way for easier
 access and search.
 
 ## Feature Groups
 
-groups the Fixture Type Attributes into a structured way for easier
+Groups the Fixture Type Attributes into a structured way for easier
 access and finding.
 
 ## DMXBreak
 
-term used when a fixture needs more than one DMX start address.
+Term used when a fixture needs more than one DMX start address.
 
 ## File Format Definition
 
-To describe the device type, an uncompressed zip file with the extension
+To describe the device type, a zip file with the extension
 "\*.gdtf" is used. The archive shall contain a description XML file and
 resource files. Some of the resource files are located in a folder
 structure. There are two folders defined: "./wheels" and "./models". The
-folder "./models" has two subfolders for a better structural overview
-called "./models/3ds" and "./models/svg". The description.xml file
+folder "./models" has subfolders for a better structural overview:
+- ./models/3ds
+- ./models/gltf
+- ./models/svg
+
+The description.xml file
 contains the description of the device type and all DMX modes as well as
 all firmware revisions of the device.
 
@@ -129,6 +143,16 @@ all firmware revisions of the device.
 ./wheels/gobo2.png
 ./models/3ds/base.3ds
 ./models/3ds/yoke.3ds
+./models/gltf/base.glb
+./models/gltf/yoke.glb
+./models/3ds_low/base.3ds
+./models/3ds_low/yoke.3ds
+./models/gltf_low/base.glb
+./models/gltf_low/yoke.glb
+./models/gltf_high/base.glb
+./models/gltf_high/yoke.glb
+./models/3ds_high/base.3ds
+./models/3ds_high/yoke.3ds
 ./models/svg/base.svg
 ./models/svg/yoke.svg
 ```
@@ -151,38 +175,39 @@ specified in [Table 1](#user-content-table-1 ).
 
 ##### Table 1 — *XML Attribute Value Types*
 
- Value Type            | Format                | Description           
------------------------|-----------------------|-----------------------
-Uint<div id="attrtype-uint" /> | Integer               | Unsigned integer
-Int<div id="attrtype-int" />  | Integer               | Signed integer
-Hex<div id="attrtype-hex" />  | Integer               | Number in hexadecimal  notation; Default value: 0
-Float<div id="user-content-attrtype-float" /> | float                 | Floating point numeric; Separator: "."
-String<div id="attrtype-string" />                 | Literal               | Text
-Name<div id="attrtype-name" />                 | restricted Literal    | Unique object names; The allowed characters are listed in [AnnexC](#user-content-table-c1) Default value: object type with an index in parent.
-Date<div id="attrtype-date" /> yyyy-mm-ddThh:mm:ss   |  Date and time corresponding to UTC +00:00 (Coordinated Universal Time): yyyy – year, mm – month, dd – day, hh – hours (24 format), mm – minutes, ss – seconds. Example: “2016-06-21T11:22:48” 
-Node<div id="attrtype-node" />                   | Name.Name.Name...     | Link to an element: “Name” is the value of the attribute “Name” of a defined XML node. The starting point defines each attribute separately. 
-ColorCIE<div id="attrtype-colorcie" />             | floatx, floaty,floatY       | CIE color representation xyY 1931
-Matrix<div id="attrtype-matrix" />                  |  {float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} |  The transformation matrix consists 4 x 4 floats. Stored in a row-major order. For example, each row of the matrix is stored as a 4- component vector. The mathematical definition of the matrix is in a column-major order. For example, the matrix rotation is stored in the first three columns, and the translation is stored in the 4th column. The metric system consists of the Right- handed Cartesian Coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from bottom (-Z) to top (+Z). 0,0,0 – center base. 
-Rotation<div id="attrtype-rotation"/>| {float, float, float}<br/>{float, float, float} <br/>{float, float, float} | Rotation matrix, consist of 3*3 floats. Stored as row-major matrix, i.e. each row of the matrix is stored as a 3-component vector. Mathematical definition of the matrix is column-major, i.e. the matrix rotation is stored in the three columns. Metric system, right-handed Cartesian coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from the bottom (-Z) to the top (+Z). 
-Enum<div id="attrtype-enum"/>                     | Literal               | Possible values are predefined.
-DMXAddress<div id="attrtype-dmxaddress"/>|Int, Alternative format: Universe.Address | Absolute DMX address (size 4 bytes); Alternative format: Universe – integer universe number, starting with 1; Address: address within universe from 1 to 512. Format: integer 
-DMXValue<div id="attrtype-dmxvalue"/>| Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. 
-GUID<div id="attrtype-guid"/> | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. 
-Resource<div id="attrtype-resource"/> | String|File name of the resource file without extension and without subfolder. 
-Pixel<div id="attrtype-pixel"/> | Pixel| 	Integer value represeting one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner. 
+| Value Type                            | Format                | Description           |
+|----|----|----|
+|Uint<a id="attrtype-uint" />                       | Integer               | Unsigned integer|
+|Int<a id="attrtype-int" />                         | Integer               | Signed integer|
+|Hex<a id="attrtype-hex" />                         | Integer               | Number in hexadecimal  notation; Default value: 0|
+|Float<a id="user-content-attrtype-float" />        | float                 | Floating point numeric; Separator: "."|
+|String<a id="attrtype-string" />                   | Literal               | Text|
+|Name<a id="attrtype-name" />                       | restricted Literal    | Unique object names; The allowed characters are listed in [AnnexC](#user-content-table-c1) Default value: object type with an index in parent.|
+|Date<a id="attrtype-date" />                       | yyyy-mm-ddThh:mm:ss   |  Date and time corresponding to UTC +00:00 (Coordinated Universal Time): yyyy – year, mm – month, dd – day, hh – hours (24 format), mm – minutes, ss – seconds. Example: “2016-06-21T11:22:48” |
+|Node<a id="attrtype-node" />                       | Name.Name.Name...     | Link to an element: “Name” is the value of the attribute “Name” of a defined XML node. The starting point defines each attribute separately. |
+|ColorCIE<a id="attrtype-colorcie" />               | floatx, floaty,floatY       | CIE color representation xyY 1931|
+|Vector3<a id="attrtype-vector3" />                 |  {float,float,float} | Vector with 3 float components|
+|Matrix<a id="attrtype-matrix" />                   |  {float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} <br/>{float,float,float,float} |  The transformation matrix consists 4 x 4 floats. Stored in a row-major order. For example, each row of the matrix is stored as a 4- component vector. The mathematical definition of the matrix is in a column-major order. For example, the matrix rotation is stored in the first three columns, and the translation is stored in the 4th column. The metric system consists of the Right- handed Cartesian Coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from bottom (-Z) to top (+Z). 0,0,0 – center base. |
+|Rotation<a id="attrtype-rotation"/>                | {float, float, float}<br/>{float, float, float} <br/>{float, float, float} | Rotation matrix, consist of 3\*3 floats. Stored as row-major matrix, i.e. each row of the matrix is stored as a 3-component vector. Mathematical definition of the matrix is column-major, i.e. the matrix rotation is stored in the three columns. Metric system, right-handed Cartesian coordinates XYZ:<br/>X – from left (-X) to right (+X),<br/>Y – from the outside of the monitor (-Y) to the inside of the monitor (+Y),<br/>Z – from the bottom (-Z) to the top (+Z). |
+|Enum<a id="attrtype-enum"/>                        | Literal               | Possible values are predefined.|
+|DMXAddress<a id="attrtype-dmxaddress"/>            |Int, Alternative format: Universe.Address | Absolute DMX address (size 4 bytes); Alternative format: Universe – integer universe number, starting with 1; Address: address within universe from 1 to 512. Format: integer |
+|DMXValue<a id="attrtype-dmxvalue"/>                | Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. |
+|GUID<a id="attrtype-guid"/>                        | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. |
+|Resource<a id="attrtype-resource"/>                | String|File name of the resource file without extension and without subfolder. |
+|Pixel<a id="attrtype-pixel"/>                      | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner.| 
 
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
 The second XML node is the GDTF node. The attribute of this node is the
-DataVersion: `<GDTF DataVersion="1.1">`
+DataVersion: `<GDTF DataVersion="1.2">`
 
-The example above shows the XML node for GDTF version 1.1.
+The example above shows the XML node for GDTF version 1.2.
 
 <div id="table-2">
 
 | XML Attribute Name | Value Type                             | Description                                                                                                                                                 |
-| ------------------ | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| DataVersion        | Uint.Unit<div id="attrtype-uint"/> | The DataVersion attribute defines the minimal version of compatibility.The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
+|----|----|----|
+| DataVersion        | [UInt.UInt](#user-content-attrtype-uint )| The DataVersion attribute defines the minimal version of compatibility.The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
 
 #### Table 2. *GDTF Node Attributes*
 
@@ -194,79 +219,29 @@ The FixtureType node is the starting point of the description of the
 fixture type within the XML file. The defined Fixture Type Node
 attributes of the fixture type are specified in [table 2](#user-content-table-2 ).
 
+
 <div id="table-3">
+#### Table 3. *Fixture Type Node Attributes*
 
-<table>
-<caption>Table 3. <em>Fixture Type Node Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>Name of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>ShortName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Shortened name of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>LongName</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Detailed name of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>Manufacturer</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Manufacturer of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Description</p></td>
-<td><p><a href="#user-content-attrtype-string" title=>String</a></p></td>
-<td><p>Description of the fixture type.</p></td>
-</tr>
-<tr class="even">
-<td><p>FixtureTypeID</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>Unique number of the fixture type.</p></td>
-</tr>
-<tr class="odd">
-<td><p>Thumbnail</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension containing description of the thumbnail. Use the following as a resource file:</p>
-<ul>
-<li>png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024;</li>
-<li>svg file to provide the vector graphic.</li>
-</ul>
-<p>These resource files are located in the root directory of the zip file. Default value: empty.</p></td>
-</tr>
-<tr class="even">
-<td><p>RefFT</p></td>
-<td><p><a href="#user-content-attrtype-guid" title=>GUID</a></p></td>
-<td><p>GUID of the referenced fixture type</p></td>
-</tr>
-<tr class="odd">
-<td><p>CanHaveChildren</p></td>
-<td><p><a href="#user-content-attrtype-enum" title=>Enum</a></p></td>
-<td><p>Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”</p></td>
-</tr>
-</tbody>
-</table>
+| XML Attribute Name | Value Type | Description  |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )       | Name of the fixture type. As it is based on Name, it is safe for parsing.                                                                                                                                                                                                                                                    |
+| ShortName          | [String](#user-content-attrtype-string )     | Shortened name of the fixture type. Non detailed version or an abbreviation. Can use any characters or symbols.                                                                                                                                                                                                              |
+| LongName           | [String](#user-content-attrtype-string )     | Detailed, complete name of the fixture type, can include any characters or extra symbols.                                                                                                                                                                                                                                    |
+| Manufacturer       | [String](#user-content-attrtype-string )     | Manufacturer of the fixture type.                                                                                                                                                                                                                                                                                            |
+| Description        | [String](#user-content-attrtype-string )     | Description of the fixture type.                                                                                                                                                                                                                                                                                             |
+| FixtureTypeID      | [GUID](#user-content-attrtype-guid )        | Unique number of the fixture type.                                                                                                                                                                                                                                                                                           |
+| Thumbnail          | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension containing description of the thumbnail. Use the following as a resource file: <br />- png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024 <br />- svg file to provide the vector graphic.  <br />- These resource files are located in the root directory of the zip file.  |
+| RefFT              | [GUID](#user-content-attrtype-guid )       | Optional. GUID of the referenced fixture type.                                                                                                                                                                                                                                                                               |
+| CanHaveChildren    | [Enum](#user-content-attrtype-enum )       | Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”                                                                                                                                                                                                                  |
 
-</div>
 
 Fixture type node children are specified in [table 4](#user-content-table-4 ).
 
 <div id="table-4">
 
 | Child Node                                                | Mandatory | Description                                                                                 |
-| --------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------- |
+|----|----|----|
 | [AttributeDefinitions](#user-content-attribute-definitions ) | Yes       | Defines all Fixture Type Attributes that are used in the fixture type.                      |
 | [Wheels](#user-content-wheel-collect )                       | No        | Defines the physical or virtual color wheels, gobo wheels, media server content and others. |
 | [PhysicalDescriptions](#user-content-physical-descriptions ) | No        | Contains additional physical descriptions.                                                  |
@@ -302,8 +277,8 @@ are specified in [table 5](#user-content-table-5 ).
 
 <div id="table-5">
 
-| XML node                                         | Mandatory | Description                                                                                                                             |
-| ------------------------------------------------ | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| XML node     | Mandatory | Description     |
+|----|----|----|
 | [ActivationGroups](#user-content-activation-group) | No        | Defines which attributes are to be activated together. For example, Pan and Tilt are in the same activation group.                      |
 | [FeatureGroups](#user-content-feature-group)       | Yes       | Describes the logical grouping of attributes. For example, Gobo 1 and Gobo 2 are grouped in the feature Gobo of the feature group Gobo. |
 | [Attributes](#user-content-attribute)              | Yes       | List of Fixture Type Attributes that are used. Predefindes fixtury type attributes can be found in Annex A.                             |
@@ -333,7 +308,7 @@ group are specified in [table 6](#user-content-table-6 ).
 <div id="table-6">
 
 | XML Attribute Name | Value Type                        | Description                              |
-| ------------------ | --------------------------------- | ---------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the activation group. |
 
 #### Table 6. *Activation Group Attributes*
@@ -363,7 +338,7 @@ currently defined XML attributes of the feature group are specified in
 <div id="table-7">
 
 | XML Attribute Name | Value Type                            | Description                           |
-| ------------------ | ------------------------------------- | ------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the feature group. |
 | Pretty             | [String](#user-content-attrtype-string ) | The pretty name of the feature group. |
 
@@ -383,7 +358,7 @@ defined XML attributes of the feature are specified in [table
 <div id="table-8">
 
 | XML Attribute Name | Value Type                        | Description                     |
-| ------------------ | --------------------------------- | ------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the feature. |
 
 #### Table 8. *Feature Attributes*
@@ -408,24 +383,42 @@ in [table 9](#user-content-table-9 ).
 
 <div id="table-9">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| XML Attribute Name | Value Type | Description |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The unique name of the attribute.                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Pretty             | [String](#user-content-attrtype-string )     | The pretty name of the attribute .                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ActivationGroup    | [Node](#user-content-attrtype-node )         | Optional link to the activation group. The starting point is the [activation groups](#user-content-activation-groups ) node.                                                                                                                                                                                                                                                                                                            |
 | Feature            | [Node](#user-content-attrtype-node )         | Link to the corresponding feature. The starting point is the [feature groups](#user-content-feature-groups ) node.                                                                                                                                                                                                                                                                                                                      |
 | MainAttribute      | [Node](#user-content-attrtype-node )         | Optional link to the main attribute. The starting point is the [attribute](#user-content-attribute ) node.                                                                                                                                                                                                                                                                                                                              |
 | PhysicalUnit       | [Enum](#user-content-attrtype-enum )         | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
-| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional: Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
+| Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. Defines the color for the attribute.                                                                                                                                                                                                                                                                                                                                                                                       |
 |                    |                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 #### Table 9. *XML Attributes of the Attribute*
-Node*
 
 </div>
 
-The attribute Node does not have any children.
+As children the attributes node has a list of a [subphysical units](#user-content-subphysical-unit ).
 
+##### Subphysical Unit
+
+This section defines the Attribute Subphysical Unit (XML node `<SubPhysicalUnit>`).
+The currently defined XML attributes of the subphysical unit are specified in [table TODO(#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                             |
+|----|----|----|
+| Type               | [Enum](#user-content-attrtype-enum )      | The currently defined values are: "PlacementOffset", "Amplitude", "AmplitudeMin", "AmplitudeMax", "Duration", "DutyCycle",  "TimeOffset", "MinimumOpening", "Value", "RatioHorizontal", "RatioVertical".  |
+| PhysicalUnit       | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “None”, “Percent”, “Length” (m), “Mass” (kg), “Time” (s), “Temperature” (K), “LuminousIntensity”(cd), “Angle” (degree), “Force” (N), “Frequency” (Hz), “Current” (A), “Voltage” (V), “Power” (W), “Energy” (J), “Area” (m2), “Volume” (m3), “Speed” (m/s), “Acceleration” (m/s2), “AngularSpeed” (degree/s), “AngularAccc” (degree/s2), “WaveLength” (nm), “ColorComponent”. Default: “None”. |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )    | The default physical from of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO   |
+| PhysicalTo         | [Float](#user-content-attrtype-float )    | The default physical to of the subphysical unit; Unit: as defined in PhysicalUnit; Default value: TODO     |
+
+#### Table TODO. *XML Attributes of the Subphysical Unit*
+
+</div>
+
+The subphysical unit does not have any children.
 
 ## Wheel Collect
 
@@ -448,62 +441,34 @@ in [table 10](#user-content-table-10 ).
 <div id="table-10">
 
 | XML Attribute Name | Value Type                        | Description                  |
-| ------------------ | --------------------------------- | ---------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the wheel |
 
 #### Table 10. *Wheel Attributes*
 
 </div>
 
-As children, Wheel have a list of a [ wheel
-slot](#user-content-wheel-slot ).
+As children, Wheel has a list of [wheel
+slots](#user-content-wheel-slot ).
 
 #### Wheel Slot
 
-The wheel slot represents the slot on the wheel (XML node `<Slot>`). The
+The wheel slot represents a slot on the wheel (XML node `<Slot>`). The
 currently defined XML attributes of the wheel slot are specified in
 [table 11](#user-content-table-11 ).
 
 <div id="table-11">
 
-<table>
-<caption>Table 11. <em>Wheel Slot Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>The unique name of the wheel slot</p></td>
-</tr>
-<tr class="even">
-<td><p>Color</p></td>
-<td><p><a href="#user-content-attrtype-colorcie" title=>ColorCIE</a></p></td>
-<td><p>Color of the wheel slot, Default value: {0.3127, 0.3290, 100.0 } (white) For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case).</p></td>
-</tr>
-<tr class="odd">
-<td><p>Filter</p></td>
-<td><p><a href="#user-content-attrtype-node" title=>Node</a></p></td>
-<td><p>Optional link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect</p></td>
-</tr>
-<tr class="even">
-<td><p>MediaFileName</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; PNG file name without extension containing image for specific gobos etc.</p>
-<ul>
-<li>Maximum resolution of picture: 1024x1024;</li>
-<li>Recommended resolution of gobo: 256x256;</li>
-<li>Recommended resolution of animation wheel: 256x256</li>
-</ul>
-<p>These resource files are located in a folder called <code>./wheels</code> in the zip archive. Default value: empty.</p></td>
-</tr>
-</tbody>
-</table>
+#### Table 11. *Wheel Slot Attributes*
+
+| XML Attribute Name | Value Type | Description                                                                                                                                                                                                                                                                                                                       |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )        | The unique name of the wheel slot                                                                                                                                                                                                                                                                                                 |
+| Color              | [ColorCIE](#user-content-attrtype-colorcie )   | Color of the wheel slot, Default value: {0.3127, 0.3290, 100.0 } (white) For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case).                                                                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )       | Optional. Link to filter in the physical description; Do not define color if filter is used; Starting point: Filter Collect                                                                                                                                                                                                       |
+| MediaFileName | [Resource](#user-content-attrtype-resource ) | Optional. PNG file name without extension containing image for specific gobos etc. <br />- Maximum resolution of picture: 1024x1024<br />- Recommended resolution of gobo: 256x256<br />- Recommended resolution of animation wheel: 256x256<br />These resource files are located in a folder called `./wheels` in the zip archive. Default value: empty. |
+
+
 
 </div>
 
@@ -531,7 +496,7 @@ defined XML attributes of the prism facet are specified in [table
 <div id="table-12">
 
 | XML Attribute Name | Value Type                                | Description                                                           |
-| ------------------ | ----------------------------------------- | --------------------------------------------------------------------- |
+|----|----|----|
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Color of prism facet, Default value: {0.3127, 0.3290, 100.0 } (white) |
 | Rotation           | [Rotation](#user-content-attrtype-rotation ) | Specify the rotation, translation and scaling for the facet.          |
 
@@ -552,11 +517,11 @@ specified in [table 13](#user-content-table-13 ).
 <div id="table-13">
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
-| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| P1                 | [Array of Pixel](#user-content-attrtype-pixel ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| P2                 | [Array of Pixel](#user-content-attrtype-pixel ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis. |
-| P3                 | [Array of Pixel](#user-content-attrtype-pixel ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Seperator of values is ","; First Pixel is X-axis and second is Y-axis.  |
-| Radius             | [Pixel](#user-content-attrtype-pixel )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
+|----|----|----|
+| P1                 | [Array of Float](#user-content-attrtype-float ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| P2                 | [Array of Float](#user-content-attrtype-float ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis. |
+| P3                 | [Array of Float](#user-content-attrtype-float ) | Third Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
+| Radius             | [Float](#user-content-attrtype-float )          | Radius of the circle that defines the section of the animation system which will be shown in the beam                                                                                                                    |
 
 #### Table 13. *AnimationSystem Attributes*
 
@@ -579,13 +544,19 @@ in [table 14](#user-content-table-14 ).
 <div id="table-14">
 
 | XML node                               | Mandatory | Description                                                                         |
-| -------------------------------------- | --------- | ----------------------------------------------------------------------------------- |
+|----|----|----|
 | [Emitters](#user-content-emitter-collect )       | No        | Describes device emitters                                                           |
 | [Filters](#user-content-filter-collect )         | No        | Describes device filters                                                            |
-| [ColorSpace](#user-content-color-space )   | No        | Describes device color space                                                        |
+| [ColorSpace](#user-content-color-space )   | No        | Describes device default color space                                                       |
+| [AdditionalColorSpaces](#user-content-color-spaces )   | No        | Describes device color additional spaces                                                        |
+| [Gamuts](#user-content-gamuts )   | No        | Describes device gamuts                                                        |
 | [DMXProfiles](#user-content-dmx-profile-collect) | No        | Describes nonlinear correlation between DMX input and physical output of a channel. |
 | [CRIs](#user-content-color-rendering-index-collect)               | No        | Describes color rendering with IES TM-30-15 (99 color samples).                     |
+<<<<<<< HEAD
 | [Connectors](#user-content-connector-collect )   | No        | Obsolete now! See new Geometry Collect, WiringObject. Describes physical connectors of the device.       |
+=======
+| [Connectors](#user-content-connector-collect )   | No        | Obsolete now. See Geometry Collect, WiringObject. Describes physical connectors of the device.              |
+>>>>>>> 8a7840ab563416e22172428646b250deefd35258
 | [Properties](#user-content-properties-collect )   | No        | Describes physical properties of the device.                                        |
 
 #### Table 14. *Physical Description Children*
@@ -609,18 +580,18 @@ specified in [table 15](#user-content-table-15 ).
 <div id="table-15">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the emitter                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point if applicable. Omit for non-visible emitters (eg., UV). For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 | DominantWaveLength | [Float](#user-content-attrtype-float )       | Required if color is omitted, otherwise it is optional. Dominant wavelength of the LED.                                                                                                                                       |
-| DiodePart          | [String](#user-content-attrtype-string )     | Optional; Manufacturer’s part number of the diode.                                                                                                                                                                            |
+| DiodePart          | [String](#user-content-attrtype-string )     | Optional. Manufacturer’s part number of the diode.                                                                                                                                                                            |
 
 #### Table 15. *Emitter Attributes*
 
 </div>
 
-As children the Emitter Collect has a list of a
-[measurement](#user-content-measurement ).
+As children, the Emitter has a list of
+[measurements](#user-content-measurement ).
 
 ### Filter Collect
 
@@ -640,7 +611,7 @@ The currently defined XML attributes of the filter are specified in
 <div id="table-16">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique Name of the filter.                                                                                                                                                                                                                                                    |
 | Color              | [ColorCIE](#user-content-attrtype-colorcie ) | Approximate absolute color point when this filter is the only item fully inserted into the beam and the fixture is at maximum intensity. For Y give relative value compared to overall output defined in property Luminous Flux of related Beam Geometry (transmissive case). |
 
@@ -648,7 +619,7 @@ The currently defined XML attributes of the filter are specified in
 
 </div>
 
-As children the Filter Collect has a list of a
+As children the Filter has a list of
 [measurements](#user-content-measurement ).
 
 ### Measurement
@@ -661,7 +632,7 @@ the measurement are specified in [table 17](#user-content-table-17 ).
 <div id="table-17">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                                                                                                  |
-| ------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Physical           | [Float](#user-content-attrtype-float ) | For additive color mixing: uniquely given emitter intensity DMX percentage. Value range between \> 0 and \<= 100. For subtractive color mixing: uniquely given flag insertion DMX percentage. Value range between 0 and 100. |
 | LuminousIntensity  | [Float](#user-content-attrtype-float ) | Used for additive color mixing: overall candela value for the enclosed set of measurement.                                                                                                                                   |
 | Transmission       | [Float](#user-content-attrtype-float ) | Used for subtractive color mixing: total amount of lighting energy passed at this insertion percentage.                                                                                                                      |
@@ -671,7 +642,7 @@ the measurement are specified in [table 17](#user-content-table-17 ).
 
 </div>
 
-The order of the measurements corresponds to their assend physical
+The order of the measurements corresponds to their ascending physical
 values.
 
 Additional definition for additive color mixing: It is assumed that the
@@ -702,7 +673,7 @@ spacing is 1 nm. Measurement spacing should not exceed 4 nm.
 <div id="table-18">
 
 | XML Attribute Name | Value Type                          | Description                            |
-| ------------------ | ----------------------------------- | -------------------------------------- |
+|----|----|----|
 | WaveLength         | [Float](#user-content-attrtype-float ) | Center wavelength of measurement (nm). |
 | Energy             | [Float](#user-content-attrtype-float ) | Lighting energy (W/m2/nm)              |
 
@@ -712,7 +683,12 @@ spacing is 1 nm. Measurement spacing should not exceed 4 nm.
 
 The measurement point does not have any children.
 
-### Color Space
+### Color Space Collect
+
+This section defines color spaces. Currently it does not
+have any XML attributes (XML node `<AdditionalColorSpaces>`). As children, color space collect has a list of a [ColorSpace](#user-content-color-space ).
+
+#### Color Space
 
 This section defines the color space that is used for color mixing with
 indirect RGB, Hue/Sat, xyY or CMY control input. (XML node
@@ -721,13 +697,14 @@ are specified in [table 19](#user-content-table-19 ).
 
 <div id="table-19">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                  |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB" |
-| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                       |
-| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                     |
-| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                      |
-| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional; CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                       |
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                      |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )         | Unique Name of the Color Space. Default Value: "Default". Note that the name need to be unique for the default colorspace and all color spaces in the AdditionalColorSpaces node. |                                                                                                                            |
+| Mode               | [Enum](#user-content-attrtype-enum )         | Definition of the Color Space that used for the indirect color mixing. The defined values are "Custom", "sRGB", "ProPhoto" and "ANSI". Default Value: "sRGB"  |
+| Red                | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Red Primary; this is used only if the ColorSpace is "Custom".                                                                        |
+| Green              | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Green Primary; this is used only if the ColorSpace is "Custom".                                                                      |
+| Blue               | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the Blue Primary; this is used only if the ColorSpace is "Custom".                                                                       |
+| WhitePoint         | [ColorCIE](#user-content-attrtype-colorcie ) | Optional. CIE xyY of the White Point; this is used only if the ColorSpace is "Custom".                                                                        |
 
 #### Table 19. *Color Space Attributes*
 
@@ -739,7 +716,7 @@ specified in [table 20](#user-content-table-20 ).
 <div id="table-20">
 
 |             |                                     |                                          |                 |
-| ----------- | ----------------------------------- | ---------------------------------------- | --------------- |
+|----|----|----|----|
 | Mode        | sRGB                                | ProPhoto                                 | ANSI            |
 | Description | Adobe sRGB, HDTV IEC 61966-2-1:1999 | Kodak ProPhoto ROMM RGB ISO 22028-2:2013 | ANSI E1.54-2015 |
 | Red         | 0.6400, 0.3300, 0.2126              | 0.7347, 0.2653                           | 0.7347, 0.2653  |
@@ -753,22 +730,89 @@ specified in [table 20](#user-content-table-20 ).
 
 The color space does not have any children.
 
+### Gamut Collect
+
+This section defines gamuts. Currently it does not
+have any XML attributes (XML node `<Gamuts>`). As children, gamut collect has a list of a [Gamut](#user-content-gamut ).
+
+#### Gamut
+
+This section defines the color gamut of the fixture (XML node `<Gamut>`), which is the set of attainable colors by the fixture. The currently defined XML attributes of a gamut
+are specified in [table 111](#user-content-table-111 ).
+
+<div id="table-111">
+
+| XML Attribute Name | Value Type                                             | Description                                                 |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )                   | Unique Name of the Gamut.                                   |
+| Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
+
+#### Table 111. *Gamuts Attributes*
+
+</div>
+
+The gamut does not have any children.
+
 ### DMX Profile Collect
 
 This section defines DMX profile descriptions. Currently it does not
 have any XML attributes (XML node `<DMXProfiles>`). As children DMX
-profile collect has a list of a [DMX profiles](#user-content-dmx-profile ).
+profile collect has a list of [DMX profiles](#user-content-dmx-profile ).
 
 #### DMX Profile
 
 This section defines the DMX profile description (XML node
-`<DMXProfile>`).
+`<DMXProfile>`). The currently defined XML attributes of the color space
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                           | Description                    |
+|----|----|----|
+| Name                | [Name](#user-content-attrtype-name ) | Unique name of the DMX profile |
+
+#### Table TODO. *DMX Profile Attributes*
+
+</div>
+
+As children a DMX Profile has a list of [point](#user-content-point ).
+
+##### Point
+
+This section contains points to define the DMX profile (XML node `<Point>`). The currently defined XML attributes of a point
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name  | Value Type                             | Description                    |
+|----|----|----|
+| DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Unit: Percentage; Default value: 0 |
+| CFC0                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x⁰; Default value: 0  |
+| CFC1                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x;  Default value: 0  |
+| CFC2                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x²; Default value: 0  |
+| CFC3                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x³; Default value: 0  |
+
+#### Table TODO. *Point Attributes*
+
+</div>
+
+Find the Point with the biggest DMXPercentage below or equal x. If there is none, the output is expected to be 0.
+
+Output(x) = CFC3 * (x - DMXPercent)³ + CFC2 * (x - DMXPercent)² + CFC1 * (x - DMXPercent) + CFC0
+
+Here is an example where the output follows a function f for 75% of the DMX Range and another function g for the last 25%. The Point attributes are given to illustrate how they are defined.
+
+![DMXProfile example](media/DMXProfile.png "DMXProfile example")
+
+*Figure TODO. DMXProfile example*
+
+A Point does not have any children.
 
 ### Color Rendering Index Collect
 
 This section contains TM-30-15 Fidelity Index (Rf) for 99 color samples.
 Currently it does not have any XML attributes (XML node `<CRIs>`). As
-children CRIs has a list of CRI groups.
+children, CRIs has a list of [CRI groups](#user-content-cri-group ).
 
 ### Color Rendering Index Group
 
@@ -779,13 +823,15 @@ specified in [table 21](#user-content-table-21 ).
 <div id="table-21">
 
 | XML Attribute Name | Value Type                          | Description                                          |
-| ------------------ | ----------------------------------- | ---------------------------------------------------- |
+|----|----|----|
 | ColorTemperature   | [Float](#user-content-attrtype-float ) | Color temperature; Default value: 6000; Unit: Kelvin |
 
 
 #### Table 19. *CRI Group Attributes*
 
 </div>
+
+As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-cri ).
 
 ##### Color Rendering Index
 
@@ -796,7 +842,7 @@ are specified in [table 20](#user-content-table-20 ).
 <div id="table-22">
 
 | XML Attribute Name  | Value Type                        | Description                                                                             |
-| ------------------- | --------------------------------- | --------------------------------------------------------------------------------------- |
+|----|----|----|
 | CES                 | [Enum](#user-content-attrtype-enum ) | Color sample. The defined values are “CES01”, “CES02”, … “CES99”. Default Value “CES01" |
 | ColorRenderingIndex | [UInt](#user-content-attrtype-uint ) | The color rendering index for this sample. Size: 1 byte; Default value: 100             |
 
@@ -808,11 +854,16 @@ The color rendering index does not have any children.
 
 ### Connector Collect
 
+<<<<<<< HEAD
 This section originally defined the physical connectors but is obsolete with the DIN SPEC 15800:2021 or GDTF v1.2! From now on the physical connectors will become WiringObjects within the Geometry Collect. The old Connector description is listed below for backwards compatibility.
+=======
+This section defined the physical connectors and is kept for backwards compatibility. From DIN SPEC 15800:2021 or GDTF v1.2 onwards physical connectors shall be decribed as WiringObjects in the Geometry Collect. 
+>>>>>>> 8a7840ab563416e22172428646b250deefd35258
 It currently does not have any XML attributes (XML node `<Connectors>`). As children, the Connector Collect has a list of a [connectors](#user-content-connector ).
 
 #### Connector
 
+See Geometry Collect WriingObject. For easier transition find below the equivalent of the WiringObject.
 This section defines the connector (XML node `<Connector>`). The currently
 defined XML attributes of the connector are specified in [table
 23](#user-content-table-23 ).
@@ -820,12 +871,21 @@ defined XML attributes of the connector are specified in [table
 <div id="table-23">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                            |
+<<<<<<< HEAD
 | ------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector. This should become Geometry Type Wiring Object XML Attribute: Name. 
 | Type               | [Name](#user-content-attrtype-name )   | The type of the connector. This should become Geometry Type Wiring Object XML Attribute: ConnectorType. Find a list of predefined types in [Annex D](#user-content-table-d1 ). |
 | DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional: Defines to which DMX Break this connector belongs to. Obsolete now. |
 | Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. This should become Geometry Type Wiring Object XML Attribute: ComponentType. |
 | Length             | [Float](#user-content-attrtype-float ) | Defines the length of the connector's wire in meters. "0" means that there is no cable and the connector is build into the housing. Default value "0". Obsolete now. |
+=======
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )   | Unique Name of the connector. Now: Geometry Type WiringObject, XML Attribute: Name                                                                                                                         |
+| Type               | [Name](#user-content-attrtype-name )   | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). Now: Geometry Type WiringObject, XML Attribute: ConnectorType.                                                        |
+| DMXBreak           | [Uint](#user-content-attrtype-uint )   | Optional. Defines to which DMX Break this connector belongs to.  Obsolete now.                                                                                       |
+| Gender             | [Int](#user-content-attrtype-int )     | Connectors where the addition of the Gender value equal 0, can be connected; Default value: 0; Male Connectors are -1, Female are +1, Universal are 0. Obsolete now.  |
+| Length             | [Float](#user-content-attrtype-float ) | Defines the length of the connector's wire in meters. "0" means that there is no cable and the connector is build into the housing. Default value "0".  Obsolete now. |
+>>>>>>> 8a7840ab563416e22172428646b250deefd35258
 
 #### Table 23. *Connector Attributes*
 
@@ -843,7 +903,7 @@ are specified in [table 24](#user-content-table-24 ).
 <div id="table-24">
 
 | XML node                                                 | Amount | Description                                            |
-| -------------------------------------------------------- | ------ | ------------------------------------------------------ |
+|----|----|----|
 | [OperatingTemperature](#user-content-operatingtemperature ) | 0 or 1 | Temperature range in which the device can be operated. |
 | [Weight](#user-content-weight )                             | 0 or 1 | Weight of the device including all accessories.        |
 | [PowerConsumption](#user-content-powerconsumption )         | Any    | Power information for a given connector.               |
@@ -862,12 +922,11 @@ OperatingTemperature are specified in [table 25](#user-content-table-25 ).
 <div id="table-25">
 
 | XML Attribute Name | Value Type                          | Description                                                                 |
-| ------------------ | ----------------------------------- | --------------------------------------------------------------------------- |
+|----|----|----|
 | Low                | [Float](#user-content-attrtype-float ) | Lowest temperature the device can be operated. Unit: °C. Default value: 0   |
 | High               | [Float](#user-content-attrtype-float ) | Highest temperature the device can be operated. Unit: °C. Default value: 40 |
 
-#### Table 25. *Operating Temperature
-Attributes*
+#### Table 25. *Operating Temperature Attributes*
 
 </div>
 
@@ -882,7 +941,7 @@ specified in [table 26](#user-content-table-26 ).
 <div id="table-26">
 
 | XML Attribute Name | Value Type                          | Description                                                                      |
-| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Float](#user-content-attrtype-float ) | Weight of the device including all accessories. Unit: kilogram. Default value: 0 |
 
 #### Table 26. *Weight Attributes*
@@ -890,30 +949,6 @@ specified in [table 26](#user-content-table-26 ).
 </div>
 
 The weight currently does not have any children.
-
-#### PowerConsumption
-
-This section defines the maximum power consumption per connector (XML
-node `<PowerConsumption>`). The currently defined XML attributes of the
-PowerConsumption are specified in [table 27](#user-content-table-27 ).
-
-<div id="table-27">
-
-| XML Attribute Name | Value Type                          | Description                                                                               |
-| ------------------ | ----------------------------------- | ----------------------------------------------------------------------------------------- |
-| Value              | [Float](#user-content-attrtype-float ) | Defines the power consumption of the connector at full load. Unit: VA. Default value: 0   |
-| PowerFactor        | [Float](#user-content-attrtype-float ) | Defines the cosinus of phase of voltage relative to current. Unit: None. Default value: 1 |
-| Connector          | [Node](#user-content-attrtype-node )   | Name of the linked Connector                                                              |
-| VoltageLow         | [Float](#user-content-attrtype-float ) | Defines the lowest possible operating voltage. Unit: Volt. Default value: 90              |
-| VoltageHigh        | [Float](#user-content-attrtype-float ) | Defines the highest possible operating voltage. Unit: Volt. Default value: 240            |
-| FrequencyLow       | [Float](#user-content-attrtype-float ) | Defines the, owest possible operating frequency. Unit: Hertz. Default value: 50           |
-| FrequencyHigh      | [Float](#user-content-attrtype-float ) | Defines the highest possible operating frequency. Unit: Hertz. Default value: 60          |
-
-#### Table 27. *Power Consumption Attributes*
-
-</div>
-
-The PowerConsumption currently does not have any children.
 
 #### LegHeight
 
@@ -924,7 +959,7 @@ currently defined XML attributes of the LegHeight are specified in
 <div id="table-28">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                      |
-| ------------------ | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Float](#user-content-attrtype-float ) | Defines height of the legs - distance between the floor and the bottom base plate. Unit: meter. Default value: 0 |
 
 #### Table 28. *Leg Height Attributes*
@@ -951,61 +986,32 @@ specified in [table 29](#user-content-table-29 ).
 
 <div id="table-29">
 
-<table>
-<caption>Table 29. <em>Model Attributes</em></caption>
-<thead>
-<tr class="header">
-<th><p>XML Attribute Name</p></th>
-<th><p>Value Type</p></th>
-<th><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>Name</p></td>
-<td><p><a href="#user-content-attrtype-name" title=>Name</a></p></td>
-<td><p>The unique name of the model</p></td>
-</tr>
-<tr class="even">
-<td><p>Length</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="odd">
-<td><p>Width</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="even">
-<td><p>Height</p></td>
-<td><p><a href="#user-content-attrtype-float" title=>Float</a></p></td>
-<td><p>Unit: meter; Default value: 0</p></td>
-</tr>
-<tr class="odd">
-<td><p>PrimitiveType</p></td>
-<td><p><a href="#user-content-attrtype-enum" title=>Enum</a></p></td>
-<td><p>Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; TODO Default value: “Undefined”</p></td>
-</tr>
-<tr class="even">
-<td><p>File</p></td>
-<td><p><a href="#user-content-attrtype-resource" title=>Resource</a></p></td>
-<td><p>Optional; File name without extension and without subfolder containing description of the model. Use the following as a resource file:</p>
-<ul>
-<li>3DS file to provide 3D model.</li>
-<li>STEP file to provide 3D model as a parametric model;</li>
-<li>SVG file to provide the 2D symbol.</li>
-</ul>
-<p>It is possible to add several files with the same name but different formats. Preferable format for the 3D model is 3ds. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>.</p></td>
-</tr>
-</tbody>
-</table>
+| XML Attribute Name | Value Type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )       | The unique name of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Length             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Width              | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Height             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PrimitiveType      | [Enum](#user-content-attrtype-enum )        | Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; TODO Default value: “Undefined”                                                                                                                                                                                                                                                                                                                                                                         |
+| File               | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:<br />- 3DS or GLB to file to provide 3D model.<br />- SVG file to provide the 2D symbol.<br />It is possible to add several files with the same name but different formats. Preferable format for the 3D model is GlTF. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p> Software that is utilizing GDTF files should always be able to read both 3ds and GlTF file formats and should be able to write at least one of these formats. It is preferable that only one type of 3D model file formats is used within one GDTF file. |
+
 
 </div>
 
 The model currently does not have any children.
 
-All models of a device combined should not exceed a maximum vertices
-count of 1200.
+All models of a device combined should not exceed a maximum vertices count of 1200 for the default mesh level of detail.
+
+There are three level of details that you can define:
+
+| LOD  | Description  |  Folder 3DS / gltf |
+|---|---|---|
+| Low  | Optional; This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  | `3ds_low` / `gltf_low`  |
+| Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  | `3ds` / `gltf` |
+| High  | Optional;This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. | `3ds_high` / `gltf_high`  |
+
+Low and High meshes definitions are optional. Place the a file with the same name in the defined folder.
+
 
 The device shall be drawn in a hanging position displaying the front
 view. That results in the pan axis is Z aligned, and the tilt axis is X
@@ -1047,6 +1053,17 @@ ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
 
+### Regarding glTF Files
+
+The used glTF files should follow these requirements:
+
+ - Use the `glb` binary format
+ - Only use the 2.0 version
+ - Do not use extension
+ - Do not use animations
+ - Only use jpeg or png texture resource
+ - all vertex attributes are `GL_FLOAT`
+
 
 ## Geometry Collect
 
@@ -1058,20 +1075,25 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 
 <div id="table-30">
 
-| XML node                                                           | Amount | Description                                                             |
-| ------------------------------------------------------------------ | ------ | ----------------------------------------------------------------------- |
-| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                       |
-| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                     |
-| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                            |
-| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                             |
-| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                     |
-| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                   |
-| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                      |
-| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device. |
-| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.     |
-| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.       |
-| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.              |
-| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                              |
+| XML node                                                              | Amount | Description                                                                                    |
+|----|----|----|
+| [Geometry](#user-content-general-geometry )                           | Any    | General Geometry.                                                                              |
+| [Axis](#user-content-geometry-type-axis )                             | Any    | Geometry with axis.                                                                            |
+| [FilterBeam](#user-content-geometry-type-beam-filter )                | Any    | Geometry with a beam filter.                                                                   |
+| [FilterColor](#user-content-geometry-type-color-filter )              | Any    | Geometry with color filter.                                                                    |
+| [FilterGobo](#user-content-geometry-type-gobo-filter )                | Any    | Geometry with gobo.                                                                            |
+| [FilterShaper](#user-content-geometry-type-shaper-filter )            | Any    | Geometry with shaper.                                                                          |
+| [Beam](#user-content-geometry-type-beam )                             | Any    | Geometry that describes a light output to project.                                             |
+| [MediaServerLayer](#user-content-geometry-type-media-server-layer )   | Any    | Geometry that describes a media representation layer of a media device.                        |
+| [MediaServerCamera](#user-content-geometry-type-media-server-camera ) | Any    | Geometry that describes a camera or output layer of a media device.                            |
+| [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.                              |
+| [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.                                     |
+| [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                                                     |
+| [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes an internal wiring for power or data.                                  |
+| [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry that describes an additional item that can be used for a fixture (like a rain cover). |
+| [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes the internal framing of an object (like members).                      |
+| [Support](#user-content-geometry-type-support )                       | Any    | Geometry that describes a support like a base plate or a hoist.                                |
+| [Magnet](#user-content-geometry-type-magnet )                         | Any    | Geometry that describes a point where other geometries should be attached.                     |
 
 #### Table 30. *Geometry Children Types*
 
@@ -1090,7 +1112,7 @@ The currently defined XML attributes of the geometry are specified in
 <div id="table-31">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                             |
-| ------------------ | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry. Recommendation for conventional is “Body”. Recommendation for a geometry that is representing the base housing of a moving head is “Base”. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                        |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                           |
@@ -1111,7 +1133,7 @@ specified in [table 32](#user-content-table-32 ).
 <div id="table-32">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                   |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for an axis-geometry is “Yoke”. Recommendation for an axis-geometry representing the lamp housing of a moving head is “Head”. Note: The Head of a moving head is usually mounted to the Yoke. |
 | Model           | [Name](#user-content-attrtype-name ) | Link to the corresponding model. Matrix                                                                                                                                                                                 |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                 |
@@ -1132,7 +1154,7 @@ are specified in [table 27](#user-content-table-27 ).
 <div id="table-33">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                              |
-| ------------------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for beam filter limiting the diffusion of light is “BarnDoor”. Recommendation for beam filter adjusting the diameter of the beam is “Iris”. Note: BarnDoor and Iris are usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                                                                                         |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                            |
@@ -1154,7 +1176,7 @@ attributes of the color filter are specified in [table
 <div id="table-34">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry. Recommendation for filter of a color or mechanical color changer is “FilterColor”. Note: FilterColor is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                      |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                         |
@@ -1175,7 +1197,7 @@ the gobo filter are specified in [table 35](#user-content-table-35 ).
 <div id="table-35">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
-| ------------------ | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for filter of a gobo or mechanical gobo changer is “FilterGobo”. Note: FilterGobo is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                      |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                         |
@@ -1196,7 +1218,7 @@ of the shaper filter are specified in [table 36](#user-content-table-36 ).
 <div id="table-36">
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                 |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry; Recommendation for filter used to form the beam to a framed, triangular, or trapezoid shape, is “Shaper”. Note: Shaper is usually mounted to conventional. |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                            |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                               |
@@ -1217,7 +1239,7 @@ the Beam are specified in [table 37](#user-content-table-37 ).
 <div id="table-37">
 
 | XML Attribute Name  | Value Type                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry. Recommendation for a light source of a conventional or moving head or a projector is “Beam”. Note 1: Beam is usually mounted to Head or Body. Recommendation for a self-emitting single light source is “Pixel”. Note 2: Pixel is usually mounted to Head or Body. Recommendation for a number of Pixel that are controlled at the same time is “Array”. Note 3: Array is usually mounted to Head or Body. Recommendation for a light source of a moving mirror is “Mirror”. Note 4: Mirror is usually mounted to Yoke. |
 | Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -1230,9 +1252,10 @@ the Beam are specified in [table 37](#user-content-table-37 ).
 | ThrowRatio          | [Float](#user-content-attrtype-float )   | Throw Ratio of the lens for BeamType Rectangle; Default value: 1; Unit: None                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | RectangleRatio      | [Float](#user-content-attrtype-float )   | Ratio from Width to Height of the Rectangle Type Beam; Default value: 1.7777; Unit: None                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | BeamRadius          | [Float](#user-content-attrtype-float )   | Beam radius on starting point. Default value: 0.05; Unit: meter.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| BeamType            | [Enum](#user-content-attrtype-enum )     | Beam Type; Specified values: “Wash”, “Spot”, “None”, “Rectangle“. Default value “Wash”                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| BeamType            | [Enum](#user-content-attrtype-enum )     | Beam Type; Specified values: "Wash", "Spot", "None", "Rectangle", "PC", "Fresnel", "Glow". Default value "Wash"
+|
 | ColorRenderingIndex | [Uint](#user-content-attrtype-uint )     | The CRI according to TM-30 is a quantitative measure of the ability of the light source showing the object color naturally as it does as daylight reference. Size 1 byte. Default value 100.                                                                                                                                                                                                                                                                                                                                                             |
-
+| EmitterSpectrum     | [Node](#user-content-attrtype-node )     | Optional link to emitter in the physical description; use this to define the white light source of a subtractive color mixing system. Starting point: Emitter -Collect  ; Default spectrum is a Black-Body with the defined ColorTemperature.                                                                                                                                                                                                                                                                                                                                                                   |
 #### Table 37. *Beam Attributes*
 
 </div>
@@ -1249,13 +1272,13 @@ order to not block the rendered beam.
 
 The `<BeamType>` describes how the Beam will be rendered.
 
-“Wash” - A conical beam with soft edges.
+"Wash", "Fresnel", "PC"- A conical beam with soft edges and softened field projection.
 
-“Spot” - A conical beam with hard edges.
+"Spot" - A conical beam with hard edges.
 
-“Rectangle“ - A pyramid-shaped beam with hard edges.
+"Rectangle" - A pyramid-shaped beam with hard edges.
 
-“None” - No beam will be drawn, only the geometry will emit light
+"None", "Glow" - No beam will be drawn, only the geometry will emit light
 itself.
 
 The beam geometry emits its light into negative Z direction (and Y-up).
@@ -1270,7 +1293,7 @@ server layer are specified in [table 38](#user-content-table-38 ).
 <div id="table-38">
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                                                                  |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model that will be used to display the alignment in media server space. |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                     |
@@ -1292,7 +1315,7 @@ attributes of the media server camera are specified in [table
 <div id="table-39">
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                                                                  |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model that will be used to display the alignment in media server space. |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                     |
@@ -1317,7 +1340,7 @@ defined XML attributes of the media server master are specified in
 <div id="table-40">
 
 | XML Attribute Name | Value Type                            | Description                                                   |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                              |
 | Model              | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                              |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix |
@@ -1339,7 +1362,7 @@ defined XML attributes of the display are specified in [table
 <div id="table-41">
 
 | XML Attribute Name | Value Type                                | Description                                                                               |
-| ------------------ | ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | The unique name of the geometry.                                                          |
 | Model              | [Name](#user-content-attrtype-name )         | Link to the corresponding model.                                                          |
 | Position           | [Matrix](#user-content-attrtype-matrix )     | Relative position of geometry; Default value: Identity Matrix                             |
@@ -1352,23 +1375,67 @@ defined XML attributes of the display are specified in [table
 The display has the same children types as the geometry collect (see
 [table 30](#user-content-table-30 )).
 
+### Geometry Type Laser
+
+This type of geometry is used to describe the position of a laser's 
+light output (XML node `<Laser>`). The currently
+defined XML attributes of the display are specified in [table
+41](#user-content-table-35 ).
+
+<div id="table-41">
+
+| XML Attribute Name | Value Type     |                    |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
+| Model              | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                               |
+| Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
+| ColorType          | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
+| Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType] is "SingleWaveLength"; Unit:nm (nanometers)                                            |
+| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
+| Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitters](#user-content-emitter-collect ) node. |
+| BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: mm (millimeters)                                            |
+| BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
+| BeamDivergenceMax  | [Float](#user-content-attrtype-float)     | Maximum beam divergence; Unit: mrad  (milliradian)                                                             |
+| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
+
+#### Table TODO. *Laser Attributes*
+
+</div>
+
+The laser has the same children types as the geometry collect (see
+[table 30](#user-content-table-30 )).
+In addition, it also has a list of supported protocols (XML node `<Protocol>`) as children.
+
+#### Protocol
+
+This XML node specifies the protocol for a Laser (XML node `<Protocol>`). The currently defined XML
+attributes of the protocol are specified in [table
+43](#user-content-table-43 ).
+
+<div id="table-43">
+
+| XML Attribute Name | Value Type                                    | Description                                                                                              |
+|----|----|----|
+| Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
+
 ### Geometry Type Reference
 
 The Geometry Type Reference is used to describe multiple instances of
-the same geometry.Example: LED panel with multiple pixels. (XML node
-<GeometryReference>). The currently defined XML attributes of reference
-are specified in [table 36](#user-content-table-36 ). Note 1: Geometry
-Reference also allows easier defintion of the DMX Channels for these
-geometries.
+the same geometry. Example: LED panel with multiple pixels. (XML node ).
+The currently defined XML attributes of reference are specified in
+[table 36](#user-content-table-36). Note 1: Geometry Reference also
+allows easier definition of the DMX Channels for these geometries.
 
 <div id="table-42">
 
-| XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                                                                                |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XML Attribute Name | Value Type                            | Description    |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )     | The unique name of geometry.                                                                                                                                                                                                                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix                                                                                                                                                                                                                                              |
 | Geometry           | [Name](#user-content-attrtype-name )     | Name of the referenced geometry. Only top level geometries are allowed to be referenced.                                                                                                                                                                                                                   |
-| Model              | [Name](#user-content-attrtype-name )     | Optional; Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
+| Model              | [Name](#user-content-attrtype-name )     | Optional. Link to the corresponding model. The model only replaces the model of the parent of the referenced geometry. The models of the children of the referenced geometry are not affected. The starting point is Models Collect. If model is not set, the model is taken from the referenced geometry. |
 
 #### Table 42. *Geometry Reference Attributes*
 
@@ -1394,13 +1461,177 @@ attributes of the break are specified in [table
 <div id="table-43">
 
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
-| ------------------ | --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | DMXOffset          | [DMXAddress](#user-content-attrtype-dmxaddress ) | DMX offset; Default value:1 (Means no offset for the corresponding DMX Channel)                          |
 | DMXBreak           | [Uint](#user-content-attrtype-uint )             | Defines the unique number of the DMX Break for which the Offset is given. Size: 1 byte; Default value 1. |
 
 #### Table 43. *Break Attributes*
 
 </div>
+
+
+### Geometry Type Wiring Object
+
+This type of geometry is used to describe an electrical device that can be wired (XML node `<WiringObject>`). The currently
+defined XML attributes of a wiring object geometry are specified in [table 100](#user-content-table-100 ).
+
+<div id="table-100">
+
+| XML Attribute Name  | Value Type                                | Description                                                                                       |
+|----|----|----|
+| Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry. The name is also the name of the interface to the outside        |
+| Model               | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                  |
+| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. Custom type of connector can also be defined, for example "Loose End".|
+| Position            | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                     |
+| ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
+| SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocoll, you can add it here.        |
+| PinCount            | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.              |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for Consumers.                                          |
+| VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for Consumers.                                            |
+| VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for Consumers.                                            |
+| FrequencyRangeMax     | [Float](#user-content-attrtype-float )    | The Frequency range's maximum value. Only for Consumers.                                            |
+| FrequencyRangeMin     | [Float](#user-content-attrtype-float )    | The Frequency range's minimum value. Only for Consumers.                                            |
+| MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for Power Sources.         |
+| Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for Power Sources.                     |
+| SignalLayer         | [Float](#user-content-attrtype-integer )  | The layer of the Signal Type. In one device, all wiring geometry that use the same Signal Layers are connected. Special value 0: Connected to all geometries. |
+| CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device. Only for consumers.                                               |
+| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value. Only for fuses.                                                                   |
+| FuseRating          | [Enum](#user-content-attrtype-enum )      | Fuse Rating. Defined values are "B", "C", "D", "K", "Z".                                          |
+| Orientation         | [Enum](#user-content-attrtype-enum )      | Where the pins are placed on the object. Defined values are "Left", "Right", "Top", "Bottom".     |
+| WireGroup           | [String](#user-content-attrtype-string )  | Name of the group to which this wiring object belong.                                             |
+
+#### Table 100. *Wiring Object Attributes*
+
+</div>
+
+The wiring object has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+In addition, it also has socket patch (XML node `<SocketPatch>`) children.
+
+#### Pin Patch
+
+This XML node specifies how the different sockets of its parent wiring object are connected to the pins of other wiring objects. The currently defined XML
+attributes of a pin patch are specified in [table 101](#user-content-table-101 ).
+
+<div id="table-101">
+
+| XML Attribute Name  | Value Type                               | Description                                                                                            |
+|----|----|----|
+| ToWiringObject      | [Node](#user-content-attrtype-node )     | Link to the wiring object connected through this pin patch.                                         |
+| FromPin          | [Int](#user-content-attrtype-int )       | The pin number used by the parent wiring object to connect to the targeted wiring object "ToWiringObject". |
+| ToPin            | [Int](#user-content-attrtype-int )       | The pin number used by the targeted wiring object "ToWiringObject" to connect to the parent wiring object. |
+
+#### Table 101. *Socket Patch Attributes*
+
+</div>
+
+The pin patch doesn't have any children.
+
+### Geometry Type Inventory
+
+This type of geometry is used to describe a geometry used for the inventory (XML node `<Inventory>`). The currently
+defined XML attributes of an inventory geometry are specified in
+[table 102](#user-content-table-102 ).
+
+<div id="table-102">
+
+| XML Attribute Name  | Value Type                               | Description                                                    |
+|----|----|----|
+| Name                | [Name](#user-content-attrtype-name )     | The unique name of the geometry.                               |
+| Model               | [Name](#user-content-attrtype-name )     | Link to the corresponding model.                               |
+| Position            | [Matrix](#user-content-attrtype-matrix ) | Relative position of geometry; Default value: Identity Matrix  |
+| Count               | [Int](#user-content-attrtype-int )       | The default count for new objects.                             |
+
+#### Table 102. *Inventory Attributes*
+
+</div>
+
+The inventory geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Structure
+
+This type of geometry is used to describe a structure (XML node `<Structure>`). The currently
+defined XML attributes of a structure geometry are specified in
+[table 103](#user-content-table-103 ).
+
+<div id="table-103">
+
+| XML Attribute Name        | Value Type                                | Description                                                             |
+|----|----|----|
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                        |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                        |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix           |
+| LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                                    |
+| StructureType             | [Enum](#user-content-attrtype-enum )      | The type of structure. Defined values are "CenterLineBased", "Detail".  |
+| CrossSectionType          | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Fachwerk", "Tube".       |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for Tubes.                        |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for Tubes.          |
+| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for Trusses.                  |
+
+#### Table 103. *Structure Attributes*
+
+</div>
+
+The structure geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30)).
+
+### Geometry Type Support
+
+This type of geometry is used to describe a support (XML node `<Support>`). The currently
+defined XML attributes of a support geometry are specified in
+[table 104](#user-content-table-104 ).
+
+<div id="table-104">
+
+| XML Attribute Name        | Value Type                                | Description                                                                                     |
+|----|----|----|
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
+| SupportType               | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for Ropes.                                             |
+| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for Ropes.                                      |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode               |
+| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode               |
+| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode               |
+| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode.         |
+| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode.         |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.         |
+| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for Ground Supports.   |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for Ground Supports.  |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for Ground Supports.  |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for Ground Supports.  |
+
+#### Table 104. *Support Attributes*
+
+</div>
+
+The support geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
+
+### Geometry Type Magnet
+
+This type of geometry is used to describe a magnet, a point where other geometries should be attached (XML node `<Magnet>`). The currently
+defined XML attributes of a magnet geometry are specified in
+[table 105](#user-content-table-105 ).
+
+<div id="table-105">
+
+| XML Attribute Name        | Value Type                                | Description                                                                                     |
+|----|----|----|
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
+
+#### Table 105. *Magnet Attributes*
+
+</div>
+
+The magnet geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30 )).
 
 ## DMX Mode Collect
 
@@ -1419,8 +1650,9 @@ DMX mode are specified in [table 44](#user-content-table-44 ).
 <div id="table-44">
 
 | XML Attribute Name | Value Type                        | Description                                                                                   |
-| ------------------ | --------------------------------- | --------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the DMX mode                                                               |
+| Description        | [String](#user-content-attrtype-string ) | Description of the DMX mode                                                               |
 | Geometry           | [Name](#user-content-attrtype-name ) | Name of the first geometry in the device; Only top level geometries are allowed to be linked. |
 
 #### Table 44. *DMX Mode Attributes*
@@ -1432,7 +1664,7 @@ DMX mode children are specified in [table 45](#user-content-table-45 ).
 <div id="table-45">
 
 | XML node                                       | Mandatory | Description                                      |
-| ---------------------------------------------- | --------- | ------------------------------------------------ |
+|----|----|----|
 | [DMXChannels](#user-content-dmx-channel-collect ) | Yes       | Description of all DMX channels used in the mode |
 | [Relations](#user-content-relation-collect )      | No        | Description of relations between channels        |
 | [FTMacros](#user-content-macro-collect )      | No        | Is used to describe macros of the manufacturer.  |
@@ -1451,18 +1683,19 @@ channels](#user-content-dmx-channel ).
 ##### DMX Channel
 
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
-of a DMX channel cannot be user-defined and must consists of a geometry
-name and the attribute name of the first logical channel with seperator
-"\_". Currently defined XML attributes of the DMX channel are specified
-in [table 40](#user-content-table-40 ).
+of a DMX channel cannot be user-defined and must consist of a geometry
+name and the attribute name of the first logical channel with separator
+"\_". In one DMX Mode, this combination needs to be unique. Currently
+defined XML attributes of the DMX channel are specified in [table
+46](#user-content-table-46).
 
 <div id="table-46">
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                    |
-| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | DMXBreak           | [Int](#user-content-attrtype-int )           | Number of the DMXBreak; Default value: 1; Special value: “Overwrite” – means that this number will be overwritten by Geometry Reference; Size: 4 bytes                                                         |
-| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Seperator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
-| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel;                                                                                                                            |
+| Offset             | [Array of Int](#user-content-attrtype-int )  | Relative addresses of the current DMX channel from highest to least significant; Separator of values is ","; Special value: “None” – does not have any addresses; Default value: “None”; Size per int: 4 bytes |
+| InitialFunction    | [Node](#user-content-attrtype-node )         | Link to the channel function that will be activated by default for this DMXChannel. Default value is the first channel function of the first logical function of this DMX channel.                                                                                                                            |
 | Highlight          | [DMXValue](#user-content-attrtype-dmxvalue ) | Highlight value for current channel; Special value: “None”. Default value: “None”.                                                                                                                             |
 | Geometry           | [Name](#user-content-attrtype-name )         | Name of the geometry the current channel controls.                                                                                                                                                             |
 
@@ -1470,12 +1703,18 @@ in [table 40](#user-content-table-40 ).
 
 </div>
 
+The `Geometry` should be the place in the tree of geometries where the function
+of the DMX Channel (as defined by ChannelFunction) is located either physically
+or logically. If the DMX channel doesn't have a location, put it in the top
+level geometry of the geometry tree. Attributes follow a trickle down
+principle, so they are inherited from top down. 
+
 As children the DMX channel has a list of [logical
 channels](#user-content-logical-channel ).
 
 ###### Logical Channel
 
-The Fixture Type Attribute is assinged to a LogicalChannel and defines
+The Fixture Type Attribute is assigned to a LogicalChannel and defines
 the function of the LogicalChannel. All logical channels that are
 children of the same DMX channel are mutually exclusive. In a DMX mode,
 only one logical channel with the same attribute can reference the same
@@ -1487,7 +1726,7 @@ logical channel are specified in [table 47](#user-content-table-47 ).
 <div id="table-47">
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                                                                  |
-| ------------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Attribute          | [Node](#user-content-attrtype-node )   | Link to the attribute; The starting point is the Attribute Collect (see [Annex A](#user-content-annex-a-normative-attribute-definitions)).                                                              |
 | Snap               | [Enum](#user-content-attrtype-enum )   | If snap is enabled, the logical channel will not fade between values. Instead, it will jump directly to the new value.; Value: “Yes”, “No”, “On”, “Off”. Default value: “No”                 |
 | Master             | [Enum](#user-content-attrtype-enum )   | Defines if all the subordinate channel functions react to a Group Control defined by the control system. Values: “None”, “Grand”, “Group”; Default value: “None”.                            |
@@ -1503,37 +1742,58 @@ function](#user-content-channel-function ).
 
 ###### Channel Function
 
-The Fixture Type Attribute is assinged to a Channel Function and defines
+The Fixture Type Attribute is assigned to a Channel Function and defines
 the function of its DMX Range. (XML node `<ChannelFunction>`). The
 currently defined XML attributes of channel function are specified in
 [table 48](#user-content-table-48 ).
 
 <div id="table-48">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                   |
-| ------------------ | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| XML Attribute Name | Value Type                                   | Description                                                                                                                                                   |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique name; Default value: Name of attribute and number of channel function.                                                                                 |
 | Attribute          | [Node](#user-content-attrtype-node )         | Link to attribute; Starting point is the attributes node. Default value: “NoFeature”.                                                                         |
-| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                            |
+| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                             |
 | DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel function – 1 or the maximum value of the DMX channel. Default value: "0/1". |
 | Default            | [DMXValue](#user-content-attrtype-dmxvalue ) | Default DMX value of channel function when activated by the control system.                                                                                   |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value; Default value: 0                                                                                                                        |
 | PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value; Default value: 1                                                                                                                          |
 | RealFade           | [Float](#user-content-attrtype-float )       | Time in seconds to move from min to max of the Channel Function; Default value: 0                                                                             |
 | RealAcceleration   | [Float](#user-content-attrtype-float )       | Time in seconds to accelerate from stop to maximum velocity; Default value: 0                                                                                 |
-| Wheel              | [Node](#user-content-attrtype-node )         | Optional link to wheel; Starting point: Wheel Collect                                                                                                         |
-| Emitter            | [Node](#user-content-attrtype-node )         | Optional link to emitter in the physical description; Starting point: Emitter Collect                                                                         |
-| Filter             | [Node](#user-content-attrtype-node )         | Optional link to filter in the physical description; Starting point: Filter Collect                                                                           |
-| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode                                                                                              |
+| Wheel              | [Node](#user-content-attrtype-node )         | Optional. Link to a wheel; Starting point: Wheel Collect                                                                                                      |
+| Emitter            | [Node](#user-content-attrtype-node )         | Optional. Link to an emitter in the physical description; Starting point: Emitter Collect                                                                     |
+| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect Collect                                                                        |
+| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Physical Descriptions Collect                                                                        |
+| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Gamut Collect                                                                     |
+| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                            |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to DMX Profile; Starting point: DMX Profile Collect                                                                                             |
+| Min                | [Float](#user-content-attrtype-float )       | Minimum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalFrom                                                                |
+| Max                | [Float](#user-content-attrtype-float )       | Maximum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalTo                                                                  |
+| CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
+
 
 #### Table 48. *Channel Function Attributes*
 
 </div>
 
+Note:  
+For command based control systems, you can control the fixture by sending it a string in the following style:  
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION ,f FLOAT_VALUE_PHYSICAL"`  
+or   
+`"/FIXTURE_ID/CUSTOM_NAME_CHANNELFUCTION/percent ,f FLOAT_VALUE_PERCENT"`
+
+Where:  
+- FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
+- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Separators can be replaced with "/".
+- FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
+- FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
+
+
 As children the channel function has list of a [channel
-sets](#user-content-channel-set ).
+sets](#user-content-channel-set ) and a [sub channel
+sets](#user-content-sub-channel-set ).
 
 ###### Channel Set
 
@@ -1543,12 +1803,12 @@ are specified in [table 49](#user-content-table-49 ).
 
 <div id="table-49">
 
-| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
-| ------------------ | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Name               | [Name](#user-content-attrtype-name )         | The name of the channel set. Default: Empty                                                                                                                                                                                                                     |
-| DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel set – 1 or the maximum value of the current channel function; Default value: 0/1                                                                                              |
-| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                            |
-| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                              |
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                   |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )         | The name of the channel set. Default: Empty                                                                                                                                             |
+| DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel set – 1 or the maximum value of the current channel function; Default value: 0/1                      |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value. Default value is the PhysicalFrom from the parent channel function.                                                                                               |
+| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value. Default value is the PhysicalTo from the parent channel function.                                                                                                   |
 | WheelSlotIndex     | [Int](#user-content-attrtype-int )           | If the channel function has a link to a wheel, a corresponding slot index shall be specified. The wheel slot index results from the order of slots of the wheel which is linked in the channel function. The wheel slot index is normalized to 1. Size: 4 bytes |
 
 #### Table 49. *Channel Set Attributes*
@@ -1556,6 +1816,28 @@ are specified in [table 49](#user-content-table-49 ).
 </div>
 
 The channel set does not have any children.
+
+###### Sub Channel Set
+
+This section defines the sub channel sets of the channel function (XML node
+<SubChannelSet>). The currently defined XML attributes of the sub channel set
+are specified in [table TODO](#user-content-table-TODO ).
+
+<div id="table-TODO">
+
+| XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )         | The name of the sub channel set. Default: Empty                                                                                                                                                                                                              |
+| PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value                                                                                                                                                                                                                                         |
+| PhysicalTo         | [Float](#user-content-attrtype-float )       | Physical end value                                                                                                                                                                                                                                           |
+| SubPhysicalUnit    | [Node](#user-content-attrtype-node )         | Link to the sub physical unit; Starting Point: Attribute                                                                                                                                                                                                     |
+| DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to the DMX Profile; Starting Point: DMX Profile Collect                                                                                                                                                                                        |
+
+#### Table TODO. *Sub Channel Set Attributes*
+
+</div>
+
+The sub channel set does not have any children.
 
 #### Relation Collect
 
@@ -1573,9 +1855,9 @@ XML attributes of the relations are specified in [table
 
 <div id="table-50">
 
-| XML Attribute Name | Value Type                            | Description                                                      |
-| ------------------ | ------------------------------------- | ---------------------------------------------------------------- |
-| Name               | [String](#user-content-attrtype-string ) | The unique name of the relation                                  |
+| XML Attribute Name | Value Type                               | Description                                                      |
+|----|----|----|
+| Name               | [Name](#user-content-attrtype-name )     | The unique name of the relation                                  |
 | Master             | [Node](#user-content-attrtype-node )     | Link to the master DMX channel; Starting point: DMX mode         |
 | Follower           | [Node](#user-content-attrtype-node )     | Link to the following channel function; Starting point: DMX mode |
 | Type               | [Enum](#user-content-attrtype-enum )     | Type of the relation; Values: “Multiply”, “Override”             |
@@ -1650,8 +1932,9 @@ defined XML attributes of the macro are specified in [table
 <div id="table-51">
 
 | XML Attribute Name | Value Type                        | Description                   |
-| ------------------ | --------------------------------- | ----------------------------- |
+|----|----|----|
 | Name               | [Name](#user-content-attrtype-name ) | The unique name of the macro. |
+| ChannelFunction    | [Node](#user-content-attrtype-node ) | Optional. Link to channel function; Starting point [DMX Mode](#user-content-dmx-mode) |
 
 #### Table 51. *Macro Attributes*
 
@@ -1662,7 +1945,7 @@ Macro children are specified in [table 52](#user-content-table-52 )
 <div id="table-52">
 
 | XML node                          | Mandatory | Description                          |
-| --------------------------------- | --------- | ------------------------------------ |
+|----|----|----|
 | [MacroDMX](#user-content-macro-dmx ) | No        | This section defines a DMX sequence. |
 
 #### Table 52. *Macro Children*
@@ -1684,7 +1967,7 @@ defined XML attributes of the macro DMX step are specified in [table
 <div id="table-53">
 
 | XML Attribute Name | Value Type                          | Description                                          |
-| ------------------ | ----------------------------------- | ---------------------------------------------------- |
+|----|----|----|
 | Duration           | [Float](#user-content-attrtype-float ) | Duration of a step; Default value: 1; Unit: seconds. |
 
 #### Table 53. *Macro DMX Step Attributes*
@@ -1703,7 +1986,7 @@ are specified in [table 54](#user-content-table-54 ).
 <div id="table-54">
 
 | XML Attribute Name | Value Type                                | Description                                                                                  |
-| ------------------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+|----|----|----|
 | Value              | [DMXValue](#user-content-attrtype-dmxvalue ) | Value of the DMX channel                                                                     |
 | DMXChannel         | [Node](#user-content-attrtype-node )         | Link to a DMX channel. Starting node [DMX Channel collect](#user-content-dmx-channel-collect ). |
 
@@ -1731,10 +2014,11 @@ are specified in [table 55](#user-content-table-55 ).
 <div id="table-55">
 
 | XML Attribute Name | Value Type                            | Description                                                                          |
-| ------------------ | ------------------------------------- | ------------------------------------------------------------------------------------ |
+|----|----|----|
 | Text               | [String](#user-content-attrtype-string ) | User-defined text for this revision; Default value: empty                            |
 | Date               | [Date](#user-content-attrtype-date )     | Revision date and time                                                               |
 | UserID             | [Uint](#user-content-attrtype-uint )     | UserID of the user that has uploaded the GDTF file to the database; Default value: 0 |
+| ModifiedBy         | [String](#user-content-attrtype-string ) | Name of the software that modified this revision; Default value: empty               |
 
 #### Table 55. *Revision Attributes*
 
@@ -1765,7 +2049,7 @@ protocol collect currently does not have any XML attributes (XML node
 <div id="table-56">
 
 | XML node                                                   | Mandatory | Description                            |
-| ---------------------------------------------------------- | --------- | -------------------------------------- |
+|----|----|----|
 | [RDM](#user-content-rdm-section )                             | No        | Describes RDM information              |
 | [Art-Net](#user-content-art-net-section )                     | No        | Describes Art-Net information          |
 | [sACN](#user-content-streaming-acn-section )                  | No        | Describes sACN information             |
@@ -1773,8 +2057,7 @@ protocol collect currently does not have any XML attributes (XML node
 | [OpenSoundControl](#user-content-open-sound-control-section ) | No        | Describes OpenSoundControl information |
 | [CITP](#user-content-citp-section )                           | No        | Describes CITP information             |
 
-#### Table 56. *Supported Protocol Collect
-Children*
+#### Table 56. *Supported Protocol Collect Children*
 
 </div>
 
@@ -1787,7 +2070,7 @@ attributes of RDM are specified in [table 57](#user-content-table-57 ).
 <div id="table-57">
 
 | XML Attribute Name | Value Type                      | Description            |
-| ------------------ | ------------------------------- | ---------------------- |
+|----|----|----|
 | ManufacturerID     | [Hex](#user-content-attrtype-hex ) | Manufacturer ESTA ID   |
 | DeviceModelID      | [Hex](#user-content-attrtype-hex ) | Unique device model ID |
 
@@ -1806,7 +2089,7 @@ The currently defined XML attributes are specified in [table
 <div id="table-58">
 
 | XML Attribute Name | Value Type                      | Description         |
-| ------------------ | ------------------------------- | ------------------- |
+|----|----|----|
 | Value              | [Hex](#user-content-attrtype-hex ) | Software version ID |
 
 #### Table 58. *SoftwareVersionID*
@@ -1824,7 +2107,7 @@ To define the supported software versions add an XML node
 <div id="table-59">
 
 | XML Attribute Name | Value Type                        | Description                                                       |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------- |
+|----|----|----|
 | Value              | [Hex](#user-content-attrtype-hex )   | Hex Value of the DMXPersonality                                   |
 | DMXMode            | [Name](#user-content-attrtype-name ) | Link to the DMX Mode that can be used with this software version. |
 
@@ -1836,11 +2119,33 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-This section has not yet been defined (XML node `<Art-Net>`).
+To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name  | Value Type                            | Description                                                       |
+|----|----|----|
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Streaming ACN Section
 
-This section has not yet been defined (XML node `<sACN>`).
+To define a custom mapping for Streaming ACN values and DMX Stream values you can add a an XML node
+`<Map>`. The currently defined XML attributes are specified in
+[table 59](#user-content-table-59 ).
+
+<div id="table-59">
+
+| XML Attribute Name  | Value Type                            | Description                                                       |
+|----|----|----|
+| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
+| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+
+By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
 
 ### Posi Stage Net Section
 
@@ -1848,7 +2153,8 @@ This section has not yet been defined (XML node `<PosiStageNet>`).
 
 ### Open Sound Control Section
 
-This section has not yet been defined (XML node `<OpenSoundControl>`).
+This is intentionally left empty. Future settings for custom OpenSoundControl behavior can be defined in later version. (XML node `<OpenSoundControl>`).
+
 
 ### CITP Section
 
@@ -1857,12 +2163,12 @@ This section has not yet been defined (XML node `<CITP>`).
 ## Annex A. (normative) Attribute Definitions
 
 To describe the fixture types attributes are used. Attributes define the
-function. (n) and (m) are wildcards for the enumartion of attributes
+function. (n) and (m) are wildcards for the enumeration of attributes
 like Gobo(n) - Gobo1 and Gobo2 or VideoEffect(n)Parameter(m) -
 VideoEffect1Parameter1 and VideoEffect1Parameter2. Fixture Type
 Attributes without wildcards (n) or (m) are not enumerated. The
-enumaration starts with 1. The currently defined Fixture Type Attributes
-are specified in [table A1](#user-content-table-a1 ).
+enumeration starts with 1. The currently defined Fixture Type Attributes
+are specified in [table A1](#user-content-table-a1).
 
 Note 1: The predefined Fixture Type Attributes are the preferred to use
 Fixture Type Attribute. At any time user defined attributes can be
@@ -1871,7 +2177,7 @@ introduced as well.
 <div id="table-a1">
 
 | Description                      | Attribute                                                                                                                                                                                                                                                                                                 
-|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+|----------------------------------|-----------------------------| 
 | Dimmer                           | Controls the intensity of a fixture.                                                                                                                                                                                                                                                                      |
 | Pan                              | Controls the fixture's sideward movement (horizontal axis).                                                                                                                                                                                                                                               |
 | Tilt                             | Controls the fixture's upward and the downward movement (vertical axis).                                                                                                                                                                                                                                  |
@@ -1993,15 +2299,26 @@ introduced as well.
 | VideoKeyTolerance                | Adjusts tolerance of color keying.                                                                                                                                                                                                                                                                        |
 | StrobeDuration                   | Controls the length of a strobe flash.                                                                                                                                                                                                                                                                    |
 | StrobeRate                       | Controls the time between strobe flashes.                                                                                                                                                                                                                                                                 |
-| Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature.                                                                                                                                                                                                                                        |
+| StrobeFrequency                  | Controls the frequency of strobe flashes.                                                                                                                                                                                                                                                                 |
+| StrobeModeShutter                | Strobe mode shutter. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                         |
+| StrobeModeStrobe                 | Strobe mode strobe. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                          |
+| StrobeModePulse                  | Strobe mode pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                           |
+| StrobeModePulseOpen              | Strobe mode opening pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModePulseClose             | Strobe mode closing pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModeRandom                 | Strobe mode random strobe. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                   |
+| StrobeModeRandomPulse            | Strobe mode random pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                                    |
+| StrobeModeRandomPulseOpen        | Strobe mode random opening pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                            |
+| StrobeModeRandomPulseClose       | Strobe mode random closing pulse. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                            |
+| StrobeModeEffect                 | Strobe mode random shutter effect feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                                                   |
+| Shutter(n)                       | Controls the fixture´s mechanical or electronical shutter feature. Use this attribute together with StrobeFrequency to define the type of the shutter / strobe.                                                                                                                                           |
 | Shutter(n)Strobe                 | Controls the frequency of the fixture´s mechanical or electronical strobe shutter feature.                                                                                                                                                                                                                |
-| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                 |
-| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature.                                                                                                                                                                                                         |
-| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature.                                                                                                                                                                                                         |
+| Shutter(n)StrobePulse            | Controls the frequency of the fixture´s mechanical or electronical pulse shutter feature.                                                                                                                                                                                                                  |
+| Shutter(n)StrobePulseClose       | Controls the frequency of the fixture´s mechanical or electronical closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                        |
+| Shutter(n)StrobePulseOpen        | Controls the frequency of the fixture´s mechanical or electronical opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandom           | Controls the frequency of the fixture´s mechanical or electronical random strobe shutter feature.                                                                                                                                                                                                         |
 | Shutter(n)StrobeRandomPulse      | Controls the frequency of the fixture´s mechanical or electronical random pulse shutter feature.                                                                                                                                                                                                          |
-| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature.                                                                                                                                                                                                  |
-| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature.                                                                                                                                                                                                  |
+| Shutter(n)StrobeRandomPulseClose | Controls the frequency of the fixture´s mechanical or electronical random closing pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
+| Shutter(n)StrobeRandomPulseOpen  | Controls the frequency of the fixture´s mechanical or electronical random opening pulse shutter feature. The pulse is described by a ramp function.                                                                                                                                                                                                 |
 | Shutter(n)StrobeEffect           | Controls the frequency of the fixture´s mechanical or electronical shutter effect feature.                                                                                                                                                                                                                |
 | Iris                             | Controls the diameter of the fixture's beam.                                                                                                                                                                                                                                                              |
 | IrisStrobe                       | Sets frequency of the iris's strobe feature.                                                                                                                                                                                                                                                              |
@@ -2033,6 +2350,7 @@ introduced as well.
 | Zoom                             | Controls the spread of the fixture's beam/spot.                                                                                                                                                                                                                                                           |
 | ZoomModeSpot                     | Selects spot mode of zoom.                                                                                                                                                                                                                                                                                |
 | ZoomModeBeam                     | Selects beam mode of zoom.                                                                                                                                                                                                                                                                                |
+| DigitalZoom                      | Controls the image size within the defined projection. Used on digital projection based devices                                                                                                                                                                                                           |
 | Focus(n)                         | Controls the sharpness of the fixture's spot light. Can blur or sharpen the edge of the spot.                                                                                                                                                                                                             |
 | Focus(n)Adjust                   | Autofocuses functionality using presets.                                                                                                                                                                                                                                                                  |
 | Focus(n)Distance                 | Autofocuses functionality using distance.                                                                                                                                                                                                                                                                 |
@@ -2048,6 +2366,7 @@ introduced as well.
 | PanTiltMode                      | Selects fixture's pan/tilt mode. Selects between a limited pan/tilt range or a continuous pan/tilt range.                                                                                                                                                                                                 |
 | PositionModes                    | Selects the fixture's position mode.                                                                                                                                                                                                                                                                      |
 | Gobo(n)WheelMode                 | Changes control between selecting, indexing, and rotating the gobos of gobo wheel (n).                                                                                                                                                                                                                    |
+| GoboWheelShortcutMode            | Defines whether the gobo wheel takes the shortest distance between two positions.                                                                                                                                                                                                                         |
 | AnimationWheel(n)Mode            | Changes control between selecting, indexing, and rotating the slots of animation wheel (n).                                                                                                                                                                                                               |
 | AnimationWheelShortcutMode       | Defines whether the animation wheel takes the shortest distance between two positions.                                                                                                                                                                                                                    |
 | Color(n)Mode                     | Changes control between selecting, continuous selection, half selection, random selection, color spinning, etc. in colors of color wheel (n).                                                                                                                                                             |
@@ -2060,13 +2379,13 @@ introduced as well.
 | ColorCalibrationMode             | Sets calibration mode (for example on/off).                                                                                                                                                                                                                                                               |
 | ColorConsistency                 | Controls consistent behavior of color.                                                                                                                                                                                                                                                                    |
 | ColorControl                     | Controls special color related functions.                                                                                                                                                                                                                                                                 |
-| ColorModelMode                   | Controls color model (CMY/RGB/HSV..).                                                                                                                                                                                                                                                                     |
+| ColorModelMode                   | Controls color model (CMY/RGB/HSV...).                                                                                                                                                                                                                                                                     |
 | ColorSettingsReset               | Resets settings of color control channel.                                                                                                                                                                                                                                                                 |
 | ColorUniformity                  | Controls behavior of color uniformity.                                                                                                                                                                                                                                                                    |
 | CRIMode                          | Controls CRI settings of output.                                                                                                                                                                                                                                                                          |
 | CustomColor                      | Custom color related functions (save, recall..).                                                                                                                                                                                                                                                          |
 | UVStability                      | Settings for UV stability color behavior.                                                                                                                                                                                                                                                                 |
-| WavelengthCorrection             | Settings for WaveLength corrections of colors.                                                                                                                                                                                                                                                            |
+| WavelengthCorrection             | Settings for Wavelength correction of colors.                                                                                                                                                                                                                                                            |
 | WhiteCount                       | Controls if White LED is proportionally added to RGB.                                                                                                                                                                                                                                                     |
 | StrobeMode                       | Changes strobe style - strobe, pulse, random strobe, etc. - of the shutter attribute.                                                                                                                                                                                                                     |
 | ZoomMode                         | Changes modes of the fixture´s zoom.                                                                                                                                                                                                                                                                      |
@@ -2089,6 +2408,7 @@ introduced as well.
 | GlobalMSpeed                     | General speed of fixture's features.                                                                                                                                                                                                                                                                      |
 | ReflectorAdjust                  | Movement speed of the fixture's frost.                                                                                                                                                                                                                                                                    |
 | FixtureGlobalReset               | Generally resets the entire fixture.                                                                                                                                                                                                                                                                      |
+| DimmerReset                      | Resets the fixture's dimmer.                                                                                                                                                                                                                                                                              |
 | ShutterReset                     | Resets the fixture's shutter.                                                                                                                                                                                                                                                                             |
 | BeamReset                        | Resets the fixture's beam features.                                                                                                                                                                                                                                                                       |
 | ColorMixReset                    | Resets the fixture's color mixing system.                                                                                                                                                                                                                                                                 |
@@ -2115,9 +2435,9 @@ introduced as well.
 | Blower(n)                        | Fog or hazer‘s blower feature.                                                                                                                                                                                                                                                                            |
 | Fan(n)                           | Fog or hazer's Fan feature.                                                                                                                                                                                                                                                                               |
 | Fog(n)                           | Fog or hazer's Fog feature.                                                                                                                                                                                                                                                                               |
-| Haze(n)                          | Fog or hazer's haze feature.                                                                                                                                                                                                                                                                              |
+| Haze(n)                          | Fog or hazer's Haze feature.                                                                                                                                                                                                                                                                              |
 | LampPowerMode                    | Controls the energy consumption of the lamp.                                                                                                                                                                                                                                                              |
-| Fans                             | Fancontrols a fixture or device.                                                                                                                                                                                                                                                                          |
+| Fans                             | Controls a fixture or device fan.                                                                                                                                                                                                                                                                          |
 | Blade(n)A                        | 1 of 2 shutters that shape the top/right/bottom/left of the beam.                                                                                                                                                                                                                                         |
 | Blade(n)B                        | 2 of 2 shutters that shape the top/right/bottom/left of the beam.                                                                                                                                                                                                                                         |
 | Blade(n)Rot                      | Rotates position of blade(n).                                                                                                                                                                                                                                                                             |
@@ -2147,7 +2467,7 @@ introduced as well.
 (n) and (m) are wildcards for enumeration of attributes e.g., Gobo(n) -
 Gobo1 and Gobo2 or VideoEffect(n)Parameter(m) - VideoEffect1Parameter1
 and VideoEffect1Parameter2. Attributes without the wildcards (n) or (m)
-are not enumerated. The enumaration starts with 1. Attributes names are
+are not enumerated. The enumeration starts with 1. Attributes names are
 considered as normalized. The upper and lower case of attribute names is
 not taken into account.
 
@@ -2156,6 +2476,8 @@ not taken into account.
        <ActivationGroups>  
            <ActivationGroup  Name="PanTilt" />  
            <ActivationGroup  Name="XYZ" />  
+           <ActivationGroup  Name="Rot_XYZ" />
+           <ActivationGroup  Name="Scale_XYZ" />
            <ActivationGroup  Name="ColorRGB" />  
            <ActivationGroup  Name="ColorHSB" />  
            <ActivationGroup  Name="ColorCIE" />  
@@ -2222,43 +2544,67 @@ not taken into account.
            <Attribute Name="XYZ_X" Pretty="X" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Y" Pretty="Y" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" />  
            <Attribute Name="XYZ_Z" Pretty="Z" ActivationGroup="XYZ" Feature="Position.XYZ" PhysicalUnit="Length" /  
-           <Attribute Name="Rot_X" Pretty="Rot X" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Y" Pretty="Rot Y" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Rot_Z" Pretty="Rot Z" Feature="Position.Rotation" PhysicalUnit="Angle" />  
-           <Attribute Name="Scale_X" Pretty="Scale X" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Y" Pretty="Scale Y" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_Z" Pretty="Scale Z" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
-           <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
+           <Attribute Name="Rot_X" Pretty="Rot X" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Y" Pretty="Rot Y" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Rot_Z" Pretty="Rot Z" ActivationGroup="Rot_XYZ" Feature="Position.Rotation" PhysicalUnit="Angle" />  
+           <Attribute Name="Scale_X" Pretty="Scale X" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Y" Pretty="Scale Y" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_Z" Pretty="Scale Z" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Scale_XYZ" Pretty="Scale XYZ" ActivationGroup="Scale_XYZ" Feature="Position.Scale" PhysicalUnit="Percent" />  
+           <Attribute Name="Gobo(n)" Pretty="G(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)SelectSpin" Pretty="Select Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)SelectShake" Pretty="Select Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)SelectEffects" Pretty="Select Effects" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
-           <Attribute Name="Gobo(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
-           <Attribute Name="Gobo(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
+           <Attribute Name="Gobo(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Angle" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelShake" Pretty="Wheel Shake" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This is the amount of shake as a percentage of the image size and defines the peak amplitude of the shake
            <Attribute Name="Gobo(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
-           <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="Gobo(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Gobo(n)" ActivationGroup="Gobo(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Gobo(n)Pos" Pretty="G(n) &lt;&gt;" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" />  
            <Attribute Name="Gobo(n)PosRotate" Pretty="Rotate" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" />  
-           <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />  
-           <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />  
-           <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" />  
-           <Attribute Name="AnimationWheel(n)Macro" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim FX" />  
-           <Attribute Name="AnimationWheel(n)Random" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Random" />  
+           <Attribute Name="Gobo(n)PosShake" Pretty="Shake" MainAttribute="Gobo(n)Pos" ActivationGroup="Gobo(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" />
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
+           <Attribute Name="AnimationWheel(n)" ActivationGroup="AnimationWheel(n)" Pretty="Anim(n)" Feature="Gobo.Gobo" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="AnimationWheel(n)Audio" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Audio" /> 
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+           <Attribute Name="AnimationWheel(n)Macro" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim FX" />
+           <Attribute Name="AnimationWheel(n)Random" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Random" /> 
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)SelectEffects" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" Pretty="Anim Select FX" />  
-           <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />  
-           <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />  
+           <Attribute Name="AnimationWheel(n)SelectShake" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Select Shake" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
+           <Attribute Name="AnimationWheel(n)SelectSpin" ActivationGroup="AnimationWheel(n)" MainAttribute="AnimationWheel(n)" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Select Spin" />
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="AnimationWheel(n)Pos" ActivationGroup="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim Pos" />  
            <Attribute Name="AnimationWheel(n)PosRotate" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim Rotate" />  
            <Attribute Name="AnimationWheel(n)PosShake" ActivationGroup="AnimationWheel(n)Pos" MainAttribute="AnimationWheel(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim Shake" />  
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
-           <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="50" PhysicalTo="50"/> This defines the duration of the ramp in relation to the period.
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
+           <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
+              <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
+              <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Audio" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Audio/>  
            <Attribute Name="AnimationSystem(n)Random" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Random/>  
            <Attribute Name="AnimationSystem(n)Pos" ActivationGroup="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Angle" Pretty="Anim System Pos"/>  
            <Attribute Name="AnimationSystem(n)PosRotate" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="AngularSpeed" Pretty="Anim System Rotate"/>  
            <Attribute Name="AnimationSystem(n)PosShake" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake"/>  
+              <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)PosRandom" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Random"/>  
            <Attribute Name="AnimationSystem(n)PosAudio" ActivationGroup="AnimationSystem(n)Pos" MainAttribute="AnimationSystem(n)Pos" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Rot Audio"/>  
            <Attribute Name="AnimationSystem(n)Macro" Feature="Gobo.Gobo" PhysicalUnit="None" Pretty="Anim System Macro"/>  
@@ -2272,10 +2618,15 @@ not taken into account.
            <Attribute Name="PlaySpeed" Pretty="Play Speed" Feature="Gobo.Media" PhysicalUnit="Percent" />  
            <Attribute Name="ColorEffects(n)" Pretty="Color FX(n)" Feature="Color.Color" />  
            <Attribute Name="Color(n)" Pretty="C(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelIndex" Pretty="Wheel Index" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Angle" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelSpin" Pretty="Wheel Spin" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="AngularSpeed" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelRandom" Pretty="Wheel Random" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="Color(n)WheelAudio" Pretty="Wheel Audio" MainAttribute="Color(n)" ActivationGroup="ColorRGB" Feature="Color.Color" />  
+              <SubPhysicalUnit Type="PlacementOffset" PhysicalUnit="Degree" PhysicalFrom="270" PhysicalTo="270"/>
            <Attribute Name="ColorAdd_R" Pretty="R" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.64,0.33,21.3" />  
            <Attribute Name="ColorAdd_G" Pretty="G" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.3,0.6,71.5" />  
            <Attribute Name="ColorAdd_B" Pretty="B" ActivationGroup="ColorRGB" Feature="Color.RGB" PhysicalUnit="ColorComponent" Color="0.15,0.06,7.2" />  
@@ -2332,31 +2683,70 @@ not taken into account.
            <Attribute Name="VideoKeyTolerance" Pretty="Tolerance" Feature="Color.ColorKey" PhysicalUnit="None" />  
            <Attribute Name="StrobeDuration" Pretty="Strobe Duration" Feature="Beam.Beam" PhysicalUnit="Time" />  
            <Attribute Name="StrobeRate" Pretty="Strobe Rate" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeFrequency" Pretty="Strobe Frequency" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+           <Attribute Name="StrobeModeShutter" Pretty="StrobeM Shutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeStrobe" Pretty="StrobeM Strobe" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulse" Pretty="StrobeM Pulse" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulseOpen" Pretty="StrobeM Pulse Open" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModePulseClose" Pretty="StrobeM Pulse Close" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandom" Pretty="StrobeM Random" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulse" Pretty="StrobeM Random Pulse" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulseOpen" Pretty="StrobeM Random Pulse Open" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeRandomPulseClose" Pretty="StrobeM Random Pulse Close" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
+           <Attribute Name="StrobeModeEffect" Pretty="StrobeM Effect" MainAttribute="StrobeModeShutter" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)" Pretty="Sh(n)" Feature="Beam.Beam" />  
            <Attribute Name="Shutter(n)Strobe" Pretty="Strobe(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulse" Pretty="Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseClose" Pretty="Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobePulseOpen" Pretty="Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+             <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Shutter(n)StrobeRandom" Pretty="Random(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.025" PhysicalTo="0.025"/> This defines the duration of the on time of the strobe.
            <Attribute Name="Shutter(n)StrobeRandomPulse" Pretty="Random Pulse(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeRandomPulseClose" Pretty="Random Pulse Close(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeRandomPulseOpen" Pretty="Random Pulse Open(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Shutter(n)StrobeEffect" Pretty="Effect(n)" MainAttribute="Shutter(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
            <Attribute Name="Iris" Pretty="Iris" Feature="Beam.Beam" />  
            <Attribute Name="IrisStrobe" Pretty="Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the strobe from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisStrobeRandom" Pretty="Random Strobe" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="Duration" PhysicalUnit="Time" PhysicalFrom="0.3" PhysicalTo="0.3"/> This defines the duration of the on time of the iris.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseClose" Pretty="Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisPulseOpen" Pretty="Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the iris is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseClose" Pretty="Random Pulse Close" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="IrisRandomPulseOpen" Pretty="Random Pulse Open" MainAttribute="Iris" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="MinimumOpening" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum percentage to which the iris closes.
            <Attribute Name="Frost(n)" Pretty="Frost(n)" Feature="Beam.Beam" />  
            <Attribute Name="Frost(n)PulseOpen" Pretty="Pulse Open (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)PulseClose" Pretty="Pulse Close (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the pulse of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the pulse from the start as percentage of the total period.
            <Attribute Name="Frost(n)Ramp" Pretty="Ramp (n)" MainAttribute="Frost(n)" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the fraction of one period in which the ramp of the frost is on.
+              <SubPhysicalUnit Type="TimeOffset" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the offset of the end of the ramp from the start as percentage of the total period.
            <Attribute Name="Prism(n)" Pretty="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
            <Attribute Name="Prism(n)SelectSpin" Pretty="Select Spin(n)" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Prism(n)Macro" Pretty="Prism(n) Macro" MainAttribute="Prism(n)" ActivationGroup="Prism" Feature="Beam.Beam" />  
-           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="Prism(n)Pos" Pretty="Prism(n) Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed"/>  
            <Attribute Name="Prism(n)PosRotate" Pretty="Rotate(n)" MainAttribute="Prism(n)Pos" ActivationGroup="Prism" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Effects(n)" Pretty="FX(n)" Feature="Beam.Beam" />  
            <Attribute Name="Effects(n)Rate" Pretty="FX(n) Rate" Feature="Beam.Beam" PhysicalUnit="Frequency" />  
@@ -2366,12 +2756,15 @@ not taken into account.
            <Attribute Name="Effects(n)PosRotate" Pretty="FX(n) Rotate" MainAttribute="Effects(n)Pos" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />              
            <Attribute Name="EffectsSync" Pretty="FX Sync" Feature="Beam.Beam" />  
            <Attribute Name="BeamShaper" Pretty="Beam Shaper" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+              <SubPhysicalUnit Type="RatioHorizontal" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
+              <SubPhysicalUnit Type="RatioVertical" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the size of the beam compared to the original size.
            <Attribute Name="BeamShaperMacro" Pretty="Beam Shaper Macro" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
-           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" />  
+           <Attribute Name="BeamShaperPos" Pretty="Beam Shaper &lt;&gt;" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="Angle" />  
+           <Attribute Name="BeamShaperPosRotate" Pretty="Beam Shaper Rotate" ActivationGroup="BeamShaper" Feature="Beam.Beam" PhysicalUnit="AngularSpeed" />  
            <Attribute Name="Zoom" Pretty="Zoom" Feature="Focus.Focus" PhysicalUnit="Angle" />  
            <Attribute Name="ZoomModeSpot" Pretty="Zoom Spot" Feature="Focus.Focus" PhysicalUnit="Angle" />  
-           <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />          
+           <Attribute Name="ZoomModeBeam" Pretty="Zoom Beam" Feature="Focus.Focus" PhysicalUnit="Angle" />    
+           <Attribute Name="DigitalZoom" Pretty="DZoom" Feature="Focus.Focus" PhysicalUnit="Angle" />        
            <Attribute Name="Focus(n)" Pretty="Focus(n)" Feature="Focus.Focus" />  
            <Attribute Name="Focus(n)Adjust" Pretty="Focus(n) Adjust" Feature="Focus.Focus" />  
            <Attribute Name="Focus(n)Distance" Pretty="Focus(n) Distance" Feature="Focus.Focus" PhysicalUnit="Length" />  
@@ -2387,6 +2780,7 @@ not taken into account.
            <Attribute Name="PanTiltMode" Pretty="PanTilt Mode" Feature="Control.Control" />  
            <Attribute Name="PositionModes" Pretty="Pos Modes" Feature="Control.Control" />  
            <Attribute Name="Gobo(n)WheelMode" Pretty="G(n) Mode" Feature="Control.Control" />  
+           <Attribute Name="GoboWheelShortcutMode" Pretty="Gobo Shortcut Mode" Feature="Control.Control" />  
            <Attribute Name="AnimationWheel(n)Mode" Feature="Control.Control" Pretty="Anim Mode" />  
            <Attribute Name="AnimationWheelShortcutMode" Pretty="Anim Shortcut Mode" Feature="Control.Control" />  
            <Attribute Name="Color(n)Mode" Pretty="C(n) Mode" Feature="Control.Control" />  
@@ -2428,6 +2822,7 @@ not taken into account.
            <Attribute Name="GlobalMSpeed" Pretty="Global MSpeed" Feature="Control.Control" />  
            <Attribute Name="ReflectorAdjust" Pretty="Reflector Adj" Feature="Control.Control" /> />  
            <Attribute Name="FixtureGlobalReset" Pretty="Fixture Global Reset" Feature="Control.Control" />  
+           <Attribute Name="DimmerReset" Pretty="Dimmer Reset" Feature="Control.Control" />  
            <Attribute Name="ShutterReset" Pretty="Shutter Reset" Feature="Control.Control" />  
            <Attribute Name="BeamReset" Pretty="Beam Reset" Feature="Control.Control" />  
            <Attribute Name="ColorMixReset" Pretty="Color Mix Reset" Feature="Control.Control" />  
@@ -2636,10 +3031,10 @@ Table D.1 table shows the predefined connector types.
 | HDMI             | HDMI connector             |
 | PS2              | PS2 connector              |
 | TL-ST            | TosLink connector          |
-| LCDUP            | Fibre optic LC DUPLEX-type |
-| SCDUP            | Fibre optic SC DUPLEX-type |
-| SC               | Fibre optic SC-type        |
-| ST               | Fibre optic ST-type        |
+| LCDUP            | Fiber optic LC DUPLEX-type |
+| SCDUP            | Fiber optic SC DUPLEX-type |
+| SC               | Fiber optic SC-type        |
+| ST               | Fiber optic ST-type        |
 | NL4              | Speakon                    |
 | CACOM            | 8-pin LS conn              |
 | USB              | USB connector              |
@@ -2711,8 +3106,64 @@ opaque (2), and Pure White (RGB 255,255,255) is transparent (letter A).
 
 Colored gobos (3) shall use an RGB approximation. The RGB approximation
 shall be calculated on the basis of Pure White being the CCT of the
-fixture light source and the ICC colour profile embedded within the PNG.
+fixture light source and the ICC color profile embedded within the PNG.
 (See ISO 15076-1:2010) The default shall be sRGB.
+
+## Annex F (normative) SubPhysicalUnit precisions
+
+### Pulse
+
+Some attributes are named "[EFFECT]Pulse" (for example Shutter(n)StrobePulse). They should behave like a triangular function. Here is how they are defined:
+- The main PhysicalUnit is a **frequency** which allows to modify the duration of the period T.
+- t = 0s corresponds to the activation of the channel function.
+- The **TimeOffset** SubPhysicalUnit is the offset of the end of the pulse from 0, the activation of the channel function, as a percentage of the period T.
+- The **DutyCycle** SubPhysicalUnit corresponds to the fraction of one period in which the value is not 0.
+
+![Graph of a Pulse-like attribute and their SubPhysicalUnits](media/Pulse.png "Pulse-like attribute and their SubPhysicalUnits")
+
+*Figure 5. Pulse-like attribute and their SubPhysicalUnits*
+
+If there aren't any value given by the user, the TimeOffset and DutyCycle SubPhysicalUnits are defaulted to 100%:
+
+![Graph of a default Pulse-like attribute and their SubPhysicalUnits](media/Pulse\_Default.png "default Pulse-like attribute and their SubPhysicalUnits")
+
+*Figure 6. Default Pulse-like attribute and their SubPhysicalUnits*
+
+### PulseClose
+
+Some attributes are named "[EFFECT]PulseClose" (for example IrisPulseClose). They should behave like a decreasing ramp. Here is how they are defined:
+- The main PhysicalUnit is a **frequency** which allows to modify the duration of the period T.
+- t = 0s corresponds to the activation of the channel function.
+- The **TimeOffset** SubPhysicalUnit is the offset of the end of the pulse from 0, the activation of the channel function, as a percentage of the period T.
+- The **DutyCycle** SubPhysicalUnit corresponds to the fraction of one period in which the value is not 0.
+
+![Graph of a PulseClose-like attribute and their SubPhysicalUnits](media/PulseClose.png "PulseClose-like attribute and their SubPhysicalUnits")
+
+*Figure 7. PulseClose-like attribute and their SubPhysicalUnits*
+
+If there aren't any value given by the user, the TimeOffset and DutyCycle SubPhysicalUnits are defaulted to 100%:
+
+![Graph of a default PulseClose-like attribute and their SubPhysicalUnits](media/PulseClose\_Default.png "default PulseClose-like attribute and their SubPhysicalUnits")
+
+*Figure 8. Default PulseClose-like attribute and their SubPhysicalUnits*
+
+### PulseOpen
+
+Some attributes are named "[EFFECT]PulseOpen" (for example Frost(n)PulseOpen). They should behave like an increasing ramp. Here is how they are defined:
+- The main PhysicalUnit is a **frequency** which allows to modify the duration of the period T.
+- t = 0s corresponds to the activation of the channel function.
+- The **TimeOffset** SubPhysicalUnit is the offset of the end of the pulse from 0, the activation of the channel function, as a percentage of the period T.
+- The **DutyCycle** SubPhysicalUnit corresponds to the fraction of one period in which the value is not 0.
+
+![Graph of a PulseOpen-like attribute and their SubPhysicalUnits](media/PulseOpen.png "PulseOpen-like attribute and their SubPhysicalUnits")
+
+*Figure 9. PulseOpen-like attribute and their SubPhysicalUnits*
+
+If there aren't any value given by the user, the TimeOffset and DutyCycle SubPhysicalUnits are defaulted to 100%:
+
+![Graph of a default PulseOpen-like attribute and their SubPhysicalUnits](media/PulseOpen\_Default.png "default PulseOpen-like attribute and their SubPhysicalUnits")
+
+*Figure 10. Default PulseOpen-like attribute and their SubPhysicalUnits*
 
 # Revision History
 
