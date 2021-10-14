@@ -2,56 +2,63 @@ GDTF Version 1.2 Draft 1
 
 # Introduction
 
-Nowadays lighting fixtures (luminaires and other controllable devices)
-have become more and more complex. Additionally, the development of
-these devices has become faster than ever. New devices are designed with
-very complex structures and multiple instances, they have more complex
-color-mixing systems and mode dependencies. To give the user access to
-the enormous flexibility of the existing devices a way to provide the
-accurate Fixture Type data is needed to control and pre-visualize the
-particular devices as good as possible and as quickly as needed. GDTF is
-that measure. There are many different lighting consoles and software
-manufacturers on the market and all of them are using different ways and
-different file formats to get the fixture control information into their
-systems. As the development of new high-end fixtures takes place at an
-amazing speed, this creates a \`lack\` of available control data on the
-side of the console and pre-visualization software manufacturers. Also,
-fixture manufacturers are often approached by their clients directly to
-support them with accurate fixture types. As there are so many different
-consoles and visualizers on the market this process requires vast
+In the lighting and entertainment industry, lighting fixtures
+(luminaires and other controllable devices) have become more and more
+complex, and the development of these devices happens faster than ever.
+New devices are designed with very involved structures; they have
+numerous complex color-mixing systems and mode dependencies. To give the
+user access to the enormous flexibility of existing devices, a method of
+providing accurate fixture type data, and controlling and
+pre-visualizing devices quickly and precisely as possible, is needed.
+The "General Device Type Format" (GDTF) is that method.
+
+There are many different lighting consoles and software manufacturers on
+the market, and all of them use different file formats and methods of
+getting the fixture control information into their systems. The
+development of new high-end fixtures at an amazing rate creates a lack
+of available control data on the side of the console and
+pre-visualization software manufacturers. Also, fixture manufacturers
+are often approached directly by their clients with requests to support
+them with accurate fixture types. As there are so many different
+consoles and visualizers on the market, this process requires vast
 knowledge of many different systems. Fixture manufacturers would need to
 understand how every console or visualizer works, and how to provide the
-required data. Moreover a way of format description is needed that not
-only allows to provide all of the required control information, but also
-structures it already in a hierarchical way that follows the structure
-of the device to be described. The lighting designer who would like to
-use these devices has to deal with such obstacles. They often receive
-the device control data of a specific new fixture later than expected.
-Also, the data may be incomplete, because it was not created with the
-latest information needed from the manufacturer of the fixture. This
-very clearly demonstrates that our industry is missing a standardized
-way of defining the description of intelligent and complex devices. This
-document defines a data format. After the DIN SPEC has been published,
-the format will continue to be developed further, but it is important to
-make an initial version publicly available. Topics for which no
-specifications can be made at this time, but for which it is foreseeable
-that this will be necessary, are therefore already specified in this DIN
-SPEC, but with the note that no specifications can be made at this time.
+required data. A format description is needed that not only provides all
+of the required control information, but also structures it in a
+hierarchical way matching that of the described device.
+
+The lighting designer who would like to use these devices has to deal
+with such obstacles. Designers often receive the device control data of
+a specific new fixture later than expected. Also, the data may be
+incomplete, because it was not created with the latest information from
+the fixture manufacturer.
+
+These issues demonstrate that our industry needs a standardized way of
+defining the description of intelligent and complex devices. This
+document defines such a data format. After the DIN SPEC has been
+published, the format will continue to be developed further, but it is
+important to make an initial version publicly available. Topics for
+which no specifications can be made at this time, but which will soon
+become necessary, are therefore already included in this DIN SPEC, but
+with a note that no specifications can be made now.
+
+Scope
+=====
 
 # Scope
 
-This Document specifies the "General Device Type Format" (GDTF). This
-document provides a unified way of listing and describing the
-hierarchical and logical structure and controls of any type of
-controllable device (e.g. luminaires, fog machines, etc.) in the
-lighting and entertainment industry. It will be used as a foundation for
-the exchange of device data between lighting consoles, CAD and
-3D-pre-visualization applications. The purpose of an existing GDTF-file
-is to reflect the real-world physical components of the devices and to
-provide control based on this information. It contains and is derived
-from the 3D geometry (real world or virtual) of the device. This
-document is only applicable for lighting systems and equipment used in
-the entertainment industry.
+This document specifies the "General Device Type Format" (GDTF), a
+unified way of listing and describing the hierarchical and logical
+structure and controls of any type of controllable device
+(e.g. luminaires, fog machines, etc.) in the lighting and entertainment
+industry. It will be used as a foundation for the exchange of device
+data between lighting consoles, CAD and 3D-pre-visualization
+applications. The purpose of an existing GDTF file is to reflect the
+real-world physical components of the devices and to provide control
+based on this information. It contains and is derived from the 3D
+geometry (real world or virtual) of the device. This document is only
+applicable for lighting systems and equipment used in the entertainment
+industry. 	
 
 # Normative references
 
@@ -85,13 +92,13 @@ standardization at the following addresses:
 
 ## GDTF
 
-descriptive name of the specification and the acronym for General Device
+Descriptive name of the specification and the acronym for General Device
 Type Format.
 
 ## Fixture Type Attribute
 
-singular mutual exclusive control function. Note 1 to entry: Definitions
-of common attributes can be found in Annex A.
+Singular mutually exclusive control function. Note 1 to entry:
+Definitions of common attributes can be found in Annex A.
 
 ## Activation Group
 
@@ -101,17 +108,17 @@ gain control over Position.
 
 ## Feature
 
-groups the Fixture Type Attributes into a structured way for easier
+Groups the Fixture Type Attributes into a structured way for easier
 access and search.
 
 ## Feature Groups
 
-groups the Fixture Type Attributes into a structured way for easier
+Groups the Fixture Type Attributes into a structured way for easier
 access and finding.
 
 ## DMXBreak
 
-term used when a fixture needs more than one DMX start address.
+Term used when a fixture needs more than one DMX start address.
 
 ## File Format Definition
 
@@ -713,7 +720,7 @@ the measurement are specified in [table 17](#user-content-table-17 ).
 
 </div>
 
-The order of the measurements corresponds to their assend physical
+The order of the measurements corresponds to their ascending physical
 values.
 
 Additional definition for additive color mixing: It is assumed that the
@@ -984,8 +991,7 @@ OperatingTemperature are specified in [table 25](#user-content-table-25 ).
 | Low                | [Float](#user-content-attrtype-float ) | Lowest temperature the device can be operated. Unit: °C. Default value: 0   |
 | High               | [Float](#user-content-attrtype-float ) | Highest temperature the device can be operated. Unit: °C. Default value: 40 |
 
-#### Table 25. *Operating Temperature
-Attributes*
+#### Table 25. *Operating Temperature Attributes*
 
 </div>
 
@@ -1520,11 +1526,10 @@ attributes of the protocol are specified in [table
 ### Geometry Type Reference
 
 The Geometry Type Reference is used to describe multiple instances of
-the same geometry.Example: LED panel with multiple pixels. (XML node
-<GeometryReference>). The currently defined XML attributes of reference
-are specified in [table 36](#user-content-table-36 ). Note 1: Geometry
-Reference also allows easier defintion of the DMX Channels for these
-geometries.
+the same geometry. Example: LED panel with multiple pixels. (XML node ).
+The currently defined XML attributes of reference are specified in
+[table 36](#user-content-table-36). Note 1: Geometry Reference also
+allows easier definition of the DMX Channels for these geometries.
 
 <div id="table-42">
 
@@ -1671,8 +1676,8 @@ defined XML attributes of a structure geometry are specified in
 
 </div>
 
-The strucure geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+The structure geometry has the same children types as the geometry
+collect (see [table 30](#user-content-table-30)).
 
 ### Geometry Type Support
 
@@ -1783,8 +1788,9 @@ channels](#user-content-dmx-channel ).
 This section defines the DMX channel (XML node `<DMXChannel>`). The name
 of a DMX channel cannot be user-defined and must consist of a geometry
 name and the attribute name of the first logical channel with separator
-"\_". In one Dmx Mode, this combination needs to be unique. Currently defined XML attributes of the DMX channel are specified
-in [table 46](#user-content-table-46 ).
+"\_". In one DMX Mode, this combination needs to be unique. Currently
+defined XML attributes of the DMX channel are specified in [table
+46](#user-content-table-46).
 
 <div id="table-46">
 
@@ -1804,7 +1810,7 @@ The `Geometry` should be the place in the tree of geometries where the function
 of the DMX Channel (as defined by ChannelFunction) is located either physically
 or logically. If the DMX channel doesn't have a location, put it in the top
 level geometry of the geometry tree. Attributes follow a trickle down
-principle, so they are inherited from top to down. 
+principle, so they are inherited from top down. 
 
 As children the DMX channel has a list of [logical
 channels](#user-content-logical-channel ).
@@ -1883,7 +1889,7 @@ or
 
 Where:  
 - FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
-- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Seperators can be replaced with "/".
+- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Separators can be replaced with "/".
 - FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
 - FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
 
@@ -2154,8 +2160,7 @@ protocol collect currently does not have any XML attributes (XML node
 | [OpenSoundControl](#user-content-open-sound-control-section ) | No        | Describes OpenSoundControl information |
 | [CITP](#user-content-citp-section )                           | No        | Describes CITP information             |
 
-#### Table 56. *Supported Protocol Collect
-Children*
+#### Table 56. *Supported Protocol Collect Children*
 
 </div>
 
@@ -2261,12 +2266,12 @@ This section has not yet been defined (XML node `<CITP>`).
 ## Annex A. (normative) Attribute Definitions
 
 To describe the fixture types attributes are used. Attributes define the
-function. (n) and (m) are wildcards for the enumartion of attributes
+function. (n) and (m) are wildcards for the enumeration of attributes
 like Gobo(n) - Gobo1 and Gobo2 or VideoEffect(n)Parameter(m) -
 VideoEffect1Parameter1 and VideoEffect1Parameter2. Fixture Type
 Attributes without wildcards (n) or (m) are not enumerated. The
-enumaration starts with 1. The currently defined Fixture Type Attributes
-are specified in [table A1](#user-content-table-a1 ).
+enumeration starts with 1. The currently defined Fixture Type Attributes
+are specified in [table A1](#user-content-table-a1).
 
 Note 1: The predefined Fixture Type Attributes are the preferred to use
 Fixture Type Attribute. At any time user defined attributes can be
@@ -2477,13 +2482,13 @@ introduced as well.
 | ColorCalibrationMode             | Sets calibration mode (for example on/off).                                                                                                                                                                                                                                                               |
 | ColorConsistency                 | Controls consistent behavior of color.                                                                                                                                                                                                                                                                    |
 | ColorControl                     | Controls special color related functions.                                                                                                                                                                                                                                                                 |
-| ColorModelMode                   | Controls color model (CMY/RGB/HSV..).                                                                                                                                                                                                                                                                     |
+| ColorModelMode                   | Controls color model (CMY/RGB/HSV...).                                                                                                                                                                                                                                                                     |
 | ColorSettingsReset               | Resets settings of color control channel.                                                                                                                                                                                                                                                                 |
 | ColorUniformity                  | Controls behavior of color uniformity.                                                                                                                                                                                                                                                                    |
 | CRIMode                          | Controls CRI settings of output.                                                                                                                                                                                                                                                                          |
 | CustomColor                      | Custom color related functions (save, recall..).                                                                                                                                                                                                                                                          |
 | UVStability                      | Settings for UV stability color behavior.                                                                                                                                                                                                                                                                 |
-| WavelengthCorrection             | Settings for WaveLength corrections of colors.                                                                                                                                                                                                                                                            |
+| WavelengthCorrection             | Settings for Wavelength correction of colors.                                                                                                                                                                                                                                                            |
 | WhiteCount                       | Controls if White LED is proportionally added to RGB.                                                                                                                                                                                                                                                     |
 | StrobeMode                       | Changes strobe style - strobe, pulse, random strobe, etc. - of the shutter attribute.                                                                                                                                                                                                                     |
 | ZoomMode                         | Changes modes of the fixture´s zoom.                                                                                                                                                                                                                                                                      |
@@ -2533,9 +2538,9 @@ introduced as well.
 | Blower(n)                        | Fog or hazer‘s blower feature.                                                                                                                                                                                                                                                                            |
 | Fan(n)                           | Fog or hazer's Fan feature.                                                                                                                                                                                                                                                                               |
 | Fog(n)                           | Fog or hazer's Fog feature.                                                                                                                                                                                                                                                                               |
-| Haze(n)                          | Fog or hazer's haze feature.                                                                                                                                                                                                                                                                              |
+| Haze(n)                          | Fog or hazer's Haze feature.                                                                                                                                                                                                                                                                              |
 | LampPowerMode                    | Controls the energy consumption of the lamp.                                                                                                                                                                                                                                                              |
-| Fans                             | Fancontrols a fixture or device.                                                                                                                                                                                                                                                                          |
+| Fans                             | Controls a fixture or device fan.                                                                                                                                                                                                                                                                          |
 | Blade(n)A                        | 1 of 2 shutters that shape the top/right/bottom/left of the beam.                                                                                                                                                                                                                                         |
 | Blade(n)B                        | 2 of 2 shutters that shape the top/right/bottom/left of the beam.                                                                                                                                                                                                                                         |
 | Blade(n)Rot                      | Rotates position of blade(n).                                                                                                                                                                                                                                                                             |
@@ -2565,7 +2570,7 @@ introduced as well.
 (n) and (m) are wildcards for enumeration of attributes e.g., Gobo(n) -
 Gobo1 and Gobo2 or VideoEffect(n)Parameter(m) - VideoEffect1Parameter1
 and VideoEffect1Parameter2. Attributes without the wildcards (n) or (m)
-are not enumerated. The enumaration starts with 1. Attributes names are
+are not enumerated. The enumeration starts with 1. Attributes names are
 considered as normalized. The upper and lower case of attribute names is
 not taken into account.
 
@@ -3129,10 +3134,10 @@ Table D.1 table shows the predefined connector types.
 | HDMI             | HDMI connector             |
 | PS2              | PS2 connector              |
 | TL-ST            | TosLink connector          |
-| LCDUP            | Fibre optic LC DUPLEX-type |
-| SCDUP            | Fibre optic SC DUPLEX-type |
-| SC               | Fibre optic SC-type        |
-| ST               | Fibre optic ST-type        |
+| LCDUP            | Fiber optic LC DUPLEX-type |
+| SCDUP            | Fiber optic SC DUPLEX-type |
+| SC               | Fiber optic SC-type        |
+| ST               | Fiber optic ST-type        |
 | NL4              | Speakon                    |
 | CACOM            | 8-pin LS conn              |
 | USB              | USB connector              |
@@ -3204,7 +3209,7 @@ opaque (2), and Pure White (RGB 255,255,255) is transparent (letter A).
 
 Colored gobos (3) shall use an RGB approximation. The RGB approximation
 shall be calculated on the basis of Pure White being the CCT of the
-fixture light source and the ICC colour profile embedded within the PNG.
+fixture light source and the ICC color profile embedded within the PNG.
 (See ISO 15076-1:2010) The default shall be sRGB.
 
 # Revision History
