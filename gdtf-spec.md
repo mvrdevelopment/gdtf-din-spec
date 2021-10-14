@@ -828,7 +828,7 @@ The gamut does not have any children.
 
 This section defines DMX profile descriptions. Currently it does not
 have any XML attributes (XML node `<DMXProfiles>`). As children DMX
-profile collect has a list of a [DMX profiles](#user-content-dmx-profile ).
+profile collect has a list of [DMX profiles](#user-content-dmx-profile ).
 
 #### DMX Profile
 
@@ -850,7 +850,7 @@ As children a DMX Profile has a list of [point](#user-content-point ).
 
 ##### Point
 
-This section contains points to define the DMX profile (XML node `<Point>`). The currently defined XML attributes of the point
+This section contains points to define the DMX profile (XML node `<Point>`). The currently defined XML attributes of a point
 are specified in [table TODO](#user-content-table-TODO ).
 
 <div id="table-TODO">
@@ -858,20 +858,26 @@ are specified in [table TODO](#user-content-table-TODO ).
 | XML Attribute Name  | Value Type                             | Description                    |
 | ------------------- | -------------------------------------- | ------------------------------ |
 | DMXPercentage       | [Float](#user-content-attrtype-float ) | DMX percentage of the point; Unit: Percentage; Default value: 0 |
-| CBP0                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 0; Default value: 0 |
-| CBP1                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 1; Default value: 0 |
-| CBP2                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 2; Default value: 0 |
-| CBP3                | [Float](#user-content-attrtype-float ) | Cubic Bezier Parameter 3; Default value: 0 |
+| CFC0                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x⁰; Default value: 0  |
+| CFC1                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x;  Default value: 0  |
+| CFC2                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x²; Default value: 0  |
+| CFC3                | [Float](#user-content-attrtype-float ) | Cubic Function Coefficient for x³; Default value: 0  |
 
 #### Table TODO. *Point Attributes*
 
 </div>
 
-Find last point with a DMXPercent below or equal x.
+Find the Point with the biggest DMXPercentage below or equal x. If there is none, the output is expected to be 0.
 
-Output(x) = CBP3(x-DMXPercent)3 + CBP2(x-DMXPercent)2 + CBP1(x-DMXPercent) +CBP0
+Output(x) = CFC3 * (x - DMXPercent)³ + CFC2 * (x - DMXPercent)² + CFC1 * (x - DMXPercent) + CFC0
 
-The point does not have any children.
+Here is an example where the output follows a function f for 75% of the DMX Range and another function g for the last 25%. The Point attributes are given to illustrate how they are defined.
+
+![DMXProfile example](media/DMXProfile.png "DMXProfile example")
+
+*Figure TODO. DMXProfile example*
+
+A Point does not have any children.
 
 ### Color Rendering Index Collect
 
