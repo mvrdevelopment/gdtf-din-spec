@@ -1464,7 +1464,7 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 |----|----|----|
 | Name                | [Name](#user-content-attrtype-name )      | The unique name of the geometry. The name is also the name of the interface to the outside        |
 | Model               | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                  |
-| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. |
+| ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. Custom type of connector can also be defined, for example "Loose End".|
 | Position            | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                     |
 | ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
 | SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocoll, you can add it here.        |
