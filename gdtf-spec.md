@@ -871,6 +871,13 @@ Find the Point with the biggest DMXPercentage below or equal x. If there is none
 
 Output(x) = CFC3 * (x - DMXPercent)³ + CFC2 * (x - DMXPercent)² + CFC1 * (x - DMXPercent) + CFC0
 
+Here is an example where the output follows a function f for 75% of the DMX Range and another function g for the last 25%. The Point attributes are given to illustrate how they are defined.
+
+![DMXProfile example](media/DMXProfile.png
+"DMXProfile example")
+
+*Figure TODO. DMXProfile example*
+
 A Point does not have any children.
 
 ### Color Rendering Index Collect
