@@ -2205,11 +2205,11 @@ To define a custom mapping for Art-Net values and DMX Stream values you can add 
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
-By default it is asumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
+By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
 
 ### Streaming ACN Section
 
-To define a custom mapping for Streaming ACN values and DMX Stream values you can add a an XML node
+To define a custom mapping for Streaming ACN values and DMX Stream values you can add an XML node
 `<Map>`. The currently defined XML attributes are specified in
 [table 73](#user-content-table-73 ).
 
@@ -2222,7 +2222,7 @@ To define a custom mapping for Streaming ACN values and DMX Stream values you ca
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
-By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map
+By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
 
 ### Posi Stage Net Section
 
