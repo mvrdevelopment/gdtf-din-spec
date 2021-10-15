@@ -749,7 +749,7 @@ are specified in [table 111](#user-content-table-111 ).
 | Name               | [Name](#user-content-attrtype-name )                   | Unique Name of the Gamut.                                   |
 | Points             | [Array of ColorCIE](#user-content-attrtype-colorcie )  | Set of points defining the vertice of the gamut's polygon.  |
 
-#### Table 111. *Gamuts Attributes*
+#### Table 111. *Gamut Attributes*
 
 </div>
 
