@@ -416,7 +416,7 @@ As children the attribute node has a list of a [subphysical units](#user-content
 ##### Subphysical Unit
 
 This section defines the Attribute Subphysical Unit (XML node `<SubPhysicalUnit>`).
-The currently defined XML attributes of the subphysical unit are specified in [table TODO(#user-content-table-10 ).
+The currently defined XML attributes of the subphysical unit are specified in [table 10](#user-content-table-10 ).
 
 <div id="table-10">
 
@@ -1060,20 +1060,16 @@ displayed in a hanging position.
 In Figure 3 the green arrow displays the offset of the yoke related to
 the base. The magenta arrow displays the offset of the head related to
 the yoke. The offsets are to be defined by the position matrix of the
-according geometry ([table 31](#user-content-table-31 ) – [table
-42](#user-content-table-42 )). It is important that the axis of rotation of
+according geometry ([table 34](#user-content-table-34 ) – [table
+47](#user-content-table-47 )). It is important that the axis of rotation of
 each device part is exactly positioned (see Figure 4).
-
-<!---
-TODO Confirm table numbers!
--->
 
 
 ![media/Models\_device\_rotation.png](media/Models_device_rotation.png
 "media/Models_device_rotation.png") Figure 4. Positions of rotation axis
 
 The dimension XML attributes of model (see [table
-29](#user-content-table-29 )) are always used, no matter the scaling and
+32](#user-content-table-32 )) are always used, no matter the scaling and
 ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
@@ -1149,12 +1145,8 @@ The currently defined XML attributes of the geometry are specified in
 </div>
 
 The geometry has the same children types as the geometry collect (see
-[table 30](#user-content-table-30 )).
+[table 33](#user-content-table-33 )).
 
-
-<!---
-TODO Confirm table numbers!
--->
 
 ### Geometry Type Axis
 
@@ -1175,8 +1167,9 @@ specified in [table 35](#user-content-table-35 ).
 
 </div>
 
-The axis has the same children types as the geometry collect (see [table
-30](#user-content-table-30 )).
+The axis has the same children types as the geometry collect (see
+[table 33](#user-content-table-33 )).
+
 
 ### Geometry Type Beam Filter
 
@@ -1197,8 +1190,8 @@ are specified in [table 36](#user-content-table-36 ).
 
 </div>
 
-The beam has the same children types as the geometry collect (see [table
-30](#user-content-table-30 )).
+The beam has the same children types as the geometry collect (see
+[table 33](#user-content-table-33 )).
 
 ### Geometry Type Color Filter
 
@@ -1221,7 +1214,8 @@ attributes of the color filter are specified in [table
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 30](#user-content-table-30 )).
+[table 33](#user-content-table-33 )).
+
 
 ### Geometry Type Gobo Filter
 
@@ -1243,7 +1237,8 @@ the gobo filter are specified in [table 38](#user-content-table-38 ).
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 30](#user-content-table-30 )).
+[table 33](#user-content-table-33 )).
+
 
 ### Geometry Type Shaper Filter
 
@@ -1265,7 +1260,8 @@ of the shaper filter are specified in [table 39](#user-content-table-39 ).
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 24](#user-content-table-24 )).
+[table 33](#user-content-table-33 )).
+
 
 ### Geometry Type Beam
 
@@ -1297,8 +1293,9 @@ the Beam are specified in [table 40](#user-content-table-40 ).
 
 </div>
 
-The beam has the same children types as the geometry collect (see [table
-30](#user-content-table-30 )).
+The beam has the same children types as the geometry collect (see
+[table 33](#user-content-table-33 )).
+
 
 Use the Geometry Type "Beam" to describe the position of the fixture's
 light output (usually the position of the lens) and not the position of
@@ -1414,7 +1411,8 @@ defined XML attributes of the display are specified in [table
 </div>
 
 The display has the same children types as the geometry collect (see
-[table 30](#user-content-table-30 )).
+[table 33](#user-content-table-33 )).
+
 
 ### Geometry Type Laser
 
@@ -1447,7 +1445,8 @@ defined XML attributes of the laser are specified in [table
 </div>
 
 The laser has the same children types as the geometry collect (see
-[table 30](#user-content-table-30 )).
+[table 33](#user-content-table-33 )).
+
 In addition, it also has a list of supported protocols (XML node `<Protocol>`) as children.
 
 #### Protocol
