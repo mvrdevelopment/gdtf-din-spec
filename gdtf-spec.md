@@ -218,10 +218,11 @@ The example above shows the XML node for GDTF version 1.2.
 
 The FixtureType node is the starting point of the description of the
 fixture type within the XML file. The defined Fixture Type Node
-attributes of the fixture type are specified in [table 2](#user-content-table-2 ).
+attributes of the fixture type are specified in [table 3](#user-content-table-3 ).
 
 
 <div id="table-3">
+
 #### Table 3. *Fixture Type Node Attributes*
 
 | XML Attribute Name | Value Type | Description  |
