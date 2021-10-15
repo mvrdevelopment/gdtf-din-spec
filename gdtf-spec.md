@@ -1930,13 +1930,12 @@ XML attributes of the relations are specified in [table 63](#user-content-table-
 </div>
 
 The relation does not have any children. [Listing
-5](#user-content-listing-5 ) shows an example of a simple DMX mode
-described in XML (description of the corresponding geometries are in
-[listing 4](#user-content-listing-4 )).
+1](#user-content-listing-1 ) shows an example of a simple DMX mode
+described in XML.
 
-<div id="listing-5">
+<div id="listing-1">
 
-#### Listing 5. *DMX mode with relations*
+#### Listing 1. *DMX mode with relations*
 
 ```
 <DMXMode Name="Default" Geometry="Body">
