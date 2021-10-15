@@ -764,7 +764,7 @@ profile collect has a list of [DMX profiles](#user-content-dmx-profile ).
 #### DMX Profile
 
 This section defines the DMX profile description (XML node
-`<DMXProfile>`). The currently defined XML attributes of the color space
+`<DMXProfile>`). The currently defined XML attributes of the DMX profile
 are specified in [table TODO](#user-content-table-TODO ).
 
 <div id="table-TODO">
