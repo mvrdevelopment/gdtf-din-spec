@@ -404,7 +404,7 @@ in [table 9](#user-content-table-9 ).
 
 </div>
 
-As children the attributes node has a list of a [subphysical units](#user-content-subphysical-unit ).
+As children the attribute node has a list of a [subphysical units](#user-content-subphysical-unit ).
 
 ##### Subphysical Unit
 
