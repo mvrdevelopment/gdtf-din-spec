@@ -1339,7 +1339,7 @@ server layer are specified in [table 41](#user-content-table-41 ).
 </div>
 
 The media server layer has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 33](#user-content-table-33 )).
 
 ### Geometry Type Media Server Camera
 
@@ -1362,7 +1362,7 @@ attributes of the media server camera are specified in [table
 </div>
 
 The media server camera has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 33](#user-content-table-33 )).
 
 The media server camera-view points into the positive Y-direction (and
 Z-up).
@@ -1388,7 +1388,7 @@ defined XML attributes of the media server master are specified in
 </div>
 
 The media server master has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 33](#user-content-table-33 )).
 
 ### Geometry Type Display
 
