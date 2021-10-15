@@ -1545,7 +1545,7 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 
 The wiring object has the same children types as the geometry
 collect (see [table 30](#user-content-table-30 )).
-In addition, it also has socket patch (XML node `<PinPatch>`) children.
+In addition, it also has pin patch (XML node `<PinPatch>`) children.
 
 #### Pin Patch
 
