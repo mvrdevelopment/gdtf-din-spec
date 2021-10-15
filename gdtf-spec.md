@@ -554,7 +554,7 @@ in [table 14](#user-content-table-14 ).
 | [Emitters](#user-content-emitter-collect )       | No        | Describes device emitters                                                           |
 | [Filters](#user-content-filter-collect )         | No        | Describes device filters                                                            |
 | [ColorSpace](#user-content-color-space )   | No        | Describes device default color space                                                       |
-| [AdditionalColorSpaces](#user-content-color-spaces )   | No        | Describes device color additional spaces                                                        |
+| [AdditionalColorSpaces](#user-content-color-spaces )   | No        | Describes additional device color spaces                                                        |
 | [Gamuts](#user-content-gamuts )   | No        | Describes device gamuts                                                        |
 | [DMXProfiles](#user-content-dmx-profile-collect) | No        | Describes nonlinear correlation between DMX input and physical output of a channel. |
 | [CRIs](#user-content-color-rendering-index-collect)               | No        | Describes color rendering with IES TM-30-15 (99 color samples).                     |
