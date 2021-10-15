@@ -1824,16 +1824,16 @@ currently defined XML attributes of channel function are specified in
 | RealAcceleration   | [Float](#user-content-attrtype-float )       | Time in seconds to accelerate from stop to maximum velocity; Default value: 0                                                                                 |
 | Wheel              | [Node](#user-content-attrtype-node )         | Optional. Link to a wheel; Starting point: Wheel Collect                                                                                                      |
 | Emitter            | [Node](#user-content-attrtype-node )         | Optional. Link to an emitter in the physical description; Starting point: Emitter Collect                                                                     |
-| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect Collect                                                                        |
-| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Physical Descriptions Collect                                                                        |
-| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Gamut Collect                                                                     |
-| ModeMaster         | [Node](#user-content-attrtype-node )         | Link to DMX Channel or Channel Function; Starting point DMX mode. Optional.                                                                                            |
+| Filter             | [Node](#user-content-attrtype-node )         | Optional. Link to a filter in the physical description; Starting point: Filter Collect                                                                        |
+| ColorSpace         | [Node](#user-content-attrtype-node )         | Optional. Link to a color space in the physical description; Starting point: Physical Descriptions Collect                                                    |
+| Gamut              | [Node](#user-content-attrtype-node )         | Optional. Link to a gamut in the physical description; Starting point: Gamut Collect                                                                          |
+| ModeMaster         | [Node](#user-content-attrtype-node )         | Optional. Link to DMX Channel or Channel Function; Starting point DMX mode.                                                                                   |
 | ModeFrom           | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX start value; Default value: 0/1                                                                                       |
 | ModeTo             | [DMXValue](#user-content-attrtype-dmxvalue ) | Only used together with ModeMaster; DMX end value; Default value: 0/1                                                                                         |
 | DMXProfile         | [Node](#user-content-attrtype-node )         | Optional link to DMX Profile; Starting point: DMX Profile Collect                                                                                             |
 | Min                | [Float](#user-content-attrtype-float )       | Minimum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalFrom                                                                |
 | Max                | [Float](#user-content-attrtype-float )       | Maximum Physical Value that will be used for the DMX Profile. Default: Value from PhysicalTo                                                                  |
-| CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer. Dimmer   |
+| CustomName         | [String](#user-content-attrtype-string )     | Custom Name that can he used do adress this channel function with other command based protocols like OSC. Default: Node Name of the Channel function Example: Head_Dimmer.Dimmer.Dimmer   |
 
 
 
@@ -1847,7 +1847,7 @@ or
 
 Where:  
 - FIXTURE_ID is the fixture ID is the value defined for the fixture instance.
-- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that you all "." Separators can be replaced with "/".
+- CUSTOM_NAME_CHANNELFUCTION is the Custom Name for the ChannelFunction. Note that all "." Separators can be replaced with "/".
 - FLOAT_VALUE_PHYSICAL is the physical value that the fixture should adopt. The values will be capped by the fixture by PhysicalFrom and PhysicalTo.
 - FLOAT_VALUE_PERCENT is the percent value that the fixture should adopt. The values can be between 0 and 100.
 
@@ -2193,7 +2193,7 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-To define a custom mapping for Art-Net values and DMX Stream values you can add a an XML node
+To define a custom mapping for Art-Net values and DMX Stream values you can add an XML node
 `<Map>`. The currently defined XML attributes are specified in
 [table 72](#user-content-table-72 ).
 
