@@ -1549,7 +1549,7 @@ In addition, it also has pin patch (XML node `<PinPatch>`) children.
 
 #### Pin Patch
 
-This XML node `<PinPatch>` specifies how the different sockets of its parent
+This XML node (XML node `<PinPatch>`) specifies how the different sockets of its parent
 wiring object are connected to the pins of other wiring objects. The currently
 defined XML attributes of a pin patch are specified in [table
 101](#user-content-table-101 ).
