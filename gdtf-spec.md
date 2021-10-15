@@ -113,8 +113,8 @@ access and search.
 
 ## Feature Groups
 
-Groups the Fixture Type Attributes into a structured way for easier
-access and finding.
+Groups the Fixture Type Features into a logical way for easier
+access and search.
 
 ## DMXBreak
 
