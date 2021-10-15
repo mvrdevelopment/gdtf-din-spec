@@ -856,7 +856,7 @@ specified in [table 25](#user-content-table-25 ).
 
 </div>
 
-As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-color_rendering_index ).
+As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-color-rendering-index ).
 
 ##### Color Rendering Index
 
