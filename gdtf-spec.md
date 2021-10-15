@@ -1027,9 +1027,9 @@ There are three level of details that you can define:
 |---|---|---|
 | Low  | Optional; This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  | `3ds_low` / `gltf_low`  |
 | Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  | `3ds` / `gltf` |
-| High  | Optional;This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is not limit for the vertex count. | `3ds_high` / `gltf_high`  |
+| High  | Optional; This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is no limit for the vertex count. | `3ds_high` / `gltf_high`  |
 
-Low and High meshes definitions are optional. Place the a file with the same name in the defined folder.
+Low and High meshes definitions are optional. Place the file with the same name in the defined folder.
 
 
 The device shall be drawn in a hanging position displaying the front
