@@ -1061,8 +1061,8 @@ displayed in a hanging position.
 In Figure 3 the green arrow displays the offset of the yoke related to
 the base. The magenta arrow displays the offset of the head related to
 the yoke. The offsets are to be defined by the position matrix of the
-according geometry ([table 34](#user-content-table-34 ) – [table
-47](#user-content-table-47 )). It is important that the axis of rotation of
+according geometry ([table 34](#user-content-table-34 ) – [table 54](#user-content-table-54 )). 
+It is important that the axis of rotation of
 each device part is exactly positioned (see Figure 4).
 
 
