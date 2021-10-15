@@ -1805,7 +1805,7 @@ currently defined XML attributes of channel function are specified in
 |----|----|----|
 | Name               | [Name](#user-content-attrtype-name )         | Unique name; Default value: Name of attribute and number of channel function.                                                                                 |
 | Attribute          | [Node](#user-content-attrtype-node )         | Link to attribute; Starting point is the attributes node. Default value: “NoFeature”.                                                                         |
-| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer ́s original name of the attribute; Default: empty                                                                                             |
+| OriginalAttribute  | [String](#user-content-attrtype-string )     | The manufacturer's original name of the attribute; Default: empty                                                                                             |
 | DMXFrom            | [DMXValue](#user-content-attrtype-dmxvalue ) | Start DMX value; The end DMX value is calculated as a DMXFrom of the next channel function – 1 or the maximum value of the DMX channel. Default value: "0/1". |
 | Default            | [DMXValue](#user-content-attrtype-dmxvalue ) | Default DMX value of channel function when activated by the control system.                                                                                   |
 | PhysicalFrom       | [Float](#user-content-attrtype-float )       | Physical start value; Default value: 0                                                                                                                        |
