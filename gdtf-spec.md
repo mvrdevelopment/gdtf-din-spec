@@ -836,7 +836,7 @@ A Point does not have any children.
 
 This section contains TM-30-15 Fidelity Index (Rf) for 99 color samples.
 Currently it does not have any XML attributes (XML node `<CRIs>`). As
-children, CRIs has a list of [CRI groups](#user-content-cri-group ).
+children, CRIs has a list of [CRI groups](#user-content-color-rendering-index-group ).
 
 ### Color Rendering Index Group
 
@@ -856,7 +856,7 @@ specified in [table 25](#user-content-table-25 ).
 
 </div>
 
-As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-cri ).
+As children, the CRIGroup has an optional list of [Color Rendering Index](#user-content-color_rendering_index ).
 
 ##### Color Rendering Index
 
