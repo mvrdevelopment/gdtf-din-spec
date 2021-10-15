@@ -1024,11 +1024,17 @@ All models of a device combined should not exceed a maximum vertices count of 12
 
 There are three level of details that you can define:
 
+#### Table 33. *Mesh level of detail*
+
+<div id="table-33">
+
 | LOD  | Description  |  Folder 3DS / gltf |
 |---|---|---|
 | Low  | Optional; This is the mesh for fixtures that are far away from the camera. It should have 30% of the the vertexes from the default mesh vertex count.  | `3ds_low` / `gltf_low`  |
 | Default  | This is the default mesh that is used for real time visualization in preprogramming tool. It should have the minimum vertex count possible, while still looking like the fixture in 3D.  | `3ds` / `gltf` |
 | High  | Optional; This is high quality mesh targeting non-realtime applications, where the vertex count is not that important. There is no limit for the vertex count. | `3ds_high` / `gltf_high`  |
+
+</div>
 
 Low and High meshes definitions are optional. Place the file with the same name in the defined folder.
 
@@ -1061,7 +1067,7 @@ displayed in a hanging position.
 In Figure 3 the green arrow displays the offset of the yoke related to
 the base. The magenta arrow displays the offset of the head related to
 the yoke. The offsets are to be defined by the position matrix of the
-according geometry ([table 34](#user-content-table-34 ) – [table 54](#user-content-table-54 )). 
+according geometry ([table 35](#user-content-table-35 ) – [table 55](#user-content-table-55 )). 
 It is important that the axis of rotation of
 each device part is exactly positioned (see Figure 4).
 
@@ -1093,11 +1099,11 @@ The physical description of the device parts is defined in the geometry
 collect. Geometry collect can contain a separate geometry or a tree of
 geometries. The geometry collect currently does not have any XML
 attributes (XML node `<Geometries>`). The currently defined children nodes
-of geometry collect are specified in [table 33](#user-content-table-33 ).
+of geometry collect are specified in [table 34](#user-content-table-34 ).
 
-<div id="table-33">
+<div id="table-34">
 
-#### Table 33. *Geometry Children Types*
+#### Table 34. *Geometry Children Types*
 
 | XML node                                                              | Amount | Description                                                                                    |
 |----|----|----|
@@ -1130,11 +1136,11 @@ geometry.
 
 It is a basic geometry type without specification (XML node `<Geometry>`).
 The currently defined XML attributes of the geometry are specified in
-[table 34](#user-content-table-34 ).
+[table 35](#user-content-table-35 ).
 
-<div id="table-34">
+<div id="table-35">
 
-#### Table 34. *Geometry Attributes*
+#### Table 35. *Geometry Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                             |
 |----|----|----|
@@ -1146,18 +1152,18 @@ The currently defined XML attributes of the geometry are specified in
 </div>
 
 The geometry has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Axis
 
 This type of geometry defines device parts with a rotation axis (XML
 node `<Axis>`). The currently defined XML attributes of the axis are
-specified in [table 35](#user-content-table-35 ).
+specified in [table 36](#user-content-table-36 ).
 
-<div id="table-35">
+<div id="table-36">
 
-#### Table 35. *Axis Attributes*
+#### Table 36. *Axis Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                   |
 |----|----|----|
@@ -1169,18 +1175,18 @@ specified in [table 35](#user-content-table-35 ).
 </div>
 
 The axis has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Beam Filter
 
 This type of geometry defines device parts with a beam filter (XML node
 `<FilterBeam>`). The currently defined XML attributes of the beam filter
-are specified in [table 36](#user-content-table-36 ).
+are specified in [table 37](#user-content-table-37 ).
 
-<div id="table-36">
+<div id="table-37">
 
-#### Table 36. *Beam Filter Attributes*
+#### Table 37. *Beam Filter Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                                                                              |
 |----|----|----|
@@ -1192,18 +1198,17 @@ are specified in [table 36](#user-content-table-36 ).
 </div>
 
 The beam has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 ### Geometry Type Color Filter
 
 This type of geometry is used to describe device parts which have a
 color filter (XML node `<FilterColor>`). The currently defined XML
-attributes of the color filter are specified in [table
-37](#user-content-table-37 ).
+attributes of the color filter are specified in [table 38](#user-content-table-38 ).
 
-<div id="table-37">
+<div id="table-38">
 
-#### Table 37. *Color Filter Attributes*
+#### Table 38. *Color Filter Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
 |----|----|----|
@@ -1215,18 +1220,18 @@ attributes of the color filter are specified in [table
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Gobo Filter
 
 This type of geometry is used to describe device parts which have gobo
 wheels (XML node `<FilterGobo>`). The currently defined XML attributes of
-the gobo filter are specified in [table 38](#user-content-table-38 ).
+the gobo filter are specified in [table 39](#user-content-table-39 ).
 
-<div id="table-38">
+<div id="table-39">
 
-#### Table 38. *Gobo Filter Attributes*
+#### Table 39. *Gobo Filter Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                           |
 |----|----|----|
@@ -1238,18 +1243,18 @@ the gobo filter are specified in [table 38](#user-content-table-38 ).
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Shaper Filter
 
 This type of geometry is used to describe device parts which have a
 shaper (XML node `<FilterShaper>`). The currently defined XML attributes
-of the shaper filter are specified in [table 39](#user-content-table-39 ).
+of the shaper filter are specified in [table 40](#user-content-table-40 ).
 
-<div id="table-39">
+<div id="table-40">
 
-#### Table 39. *Shaper Filter Attributes*
+#### Table 40. *Shaper Filter Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                                                                                                                 |
 |----|----|----|
@@ -1261,18 +1266,18 @@ of the shaper filter are specified in [table 39](#user-content-table-39 ).
 </div>
 
 The color has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Beam
 
 This type of geometry is used to describe device parts which have a
 light source (XML node `<Beam>`). The currently defined XML attributes of
-the Beam are specified in [table 40](#user-content-table-40 ).
+the Beam are specified in [table 41](#user-content-table-41 ).
 
-<div id="table-40">
+<div id="table-41">
 
-#### Table 40. *Beam Attributes*
+#### Table 41. *Beam Attributes*
 
 | XML Attribute Name  | Value Type                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |----|----|----|
@@ -1295,7 +1300,7 @@ the Beam are specified in [table 40](#user-content-table-40 ).
 </div>
 
 The beam has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 Use the Geometry Type "Beam" to describe the position of the fixture's
@@ -1323,11 +1328,11 @@ The beam geometry emits its light into negative Z direction (and Y-up).
 This type of geometry is used to describe the layer of a media device
 that is used for representation of media files (XML node
 `<MediaServerLayer>`). The currently defined XML attributes of the media
-server layer are specified in [table 41](#user-content-table-41 ).
+server layer are specified in [table 42](#user-content-table-42 ).
 
-<div id="table-41">
+<div id="table-42">
 
-#### Table 41. *Media Server Layer Attributes*
+#### Table 42. *Media Server Layer Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
 |----|----|----|
@@ -1339,18 +1344,18 @@ server layer are specified in [table 41](#user-content-table-41 ).
 </div>
 
 The media server layer has the same children types as the geometry
-collect (see [table 33](#user-content-table-33 )).
+collect (see [table 34](#user-content-table-34 )).
 
 ### Geometry Type Media Server Camera
 
 This type of geometry is used to describe the camera or output of a
 media device (XML node `<MediaServerCamera>`). The currently defined XML
 attributes of the media server camera are specified in [table
-42](#user-content-table-42 ).
+43](#user-content-table-43 ).
 
-<div id="table-42">
+<div id="table-43">
 
-#### Table 42. *Media Server Camera Attributes*
+#### Table 43. *Media Server Camera Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                                       |
 |----|----|----|
@@ -1362,7 +1367,7 @@ attributes of the media server camera are specified in [table
 </div>
 
 The media server camera has the same children types as the geometry
-collect (see [table 33](#user-content-table-33 )).
+collect (see [table 34](#user-content-table-34 )).
 
 The media server camera-view points into the positive Y-direction (and
 Z-up).
@@ -1372,11 +1377,11 @@ Z-up).
 This type of geometry is used to describe the master control of one or
 several media devices (XML node `<MediaServerMaster>`). The currently
 defined XML attributes of the media server master are specified in
-[table 43](#user-content-table-43 ).
+[table 44](#user-content-table-44 ).
 
-<div id="table-43">
+<div id="table-44">
 
-#### Table 43. *Media Server Master Attributes*
+#### Table 44. *Media Server Master Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                   |
 |----|----|----|
@@ -1388,18 +1393,17 @@ defined XML attributes of the media server master are specified in
 </div>
 
 The media server master has the same children types as the geometry
-collect (see [table 33](#user-content-table-33 )).
+collect (see [table 34](#user-content-table-34 )).
 
 ### Geometry Type Display
 
 This type of geometry is used to describe a self-emitting surface which
 is used to display visual media (XML node `<Display>`). The currently
-defined XML attributes of the display are specified in [table
-44](#user-content-table-44 ).
+defined XML attributes of the display are specified in [table 45](#user-content-table-45 ).
 
-<div id="table-44">
+<div id="table-45">
 
-#### Table 44. *Display Attributes*
+#### Table 45. *Display Attributes*
 
 | XML Attribute Name | Value Type                                | Description                                                                               |
 |----|----|----|
@@ -1412,19 +1416,18 @@ defined XML attributes of the display are specified in [table
 </div>
 
 The display has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 
 ### Geometry Type Laser
 
 This type of geometry is used to describe the position of a laser's 
 light output (XML node `<Laser>`). The currently
-defined XML attributes of the laser are specified in [table
-45](#user-content-table-45 ).
+defined XML attributes of the laser are specified in [table 46](#user-content-table-46 ).
 
-<div id="table-45">
+<div id="table-46">
 
-#### Table 45. *Laser Attributes*
+#### Table 46. *Laser Attributes*
 
 | XML Attribute Name | Value Type     |                    |
 |----|----|----|
@@ -1446,19 +1449,18 @@ defined XML attributes of the laser are specified in [table
 </div>
 
 The laser has the same children types as the geometry collect (see
-[table 33](#user-content-table-33 )).
+[table 34](#user-content-table-34 )).
 
 In addition, it also has a list of supported protocols (XML node `<Protocol>`) as children.
 
 #### Protocol
 
 This XML node specifies the protocol for a Laser (XML node `<Protocol>`). The currently defined XML
-attributes of the protocol are specified in [table
-46](#user-content-table-46 ).
+attributes of the protocol are specified in [table 47](#user-content-table-47 ).
 
-<div id="table-46">
+<div id="table-47">
 
-#### Table 46 *Protocol attributes*
+#### Table 47 *Protocol attributes*
 
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
 |----|----|----|
@@ -1469,14 +1471,14 @@ attributes of the protocol are specified in [table
 The Geometry Type Reference is used to describe multiple instances of
 the same geometry. Example: LED panel with multiple pixels. (XML node ).
 The currently defined XML attributes of reference are specified in
-[table 47](#user-content-table-47). 
+[table 48](#user-content-table-48). 
 
 Note 1: Geometry Reference also allows easier definition of the DMX Channels
 for these geometries.
 
-<div id="table-47">
+<div id="table-48">
 
-#### Table 47. *Geometry Reference Attributes*
+#### Table 48. *Geometry Reference Attributes*
 
 | XML Attribute Name | Value Type                            | Description    |
 |----|----|----|
@@ -1502,12 +1504,11 @@ defined.
 
 This XML node specifies the DMX offset for the DMX channel of the
 referenced geometry (XML node `<Break>`). The currently defined XML
-attributes of the break are specified in [table
-48](#user-content-table-48 ).
+attributes of the break are specified in [table 49](#user-content-table-49 ).
 
-<div id="table-48">
+<div id="table-49">
 
-#### Table 48. *Break Attributes*
+#### Table 49. *Break Attributes*
 
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
 |----|----|----|
@@ -1521,11 +1522,11 @@ attributes of the break are specified in [table
 ### Geometry Type Wiring Object
 
 This type of geometry is used to describe an electrical device that can be wired (XML node `<WiringObject>`). The currently
-defined XML attributes of a wiring object geometry are specified in [table 49](#user-content-table-49 ).
+defined XML attributes of a wiring object geometry are specified in [table 50](#user-content-table-50 ).
 
-<div id="table-49">
+<div id="table-50">
 
-#### Table 49. *Wiring Object Attributes*
+#### Table 50. *Wiring Object Attributes*
 
 | XML Attribute Name  | Value Type                                | Description                                                                                       |
 |----|----|----|
@@ -1554,19 +1555,18 @@ defined XML attributes of a wiring object geometry are specified in [table 49](#
 </div>
 
 The wiring object has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 34](#user-content-table-34 )).
 In addition, it also has pin patch (XML node `<PinPatch>`) children.
 
 #### Pin Patch
 
 This XML node (XML node `<PinPatch>`) specifies how the different sockets of its parent
 wiring object are connected to the pins of other wiring objects. The currently
-defined XML attributes of a pin patch are specified in [table
-50](#user-content-table-50 ).
+defined XML attributes of a pin patch are specified in [table 51](#user-content-table-51 ).
 
-<div id="table-50">
+<div id="table-51">
 
-#### Table 50. *Pin Patch Attributes*
+#### Table 51. *Pin Patch Attributes*
 
 | XML Attribute Name  | Value Type                               | Description                                                                                            |
 |----|----|----|
@@ -1583,11 +1583,11 @@ The pin patch doesn't have any children.
 
 This type of geometry is used to describe a geometry used for the inventory (XML node `<Inventory>`). The currently
 defined XML attributes of an inventory geometry are specified in
-[table 51](#user-content-table-51 ).
+[table 52](#user-content-table-52 ).
 
-<div id="table-51">
+<div id="table-52">
 
-#### Table 51. *Inventory Attributes*
+#### Table 52. *Inventory Attributes*
 
 | XML Attribute Name  | Value Type                               | Description                                                    |
 |----|----|----|
@@ -1600,17 +1600,17 @@ defined XML attributes of an inventory geometry are specified in
 </div>
 
 The inventory geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 34](#user-content-table-34 )).
 
 ### Geometry Type Structure
 
 This type of geometry is used to describe a structure (XML node `<Structure>`). The currently
 defined XML attributes of a structure geometry are specified in
-[table 52](#user-content-table-52 ).
+[table 53](#user-content-table-53 ).
 
-<div id="table-52">
+<div id="table-53">
 
-#### Table 52. *Structure Attributes*
+#### Table 53. *Structure Attributes*
 
 | XML Attribute Name        | Value Type                                | Description                                                             |
 |----|----|----|
@@ -1628,17 +1628,17 @@ defined XML attributes of a structure geometry are specified in
 </div>
 
 The structure geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30)).
+collect (see [table 34](#user-content-table-34)).
 
 ### Geometry Type Support
 
 This type of geometry is used to describe a support (XML node `<Support>`). The currently
 defined XML attributes of a support geometry are specified in
-[table 53](#user-content-table-53 ).
+[table 54](#user-content-table-54 ).
 
-<div id="table-53">
+<div id="table-54">
 
-#### Table 53. *Support Attributes*
+#### Table 54. *Support Attributes*
 
 | XML Attribute Name        | Value Type                                | Description                                                                                     |
 |----|----|----|
@@ -1665,17 +1665,17 @@ defined XML attributes of a support geometry are specified in
 </div>
 
 The support geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 34](#user-content-table-34 )).
 
 ### Geometry Type Magnet
 
 This type of geometry is used to describe a magnet, a point where other geometries should be attached (XML node `<Magnet>`). The currently
 defined XML attributes of a magnet geometry are specified in
-[table 54](#user-content-table-54 ).
+[table 55](#user-content-table-55 ).
 
-<div id="table-54">
+<div id="table-55">
 
-#### Table 54. *Magnet Attributes*
+#### Table 55. *Magnet Attributes*
 
 | XML Attribute Name        | Value Type                                | Description                                                                                     |
 |----|----|----|
@@ -1687,7 +1687,7 @@ defined XML attributes of a magnet geometry are specified in
 </div>
 
 The magnet geometry has the same children types as the geometry
-collect (see [table 30](#user-content-table-30 )).
+collect (see [table 34](#user-content-table-34 )).
 
 ## DMX Mode Collect
 
@@ -1701,11 +1701,11 @@ mode collect has DMX modes.
 
 Each DMX mode describes logical control part of the device in a specific
 mode (XML node `<DMXMode>`). The currently defined XML attributes of the
-DMX mode are specified in [table 55](#user-content-table-55 ).
+DMX mode are specified in [table 56](#user-content-table-56 ).
 
-<div id="table-55">
+<div id="table-56">
 
-#### Table 55. *DMX Mode Attributes*
+#### Table 56. *DMX Mode Attributes*
 
 | XML Attribute Name | Value Type                        | Description                                                                                   |
 |----|----|----|
@@ -1716,11 +1716,11 @@ DMX mode are specified in [table 55](#user-content-table-55 ).
 
 </div>
 
-DMX mode children are specified in [table 56](#user-content-table-56 ).
+DMX mode children are specified in [table 57](#user-content-table-57 ).
 
-<div id="table-56">
+<div id="table-57">
 
-#### Table 56. *DMX Mode Children*
+#### Table 57. *DMX Mode Children*
 
 | XML node                                       | Mandatory | Description                                      |
 |----|----|----|
@@ -1745,11 +1745,11 @@ of a DMX channel cannot be user-defined and must consist of a geometry
 name and the attribute name of the first logical channel with separator
 "\_". In one DMX Mode, this combination needs to be unique. Currently
 defined XML attributes of the DMX channel are specified in [table
-57](#user-content-table-57).
+58](#user-content-table-58).
 
-<div id="table-57">
+<div id="table-58">
 
-#### Table 57. *DMX Channel Attributes*
+#### Table 58. *DMX Channel Attributes*
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                    |
 |----|----|----|
@@ -1780,11 +1780,11 @@ only one logical channel with the same attribute can reference the same
 geometry at a time. The name of a Logical Channel cannot be user-defined
 and is equal to the linked attribute name. The XML node of the logical
 channel is `<LogicalChannel>`. The currently defined XML attributes of the
-logical channel are specified in [table 58](#user-content-table-58 ).
+logical channel are specified in [table 59](#user-content-table-59 ).
 
-<div id="table-58">
+<div id="table-59">
 
-#### Table 58. *Logical Channel Attributes*
+#### Table 59. *Logical Channel Attributes*
 
 | XML Attribute Name | Value Type                          | Description                                                                                                                                                                                  |
 |----|----|----|
@@ -1805,11 +1805,11 @@ function](#user-content-channel-function ).
 The Fixture Type Attribute is assigned to a Channel Function and defines
 the function of its DMX Range. (XML node `<ChannelFunction>`). The
 currently defined XML attributes of channel function are specified in
-[table 59](#user-content-table-59 ).
+[table 60](#user-content-table-60 ).
 
-<div id="table-59">
+<div id="table-60">
 
-#### Table 59. *Channel Function Attributes*
+#### Table 60. *Channel Function Attributes*
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                   |
 |----|----|----|
@@ -1860,11 +1860,11 @@ sets](#user-content-sub-channel-set ).
 
 This section defines the channel sets of the channel function (XML node
 <ChannelSet>). The currently defined XML attributes of the channel set
-are specified in [table 60](#user-content-table-60 ).
+are specified in [table 61](#user-content-table-61 ).
 
-<div id="table-60">
+<div id="table-61">
 
-#### Table 60. *Channel Set Attributes*
+#### Table 61. *Channel Set Attributes*
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                   |
 |----|----|----|
@@ -1883,11 +1883,11 @@ The channel set does not have any children.
 
 This section defines the sub channel sets of the channel function (XML node
 <SubChannelSet>). The currently defined XML attributes of the sub channel set
-are specified in [table 61](#user-content-table-61 ).
+are specified in [table 62](#user-content-table-62 ).
 
-<div id="table-61">
+<div id="table-62">
 
-#### Table 61. *Sub Channel Set Attributes*
+#### Table 62. *Sub Channel Set Attributes*
 
 | XML Attribute Name | Value Type                                | Description                                                                                                                                                                                                                                                     |
 |----|----|----|
@@ -1913,12 +1913,11 @@ relation collect has a list of a [relation](#user-content-relation ).
 
 This section defines the relation between the master DMX channel and the
 following logical channel (XML node `<Relation>`). The currently defined
-XML attributes of the relations are specified in [table
-62](#user-content-table-62 ).
+XML attributes of the relations are specified in [table 63](#user-content-table-63 ).
 
-<div id="table-62">
+<div id="table-63">
 
-#### Table 62. *Relation Attributes*
+#### Table 63. *Relation Attributes*
 
 | XML Attribute Name | Value Type                               | Description                                                      |
 |----|----|----|
@@ -1992,11 +1991,11 @@ system. The macro collect currently does not have any XML attributes
 
 This section defines a DMX sequence. (XML node `<FTMacro>`). The currently
 defined XML attributes of the macro are specified in [table
-63](#user-content-table-63 ).
+64](#user-content-table-64 ).
 
-<div id="table-63">
+<div id="table-64">
 
-#### Table 63. *Macro Attributes*
+#### Table 64. *Macro Attributes*
 
 | XML Attribute Name | Value Type                        | Description                   |
 |----|----|----|
@@ -2006,11 +2005,11 @@ defined XML attributes of the macro are specified in [table
 
 </div>
 
-Macro children are specified in [table 64](#user-content-table-64 )
+Macro children are specified in [table 65](#user-content-table-65 )
 
-<div id="table-64">
+<div id="table-65">
 
-#### Table 64. *Macro Children*
+#### Table 65. *Macro Children*
 
 | XML node                          | Mandatory | Description                          |
 |----|----|----|
@@ -2029,11 +2028,11 @@ list of [MacroDMXStep](#user-content-macro-dmx-step ).
 
 This section defines a DMX step (XML node `<MacroDMXStep>`). The currently
 defined XML attributes of the macro DMX step are specified in [table
-65](#user-content-table-65 ).
+66](#user-content-table-66 ).
 
-<div id="table-65">
+<div id="table-66">
 
-#### Table 65. *Macro DMX Step Attributes*
+#### Table 66. *Macro DMX Step Attributes*
 
 | XML Attribute Name | Value Type                          | Description                                          |
 |----|----|----|
@@ -2049,11 +2048,11 @@ Value](#user-content-dmx-value ).
 
 This section defines the value for DMX channel (XML node
 <MacroDMXValue>). The currently defined XML attributes of the DMX Value
-are specified in [table 66](#user-content-table-66 ).
+are specified in [table 67](#user-content-table-67 ).
 
-<div id="table-66">
+<div id="table-67">
 
-#### Table 66. *DMX Value Attributes*
+#### Table 67. *DMX Value Attributes*
 
 | XML Attribute Name | Value Type                                | Description                                                                                  |
 |----|----|----|
@@ -2078,11 +2077,11 @@ This section defines one revision of a the device type (XML node
 `Revision>`). Revisions are optional. Every time a GDTF file is uploaded
 to the database, a revision with the actual time and UserID is created
 by the database. The currently defined XML attributes of the revision
-are specified in [table 67](#user-content-table-67 ).
+are specified in [table 68](#user-content-table-68 ).
 
-<div id="table-67">
+<div id="table-68">
 
-#### Table 67. *Revision Attributes*
+#### Table 68. *Revision Attributes*
 
 | XML Attribute Name | Value Type                            | Description                                                                          |
 |----|----|----|
@@ -2114,11 +2113,11 @@ If the device supports one or several additional protocols, these
 protocol specific information have to be specified. The supported
 protocol collect currently does not have any XML attributes (XML node
 `<Protocols>`). Children of supported protocol collect are specified in
-[table 68](#user-content-table-68 ).
+[table 69](#user-content-table-69 ).
 
-<div id="table-68">
+<div id="table-69">
 
-#### Table 68. *Supported Protocol Collect Children*
+#### Table 69. *Supported Protocol Collect Children*
 
 | XML node                                                   | Mandatory | Description                            |
 |----|----|----|
@@ -2136,11 +2135,11 @@ protocol collect currently does not have any XML attributes (XML node
 
 If the device supports the RDM protocol, this section defines the
 corresponding information (XML node `<FTRDM>`). The currently defined XML
-attributes of RDM are specified in [table 69](#user-content-table-69 ).
+attributes of RDM are specified in [table 70](#user-content-table-70 ).
 
-<div id="table-69">
+<div id="table-70">
 
-#### Table 69. *RDM Attributes*
+#### Table 70. *RDM Attributes*
 
 | XML Attribute Name | Value Type                      | Description            |
 |----|----|----|
@@ -2155,12 +2154,11 @@ As children the FTRDM has a list of `SoftwareVersionID`.
 #### SoftwareVersionID
 
 For each supported software version add an XML node `<SoftwareVersionID>`.
-The currently defined XML attributes are specified in [table
-70](#user-content-table-70 ).
+The currently defined XML attributes are specified in [table 71](#user-content-table-71 ).
 
-<div id="table-70">
+<div id="table-71">
 
-#### Table 70. *SoftwareVersionID*
+#### Table 71. *SoftwareVersionID*
 
 | XML Attribute Name | Value Type                      | Description         |
 |----|----|----|
@@ -2175,11 +2173,11 @@ As children the SoftwareVersionID has a list of `DMXPersonality`.
 
 To define the supported software versions add an XML node
 `<DMXPersonality>`. The currently defined XML attributes are specified in
-[table 71](#user-content-table-71 ).
+[table 72](#user-content-table-72 ).
 
-<div id="table-71">
+<div id="table-72">
 
-#### Table 71. *DMXPersonality*
+#### Table 72. *DMXPersonality*
 
 | XML Attribute Name | Value Type                        | Description                                                       |
 |----|----|----|
@@ -2195,11 +2193,11 @@ The DMXPersonality does not have any children.
 
 To define a custom mapping for Art-Net values and DMX Stream values you can add an XML node
 `<Map>`. The currently defined XML attributes are specified in
-[table 72](#user-content-table-72 ).
+[table 73](#user-content-table-73 ).
 
-<div id="table-72">
+<div id="table-73">
 
-#### Table 72. *Todo table name*
+#### Table 73. *Todo table name*
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
 |----|----|----|
@@ -2212,11 +2210,11 @@ By default it is assumed, that all the values are mapped 1:1, so only when you d
 
 To define a custom mapping for Streaming ACN values and DMX Stream values you can add an XML node
 `<Map>`. The currently defined XML attributes are specified in
-[table 73](#user-content-table-73 ).
+[table 74](#user-content-table-74 ).
 
-<div id="table-73">
+<div id="table-74">
  
-#### Table 73. *Todo table name*
+#### Table 74. *Todo table name*
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
 |----|----|----|
