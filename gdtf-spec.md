@@ -1422,8 +1422,8 @@ defined XML attributes of the laser are specified in [table
 | Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
 | Model              | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                               |
 | Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
-| ColorType          | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
-| Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType] is "SingleWaveLength"; Unit:nm (nanometers)                                            |
+| ColorType <a id="attrtype-colortype" />         | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
+| Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType](#user-content-attrtype-colortype) is "SingleWaveLength"; Unit:nm (nanometers)                                            |
 | OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
 | Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitter Collect](#user-content-emitter-collect ). |
 | BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: mm (millimeters)                                            |
