@@ -1410,13 +1410,13 @@ The display has the same children types as the geometry collect (see
 
 This type of geometry is used to describe the position of a laser's 
 light output (XML node `<Laser>`). The currently
-defined XML attributes of the display are specified in [table
+defined XML attributes of the laser are specified in [table
 41](#user-content-table-35 ).
 
 <div id="table-todo">
 
 #### Table TODO. *Laser Attributes*
-i
+
 | XML Attribute Name | Value Type     |                    |
 |----|----|----|
 | Name               | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                               |
