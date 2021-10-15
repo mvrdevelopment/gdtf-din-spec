@@ -885,7 +885,7 @@ It currently does not have any XML attributes (XML node `<Connectors>`). As chil
 
 #### Connector
 
-See Geometry Collect WriingObject. For easier transition find below the equivalent of the WiringObject.
+See Geometry Collect WiringObject. For easier transition find below the equivalent of the WiringObject.
 This section defines the connector (XML node `<Connector>`). The currently
 defined XML attributes of the connector are specified in [table
 27](#user-content-table-27 ).
