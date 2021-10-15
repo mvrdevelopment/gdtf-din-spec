@@ -1609,10 +1609,10 @@ defined XML attributes of a structure geometry are specified in
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix           |
 | LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                                    |
 | StructureType             | [Enum](#user-content-attrtype-enum )      | The type of structure. Defined values are "CenterLineBased", "Detail".  |
-| CrossSectionType          | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Truss", "Tube".       |
-| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for Tubes.                        |
-| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for Tubes.          |
-| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for Trusses.                  |
+| CrossSectionType  <a id="attrtype-crosssectiontype" />        | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Truss", "Tube".       |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for [Tubes](#user-content-attrtype-crosssectiontype ).                        |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for [Tubes](#user-content-attrtype-crosssectiontype ).          |
+| TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for [Trusses](#user-content-attrtype-crosssectiontype ).                  |
 
 
 </div>
@@ -1635,21 +1635,21 @@ defined XML attributes of a support geometry are specified in
 | Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
-| SupportType               | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
-| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for Ropes.                                             |
-| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for Ropes.                                      |
+| SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ).                                             |
+| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ) .                                      |
 | CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode               |
 | CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode               |
 | CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode               |
 | CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode.         |
 | CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode.         |
 | CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.         |
-| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for Ground Supports.   |
-| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for Ground Supports.   |
-| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for Ground Supports.   |
-| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for Ground Supports.  |
-| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for Ground Supports.  |
-| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for Ground Supports.  |
+| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
 
 
 </div>
