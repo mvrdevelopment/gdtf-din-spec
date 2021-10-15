@@ -209,7 +209,7 @@ The example above shows the XML node for GDTF version 1.2.
 
 | XML Attribute Name | Value Type                             | Description                                                                                                                                                 |
 |----|----|----|
-| DataVersion        | [UInt.UInt](#user-content-attrtype-uint )| The DataVersion attribute defines the minimal version of compatibility.The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
+| DataVersion        | [UInt.UInt](#user-content-attrtype-uint )| The DataVersion attribute defines the minimal version of compatibility. The Version format is “Major.Minor”, where major and minor is Uint with size 1 byte. |
 
 
 </div>
