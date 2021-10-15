@@ -1524,7 +1524,7 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 | ConnectorType       | [Name](#user-content-attrtype-name )      | The type of the connector. Find a list of predefined types in [Annex D](#user-content-table-d1 ). This is not applicable for Component Types Fuses. Custom type of connector can also be defined, for example "Loose End".|
 | Position            | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                     |
 | ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
-| SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocoll, you can add it here.        |
+| SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocol, you can add it here.        |
 | PinCount            | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.              |
 | ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for Consumers.                                          |
 | VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for Consumers.                                            |
@@ -1533,7 +1533,7 @@ defined XML attributes of a wiring object geometry are specified in [table 100](
 | FrequencyRangeMin     | [Float](#user-content-attrtype-float )    | The Frequency range's minimum value. Only for Consumers.                                            |
 | MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for Power Sources.         |
 | Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for Power Sources.                     |
-| SignalLayer         | [Float](#user-content-attrtype-integer )  | The layer of the Signal Type. In one device, all wiring geometry that use the same Signal Layers are connected. Special value 0: Connected to all geometries. |
+| SignalLayer         | [Integer](#user-content-attrtype-integer )  | The layer of the Signal Type. In one device, all wiring geometry that use the same Signal Layers are connected. Special value 0: Connected to all geometries. |
 | CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device. Only for consumers.                                               |
 | FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value. Only for fuses.                                                                   |
 | FuseRating          | [Enum](#user-content-attrtype-enum )      | Fuse Rating. Defined values are "B", "C", "D", "K", "Z".                                          |
