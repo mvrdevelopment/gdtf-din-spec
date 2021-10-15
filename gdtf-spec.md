@@ -535,7 +535,6 @@ specified in [table 13](#user-content-table-13 ).
 #### Table 13. *AnimationSystem Attributes*
 
 | XML Attribute Name | Value Type                                   | Description                                                                                                                                                                                                              |
-
 |----|----|----|
 | P1                 | [Array of Float](#user-content-attrtype-float ) | First Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis.  |
 | P2                 | [Array of Float](#user-content-attrtype-float ) | Second Point of the Spline describing the path of animation system in the beam in relation to the middle of the Media File; Array of two floats; Separator of values is ","; First Float is X-axis and second is Y-axis. |
