@@ -264,12 +264,17 @@ sections is mandatory as specified in [table 4](#user-content-table-4 ).
 This section defines the attribute definitions for the Fixture Type
 Attributes.
 
-Note 1: More information on the definitions of attributes can be found
-in Annex A "Attribute Definitions"". Note 2: All currently defined
-Fixture Type Attributes can be found in Annex B "Attribute Listing".
+Note 1: More information on the definitions of attributes can be found in Annex
+A "Attribute Definitions"". 
+
+Note 2: All currently defined Fixture Type Attributes can be found in Annex B
+"Attribute Listing".
+
 Note 3: All currently defined activation groups can be found in Annex B
-"Attribute Listing". Note 4: All currently defined feature groups can be
-found in Annex B "Attribute Listing".
+"Attribute Listing". 
+
+Note 4: All currently defined feature groups can be found in Annex B "Attribute
+Listing".
 
 The current attribute definition node does not have any XML attributes
 (XML node `<AttributeDefinitions>`). Children of the attribute definition
@@ -322,10 +327,11 @@ The activation group does not have any children.
 This section defines the logical grouping of Fixture Type Attributes
 (XML node `<FeatureGroups>`).
 
-Note 1 A feature group can contain more than one logical control unit. A
-feature group Position shall contain PanTilt and XYZ as separate
-Feature. Note 2 Usually Pan and Tilt create a logical unit to enable
-position control, so they must be grouped in a Feature PanTilt.
+Note 1: A feature group can contain more than one logical control unit. A
+feature group Position shall contain PanTilt and XYZ as separate Feature. 
+
+Note 2: Usually Pan and Tilt create a logical unit to enable position control,
+so they must be grouped in a Feature PanTilt.
 
 As children the feature groups has a list of a [feature group](#user-content-feature-group ).
 
@@ -426,9 +432,9 @@ This section defines all physical or virtual wheels of the device. It
 currently does not have any XML attributes (XML node `<Wheels>`). As
 children wheel collect can have a list of a [wheels](#user-content-wheel ).
 
-Note 1: Physical or virtual wheels represent the changes to the light
-beam within the device. Typically color, gobo, prism, animation, content
-and others are described by wheels.
+Note 1: Physical or virtual wheels represent the changes to the light beam
+within the device. Typically color, gobo, prism, animation, content and others
+are described by wheels.
 
 ### Wheel
 
@@ -472,9 +478,9 @@ currently defined XML attributes of the wheel slot are specified in
 
 </div>
 
-Note 1: More information on the definitions of images used in wheel
-slots to visualize gobos, animation wheels or color wheels can be found
-in Annex E "Wheel Slot Image Definition".
+Note 1: More information on the definitions of images used in wheel slots to
+visualize gobos, animation wheels or color wheels can be found in Annex E
+"Wheel Slot Image Definition".
 
 The link between a slot and a [channel set](#user-content-channel-set ) is
 done via the wheel slot index. The wheel slot index of a slot is derived
@@ -1013,9 +1019,10 @@ The mesh of each fixture part shall be drawn around its own suspension
 point. The zero point of a device does not necessarily have to contain
 the offset related to the yoke, but it must be centered on its axis of
 rotation. The offset is defined by the geometry and has to be related to
-its parent geometry and not to the base. Note 1: In general, the offsets
-are mostly negative, because the device is displayed in a hanging
-position.
+its parent geometry and not to the base. 
+
+Note 1: In general, the offsets are mostly negative, because the device is
+displayed in a hanging position.
 
 ![media/Models\_device\_offsets\_1.1.png](media/Models_device_offsets_1.1.png
 "media/Models_device_offsets_1.1.png") Figure 3. Offsets of the parts
@@ -1082,9 +1089,9 @@ of geometry collect are specified in [table 30](#user-content-table-30 ).
 
 </div>
 
-Note 1: Position the geometry in it's "Default" position. This is
-defined by the Default Value from the DMX Channel that controls the
-position of that geometry.
+Note 1: Position the geometry in it's "Default" position. This is defined by
+the Default Value from the DMX Channel that controls the position of that
+geometry.
 
 ### General Geometry
 
@@ -1408,8 +1415,10 @@ attributes of the protocol are specified in [table
 The Geometry Type Reference is used to describe multiple instances of
 the same geometry. Example: LED panel with multiple pixels. (XML node ).
 The currently defined XML attributes of reference are specified in
-[table 36](#user-content-table-36). Note 1: Geometry Reference also
-allows easier definition of the DMX Channels for these geometries.
+[table 36](#user-content-table-36). 
+
+Note 1: Geometry Reference also allows easier definition of the DMX Channels
+for these geometries.
 
 <div id="table-42">
 
@@ -2153,9 +2162,8 @@ Attributes without wildcards (n) or (m) are not enumerated. The
 enumeration starts with 1. The currently defined Fixture Type Attributes
 are specified in [table A1](#user-content-table-a1).
 
-Note 1: The predefined Fixture Type Attributes are the preferred to use
-Fixture Type Attribute. At any time user defined attributes can be
-introduced as well.
+Note 1: The predefined Fixture Type Attributes are the preferred to use Fixture
+Type Attribute. At any time user defined attributes can be introduced as well.
 
 <div id="table-a1">
 
@@ -3079,9 +3087,9 @@ considered to be the equivalent of a gobo holder. The Image region shall
 be fully opaque aside from anti-aliasing, and shall be as large as
 possible.
 
-Note 1: This allows a data consumer to determine the precise pixel
-extents of the Image and place the provided PNG over an arbitrary GUI
-background without additional processing.
+Note 1: This allows a data consumer to determine the precise pixel extents of
+the Image and place the provided PNG over an arbitrary GUI background without
+additional processing.
 
 The Background region, the equivalent of gobo holder, is defined by full
 transparency (Alpha 0). In the Image region, Pure Black (RGB 0,0,0) is
@@ -3171,8 +3179,8 @@ This section lists all the changes that are made to GDTF.
     \#112
   - Updated XML attribute "LuminousFlux" of Geometry type Beam \#158
 
-Note: The default meshes for Base, Conventional and Scanner were
-updated. The origin of the meshes is now the mounting plate.
+Note: The default meshes for Base, Conventional and Scanner were updated. The
+origin of the meshes is now the mounting plate.
 
 ## Version 1.0
 
