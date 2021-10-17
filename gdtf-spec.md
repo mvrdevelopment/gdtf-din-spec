@@ -1555,7 +1555,7 @@ defined XML attributes of a structure geometry are specified in
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix           |
 | LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                                    |
 | StructureType             | [Enum](#user-content-attrtype-enum )      | The type of structure. Defined values are "CenterLineBased", "Detail".  |
-| CrossSectionType          | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Truss-timbering", "Tube".       |
+| CrossSectionType          | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Truss", "Tube".       |
 | CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for Tubes.                        |
 | CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for Tubes.          |
 | TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for Trusses.                  |
