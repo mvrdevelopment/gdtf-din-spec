@@ -194,7 +194,6 @@ specified in [Table 1](#user-content-table-1 ).
 |DMXValue<a id="attrtype-dmxvalue"/>                | Uint/n for ByteMirroring values <br/>Uint/ns for ByteShifting values |Special type to define DMX value where n is the byte count. The byte count can be individually specified without depending on the resolution of the DMX Channel.<br/> By default byte mirroring is used for the conversion. So 255/1 in a 16 bit channel will result in 65535.<br/>You can use the byte shifting operator to use byte shifting for the conversion. So 255/1s in a 16 bit channel will result in 65280. |
 |GUID<a id="attrtype-guid"/>                        | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | Unique ID corresponding to RFC 4122: X–1 digit in hexadecimal notation. Example: “308EA87D-7164-42DE-8106-A6D273F57A51”. |
 |Resource<a id="attrtype-resource"/>                | String|File name of the resource file without extension and without subfolder. |
-|Pixel<a id="attrtype-pixel"/>                      | Pixel| 	Integer value representing one Pixel inside a MediaFile. Pixel count starts with zero in the top left corner.| 
 
 The first XML node is always the XML description node: `<?xml version="1.0" encoding="UTF-8"?>`
 
