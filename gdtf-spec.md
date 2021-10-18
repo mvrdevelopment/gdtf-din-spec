@@ -1404,6 +1404,8 @@ attributes of the protocol are specified in [table
 |----|----|----|
 | Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
 
+The protocol doesn't have any children.
+
 ### Geometry Type Reference
 
 The Geometry Type Reference is used to describe multiple instances of
