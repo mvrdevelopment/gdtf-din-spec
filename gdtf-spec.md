@@ -1537,16 +1537,16 @@ defined XML attributes of a wiring object geometry are specified in [table 50](#
 | ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "Generator", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
 | SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocol, you can add it here.        |
 | PinCount            | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.              |
-| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ).                                          |
-| VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ).                                            |
-| VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ).                                            |
-| FrequencyRangeMax     | [Float](#user-content-attrtype-float )    | The Frequency range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ).                                            |
-| FrequencyRangeMin     | [Float](#user-content-attrtype-float )    | The Frequency range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ).                                            |
-| MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for [Power Sources](#user-content-attrtype-connectortype ).         |
-| Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for [Power Sources](#user-content-attrtype-connectortype ).                     |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: watt.                                         |
+| VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit:volt.                                           |
+| VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: volt.                                            |
+| FrequencyRangeMax     | [Float](#user-content-attrtype-float )    | The Frequency range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: hertz.                                           |
+| FrequencyRangeMin     | [Float](#user-content-attrtype-float )    | The Frequency range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: hertz.                                            |
+| MaxPayLoad          | [Float](#user-content-attrtype-float )    | The maximum electrical payload that this power source can handle. Only for [Power Sources](#user-content-attrtype-connectortype ). Unit: voltampere.        |
+| Voltage             | [Float](#user-content-attrtype-float )    | The voltage output that this power source can handle. Only for [Power Sources](#user-content-attrtype-connectortype ). Unit: volt.                     |
 | SignalLayer         | [Integer](#user-content-attrtype-integer )  | The layer of the Signal Type. In one device, all wiring geometry that use the same Signal Layers are connected. Special value 0: Connected to all geometries. |
 | CosPhi              | [Float](#user-content-attrtype-float )    | The Power Factor of the device. Only for consumers.                                               |
-| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value. Only for fuses.                                                                   |
+| FuseCurrent         | [Float](#user-content-attrtype-float )    | The fuse value. Only for fuses. Unit: ampere.                                                                   |
 | FuseRating          | [Enum](#user-content-attrtype-enum )      | Fuse Rating. Defined values are "B", "C", "D", "K", "Z".                                          |
 | Orientation         | [Enum](#user-content-attrtype-enum )      | Where the pins are placed on the object. Defined values are "Left", "Right", "Top", "Bottom".     |
 | WireGroup           | [String](#user-content-attrtype-string )  | Name of the group to which this wiring object belong.                                             |
@@ -1620,8 +1620,8 @@ defined XML attributes of a structure geometry are specified in
 | LinkedGeometry            | [Name](#user-content-attrtype-name )      | The linked geometry.                                                    |
 | StructureType             | [Enum](#user-content-attrtype-enum )      | The type of structure. Defined values are "CenterLineBased", "Detail".  |
 | CrossSectionType  <a id="attrtype-crosssectiontype" />        | [Enum](#user-content-attrtype-enum )      | The type of cross section. Defined values are "Truss", "Tube".       |
-| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for [Tubes](#user-content-attrtype-crosssectiontype ).                        |
-| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for [Tubes](#user-content-attrtype-crosssectiontype ).          |
+| CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for [Tubes](#user-content-attrtype-crosssectiontype ). Unit: millimeter.                        |
+| CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for [Tubes](#user-content-attrtype-crosssectiontype ). Unit: millimeter.          |
 | TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for [Trusses](#user-content-attrtype-crosssectiontype ).                  |
 
 
@@ -1640,20 +1640,20 @@ defined XML attributes of a support geometry are specified in
 
 #### Table 54. *Support Attributes*
 
-| XML Attribute Name        | Value Type                                | Description                                                                                     |
+| XML Attribute Name        | Value Type                                | Description                                                                                                                            |
 |----|----|----|
-| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                |
-| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                |
-| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                   |
-| SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                |
-| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ).                                             |
-| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ) .                                      |
-| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode               |
-| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode               |
-| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode               |
-| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode.         |
-| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode.         |
-| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.         |
+| Name                      | [Name](#user-content-attrtype-name )      | The unique name of the geometry.                                                                                                       |
+| Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                                                       |
+| Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                                          |
+| SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                        |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: millimeter.                                             |
+| RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                     |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
+| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
+| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
+| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
+| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.  Unit: kN/m.                                    |
 | ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
 | ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
 | ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
