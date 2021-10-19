@@ -113,12 +113,20 @@ access and search.
 
 ## Feature Groups
 
-Groups the Fixture Type Attributes into a structured way for easier
-access and finding.
+Groups the Fixture Type Features into a logical way for easier
+access and search.
 
 ## DMXBreak
 
 Term used when a fixture needs more than one DMX start address.
+
+# glTF
+
+The Graphics Language Transmission Format is a defined file format for three-dimensional scenes and models.
+
+# glb
+
+The selfcontained binary file format of a glTF scene or model.
 
 ## File Format Definition
 
@@ -557,7 +565,7 @@ specified in [table 14](#user-content-table-14 ).
 The AnimationSystem cannot have any children.
 
 ![media/animation\_wheel\_example.png](media/animation_wheel_example.png
-"media/animation_wheel_example.png") Picture TODO. Example of animation
+"media/animation_wheel_example.png") Example of an animation
 system
 
 
@@ -837,7 +845,7 @@ Here is an example where the output follows a function f for 75% of the DMX Rang
 
 ![DMXProfile example](media/DMXProfile.png "DMXProfile example")
 
-*Figure TODO. DMXProfile example*
+*Figure 1. DMXProfile example*
 
 A Point does not have any children.
 
@@ -1171,6 +1179,7 @@ of geometry collect are specified in [table 34](#user-content-table-34 ).
 | [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.                              |
 | [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.                                     |
 | [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                                                     |
+| [Laser](#user-content-geometry-type-laser )                           | Any    | Geometry with a laser light output.                                                            |
 | [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes an internal wiring for power or data.                                  |
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry that describes an additional item that can be used for a fixture (like a rain cover). |
 | [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes the internal framing of an object (like members).                      |
@@ -1488,13 +1497,13 @@ defined XML attributes of the laser are specified in [table 46](#user-content-ta
 | Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
 | ColorType <a id="attrtype-colortype" />         | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
 | Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType](#user-content-attrtype-colortype) is "SingleWaveLength"; Unit:nm (nanometers)                                            |
-| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
+| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: Watt                                                              |
 | Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitter Collect](#user-content-emitter-collect ). |
 | BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: meter                                            |
 | BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
 | BeamDivergenceMax  | [Float](#user-content-attrtype-float)     | Maximum beam divergence; Unit: mrad  (milliradian)                                                             |
-| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
-| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symmetrical output; Unit: Degree                            |
+| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Tilt of the beam. Assumes symmetrical output; Unit: Degree                           |
 | ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
 
 
@@ -1517,6 +1526,8 @@ attributes of the protocol are specified in [table 47](#user-content-table-47 ).
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
 |----|----|----|
 | Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
+
+The protocol doesn't have any children.
 
 ### Geometry Type Reference
 
@@ -1589,7 +1600,7 @@ defined XML attributes of a wiring object geometry are specified in [table 50](#
 | ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "PowerSource", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
 | SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocol, you can add it here.        |
 | PinCount            | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.              |
-| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: watt.                                         |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: Watt.                                         |
 | VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit:volt.                                           |
 | VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: volt.                                            |
 | FrequencyRangeMax     | [Float](#user-content-attrtype-float )    | The Frequency range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: hertz.                                           |
@@ -1677,6 +1688,8 @@ defined XML attributes of a structure geometry are specified in
 | TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for [Trusses](#user-content-attrtype-crosssectiontype ).                  |
 
 
+
+
 </div>
 
 The structure geometry has the same children types as the geometry
@@ -1700,18 +1713,18 @@ defined XML attributes of a support geometry are specified in
 | SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                        |
 | RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                             |
 | RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                     |
-| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
-| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
-| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.  Unit: kN/m.                                    |
-| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
-| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
-| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode. Unit: N/m.                                     |
+| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode. Unit: N/m.                                     |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.  Unit: N/m.                                    |
+| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
 
 
 </div>
@@ -2242,37 +2255,42 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-To define a custom mapping for Art-Net values and DMX Stream values you can add an XML node
-`<Map>`. The currently defined XML attributes are specified in
+If the device supports the Art-Net protocol, this section defines the
+corresponding information (XML node `<Art-Net>`).
+
+As children the Art-Net has a list of [Maps](#user-content-map).
+
+To define a custom mapping between Art-Net values and DMX Stream values you can add an XML node
+`<Map>` as a child. The currently defined XML attributes are specified in
 [table 73](#user-content-table-73 ).
+
+By default, it is assumed that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+
+#### Map
 
 <div id="table-73">
 
-#### Table 73. *Todo table name*
+#### Table 73. *Map Attributes*
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
 |----|----|----|
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
-By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+</div>
 
 ### Streaming ACN Section
 
-To define a custom mapping for Streaming ACN values and DMX Stream values you can add an XML node
-`<Map>`. The currently defined XML attributes are specified in
-[table 74](#user-content-table-74 ).
+If the device supports the Streaming ACN protocol, this section defines the
+corresponding information (XML node `<sACN>`).
 
-<div id="table-74">
- 
-#### Table 74. *Todo table name*
+As children the Streaming ACN has a list of [Maps](#user-content-map).
 
-| XML Attribute Name  | Value Type                            | Description                                                       |
-|----|----|----|
-| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
-| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+To define a custom mapping between Streaming ACN values and DMX Stream values you can add an XML node
+`<Map>` as a child. The currently defined XML attributes are specified in
+[table 73](#user-content-table-73 ).
 
-By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+By default, it is assumed that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
 
 ### Posi Stage Net Section
 
