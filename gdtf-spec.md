@@ -126,7 +126,7 @@ The Graphics Language Transmission Format is a defined file format for three-dim
 
 # glb
 
-The entirely selfcontained binary file format of a glTF scene or model.
+The selfcontained binary file format of a glTF scene or model.
 
 ## File Format Definition
 
