@@ -1110,11 +1110,11 @@ define the insertion point in relation to the view box.
 SVG can have background filling. This filling should have the color #C8C8C8. By
 this color, any software can replace it with another color.
 
-| Type  | Description  |
-|---|---|
-| Top View  | View from top in -Z direction. |
-| Front View  | View from  fron in Y direction |
-| Side View  | View from  fron in -X direction  |
+| Type  | Description  | Folder 3DS / gltf |
+|---|---|---|
+| Top View  | View from top in -Z direction. | `svg` |
+| Front View  | View from  fron in Y direction | `svg_front` |
+| Side View  | View from  fron in -X direction  | `svg_side` |
 
 
 
