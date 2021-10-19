@@ -556,7 +556,7 @@ specified in [table 14](#user-content-table-14 ).
 The AnimationSystem cannot have any children.
 
 ![media/animation\_wheel\_example.png](media/animation_wheel_example.png
-"media/animation_wheel_example.png") Picture TODO. Example of animation
+"media/animation_wheel_example.png") Example of an animation
 system
 
 
@@ -836,7 +836,7 @@ Here is an example where the output follows a function f for 75% of the DMX Rang
 
 ![DMXProfile example](media/DMXProfile.png "DMXProfile example")
 
-*Figure TODO. DMXProfile example*
+*Figure 1. DMXProfile example*
 
 A Point does not have any children.
 
@@ -2203,37 +2203,42 @@ The DMXPersonality does not have any children.
 
 ### Art-Net Section
 
-To define a custom mapping for Art-Net values and DMX Stream values you can add an XML node
-`<Map>`. The currently defined XML attributes are specified in
+If the device supports the Art-Net protocol, this section defines the
+corresponding information (XML node `<Art-Net>`).
+
+As children the Art-Net has a list of [Maps](#user-content-map).
+
+To define a custom mapping between Art-Net values and DMX Stream values you can add an XML node
+`<Map>` as a child. The currently defined XML attributes are specified in
 [table 73](#user-content-table-73 ).
+
+By default, it is assumed that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+
+#### Map
 
 <div id="table-73">
 
-#### Table 73. *Todo table name*
+#### Table 73. *Map Attributes*
 
 | XML Attribute Name  | Value Type                            | Description                                                       |
 |----|----|----|
 | Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Artnet value.                                        |
 | Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
 
-By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+</div>
 
 ### Streaming ACN Section
 
-To define a custom mapping for Streaming ACN values and DMX Stream values you can add an XML node
-`<Map>`. The currently defined XML attributes are specified in
-[table 74](#user-content-table-74 ).
+If the device supports the Streaming ACN protocol, this section defines the
+corresponding information (XML node `<sACN>`).
 
-<div id="table-74">
- 
-#### Table 74. *Todo table name*
+As children the Streaming ACN has a list of [Maps](#user-content-map).
 
-| XML Attribute Name  | Value Type                            | Description                                                       |
-|----|----|----|
-| Key                 | [Uint](#user-content-attrtype-uint )  | Value of the Streaming ACN value.                                 |
-| Value               | [Uint](#user-content-attrtype-uint )  | Value of the DMX value.                                           |
+To define a custom mapping between Streaming ACN values and DMX Stream values you can add an XML node
+`<Map>` as a child. The currently defined XML attributes are specified in
+[table 73](#user-content-table-73 ).
 
-By default it is assumed, that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
+By default, it is assumed that all the values are mapped 1:1, so only when you differ from that you can add a custom map.
 
 ### Posi Stage Net Section
 
