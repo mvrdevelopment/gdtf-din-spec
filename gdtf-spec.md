@@ -1083,8 +1083,7 @@ its parent geometry and not to the base.
 Note 1: In general, the offsets are mostly negative, because the device is
 displayed in a hanging position.
 
-![media/Models\_device\_offsets\_1.1.png](media/Models_device_offsets_1.1.png
-"media/Models_device_offsets_1.1.png") Figure 3. Offsets of the parts
+![Device Offsets](media/Models_device_offsets_1.1.png) Figure 3. Offsets of the parts
 
 In Figure 3 the green arrow displays the offset of the yoke related to
 the base. The magenta arrow displays the offset of the head related to
@@ -1094,8 +1093,7 @@ It is important that the axis of rotation of
 each device part is exactly positioned (see Figure 4).
 
 
-![media/Models\_device\_rotation.png](media/Models_device_rotation.png
-"media/Models_device_rotation.png") Figure 4. Positions of rotation axis
+![media/Models\_device\_rotation.png](media/Models_device_rotation.png) Figure 4. Positions of rotation axis
 
 The dimension XML attributes of model (see [table
 32](#user-content-table-32 )) are always used, no matter the scaling and
@@ -1124,15 +1122,15 @@ this color, any software can replace it with another color.
 
 ![Yoke](media/svg/non-symetric/yoke.svg)
 
-![media/](media/svg/non-symetric/thumbnail.svg)
+![Thumbnail](media/svg/non-symetric/thumbnail.svg)
 
-![media/](media/svg/Spiider/front/base.svg)
-![media/](media/svg/Spiider/front/head.svg)
-![media/](media/svg/Spiider/front/yoke.svg)
+![Front View Base](media/svg/Spiider/front/base.svg)
+![Front View Head/](media/svg/Spiider/front/head.svg)
+![Front View Yoke](media/svg/Spiider/front/yoke.svg)
 
-![media/](media/svg/Spiider/side/base.svg)
-![media/](media/svg/Spiider/side/head.svg)
-![media/](media/svg/Spiider/side/yoke.svg)
+![Side View Base](media/svg/Spiider/side/base.svg)
+![Side View Head](media/svg/Spiider/side/head.svg)
+![Side View Yoke](media/svg/Spiider/side/yoke.svg)
 
 SVG images should be drawn in a 1:1 scale to the actual device. Use mm as base unit. Scaling operation from 3D meshes will not be applied to the SVG informations
 
@@ -3233,8 +3231,7 @@ Gobo images shall be in PNG format with an alpha channel. Indexed,
 Greyscale and Alpha, 8bit RGB and Alpha, or 16bit RGB and Alpha are
 accepted pixel formats.
 
-![media/Gobo\_example\_labeled.png](media/Gobo_example_labeled.png
-"media/Gobo_example_labeled.png")
+![Gobo Labeled](media/Gobo_example_labeled.png)
 
 A gobo image is comprised of a transparent Background (1) and the image
 itself on top. The Background shall be fully transparent and should be
