@@ -556,7 +556,7 @@ specified in [table 14](#user-content-table-14 ).
 The AnimationSystem cannot have any children.
 
 ![media/animation\_wheel\_example.png](media/animation_wheel_example.png
-"media/animation_wheel_example.png") Picture TODO. Example of animation
+"media/animation_wheel_example.png") Example of an animation
 system
 
 
