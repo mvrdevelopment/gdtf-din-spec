@@ -836,7 +836,7 @@ Here is an example where the output follows a function f for 75% of the DMX Rang
 
 ![DMXProfile example](media/DMXProfile.png "DMXProfile example")
 
-*Figure TODO. DMXProfile example*
+*Figure 1. DMXProfile example*
 
 A Point does not have any children.
 
