@@ -1445,7 +1445,7 @@ defined XML attributes of the laser are specified in [table 46](#user-content-ta
 | Position           | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                  |
 | ColorType <a id="attrtype-colortype" />         | [Enum](#user-content-attrtype-enum )      | The currently defined unit values are: “RGB”, “SingleWaveLength”,  Default: RGB.                               |
 | Color              | [Float](#user-content-attrtype-float)     | Required if [ColorType](#user-content-attrtype-colortype) is "SingleWaveLength"; Unit:nm (nanometers)                                            |
-| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: mW (milliwatt)                                                             |
+| OutputStrength     | [Float](#user-content-attrtype-float)     | Output Strength of the Laser; Unit: Watt                                                              |
 | Emitter            | [Node](#user-content-attrtype-node )      | Optional link to the emitter group. The starting point is the [Emitter Collect](#user-content-emitter-collect ). |
 | BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: meter                                            |
 | BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
@@ -1548,7 +1548,7 @@ defined XML attributes of a wiring object geometry are specified in [table 50](#
 | ComponentType       | [Enum](#user-content-attrtype-enum )      | The type of the electrical component used. Defined values are "Input", "Output", "PowerSource", "Consumer", "Fuse", "NetworkProvider", "NetworkInput", "NetworkOutput", "NetworkInOut". |
 | SignalType          | [String](#user-content-attrtype-string )  | The type of the signal used. Predefinded values are "Power", "DMX512", "Protocol", "AES", "AnalogVideo", "AnalogAudio". When you have a custom protocol, you can add it here.        |
 | PinCount            | [Int](#user-content-attrtype-int )        | The number of available pins of the connector type to connect internal wiring to it.              |
-| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: watt.                                         |
+| ElectricalPayLoad   | [Float](#user-content-attrtype-float )    | The electrical consumption in Watts. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: Watt.                                         |
 | VoltageRangeMax     | [Float](#user-content-attrtype-float )    | The voltage range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit:volt.                                           |
 | VoltageRangeMin     | [Float](#user-content-attrtype-float )    | The voltage range's minimum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: volt.                                            |
 | FrequencyRangeMax     | [Float](#user-content-attrtype-float )    | The Frequency range's maximum value. Only for [Consumers](#user-content-attrtype-connectortype ). Unit: hertz.                                           |
@@ -1661,18 +1661,18 @@ defined XML attributes of a support geometry are specified in
 | SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                        |
 | RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                             |
 | RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                     |
-| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode. Unit: kN.                                            |
-| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
-| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode. Unit: kN/m.                                     |
-| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.  Unit: kN/m.                                    |
-| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
-| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
-| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
-| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit kN/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityZ                 | [Float](#user-content-attrtype-float )    | The allowable force on the Z-Axis applied to the object according to the Eurocode. Unit: N.                                            |
+| CapacityXX                | [Float](#user-content-attrtype-float )    | The allowable moment around the X-Axis applied to the object according to the Eurocode. Unit: N/m.                                     |
+| CapacityYY                | [Float](#user-content-attrtype-float )    | The allowable moment around the Y-Axis applied to the object according to the Eurocode. Unit: N/m.                                     |
+| CapacityZZ                | [Float](#user-content-attrtype-float )    | The allowable moment around the Z-Axis applied to the object according to the Eurocode.  Unit: N/m.                                    |
+| ResistanceX               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the X-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceY               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Y-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceZ               | [Float](#user-content-attrtype-float )    | The compression ratio for this support along the Z-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).   |
+| ResistanceXX              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the X-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceYY              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Y-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
+| ResistanceZZ              | [Float](#user-content-attrtype-float )    | The compression ratio for this support around the Z-Axis. Unit N/m. Only for [Ground Supports](#user-content-attrtype-supporttype ).  |
 
 
 </div>
