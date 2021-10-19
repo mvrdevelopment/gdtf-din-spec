@@ -113,12 +113,20 @@ access and search.
 
 ## Feature Groups
 
-Groups the Fixture Type Attributes into a structured way for easier
-access and finding.
+Groups the Fixture Type Features into a logical way for easier
+access and search.
 
 ## DMXBreak
 
 Term used when a fixture needs more than one DMX start address.
+
+# glTF
+
+The Graphics Language Transmission Format is a defined file format for three-dimensional scenes and models.
+
+# glb
+
+The selfcontained binary file format of a glTF scene or model.
 
 ## File Format Definition
 
@@ -1626,6 +1634,8 @@ defined XML attributes of a structure geometry are specified in
 | CrossSectionHeight        | [Float](#user-content-attrtype-float )    | The height of the cross section. Only for [Tubes](#user-content-attrtype-crosssectiontype ). Unit: meter.                        |
 | CrossSectionWallThickness | [Float](#user-content-attrtype-float )    | The thickness of the wall of the cross section.Only for [Tubes](#user-content-attrtype-crosssectiontype ). Unit: meter.          |
 | TrussCrossSection         | [String](#user-content-attrtype-string )  | The name of the truss cross section. Only for [Trusses](#user-content-attrtype-crosssectiontype ).                  |
+
+
 
 
 </div>
