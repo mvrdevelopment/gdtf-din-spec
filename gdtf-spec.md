@@ -1119,6 +1119,7 @@ of geometry collect are specified in [table 34](#user-content-table-34 ).
 | [MediaServerMaster](#user-content-geometry-type-media-server-master ) | Any    | Geometry that describes a master control layer of a media device.                              |
 | [Display](#user-content-geometry-type-display )                       | Any    | Geometry that describes a surface to display visual media.                                     |
 | [GeometryReference](#user-content-geometry-type-reference )           | Any    | Reference to already described geometries.                                                     |
+| [Laser](#user-content-geometry-type-laser )                           | Any    | Geometry with a laser light output.                                                            |
 | [WiringObject](#user-content-geometry-type-wiring-object )            | Any    | Geometry that describes an internal wiring for power or data.                                  |
 | [Inventory](#user-content-geometry-type-inventory )                   | Any    | Geometry that describes an additional item that can be used for a fixture (like a rain cover). |
 | [Structure](#user-content-geometry-type-structure )                   | Any    | Geometry that describes the internal framing of an object (like members).                      |
@@ -1441,8 +1442,8 @@ defined XML attributes of the laser are specified in [table 46](#user-content-ta
 | BeamDiameter       | [Float](#user-content-attrtype-float)     | Beam diameter where it leaves the projector; Unit: meter                                            |
 | BeamDivergenceMin  | [Float](#user-content-attrtype-float)     | Minimum beam divergence; Unit: mrad  (milliradian)                                                             |
 | BeamDivergenceMax  | [Float](#user-content-attrtype-float)     | Maximum beam divergence; Unit: mrad  (milliradian)                                                             |
-| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
-| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symetrical output; Unit: Degree                             |
+| ScanAnglePan       | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Pan of the beam. Assumes symmetrical output; Unit: Degree                            |
+| ScanAngleTilt      | [Float](#user-content-attrtype-float)     | Possible Total Scan Angle Tilt of the beam. Assumes symmetrical output; Unit: Degree                           |
 | ScanSpeed          | [Float](#user-content-attrtype-float)     | Speed of the beam; Unit: kilo point per second                                                                 |
 
 
@@ -1465,6 +1466,8 @@ attributes of the protocol are specified in [table 47](#user-content-table-47 ).
 | XML Attribute Name | Value Type                                    | Description                                                                                              |
 |----|----|----|
 | Name          | [String](#user-content-attrtype-string ) | Name of the protocol                      |
+
+The protocol doesn't have any children.
 
 ### Geometry Type Reference
 
