@@ -163,6 +163,11 @@ all firmware revisions of the device.
 ./models/3ds_high/yoke.3ds
 ./models/svg/base.svg
 ./models/svg/yoke.svg
+./models/svg_side/base.svg
+./models/svg_side/yoke.svg
+./models/svg_front/base.svg
+./models/svg_front/yoke.svg
+
 ```
 
 The ZIP archive name is specified as follows:
@@ -235,15 +240,19 @@ attributes of the fixture type are specified in [table 3](#user-content-table-3 
 
 | XML Attribute Name | Value Type | Description  |
 |----|----|----|
-| Name               | [Name](#user-content-attrtype-name )       | Name of the fixture type. As it is based on Name, it is safe for parsing.                                                                                                                                                                                                                                                    |
-| ShortName          | [String](#user-content-attrtype-string )     | Shortened name of the fixture type. Non detailed version or an abbreviation. Can use any characters or symbols.                                                                                                                                                                                                              |
-| LongName           | [String](#user-content-attrtype-string )     | Detailed, complete name of the fixture type, can include any characters or extra symbols.                                                                                                                                                                                                                                    |
-| Manufacturer       | [String](#user-content-attrtype-string )     | Manufacturer of the fixture type.                                                                                                                                                                                                                                                                                            |
-| Description        | [String](#user-content-attrtype-string )     | Description of the fixture type.                                                                                                                                                                                                                                                                                             |
-| FixtureTypeID      | [GUID](#user-content-attrtype-guid )        | Unique number of the fixture type.                                                                                                                                                                                                                                                                                           |
-| Thumbnail          | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension containing description of the thumbnail. Use the following as a resource file: <br />- png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024 <br />- svg file to provide the vector graphic.  <br />- These resource files are located in the root directory of the zip file.  |
-| RefFT              | [GUID](#user-content-attrtype-guid )       | Optional. GUID of the referenced fixture type.                                                                                                                                                                                                                                                                               |
-| CanHaveChildren    | [Enum](#user-content-attrtype-enum )       | Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes”                                                                                                                                                                                                                  |
+| Name               | [Name](#user-content-attrtype-name )         | Name of the fixture type. As it is based on Name, it is safe for parsing. |
+| ShortName          | [String](#user-content-attrtype-string )     | Shortened name of the fixture type. Non detailed version or an abbreviation. Can use any characters or symbols. |
+| LongName           | [String](#user-content-attrtype-string )     | Detailed, complete name of the fixture type, can include any characters or extra symbols. |
+| Manufacturer       | [String](#user-content-attrtype-string )     | Manufacturer of the fixture type.|
+| Description        | [String](#user-content-attrtype-string )     | Description of the fixture type. |
+| FixtureTypeID      | [GUID](#user-content-attrtype-guid )         | Unique number of the fixture type. |
+| Thumbnail          | [Resource](#user-content-attrtype-resource ) | Optional. File name without extension containing description of the thumbnail. Use the following as a resource file: <br />- png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024 <br />- svg file to provide the vector graphic.  <br />- These resource files are located in the root directory of the zip file.  |
+| ThumbnailOffsetX   | [Int](#user-content-attrtype-int )           | Horizontal offset in pixels from the top left of the viewbox to the insertion point on a label. |
+| ThumbnailOffsetY   | [Int](#user-content-attrtype-int )           | Vertical offset in pixels from the top left of the viewbox to the insertion point on a label. |
+| RefFT              | [GUID](#user-content-attrtype-guid )         | Optional. GUID of the referenced fixture type. |
+| CanHaveChildren    | [Enum](#user-content-attrtype-enum )         | Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes” |
+
+</div>
 
 
 Fixture type node children are specified in [table 4](#user-content-table-4 ).
@@ -1014,15 +1023,20 @@ specified in [table 32](#user-content-table-32 ).
 
 #### Table 32. *Model Attributes*
 
-| XML Attribute Name | Value Type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| XML Attribute Name | Value Type | Description |
 |----|----|----|
-| Name               | [Name](#user-content-attrtype-name )       | The unique name of the model                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Length             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Width              | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Height             | [Float](#user-content-attrtype-float )      | Unit: meter; Default value: 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| PrimitiveType      | [Enum](#user-content-attrtype-enum )        | Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; Default value: “Undefined”                                                                                                                                                                                                                                                                                                                                                                         |
-| File               | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:<br />- 3DS or GLB file to provide 3D model.<br />- SVG file to provide the 2D symbol.<br />It is possible to add several files with the same name but different formats. Preferable format for the 3D model is glTF. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p> Software that is utilizing GDTF files should always be able to read both 3ds and glTF file formats and should be able to write at least one of these formats. It is preferable that only one type of 3D model file formats is used within one GDTF file. |
-
+| Name               | [Name](#user-content-attrtype-name )       | The unique name of the model |
+| Length             | [Float](#user-content-attrtype-float )     | Unit: meter; Default value: 0 |
+| Width              | [Float](#user-content-attrtype-float )     | Unit: meter; Default value: 0 |
+| Height             | [Float](#user-content-attrtype-float )     | Unit: meter; Default value: 0 |
+| PrimitiveType      | [Enum](#user-content-attrtype-enum )       | Type of 3D model; The currently defined values are: “Undefined”, “Cube”, “Cylinder”, “Sphere”, “Base”, “Yoke”, “Head”, “Scanner”, “Conventional”, “Pigtail”, "Base1_1", "Scanner1_1", "Conventional1_1"; TODO Default value: “Undefined” |
+| File               | [Resource](#user-content-attrtype-resource )   | Optional. File name without extension and without subfolder containing description of the model. Use the following as a resource file:<br />- 3DS or GLB to file to provide 3D model.<br />- SVG file to provide the 2D symbol.<br />It is possible to add several files with the same name but different formats. Preferable format for the 3D model is GLTF. The resource files are located in subfolders of a folder called <code>./models</code>. The names of the subfolders correspond to the file format of the resource files (3ds, step, svg). The path for 3ds files would be <code>./models/3ds</code>. For glb files, it would be <code>./models/gltf</code>.</p> Software that is utilizing GDTF files should always be able to read both 3ds and GlTF file formats and should be able to write at least one of these formats. It is preferable that only one type of 3D model file formats is used within one GDTF file. |
+| SVGOffsetX            | [Float](#user-content-attrtype-float )  | Offset in X from the 0,0 point to the desired insertion point of the top view svg. Unit based on the SVG. Default value: 0|
+| SVGOffsetY            | [Float](#user-content-attrtype-float )  | Offset in Y from the 0,0 point to the desired insertion point of the top view svg. Unit based on the SVG. Default value: 0|
+| SVGSideOffsetX        | [Float](#user-content-attrtype-float )  | Offset in X from the 0,0 point to the desired insertion point of the side view svg. Unit based on the SVG. Default value: 0|
+| SVGSideOffsetY        | [Float](#user-content-attrtype-float )  | Offset in Y from the 0,0 point to the desired insertion point of the side view svg. Unit based on the SVG. Default value: 0|
+| SVGFrontOffsetX       | [Float](#user-content-attrtype-float )  | Offset in X from the 0,0 point to the desired insertion point of the front view svg. Unit based on the SVG. Default value: 0|
+| SVGFrontOffsetY       | [Float](#user-content-attrtype-float )  | Offset in Z from the 0,0 point to the desired insertion point of the front view svg. Unit based on the SVG. Default value: 0|
 
 </div>
 
@@ -1069,8 +1083,7 @@ its parent geometry and not to the base.
 Note 1: In general, the offsets are mostly negative, because the device is
 displayed in a hanging position.
 
-![media/Models\_device\_offsets\_1.1.png](media/Models_device_offsets_1.1.png
-"media/Models_device_offsets_1.1.png") Figure 3. Offsets of the parts
+![Device Offsets](media/Models_device_offsets_1.1.png) Figure 3. Offsets of the parts
 
 In Figure 3 the green arrow displays the offset of the yoke related to
 the base. The magenta arrow displays the offset of the head related to
@@ -1080,14 +1093,46 @@ It is important that the axis of rotation of
 each device part is exactly positioned (see Figure 4).
 
 
-![media/Models\_device\_rotation.png](media/Models_device_rotation.png
-"media/Models_device_rotation.png") Figure 4. Positions of rotation axis
+![media/Models\_device\_rotation.png](media/Models_device_rotation.png) Figure 4. Positions of rotation axis
 
 The dimension XML attributes of model (see [table
 32](#user-content-table-32 )) are always used, no matter the scaling and
 ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
+
+SVG use viewboxes to align their content. The viewbox is always defined ny the
+top left of the bounding box. With the attributes `SVG_VIEW_Offset_XY` you can
+define the insertion point in relation to the view box.
+
+SVG can have background filling. This filling should have the color #C8C8C8. By
+this color, any software can replace it with another color.
+
+| Type  | Description  | Folder 3DS / gltf |
+|---|---|---|
+| Top View  | View from top in -Z direction. | `svg` |
+| Front View  | View from  fron in Y direction | `svg_front` |
+| Side View  | View from  fron in -X direction  | `svg_side` |
+
+
+
+![Base](media/svg/non-symetric/base.svg)
+
+![Head](media/svg/non-symetric/head.svg)
+
+![Yoke](media/svg/non-symetric/yoke.svg)
+
+![Thumbnail](media/svg/non-symetric/thumbnail.svg)
+
+![Front View Base](media/svg/Spiider/front/base.svg)
+![Front View Head/](media/svg/Spiider/front/head.svg)
+![Front View Yoke](media/svg/Spiider/front/yoke.svg)
+
+![Side View Base](media/svg/Spiider/side/base.svg)
+![Side View Head](media/svg/Spiider/side/head.svg)
+![Side View Yoke](media/svg/Spiider/side/yoke.svg)
+
+SVG images should be drawn in a 1:1 scale to the actual device. Use mm as base unit. Scaling operation from 3D meshes will not be applied to the SVG informations
 
 ### Regarding glTF Files
 
@@ -1100,6 +1145,11 @@ The used glTF files should follow these requirements:
  - Only use jpeg or png texture resource
  - all vertex attributes are `GL_FLOAT`
 
+ ### Regarding SVG Files
+
+- Use SVG 1.1 spec
+- Don't embed bitmap images.
+- Align the viewbox to the top left of the device
 
 ## Geometry Collect
 
@@ -3181,8 +3231,7 @@ Gobo images shall be in PNG format with an alpha channel. Indexed,
 Greyscale and Alpha, 8bit RGB and Alpha, or 16bit RGB and Alpha are
 accepted pixel formats.
 
-![media/Gobo\_example\_labeled.png](media/Gobo_example_labeled.png
-"media/Gobo_example_labeled.png")
+![Gobo Labeled](media/Gobo_example_labeled.png)
 
 A gobo image is comprised of a transparent Background (1) and the image
 itself on top. The Background shall be fully transparent and should be
