@@ -66,18 +66,24 @@ The following documents are referred to in the text in such a way that
 some or all of their content constitutes requirements of this document.
 For dated references, only the edition cited applies. For undated
 references, the latest edition of the referenced document (including any
-amendments) applies. ANSI E1.54 2015, PLASA Standard for Color
-Communication in Entertainment Lighting ANSI/IES TM-30, IES Method for
-Evaluating Light Source Color Rendition RFC 4122, A Universally Unique
-IDentifier (UUID) URN Namespace (available at
-<https://www.ietf.org/rfc/rfc4122.txt>) IEC 61966-2-1:1999, Multimedia
-systems and equipment - Colour measurement and management - Part 2-1:
-Colour management - Default RGB colour space - sRGB ISO 22028-2:2013,
-Photography and graphic technology - Extended colour encodings for
-digital image storage, manipulation and interchange - Part 2: Reference
-output medium metric RGB colour image encoding (ROMM RGB)
+amendments) applies. 
 
-OpenSoundControl http://opensoundcontrol.org/index.html
+- ANSI E1.54 2015, PLASA Standard for Color Communication in Entertainment
+  Lighting 
+
+- ANSI/IES TM-30, IES Method for Evaluating Light Source Color Rendition 
+
+- RFC 4122, A Universally Unique IDentifier (UUID) URN Namespace (available at
+  <https://www.ietf.org/rfc/rfc4122.txt>) 
+
+- IEC 61966-2-1:1999, Multimedia systems and equipment - Colour measurement and
+  management - Part 2-1: Colour management - Default RGB colour space - sRGB 
+
+- ISO 22028-2:2013, Photography and graphic technology - Extended colour
+  encodings for digital image storage, manipulation and interchange - Part 2:
+  Reference output medium metric RGB colour image encoding (ROMM RGB)
+
+- OpenSoundControl http://opensoundcontrol.org/index.html
 
 
 # Terms and definitions
@@ -120,11 +126,11 @@ access and search.
 
 Term used when a fixture needs more than one DMX start address.
 
-# glTF
+## glTF
 
 The Graphics Language Transmission Format is a defined file format for three-dimensional scenes and models.
 
-# glb
+## glb
 
 The selfcontained binary file format of a glTF scene or model.
 
@@ -1097,7 +1103,7 @@ each device part is exactly positioned (see Figure 4).
 
 The dimension XML attributes of model (see [table
 32](#user-content-table-32 )) are always used, no matter the scaling and
-ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
+ratio of the mesh file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
 
@@ -1709,7 +1715,7 @@ defined XML attributes of a support geometry are specified in
 | Model                     | [Name](#user-content-attrtype-name )      | Link to the corresponding model.                                                                                                       |
 | Position                  | [Matrix](#user-content-attrtype-matrix )  | Relative position of geometry; Default value: Identity Matrix                                                                          |
 | SupportType    <a id="attrtype-supporttype" />           | [Enum](#user-content-attrtype-enum )      | The type of support. Defined values are "Rope", "GroundSupport".                                        |
-| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                             |
+| RopeCrossSection          | [String](#user-content-attrtype-string )  | The name of the rope cross section. Only for [Ropes](#user-content-attrtype-supporttype ).                                             |
 | RopeOffset                | [Vector3](#user-content-attrtype-vector3 )| The Offset of the rope from bottom to top. Only for [Ropes](#user-content-attrtype-supporttype ). Unit: meter.                                     |
 | CapacityX                 | [Float](#user-content-attrtype-float )    | The allowable force on the X-Axis applied to the object according to the Eurocode. Unit: N.                                            |
 | CapacityY                 | [Float](#user-content-attrtype-float )    | The allowable force on the Y-Axis applied to the object according to the Eurocode. Unit: N.                                            |
