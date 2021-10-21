@@ -1103,7 +1103,7 @@ each device part is exactly positioned (see Figure 4).
 
 The dimension XML attributes of model (see [table
 32](#user-content-table-32 )) are always used, no matter the scaling and
-ratio of the 3ds file. The mesh is explicitly scaled to this dimension.
+ratio of the mesh file. The mesh is explicitly scaled to this dimension.
 The length defines the dimension of the model on the X axis, the width
 on the Y axis and the height on the Z axis.
 
