@@ -126,11 +126,11 @@ access and search.
 
 Term used when a fixture needs more than one DMX start address.
 
-# glTF
+## glTF
 
 The Graphics Language Transmission Format is a defined file format for three-dimensional scenes and models.
 
-# glb
+## glb
 
 The selfcontained binary file format of a glTF scene or model.
 
