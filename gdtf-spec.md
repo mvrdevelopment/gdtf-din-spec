@@ -1262,7 +1262,7 @@ are specified in [table 37](#user-content-table-37 ).
 
 </div>
 
-The beam has the same children types as the geometry collect (see
+The beam filter has the same children types as the geometry collect (see
 [table 34](#user-content-table-34 )).
 
 ### Geometry Type Color Filter
@@ -1284,7 +1284,7 @@ attributes of the color filter are specified in [table 38](#user-content-table-3
 
 </div>
 
-The color has the same children types as the geometry collect (see
+The color filter has the same children types as the geometry collect (see
 [table 34](#user-content-table-34 )).
 
 
@@ -1307,7 +1307,7 @@ the gobo filter are specified in [table 39](#user-content-table-39 ).
 
 </div>
 
-The color has the same children types as the geometry collect (see
+The gobo filter has the same children types as the geometry collect (see
 [table 34](#user-content-table-34 )).
 
 
@@ -1330,7 +1330,7 @@ of the shaper filter are specified in [table 40](#user-content-table-40 ).
 
 </div>
 
-The color has the same children types as the geometry collect (see
+The shaper filter has the same children types as the geometry collect (see
 [table 34](#user-content-table-34 )).
 
 
@@ -1557,7 +1557,7 @@ for these geometries.
 
 </div>
 
-As children, the Geometry Type Reference has a list of a break. The
+As children, the Geometry Type Reference has a list of breaks. The
 count of the children depends on the number of different breaks in the
 DMX channels of the referenced geometry. If the referenced geometry, for
 example, has DMX channels with DMX break 2 and 4, the geometry reference
