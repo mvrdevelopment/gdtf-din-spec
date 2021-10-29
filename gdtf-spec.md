@@ -253,8 +253,8 @@ attributes of the fixture type are specified in [table 3](#user-content-table-3 
 | Description        | [String](#user-content-attrtype-string )     | Description of the fixture type. |
 | FixtureTypeID      | [GUID](#user-content-attrtype-guid )         | Unique number of the fixture type. |
 | Thumbnail          | [Resource](#user-content-attrtype-resource ) | Optional. File name without extension containing description of the thumbnail. Use the following as a resource file: <br />- png file to provide the rasterized picture. Maximum resolution of picture: 1024x1024 <br />- svg file to provide the vector graphic.  <br />- These resource files are located in the root directory of the zip file.  |
-| ThumbnailOffsetX   | [Int](#user-content-attrtype-int )           | Horizontal offset in pixels from the top left of the viewbox to the insertion point on a label. |
-| ThumbnailOffsetY   | [Int](#user-content-attrtype-int )           | Vertical offset in pixels from the top left of the viewbox to the insertion point on a label. |
+| ThumbnailOffsetX   | [Int](#user-content-attrtype-int )           | Horizontal offset in pixels from the top left of the viewbox to the insertion point on a label. Default value: 0 |
+| ThumbnailOffsetY   | [Int](#user-content-attrtype-int )           | Vertical offset in pixels from the top left of the viewbox to the insertion point on a label. Default value: 0 |
 | RefFT              | [GUID](#user-content-attrtype-guid )         | Optional. GUID of the referenced fixture type. |
 | CanHaveChildren    | [Enum](#user-content-attrtype-enum )         | Describes if it is possible to mount other devices to this device. Value: “Yes”, “No”. Default value: “Yes” |
 
@@ -1042,7 +1042,7 @@ specified in [table 32](#user-content-table-32 ).
 | SVGSideOffsetX        | [Float](#user-content-attrtype-float )  | Offset in X from the 0,0 point to the desired insertion point of the side view svg. Unit based on the SVG. Default value: 0|
 | SVGSideOffsetY        | [Float](#user-content-attrtype-float )  | Offset in Y from the 0,0 point to the desired insertion point of the side view svg. Unit based on the SVG. Default value: 0|
 | SVGFrontOffsetX       | [Float](#user-content-attrtype-float )  | Offset in X from the 0,0 point to the desired insertion point of the front view svg. Unit based on the SVG. Default value: 0|
-| SVGFrontOffsetY       | [Float](#user-content-attrtype-float )  | Offset in Z from the 0,0 point to the desired insertion point of the front view svg. Unit based on the SVG. Default value: 0|
+| SVGFrontOffsetY       | [Float](#user-content-attrtype-float )  | Offset in Y from the 0,0 point to the desired insertion point of the front view svg. Unit based on the SVG. Default value: 0|
 
 </div>
 
