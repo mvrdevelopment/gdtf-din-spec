@@ -2741,7 +2741,7 @@ not taken into account.
               <SubPhysicalUnit Type="Amplitude" PhysicalUnit="Percent" PhysicalFrom="20" PhysicalTo="20"/> This defines the peak amplitude of the shake
            <Attribute Name="AnimationSystem(n)" ActivationGroup="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Percent" Pretty="Anim System"/>  
            <Attribute Name="AnimationSystem(n)Ramp" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" "Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Ramp"/>  
-              <SubPhysicalUnit Type="Duration" PhysicalUnit="Percent" PhysicalFrom="50" PhysicalTo="50"/> This defines the duration of the ramp in relation to the period.
+              <SubPhysicalUnit Type="DutyCycle" PhysicalUnit="Percent" PhysicalFrom="50" PhysicalTo="50"/> This defines the duration of the ramp in relation to the period.
               <SubPhysicalUnit Type="AmplitudeMin" PhysicalUnit="Percent" PhysicalFrom="0" PhysicalTo="0"/> This defines the minimum position in relation to the whole way of the spline
               <SubPhysicalUnit Type="AmplitudeMax" PhysicalUnit="Percent" PhysicalFrom="100" PhysicalTo="100"/> This defines the maximum position in relation to the whole way of the spline
            <Attribute Name="AnimationSystem(n)Shake" ActivationGroup="AnimationSystem(n)" MainAttribute="AnimationSystem(n)" Feature="Gobo.Gobo" PhysicalUnit="Frequency" Pretty="Anim System Shake/>
